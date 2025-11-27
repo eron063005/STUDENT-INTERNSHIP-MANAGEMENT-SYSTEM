@@ -15,5 +15,5 @@
     Private Sub ucVisit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadVisitCards(panelVisit)
     End Sub
-    'burat
+
 End Class
