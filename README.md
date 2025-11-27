@@ -1,7 +1,7 @@
 # STUDENT INTERNSHIP MANAGEMENT SYSTEM
 
-Group 6
-Members:
-Sam Aidan C. Gonzaga
-Aaron G. Cayabyab
-Vehniah P. Samson
+Group 6 <br>
+<b> Members: <br>
+Sam Aidan C. Gonzaga <br>
+Aaron G. Cayabyab <br>
+Vehniah P. Samson <br>
