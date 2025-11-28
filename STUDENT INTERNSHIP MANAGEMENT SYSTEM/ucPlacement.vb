@@ -68,7 +68,7 @@ Public Class ucPlacement
         editForm.txtEditPlaceStatus.Text = If(row.Cells("Status").Value, "").ToString()
         editForm.dtpEditPlaceStartDate.Value = If(row.Cells("StartDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("StartDate").Value), DateTime.Now)
         editForm.dtpEditPlaceEndDate.Value = If(row.Cells("EndDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("EndDate").Value), DateTime.Now)
-        'editForm.txtEditPlaceGrade.Text = If(row.Cells(5).Value, "").ToString()
+        editForm.txtEditPlaceGrade.Text = If(row.Cells("FGrade").Value, "").ToString()
 
         ' Show the edit form
         'editForm.ShowDialog()

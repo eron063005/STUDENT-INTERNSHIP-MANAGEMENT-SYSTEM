@@ -216,6 +216,9 @@ Module ModuleDB
             "SELECT DISTINCT
                 i.InternshipID,
                 v.StudentID,
+                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                c.CompanyID,
+                c.CompanyName,
                 i.Status,
                 i.StartDate,
                 i.EndDate,
@@ -223,6 +226,9 @@ Module ModuleDB
             FROM internship i
             INNER JOIN Final_Grade fg ON i.InternshipID = fg.InternshipID
             INNER JOIN visit_log v ON i.InternshipID = v.InternshipID
+            INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
+            INNER JOIN Company_Contact cc On a.CompanyContactID = cc.CompanyContactID  
+            INNER JOIN Company c On cc.CompanyID = c.CompanyID
             INNER JOIN student s ON v.StudentID = s.StudentID
             WHERE v.FacultyID = @facultyID
             "
