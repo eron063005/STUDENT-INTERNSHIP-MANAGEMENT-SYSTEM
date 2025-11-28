@@ -279,8 +279,7 @@ Partial Class Reset_Password
         Label9.Text = "Reset Password"
         ' 
         ' ResetPassbtn
-        ' 
-<<<<<<< Updated upstream
+        '
         ResetPassbtn.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
         ResetPassbtn.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         ResetPassbtn.BorderSize = 5
@@ -298,25 +297,23 @@ Partial Class Reset_Password
         ResetPassbtn.TabIndex = 5
         ResetPassbtn.Text = "Reset Password"
         ResetPassbtn.UseVisualStyleBackColor = False
-=======
-        RoundedButton1.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 5
-        RoundedButton1.CornerRadius = 10
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton1.Location = New Point(69, 439)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton1.Size = New Size(612, 82)
-        RoundedButton1.TabIndex = 5
-        RoundedButton1.Text = "Reset Password"
-        RoundedButton1.UseVisualStyleBackColor = False
->>>>>>> Stashed changes
+        'RoundedButton1.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        'RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        'RoundedButton1.BorderSize = 5
+        'RoundedButton1.CornerRadius = 10
+        'RoundedButton1.Cursor = Cursors.Hand
+        'RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        'RoundedButton1.FlatStyle = FlatStyle.Flat
+        'RoundedButton1.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        'RoundedButton1.ForeColor = Color.Black
+        'RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        'RoundedButton1.Location = New Point(69, 439)
+        'RoundedButton1.Name = "RoundedButton1"
+        'RoundedButton1.PressedColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        'RoundedButton1.Size = New Size(612, 82)
+        'RoundedButton1.TabIndex = 5
+        'RoundedButton1.Text = "Reset Password"
+        'RoundedButton1.UseVisualStyleBackColor = False
         ' 
         ' Label10
         ' 

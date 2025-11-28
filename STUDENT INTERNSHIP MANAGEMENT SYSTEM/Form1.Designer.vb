@@ -2,7 +2,7 @@
 
 Public Class LogIn
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles btnLogIn.Click
-<<<<<<< Updated upstream
+
         If txtFacultyID.Text.Trim() = "" Or txtPassword.Text.Trim() = "" Then
             MessageBox.Show("Please enter both Faculty ID and Password.")
             Return

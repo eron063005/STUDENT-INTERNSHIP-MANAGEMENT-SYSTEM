@@ -1,13 +1,10 @@
-<<<<<<< Updated upstream
-﻿Imports MySql.Data.MySqlClient
+
+Imports MySql.Data.MySqlClient
 
 Public Class Reset_Password
-=======
-﻿Public Class Reset_Password
     Private Sub ResetPassword_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         TransparencyHelper.ApplyTransparency(Me, PictureBox2, PictureBox1, Label3, btnExitResetPass, RoundedPanel1)
     End Sub
->>>>>>> Stashed changes
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
         Dim frm As New LogIn
         frm.Show()
