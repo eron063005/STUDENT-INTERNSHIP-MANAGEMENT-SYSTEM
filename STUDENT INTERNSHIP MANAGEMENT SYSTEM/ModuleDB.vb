@@ -259,11 +259,12 @@ Module ModuleDB
                  INNER JOIN final_grade fg ON i.FinalGradeID = fg.FinalGradeID
                  INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
                  INNER JOIN company_contact cc ON a.companycontactID = cc.companycontactID
-                 INNER JOIN company c ON cc.CompanyId = c.CompanyId;
-    "
+                 INNER JOIN company c ON cc.CompanyId = c.CompanyId
+                 WHERE f.FacultyID = @facultyID"
 
         Using con As New MySqlConnection(connString)
             Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
                 con.Open()
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     Dim yOffset As Integer = 10
