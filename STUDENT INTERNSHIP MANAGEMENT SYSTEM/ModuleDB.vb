@@ -10,12 +10,11 @@ Module ModuleDB
         Dim count As Integer = 0
 
         Dim query As String = "
-     SELECT COUNT(*)
-     FROM Internship i
-     JOIN Final_Grade fg ON i.FinalGradeId = fg.FinalGradeId
-     JOIN visit_log v ON fg.VisitId = v.VisitId
-     WHERE i.Status = 'Ongoing'
-     AND v.FacultyId = @facultyID;
+     SELECT COUNT(DISTINCT i.InternshipId, v.StudentId) AS Total
+        FROM internship i
+        JOIN visit_log v ON i.InternshipId = v.InternshipId
+        WHERE i.Status = 'Ongoing'
+        AND v.FacultyId = @facultyID;
  "
 
         Try
