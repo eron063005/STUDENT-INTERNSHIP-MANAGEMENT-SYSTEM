@@ -12,7 +12,7 @@ Public Class frmEditStudent
     Private Sub frmEditStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' populate sex combo
         If cmbEditStdSex.Items.Count = 0 Then
-            cmbEditStdSex.Items.AddRange(New String() {"Male", "Female", "Other"})
+            cmbEditStdSex.Items.AddRange(New String() {"Male", "Female"})
         End If
 
         ' load courses into combo
@@ -31,8 +31,8 @@ Public Class frmEditStudent
             Me.Close()
             Return
         End If
-
-        Dim query As String = "SELECT StudentId, FirstName, MiddleName, LastName, Age, Sex, ContactNo, Email, CourseId, Section, FacultyId 
+        'BDAY NA KESA AGE UNG IFFETCH
+        Dim query As String = "SELECT StudentId, FirstName, MiddleName, LastName, Birthday, Sex, ContactNo, Email, CourseId, Section, FacultyId 
                        FROM student WHERE StudentId = @id"
 
         Using con As New MySqlConnection(connString)
@@ -50,14 +50,15 @@ Public Class frmEditStudent
                             txtEditStdMiddlename.Text = rdr("MiddleName").ToString()
                             txtEditStdLastname.Text = rdr("LastName").ToString()
 
-                            Dim ageVal As Integer
-                            If Integer.TryParse(rdr("Age").ToString(), ageVal) Then
-                                nudEditStdAge.Value = Math.Min(Math.Max(ageVal, nudEditStdAge.Minimum), nudEditStdAge.Maximum)
+                            'AIAH DITO ITO DAGDAG KO KASI GINAWANG BDAY UNG AGE SA DB
+                            If Not IsDBNull(rdr("Birthday")) Then
+                                Dim bday As Date = Convert.ToDateTime(rdr("Birthday"))
+                                dtpEditBirthday.Value = bday
                             End If
-
                             cmbEditStdSex.SelectedItem = rdr("Sex").ToString()
                             mtxtEditStdConNo.Text = rdr("ContactNo").ToString()
                             txtEditStdEmail.Text = rdr("Email").ToString()
+                            'GANG DITO PRE
 
                             ' COURSE + PROFESSOR
                             Dim courseId As String = rdr("CourseId").ToString()
@@ -164,13 +165,13 @@ Public Class frmEditStudent
             Return
         End If
 
-        Dim query = "UPDATE student SET FirstName=@fn, MiddleName=@mn, LastName=@ln, Age=@age, Sex=@sex, ContactNo=@cn, Email=@em, CourseId=@course WHERE StudentId=@id"
+        Dim query = "UPDATE student SET FirstName=@fn, MiddleName=@mn, LastName=@ln, Birthday=@bday, Sex=@sex, ContactNo=@cn, Email=@em, CourseId=@course WHERE StudentId=@id"
         Using con As New MySqlConnection(connString)
             Using cmd As New MySqlCommand(query, con)
                 cmd.Parameters.AddWithValue("@fn", txtEditStdFirstname.Text.Trim)
                 cmd.Parameters.AddWithValue("@mn", txtEditStdMiddlename.Text.Trim)
                 cmd.Parameters.AddWithValue("@ln", txtEditStdLastname.Text.Trim)
-                cmd.Parameters.AddWithValue("@age", CInt(nudEditStdAge.Value))
+                cmd.Parameters.AddWithValue("@bday", dtpEditBirthday.Value.Date)
                 cmd.Parameters.AddWithValue("@sex", If(cmbEditStdSex.SelectedItem IsNot Nothing, cmbEditStdSex.SelectedItem.ToString, ""))
                 cmd.Parameters.AddWithValue("@cn", mtxtEditStdConNo.Text.Trim)
                 cmd.Parameters.AddWithValue("@em", txtEditStdEmail.Text.Trim)

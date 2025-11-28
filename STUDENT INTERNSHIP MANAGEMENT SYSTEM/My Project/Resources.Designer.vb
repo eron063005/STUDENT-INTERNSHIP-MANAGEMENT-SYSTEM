@@ -403,6 +403,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Untitled_design__1_() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Untitled design (1)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Vaia_Logo__Custom_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Vaia Logo (Custom)", resourceCulture)
@@ -453,9 +463,99 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property VAIA_MAIN2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA MAIN2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property VAIA_NAV() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("VAIA NAV", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO5() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO6() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO6", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property VAIA_SCHOOL_DEMO7() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VAIA SCHOOL DEMO7", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

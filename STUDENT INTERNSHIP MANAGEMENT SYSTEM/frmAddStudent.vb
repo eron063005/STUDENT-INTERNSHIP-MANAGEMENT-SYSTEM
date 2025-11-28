@@ -28,7 +28,6 @@ Public Class frmAddStudent
         txtAddStdFirstname.Clear()
         txtAddStdLastname.Clear()
         txtAddStdMiddlename.Clear()
-        nudAddStdAge.Value = 0
         cmbAddStdSex.SelectedIndex = -1
         mtxtAddStdContactNo.Clear()
         txtAddStdEmail.Clear()
@@ -47,7 +46,10 @@ Public Class frmAddStudent
         Dim studentID As String = GenerateStudentID()
 
         ' Example query
-        Dim query As String = "INSERT INTO `student` (`StudentId`, `FirstName`, `LastName`, `MiddleName`, `Age`, `Sex`, `ContactNo`, `Email`, `CourseId`, `Section`, `FacultyId`) VALUES (@id, @fname, @lname, @mname, @age, @sex, @contactNum, @email, @course, @section, @fId);"
+        'DITO YA INIBA NA SYA NG BDAY KESA SA AGE
+        Dim query As String = "INSERT INTO `student` (`StudentId`, `FirstName`, `LastName`, 
+        `MiddleName`, `Birthday`, `Sex`, `ContactNo`, `Email`, `CourseId`, `Section`, `FacultyId`) 
+        VALUES (@id, @fname, @lname, @mname, @bday, @sex, @contactNum, @email, @course, @section, @fId);"
 
         Dim cmd As New MySqlCommand(query, con)
 
@@ -55,7 +57,7 @@ Public Class frmAddStudent
         cmd.Parameters.AddWithValue("@fname", txtAddStdFirstname.Text.Trim())
         cmd.Parameters.AddWithValue("@lname", txtAddStdLastname.Text.Trim())
         cmd.Parameters.AddWithValue("@mname", txtAddStdMiddlename.Text.Trim())
-        cmd.Parameters.AddWithValue("@age", nudAddStdAge.Text.Trim())
+        cmd.Parameters.AddWithValue("@bday", dtpAddBirthday.Value.Date)
         cmd.Parameters.AddWithValue("@sex", cmbAddStdSex.Text.Trim())
         cmd.Parameters.AddWithValue("@contactNum", mtxtAddStdContactNo.Text.Trim())
         cmd.Parameters.AddWithValue("@email", txtAddStdEmail.Text.Trim())

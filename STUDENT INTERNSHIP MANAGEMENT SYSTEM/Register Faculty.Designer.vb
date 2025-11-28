@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Register_Faculty
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Register_Faculty
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Panel1 = New Panel()
         Label3 = New Label()
@@ -46,14 +46,16 @@ Partial Class Register_Faculty
         Label6 = New Label()
         Panel2 = New Panel()
         Label9 = New Label()
-        RoundedButton1 = New RoundedButton()
+        btnRegisFaculty = New RoundedButton()
         Label10 = New Label()
         Label11 = New Label()
         TextBox1 = New TextBox()
         TextBox2 = New TextBox()
         btnExitFaculRegis = New Button()
+        PictureBox2 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -87,6 +89,7 @@ Partial Class Register_Faculty
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 8
         RoundedPanel1.Controls.Add(btnShowConfirm)
@@ -109,7 +112,7 @@ Partial Class Register_Faculty
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label9)
-        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.Controls.Add(btnRegisFaculty)
         RoundedPanel1.Controls.Add(Label10)
         RoundedPanel1.Controls.Add(Label11)
         RoundedPanel1.Controls.Add(TextBox1)
@@ -338,25 +341,25 @@ Partial Class Register_Faculty
         Label9.TabIndex = 6
         Label9.Text = "Faculty Registration"
         ' 
-        ' RoundedButton1
+        ' btnRegisFaculty
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 5
-        RoundedButton1.CornerRadius = 10
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.Yellow
-        RoundedButton1.Location = New Point(77, 663)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.Red
-        RoundedButton1.Size = New Size(612, 82)
-        RoundedButton1.TabIndex = 5
-        RoundedButton1.Text = "Register"
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnRegisFaculty.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        btnRegisFaculty.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnRegisFaculty.BorderSize = 5
+        btnRegisFaculty.CornerRadius = 10
+        btnRegisFaculty.Cursor = Cursors.Hand
+        btnRegisFaculty.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnRegisFaculty.FlatStyle = FlatStyle.Flat
+        btnRegisFaculty.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnRegisFaculty.ForeColor = Color.Black
+        btnRegisFaculty.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnRegisFaculty.Location = New Point(77, 663)
+        btnRegisFaculty.Name = "btnRegisFaculty"
+        btnRegisFaculty.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnRegisFaculty.Size = New Size(612, 82)
+        btnRegisFaculty.TabIndex = 5
+        btnRegisFaculty.Text = "Register"
+        btnRegisFaculty.UseVisualStyleBackColor = False
         ' 
         ' Label10
         ' 
@@ -415,6 +418,16 @@ Partial Class Register_Faculty
         btnExitFaculRegis.TabIndex = 20
         btnExitFaculRegis.UseVisualStyleBackColor = False
         ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DEMO
+        PictureBox2.Location = New Point(8, 8)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(1920, 1080)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 21
+        PictureBox2.TabStop = False
+        ' 
         ' Register_Faculty
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -426,6 +439,7 @@ Partial Class Register_Faculty
         Controls.Add(Label3)
         Controls.Add(PictureBox1)
         Controls.Add(Panel1)
+        Controls.Add(PictureBox2)
         FormBorderStyle = FormBorderStyle.None
         Name = "Register_Faculty"
         Text = "Register_Faculty"
@@ -433,6 +447,7 @@ Partial Class Register_Faculty
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -445,7 +460,7 @@ Partial Class Register_Faculty
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents btnRegisFaculty As RoundedButton
     Friend WithEvents Label10 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
@@ -467,4 +482,5 @@ Partial Class Register_Faculty
     Friend WithEvents Label11 As Label
     Friend WithEvents btnShowConfirm As Button
     Friend WithEvents btnShowPass As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

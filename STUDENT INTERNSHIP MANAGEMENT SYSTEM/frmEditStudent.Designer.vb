@@ -28,7 +28,6 @@ Partial Class frmEditStudent
         btnEditStdCancel = New RoundedButton()
         cmbEditStdCourse = New ComboBox()
         cmbEditStdSex = New ComboBox()
-        nudEditStdAge = New NumericUpDown()
         txtEditStdEmail = New TextBox()
         mtxtEditStdConNo = New MaskedTextBox()
         txtEditStdLastname = New TextBox()
@@ -45,12 +44,12 @@ Partial Class frmEditStudent
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
+        dtpEditBirthday = New DateTimePicker()
+        cmbEditStdProf = New ComboBox()
         Label12 = New Label()
         Label11 = New Label()
         txtEditStdSection = New TextBox()
         Panel2 = New Panel()
-        cmbEditStdProf = New ComboBox()
-        CType(nudEditStdAge, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -71,7 +70,7 @@ Partial Class frmEditStudent
         ' mtxtEditStudentID
         ' 
         mtxtEditStudentID.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditStudentID.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
+        mtxtEditStudentID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtEditStudentID.Location = New Point(27, 184)
         mtxtEditStudentID.Name = "mtxtEditStudentID"
         mtxtEditStudentID.Size = New Size(244, 44)
@@ -88,7 +87,7 @@ Partial Class frmEditStudent
         btnSaveStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveStd.ForeColor = Color.Black
         btnSaveStd.HoverColor = Color.Yellow
-        btnSaveStd.Location = New Point(891, 634)
+        btnSaveStd.Location = New Point(891, 618)
         btnSaveStd.Name = "btnSaveStd"
         btnSaveStd.PressedColor = Color.Red
         btnSaveStd.Size = New Size(171, 63)
@@ -107,7 +106,7 @@ Partial Class frmEditStudent
         btnEditStdCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditStdCancel.ForeColor = Color.Black
         btnEditStdCancel.HoverColor = Color.Yellow
-        btnEditStdCancel.Location = New Point(700, 634)
+        btnEditStdCancel.Location = New Point(697, 618)
         btnEditStdCancel.Name = "btnEditStdCancel"
         btnEditStdCancel.PressedColor = Color.Red
         btnEditStdCancel.Size = New Size(171, 63)
@@ -117,36 +116,27 @@ Partial Class frmEditStudent
         ' 
         ' cmbEditStdCourse
         ' 
-        cmbEditStdCourse.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
+        cmbEditStdCourse.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cmbEditStdCourse.FormattingEnabled = True
-        cmbEditStdCourse.Location = New Point(422, 567)
+        cmbEditStdCourse.Location = New Point(421, 356)
         cmbEditStdCourse.Name = "cmbEditStdCourse"
         cmbEditStdCourse.Size = New Size(640, 45)
         cmbEditStdCourse.TabIndex = 51
         ' 
         ' cmbEditStdSex
         ' 
-        cmbEditStdSex.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
+        cmbEditStdSex.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cmbEditStdSex.FormattingEnabled = True
-        cmbEditStdSex.Location = New Point(135, 566)
+        cmbEditStdSex.Location = New Point(309, 554)
         cmbEditStdSex.Name = "cmbEditStdSex"
-        cmbEditStdSex.Size = New Size(257, 45)
+        cmbEditStdSex.Size = New Size(218, 45)
         cmbEditStdSex.TabIndex = 50
-        ' 
-        ' nudEditStdAge
-        ' 
-        nudEditStdAge.BorderStyle = BorderStyle.FixedSingle
-        nudEditStdAge.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        nudEditStdAge.Location = New Point(27, 566)
-        nudEditStdAge.Name = "nudEditStdAge"
-        nudEditStdAge.Size = New Size(73, 44)
-        nudEditStdAge.TabIndex = 49
         ' 
         ' txtEditStdEmail
         ' 
         txtEditStdEmail.BorderStyle = BorderStyle.FixedSingle
-        txtEditStdEmail.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        txtEditStdEmail.Location = New Point(457, 469)
+        txtEditStdEmail.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditStdEmail.Location = New Point(457, 457)
         txtEditStdEmail.Name = "txtEditStdEmail"
         txtEditStdEmail.Size = New Size(605, 44)
         txtEditStdEmail.TabIndex = 48
@@ -154,8 +144,8 @@ Partial Class frmEditStudent
         ' mtxtEditStdConNo
         ' 
         mtxtEditStdConNo.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditStdConNo.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        mtxtEditStdConNo.Location = New Point(27, 469)
+        mtxtEditStdConNo.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        mtxtEditStdConNo.Location = New Point(27, 457)
         mtxtEditStdConNo.Name = "mtxtEditStdConNo"
         mtxtEditStdConNo.Size = New Size(424, 44)
         mtxtEditStdConNo.TabIndex = 47
@@ -163,8 +153,8 @@ Partial Class frmEditStudent
         ' txtEditStdLastname
         ' 
         txtEditStdLastname.BorderStyle = BorderStyle.FixedSingle
-        txtEditStdLastname.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        txtEditStdLastname.Location = New Point(739, 264)
+        txtEditStdLastname.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditStdLastname.Location = New Point(739, 279)
         txtEditStdLastname.Name = "txtEditStdLastname"
         txtEditStdLastname.Size = New Size(323, 44)
         txtEditStdLastname.TabIndex = 46
@@ -172,8 +162,8 @@ Partial Class frmEditStudent
         ' txtEditStdMiddlename
         ' 
         txtEditStdMiddlename.BorderStyle = BorderStyle.FixedSingle
-        txtEditStdMiddlename.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        txtEditStdMiddlename.Location = New Point(364, 264)
+        txtEditStdMiddlename.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditStdMiddlename.Location = New Point(364, 279)
         txtEditStdMiddlename.Name = "txtEditStdMiddlename"
         txtEditStdMiddlename.Size = New Size(365, 44)
         txtEditStdMiddlename.TabIndex = 45
@@ -181,8 +171,8 @@ Partial Class frmEditStudent
         ' txtEditStdFirstname
         ' 
         txtEditStdFirstname.BorderStyle = BorderStyle.FixedSingle
-        txtEditStdFirstname.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        txtEditStdFirstname.Location = New Point(27, 264)
+        txtEditStdFirstname.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditStdFirstname.Location = New Point(27, 279)
         txtEditStdFirstname.Name = "txtEditStdFirstname"
         txtEditStdFirstname.Size = New Size(326, 44)
         txtEditStdFirstname.TabIndex = 44
@@ -191,7 +181,7 @@ Partial Class frmEditStudent
         ' 
         Label10.AutoSize = True
         Label10.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label10.Location = New Point(422, 537)
+        Label10.Location = New Point(421, 326)
         Label10.Name = "Label10"
         Label10.Size = New Size(166, 27)
         Label10.TabIndex = 43
@@ -201,7 +191,7 @@ Partial Class frmEditStudent
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label9.Location = New Point(135, 537)
+        Label9.Location = New Point(301, 524)
         Label9.Name = "Label9"
         Label9.Size = New Size(52, 27)
         Label9.TabIndex = 42
@@ -211,17 +201,17 @@ Partial Class frmEditStudent
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label8.Location = New Point(27, 537)
+        Label8.Location = New Point(27, 525)
         Label8.Name = "Label8"
-        Label8.Size = New Size(59, 27)
+        Label8.Size = New Size(102, 27)
         Label8.TabIndex = 41
-        Label8.Text = "Age"
+        Label8.Text = "Birthday"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label7.Location = New Point(454, 439)
+        Label7.Location = New Point(454, 427)
         Label7.Name = "Label7"
         Label7.Size = New Size(73, 27)
         Label7.TabIndex = 40
@@ -231,7 +221,7 @@ Partial Class frmEditStudent
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label6.Location = New Point(27, 439)
+        Label6.Location = New Point(27, 427)
         Label6.Name = "Label6"
         Label6.Size = New Size(147, 27)
         Label6.TabIndex = 39
@@ -241,7 +231,7 @@ Partial Class frmEditStudent
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label5.Location = New Point(736, 234)
+        Label5.Location = New Point(736, 249)
         Label5.Name = "Label5"
         Label5.Size = New Size(120, 27)
         Label5.TabIndex = 38
@@ -251,7 +241,7 @@ Partial Class frmEditStudent
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label4.Location = New Point(371, 234)
+        Label4.Location = New Point(371, 249)
         Label4.Name = "Label4"
         Label4.Size = New Size(156, 27)
         Label4.TabIndex = 37
@@ -261,7 +251,7 @@ Partial Class frmEditStudent
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label3.Location = New Point(27, 234)
+        Label3.Location = New Point(27, 249)
         Label3.Name = "Label3"
         Label3.Size = New Size(119, 27)
         Label3.TabIndex = 36
@@ -291,6 +281,7 @@ Partial Class frmEditStudent
         ' 
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(dtpEditBirthday)
         RoundedPanel1.Controls.Add(cmbEditStdProf)
         RoundedPanel1.Controls.Add(Label12)
         RoundedPanel1.Controls.Add(Label11)
@@ -303,7 +294,6 @@ Partial Class frmEditStudent
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Controls.Add(cmbEditStdSex)
         RoundedPanel1.Controls.Add(btnExitEditStd)
-        RoundedPanel1.Controls.Add(nudEditStdAge)
         RoundedPanel1.Controls.Add(txtEditStdEmail)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(mtxtEditStdConNo)
@@ -315,14 +305,30 @@ Partial Class frmEditStudent
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(0, 0)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(1086, 718)
+        RoundedPanel1.Size = New Size(1086, 699)
         RoundedPanel1.TabIndex = 77
+        ' 
+        ' dtpEditBirthday
+        ' 
+        dtpEditBirthday.Location = New Point(27, 555)
+        dtpEditBirthday.Name = "dtpEditBirthday"
+        dtpEditBirthday.Size = New Size(250, 27)
+        dtpEditBirthday.TabIndex = 58
+        ' 
+        ' cmbEditStdProf
+        ' 
+        cmbEditStdProf.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cmbEditStdProf.FormattingEnabled = True
+        cmbEditStdProf.Location = New Point(549, 554)
+        cmbEditStdProf.Name = "cmbEditStdProf"
+        cmbEditStdProf.Size = New Size(512, 45)
+        cmbEditStdProf.TabIndex = 57
         ' 
         ' Label12
         ' 
         Label12.AutoSize = True
         Label12.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(422, 327)
+        Label12.Location = New Point(417, 537)
         Label12.Name = "Label12"
         Label12.Size = New Size(110, 27)
         Label12.TabIndex = 56
@@ -341,7 +347,7 @@ Partial Class frmEditStudent
         ' txtEditStdSection
         ' 
         txtEditStdSection.BorderStyle = BorderStyle.FixedSingle
-        txtEditStdSection.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
+        txtEditStdSection.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         txtEditStdSection.Location = New Point(27, 357)
         txtEditStdSection.Name = "txtEditStdSection"
         txtEditStdSection.Size = New Size(389, 44)
@@ -355,21 +361,12 @@ Partial Class frmEditStudent
         Panel2.Size = New Size(990, 4)
         Panel2.TabIndex = 40
         ' 
-        ' cmbEditStdProf
-        ' 
-        cmbEditStdProf.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
-        cmbEditStdProf.FormattingEnabled = True
-        cmbEditStdProf.Location = New Point(422, 356)
-        cmbEditStdProf.Name = "cmbEditStdProf"
-        cmbEditStdProf.Size = New Size(640, 45)
-        cmbEditStdProf.TabIndex = 57
-        ' 
         ' frmEditStudent
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        ClientSize = New Size(1086, 716)
+        ClientSize = New Size(1086, 697)
         Controls.Add(txtEditStdLastname)
         Controls.Add(txtEditStdMiddlename)
         Controls.Add(txtEditStdFirstname)
@@ -382,7 +379,6 @@ Partial Class frmEditStudent
         Name = "frmEditStudent"
         StartPosition = FormStartPosition.CenterScreen
         Text = "frmEditStudent"
-        CType(nudEditStdAge, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         ResumeLayout(False)
@@ -395,7 +391,6 @@ Partial Class frmEditStudent
     Friend WithEvents btnEditStdCancel As RoundedButton
     Friend WithEvents cmbEditStdCourse As ComboBox
     Friend WithEvents cmbEditStdSex As ComboBox
-    Friend WithEvents nudEditStdAge As NumericUpDown
     Friend WithEvents txtEditStdEmail As TextBox
     Friend WithEvents mtxtEditStdConNo As MaskedTextBox
     Friend WithEvents txtEditStdLastname As TextBox
@@ -417,4 +412,5 @@ Partial Class frmEditStudent
     Friend WithEvents Label11 As Label
     Friend WithEvents txtEditStdSection As TextBox
     Friend WithEvents cmbEditStdProf As ComboBox
+    Friend WithEvents dtpEditBirthday As DateTimePicker
 End Class

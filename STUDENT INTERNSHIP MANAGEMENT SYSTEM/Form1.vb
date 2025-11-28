@@ -14,6 +14,13 @@ Partial Class LogIn
         End Try
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ResetPassword.Font = New Font("Century Gothic", 12, FontStyle.Underline)
+        RegisFaculty.Font = New Font("Century Gothic", 12, FontStyle.Underline)
+        RegisStd.Font = New Font("Century Gothic", 12, FontStyle.Underline)
+    End Sub
+
+
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
@@ -30,17 +37,18 @@ Partial Class LogIn
         Label3 = New Label()
         RoundedPanel1 = New RoundedPanel()
         btnShowPass = New Button()
-        Label8 = New Label()
-        Label7 = New Label()
+        RegisStd = New Label()
+        RegisFaculty = New Label()
         Label6 = New Label()
         Panel2 = New Panel()
         ResetPassword = New Label()
         Label4 = New Label()
         btnLogIn = New RoundedButton()
-        Button1 = New Button()
-        Panel1 = New Panel()
+        btnLogInExit = New Button()
+        PictureBox2 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' PictureBox1
@@ -48,7 +56,7 @@ Partial Class LogIn
         PictureBox1.Image = My.Resources.Resources.VAIA_MAIN
         PictureBox1.Location = New Point(105, 83)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(725, 750)
+        PictureBox1.Size = New Size(725, 749)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -100,7 +108,7 @@ Partial Class LogIn
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 40.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.FromArgb(CByte(222), CByte(237), CByte(238))
-        Label3.Location = New Point(100, 791)
+        Label3.Location = New Point(101, 791)
         Label3.Name = "Label3"
         Label3.Size = New Size(723, 160)
         Label3.TabIndex = 5
@@ -108,11 +116,12 @@ Partial Class LogIn
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 8
         RoundedPanel1.Controls.Add(btnShowPass)
-        RoundedPanel1.Controls.Add(Label8)
-        RoundedPanel1.Controls.Add(Label7)
+        RoundedPanel1.Controls.Add(RegisStd)
+        RoundedPanel1.Controls.Add(RegisFaculty)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(ResetPassword)
@@ -124,7 +133,7 @@ Partial Class LogIn
         RoundedPanel1.Controls.Add(txtFacultyID)
         RoundedPanel1.CornerRadius = 50
         RoundedPanel1.FillColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        RoundedPanel1.Location = New Point(1035, 150)
+        RoundedPanel1.Location = New Point(1035, 149)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(747, 767)
         RoundedPanel1.TabIndex = 6
@@ -142,31 +151,31 @@ Partial Class LogIn
         btnShowPass.TabIndex = 12
         btnShowPass.UseVisualStyleBackColor = False
         ' 
-        ' Label8
+        ' RegisStd
         ' 
-        Label8.AutoSize = True
-        Label8.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        Label8.Cursor = Cursors.Hand
-        Label8.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label8.ForeColor = Color.FromArgb(CByte(0), CByte(171), CByte(37))
-        Label8.Location = New Point(276, 688)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(197, 23)
-        Label8.TabIndex = 11
-        Label8.Text = "Register for Student"
+        RegisStd.AutoSize = True
+        RegisStd.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        RegisStd.Cursor = Cursors.Hand
+        RegisStd.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        RegisStd.ForeColor = Color.FromArgb(CByte(0), CByte(171), CByte(37))
+        RegisStd.Location = New Point(295, 688)
+        RegisStd.Name = "RegisStd"
+        RegisStd.Size = New Size(162, 23)
+        RegisStd.TabIndex = 11
+        RegisStd.Text = "Add as Student"
         ' 
-        ' Label7
+        ' RegisFaculty
         ' 
-        Label7.AutoSize = True
-        Label7.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        Label7.Cursor = Cursors.Hand
-        Label7.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.ForeColor = Color.FromArgb(CByte(104), CByte(203), CByte(248))
-        Label7.Location = New Point(277, 650)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(200, 23)
-        Label7.TabIndex = 10
-        Label7.Text = "Register for Faculty "
+        RegisFaculty.AutoSize = True
+        RegisFaculty.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        RegisFaculty.Cursor = Cursors.Hand
+        RegisFaculty.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        RegisFaculty.ForeColor = Color.FromArgb(CByte(104), CByte(203), CByte(248))
+        RegisFaculty.Location = New Point(277, 651)
+        RegisFaculty.Name = "RegisFaculty"
+        RegisFaculty.Size = New Size(200, 23)
+        RegisFaculty.TabIndex = 10
+        RegisFaculty.Text = "Register for Faculty "
         ' 
         ' Label6
         ' 
@@ -174,7 +183,7 @@ Partial Class LogIn
         Label6.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
         Label6.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = Color.FromArgb(CByte(154), CByte(166), CByte(178))
-        Label6.Location = New Point(255, 610)
+        Label6.Location = New Point(255, 611)
         Label6.Name = "Label6"
         Label6.Size = New Size(253, 23)
         Label6.TabIndex = 9
@@ -195,7 +204,7 @@ Partial Class LogIn
         ResetPassword.Cursor = Cursors.Hand
         ResetPassword.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         ResetPassword.ForeColor = Color.Black
-        ResetPassword.Location = New Point(474, 430)
+        ResetPassword.Location = New Point(474, 429)
         ResetPassword.Name = "ResetPassword"
         ResetPassword.Size = New Size(183, 23)
         ResetPassword.TabIndex = 7
@@ -224,37 +233,39 @@ Partial Class LogIn
         btnLogIn.FlatStyle = FlatStyle.Flat
         btnLogIn.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogIn.ForeColor = Color.Black
-        btnLogIn.HoverColor = Color.FromArgb(CByte(192), CByte(255), CByte(255))
+        btnLogIn.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnLogIn.Location = New Point(93, 475)
         btnLogIn.Name = "btnLogIn"
-        btnLogIn.PressedColor = Color.Empty
-        btnLogIn.Size = New Size(564, 82)
+        btnLogIn.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnLogIn.Size = New Size(565, 83)
         btnLogIn.TabIndex = 5
         btnLogIn.Text = "Log In"
         btnLogIn.UseVisualStyleBackColor = False
         ' 
-        ' Button1
+        ' btnLogInExit
         ' 
-        Button1.BackColor = Color.Transparent
-        Button1.Cursor = Cursors.Hand
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatAppearance.MouseDownBackColor = Color.Transparent
-        Button1.FlatAppearance.MouseOverBackColor = Color.Transparent
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Image = My.Resources.Resources.Exit21
-        Button1.Location = New Point(1887, 0)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(33, 32)
-        Button1.TabIndex = 7
-        Button1.UseVisualStyleBackColor = False
+        btnLogInExit.BackColor = Color.Transparent
+        btnLogInExit.Cursor = Cursors.Hand
+        btnLogInExit.FlatAppearance.BorderSize = 0
+        btnLogInExit.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnLogInExit.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnLogInExit.FlatStyle = FlatStyle.Flat
+        btnLogInExit.Image = My.Resources.Resources.Exit21
+        btnLogInExit.Location = New Point(1887, 0)
+        btnLogInExit.Name = "btnLogInExit"
+        btnLogInExit.Size = New Size(33, 32)
+        btnLogInExit.TabIndex = 7
+        btnLogInExit.UseVisualStyleBackColor = False
         ' 
-        ' Panel1
+        ' PictureBox2
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
-        Panel1.Location = New Point(912, 66)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(16, 923)
-        Panel1.TabIndex = 9
+        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DEMO
+        PictureBox2.Location = New Point(0, 0)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(1920, 1080)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 10
+        PictureBox2.TabStop = False
         ' 
         ' LogIn
         ' 
@@ -262,11 +273,11 @@ Partial Class LogIn
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         ClientSize = New Size(1920, 1080)
-        Controls.Add(Panel1)
-        Controls.Add(Button1)
+        Controls.Add(btnLogInExit)
         Controls.Add(RoundedPanel1)
         Controls.Add(Label3)
         Controls.Add(PictureBox1)
+        Controls.Add(PictureBox2)
         FormBorderStyle = FormBorderStyle.None
         Name = "LogIn"
         StartPosition = FormStartPosition.CenterScreen
@@ -275,9 +286,27 @@ Partial Class LogIn
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
+
+    'ITO YA OH PANG TRANSPARENT
+    Public Sub New()
+        InitializeComponent()
+        ' Ensure Shown handler is attached (if not already from designer)
+        AddHandler Me.Shown, AddressOf LogIn_Shown
+    End Sub
+
+    ' Called when form is shown (layout finalized) — safe place to reparent controls
+    Private Sub LogIn_Shown(sender As Object, e As EventArgs)
+        ' --- Make targets transparent over PictureBox2 ---
+        TransparencyHelper.MakeTransparent(PictureBox1, PictureBox2)
+        TransparencyHelper.MakeTransparent(Label3, PictureBox2)
+        TransparencyHelper.MakeTransparent(btnLogInExit, PictureBox2)
+        TransparencyHelper.MakeTransparent(RoundedPanel1, PictureBox2)
+    End Sub
+    'GANG DITO
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
@@ -288,7 +317,7 @@ Partial Class LogIn
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents btnLogIn As RoundedButton
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLogInExit.Click
         Dim result As DialogResult
         result = MessageBox.Show("Are you sure you want to exit?",
                                  "Exit Confirmation",
@@ -304,17 +333,31 @@ Partial Class LogIn
         frm.Show()
     End Sub
 
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles RegisFaculty.Click
         Dim frm As New Register_Faculty
         frm.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-        Dim frm As New frmAddStudent
-        frm.FormBorderStyle = FormBorderStyle.None
-        frm.Size = Screen.PrimaryScreen.Bounds.Size
-        frm.StartPosition = FormStartPosition.CenterScreen
-        'frm.WindowState = FormWindowState.Maximized
-        frm.Show()
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles RegisStd.Click
+        ' Dim the background
+        PictureBox2.BackColor = Color.FromArgb(255, 0, 0, 0) ' semi-transparent black overlay effect
+        PictureBox2.Refresh() ' make sure effect shows
+
+        ' Hide other controls
+        PictureBox1.Hide()
+        Label3.Hide()
+        RoundedPanel1.Hide()
+
+        ' Show frmAddStudent as modal so the code waits until it's closed
+        Using frm As New frmAddStudent
+            frm.ShowDialog() ' modal form
+        End Using
+
+        ' Restore visibility and opacity
+        PictureBox1.Show()
+        Label3.Show()
+        RoundedPanel1.Show()
+        PictureBox2.BackColor = Color.Transparent
     End Sub
 End Class

@@ -4,6 +4,10 @@ Imports System.Drawing.Drawing2D
 <DefaultProperty("CornerRadius")>
 Public Class RoundedPanel
     Inherits Panel
+    Public Sub New()
+        Me.SetStyle(ControlStyles.SupportsTransparentBackColor, True)
+        Me.BackColor = Color.Transparent
+    End Sub
 
     Private _cornerRadius As Integer = 20
     Private _borderColor As Color = Color.FromArgb(80, 118, 133)
