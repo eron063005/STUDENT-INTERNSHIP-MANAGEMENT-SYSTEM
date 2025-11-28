@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Reset_Password
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Reset_Password
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Panel1 = New Panel()
         btnExitResetPass = New Button()
@@ -44,8 +44,10 @@ Partial Class Reset_Password
         ResetPassbtn = New RoundedButton()
         Label10 = New Label()
         TextBox2 = New TextBox()
+        PictureBox2 = New PictureBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -94,6 +96,7 @@ Partial Class Reset_Password
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 8
         RoundedPanel1.Controls.Add(btnConfirmNew)
@@ -277,6 +280,7 @@ Partial Class Reset_Password
         ' 
         ' ResetPassbtn
         ' 
+<<<<<<< Updated upstream
         ResetPassbtn.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
         ResetPassbtn.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         ResetPassbtn.BorderSize = 5
@@ -294,6 +298,25 @@ Partial Class Reset_Password
         ResetPassbtn.TabIndex = 5
         ResetPassbtn.Text = "Reset Password"
         ResetPassbtn.UseVisualStyleBackColor = False
+=======
+        RoundedButton1.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        RoundedButton1.BorderSize = 5
+        RoundedButton1.CornerRadius = 10
+        RoundedButton1.Cursor = Cursors.Hand
+        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        RoundedButton1.FlatStyle = FlatStyle.Flat
+        RoundedButton1.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        RoundedButton1.ForeColor = Color.Black
+        RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        RoundedButton1.Location = New Point(69, 439)
+        RoundedButton1.Name = "RoundedButton1"
+        RoundedButton1.PressedColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        RoundedButton1.Size = New Size(612, 82)
+        RoundedButton1.TabIndex = 5
+        RoundedButton1.Text = "Reset Password"
+        RoundedButton1.UseVisualStyleBackColor = False
+>>>>>>> Stashed changes
         ' 
         ' Label10
         ' 
@@ -316,6 +339,16 @@ Partial Class Reset_Password
         TextBox2.Size = New Size(564, 65)
         TextBox2.TabIndex = 1
         ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DEMO
+        PictureBox2.Location = New Point(8, 8)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(1920, 1080)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 22
+        PictureBox2.TabStop = False
+        ' 
         ' Reset_Password
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -327,6 +360,7 @@ Partial Class Reset_Password
         Controls.Add(PictureBox1)
         Controls.Add(btnExitResetPass)
         Controls.Add(Panel1)
+        Controls.Add(PictureBox2)
         FormBorderStyle = FormBorderStyle.None
         Name = "Reset_Password"
         Text = "Reset_Password"
@@ -334,6 +368,7 @@ Partial Class Reset_Password
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -360,4 +395,5 @@ Partial Class Reset_Password
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btnConfirmNew As Button
     Friend WithEvents btnShowNew As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

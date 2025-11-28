@@ -2,6 +2,7 @@
 
 Public Class LogIn
     Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles btnLogIn.Click
+<<<<<<< Updated upstream
         If txtFacultyID.Text.Trim() = "" Or txtPassword.Text.Trim() = "" Then
             MessageBox.Show("Please enter both Faculty ID and Password.")
             Return
@@ -31,15 +32,21 @@ Public Class LogIn
                 End If
             End Using
         End Using
+=======
+        Dashboard.Show()
+        Hide()
+>>>>>>> Stashed changes
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnLogInExit As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ResetPassword As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents RegisStd As Label
+    Friend WithEvents RegisFaculty As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents btnShowPass As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+
 End Class

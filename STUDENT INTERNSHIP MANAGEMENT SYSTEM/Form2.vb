@@ -1,9 +1,20 @@
-﻿Imports System.Windows.Forms
-Imports System.Drawing
+﻿Imports System.Drawing
+Imports System.Reflection.Emit
+Imports System.Windows.Forms
 Imports ExcelDataReader.Log
 
 Public Class Dashboard
 
+<<<<<<< Updated upstream
+=======
+    Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        'ITO YA TRANSPARENT NA DIN SYA
+        TransparencyHelper.MakeTransparent(Label1, PictureBox2)
+        TransparencyHelper.MakeTransparent(Label2, PictureBox2)
+        TransparencyHelper.MakeTransparent(PictureBox1, PictureBox2)
+    End Sub
+
+>>>>>>> Stashed changes
     ' Dashboard.vb
     Public Sub ShowFormWithPadding(frm As Form, leftPadding As Integer, topPadding As Integer,
                                rightPadding As Integer, bottomPadding As Integer)
