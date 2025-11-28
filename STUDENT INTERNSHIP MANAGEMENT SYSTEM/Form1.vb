@@ -261,7 +261,7 @@ Partial Class LogIn
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DEMO
+        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DIFF
         PictureBox2.Location = New Point(0, 0)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(1920, 1080)

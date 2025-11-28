@@ -279,7 +279,7 @@ Partial Class Reset_Password
         Label9.Text = "Reset Password"
         ' 
         ' ResetPassbtn
-        '
+        ' 
         ResetPassbtn.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
         ResetPassbtn.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         ResetPassbtn.BorderSize = 5
@@ -321,7 +321,7 @@ Partial Class Reset_Password
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DEMO
+        PictureBox2.Image = My.Resources.Resources.VAIA_SCHOOL_DIFF
         PictureBox2.Location = New Point(8, 8)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(1920, 1080)
