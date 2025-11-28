@@ -215,15 +215,16 @@ Module ModuleDB
             Dim query As String =
             "SELECT DISTINCT
                     i.InternshipID,
+                    CONCAT(s.FirstName, ' ', s.MiddleName, ' ', s.LastName) AS StudentName,
                     i.Status,
                     i.StartDate,
                     i.EndDate,
-                    i.FGrade,
-                    vl.StudentID
+                    i.FGrade
                 FROM internship i
-                INNER JOIN visit_log vl ON i.InternshipID = vl.InternshipID
-                WHERE vl.FacultyID = @facultyID;
-
+                INNER JOIN Final_Grade fg ON i.FinalGradeID = fg.FinalGradeID
+                INNER JOIN visit_log v ON i.InternshipId = v.InternshipId
+                INNER JOIN student s ON v.StudentID = s.StudentID
+                WHERE v.FacultyID = @facultyID
             "
 
             Using cmd As New MySqlCommand(query, con)
