@@ -2,11 +2,11 @@
 
 Public Class ucStudent
     Public Sub RefreshData()
-        ModuleDB.LoadData(dgvStudent, "student")
+        ModuleDB.LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
 
     Private Sub ucStudent_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadData(dgvStudent, "Student")
+        LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
 
     Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click

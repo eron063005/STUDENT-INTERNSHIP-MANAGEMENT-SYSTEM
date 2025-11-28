@@ -3,6 +3,7 @@
 Module ModuleDB
     Public connString As String =
         "server=localhost; port=3306; user=root; password=; database=OJTDB_VAIA;"
+    Public LoggedFacultyID As String
 
     'Student Part
     Function GenerateStudentID() As String
@@ -55,6 +56,25 @@ Module ModuleDB
         Finally
             If con.State = ConnectionState.Open Then con.Close()
         End Try
+    End Sub
+
+    Sub LoadDataStudent(targetGrid As DataGridView, facultyID As String)
+        Using con As New MySqlConnection(connString)
+            Dim query As String = $"SELECT * FROM student WHERE facultyid = @facultyID"
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", facultyID)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+        End Using
+
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
     '---------------
     Sub LoadData(targetGrid As DataGridView, tableName As String)

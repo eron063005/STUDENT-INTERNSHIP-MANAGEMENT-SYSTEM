@@ -3,6 +3,7 @@ Imports System.Drawing
 Imports ExcelDataReader.Log
 
 Public Class Dashboard
+
     ' Dashboard.vb
     Public Sub ShowFormWithPadding(frm As Form, leftPadding As Integer, topPadding As Integer,
                                rightPadding As Integer, bottomPadding As Integer)
