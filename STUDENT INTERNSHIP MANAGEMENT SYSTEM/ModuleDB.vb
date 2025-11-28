@@ -212,19 +212,20 @@ Module ModuleDB
     'Placement Part
     Sub LoadDataInternship(targetGrid As DataGridView)
         Using con As New MySqlConnection(connString)
-
             Dim query As String =
-            "SELECT 
-                i.InternshipID,
-                i.Status,
-                i.StartDate,
-                i.EndDate,
-                i.Grade
-            FROM internship i
-            INNER JOIN Final_Grade fg ON i.FinalGradeID = fg.FinalGradeID 
-            INNER JOIN visit_log vl ON fg.VisitID = vl.VisitID
-            INNER JOIN faculty f ON vl.FacultyID = f.FacultyID
-            WHERE f.FacultyID = @facultyID"
+            "SELECT DISTINCT
+                    i.InternshipID,
+                    CONCAT(s.FirstName, ' ', s.MiddleName, ' ', s.LastName) AS StudentName,
+                    i.Status,
+                    i.StartDate,
+                    i.EndDate,
+                    i.FGrade
+                FROM internship i
+                INNER JOIN Final_Grade fg ON i.FinalGradeID = fg.FinalGradeID
+                INNER JOIN visit_log v ON i.InternshipId = v.InternshipId
+                INNER JOIN student s ON v.StudentID = s.StudentID
+                WHERE v.FacultyID = @facultyID
+            "
 
             Using cmd As New MySqlCommand(query, con)
                 cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
