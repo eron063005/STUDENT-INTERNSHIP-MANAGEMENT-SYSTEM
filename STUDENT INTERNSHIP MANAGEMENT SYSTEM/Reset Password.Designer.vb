@@ -29,10 +29,10 @@ Partial Class Reset_Password
         RoundedPanel1 = New RoundedPanel()
         btnConfirmNew = New Button()
         btnShowNew = New Button()
-        TextBox5 = New TextBox()
-        TextBox6 = New TextBox()
-        TextBox4 = New TextBox()
-        TextBox3 = New TextBox()
+        txtConfirmPassword = New TextBox()
+        txtNewPassword = New TextBox()
+        txtEmail = New TextBox()
+        txtFacultyID = New TextBox()
         Label14 = New Label()
         Label13 = New Label()
         Label2 = New Label()
@@ -41,7 +41,7 @@ Partial Class Reset_Password
         Label6 = New Label()
         Panel2 = New Panel()
         Label9 = New Label()
-        RoundedButton1 = New RoundedButton()
+        ResetPassbtn = New RoundedButton()
         Label10 = New Label()
         TextBox2 = New TextBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -98,10 +98,10 @@ Partial Class Reset_Password
         RoundedPanel1.BorderSize = 8
         RoundedPanel1.Controls.Add(btnConfirmNew)
         RoundedPanel1.Controls.Add(btnShowNew)
-        RoundedPanel1.Controls.Add(TextBox5)
-        RoundedPanel1.Controls.Add(TextBox6)
-        RoundedPanel1.Controls.Add(TextBox4)
-        RoundedPanel1.Controls.Add(TextBox3)
+        RoundedPanel1.Controls.Add(txtConfirmPassword)
+        RoundedPanel1.Controls.Add(txtNewPassword)
+        RoundedPanel1.Controls.Add(txtEmail)
+        RoundedPanel1.Controls.Add(txtFacultyID)
         RoundedPanel1.Controls.Add(Label14)
         RoundedPanel1.Controls.Add(Label13)
         RoundedPanel1.Controls.Add(Label2)
@@ -110,7 +110,7 @@ Partial Class Reset_Password
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label9)
-        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.Controls.Add(ResetPassbtn)
         RoundedPanel1.Controls.Add(Label10)
         RoundedPanel1.Controls.Add(TextBox2)
         RoundedPanel1.CornerRadius = 50
@@ -146,41 +146,41 @@ Partial Class Reset_Password
         btnShowNew.TabIndex = 24
         btnShowNew.UseVisualStyleBackColor = False
         ' 
-        ' TextBox5
+        ' txtConfirmPassword
         ' 
-        TextBox5.BorderStyle = BorderStyle.FixedSingle
-        TextBox5.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox5.Location = New Point(382, 349)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(299, 65)
-        TextBox5.TabIndex = 23
+        txtConfirmPassword.BorderStyle = BorderStyle.FixedSingle
+        txtConfirmPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtConfirmPassword.Location = New Point(382, 349)
+        txtConfirmPassword.Name = "txtConfirmPassword"
+        txtConfirmPassword.Size = New Size(299, 65)
+        txtConfirmPassword.TabIndex = 23
         ' 
-        ' TextBox6
+        ' txtNewPassword
         ' 
-        TextBox6.BorderStyle = BorderStyle.FixedSingle
-        TextBox6.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox6.Location = New Point(67, 349)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(299, 65)
-        TextBox6.TabIndex = 22
+        txtNewPassword.BorderStyle = BorderStyle.FixedSingle
+        txtNewPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtNewPassword.Location = New Point(67, 349)
+        txtNewPassword.Name = "txtNewPassword"
+        txtNewPassword.Size = New Size(299, 65)
+        txtNewPassword.TabIndex = 22
         ' 
-        ' TextBox4
+        ' txtEmail
         ' 
-        TextBox4.BorderStyle = BorderStyle.FixedSingle
-        TextBox4.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox4.Location = New Point(382, 243)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(299, 65)
-        TextBox4.TabIndex = 19
+        txtEmail.BorderStyle = BorderStyle.FixedSingle
+        txtEmail.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtEmail.Location = New Point(382, 243)
+        txtEmail.Name = "txtEmail"
+        txtEmail.Size = New Size(299, 65)
+        txtEmail.TabIndex = 19
         ' 
-        ' TextBox3
+        ' txtFacultyID
         ' 
-        TextBox3.BorderStyle = BorderStyle.FixedSingle
-        TextBox3.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox3.Location = New Point(67, 243)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(299, 65)
-        TextBox3.TabIndex = 18
+        txtFacultyID.BorderStyle = BorderStyle.FixedSingle
+        txtFacultyID.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtFacultyID.Location = New Point(67, 243)
+        txtFacultyID.Name = "txtFacultyID"
+        txtFacultyID.Size = New Size(299, 65)
+        txtFacultyID.TabIndex = 18
         ' 
         ' Label14
         ' 
@@ -275,25 +275,25 @@ Partial Class Reset_Password
         Label9.TabIndex = 6
         Label9.Text = "Reset Password"
         ' 
-        ' RoundedButton1
+        ' ResetPassbtn
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 5
-        RoundedButton1.CornerRadius = 10
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.Yellow
-        RoundedButton1.Location = New Point(69, 439)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.Red
-        RoundedButton1.Size = New Size(612, 82)
-        RoundedButton1.TabIndex = 5
-        RoundedButton1.Text = "Reset Password"
-        RoundedButton1.UseVisualStyleBackColor = False
+        ResetPassbtn.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        ResetPassbtn.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        ResetPassbtn.BorderSize = 5
+        ResetPassbtn.CornerRadius = 10
+        ResetPassbtn.Cursor = Cursors.Hand
+        ResetPassbtn.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        ResetPassbtn.FlatStyle = FlatStyle.Flat
+        ResetPassbtn.Font = New Font("Segoe UI Black", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        ResetPassbtn.ForeColor = Color.Black
+        ResetPassbtn.HoverColor = Color.Yellow
+        ResetPassbtn.Location = New Point(69, 439)
+        ResetPassbtn.Name = "ResetPassbtn"
+        ResetPassbtn.PressedColor = Color.Red
+        ResetPassbtn.Size = New Size(612, 82)
+        ResetPassbtn.TabIndex = 5
+        ResetPassbtn.Text = "Reset Password"
+        ResetPassbtn.UseVisualStyleBackColor = False
         ' 
         ' Label10
         ' 
@@ -343,10 +343,10 @@ Partial Class Reset_Password
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtConfirmPassword As TextBox
+    Friend WithEvents txtNewPassword As TextBox
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents txtFacultyID As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label2 As Label
@@ -355,7 +355,7 @@ Partial Class Reset_Password
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents ResetPassbtn As RoundedButton
     Friend WithEvents Label10 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btnConfirmNew As Button
