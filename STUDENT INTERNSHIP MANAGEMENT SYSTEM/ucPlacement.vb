@@ -2,7 +2,7 @@
 
 Public Class ucPlacement
     Private Sub ucPlacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadData(dgvPlacement, "Internship")
+        LoadDataInternship(dgvPlacement)
 
     End Sub
 
@@ -34,7 +34,7 @@ Public Class ucPlacement
 
             MessageBox.Show("Internship record deleted successfully!")
 
-            LoadData(dgvPlacement, "Internship") ' reload table after delete
+            LoadDataInternship(dgvPlacement) ' reload table after delete
 
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -46,7 +46,7 @@ Public Class ucPlacement
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
-        LoadData(dgvPlacement, "Internship")
+        LoadDataInternship(dgvPlacement)
     End Sub
 
     Private Sub btnEditPlacement_Click(sender As Object, e As EventArgs) Handles btnEditPlacement.Click
@@ -76,6 +76,6 @@ Public Class ucPlacement
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(editForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
-        LoadData(dgvPlacement, "Internship")
+        LoadDataInternship(dgvPlacement)
     End Sub
 End Class

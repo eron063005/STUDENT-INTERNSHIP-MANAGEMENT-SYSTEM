@@ -210,7 +210,44 @@ Module ModuleDB
         Return newID
     End Function
     '---------------
+    'Placement Part
+    Sub LoadDataInternship(targetGrid As DataGridView)
+        Using con As New MySqlConnection(connString)
 
+            Dim query As String =
+            "SELECT 
+                i.InternshipID,
+                i.Status,
+                i.StartDate,
+                i.EndDate,
+                i.Grade
+            FROM internship i
+            INNER JOIN Final_Grade fg ON i.FinalGradeID = fg.FinalGradeID 
+            INNER JOIN visit_log vl ON fg.VisitID = vl.VisitID
+            INNER JOIN faculty f ON vl.FacultyID = f.FacultyID
+            WHERE f.FacultyID = @facultyID"
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+
+        End Using
+
+        ' Optional DGV settings
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
+
+
+    'Visit Part
     Sub LoadVisitCards(panelVisit As Panel)
         panelVisit.Controls.Clear()
 
