@@ -32,10 +32,6 @@ Public Class LogIn
                 End If
             End Using
         End Using
-=======
-        Dashboard.Show()
-        Hide()
->>>>>>> Stashed changes
     End Sub
 
     Friend WithEvents btnLogInExit As Button
