@@ -118,17 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="VAIA SCHOOL DEMO4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="VAIA MAIN1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VAIA MAIN1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Exitbtn28" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exitbtn28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Vaia Logo (Custom)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vaia Logo (Custom)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -141,9 +135,6 @@
   </data>
   <data name="VAIA MAIN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VAIA MAIN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VAIA SCHOOL DEMO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Students" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Students.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,14 +166,8 @@
   <data name="Exitbtn210" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exitbtn213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VAIA SCHOOL DEMO3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="VAIA NAV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VAIA NAV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VAIA SCHOOL DEMO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Assessment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Assessment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,26 +178,20 @@
   <data name="Delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Exitbtn21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exitbtn21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exitbtn (Custom)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exitbtn (Custom).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gemini_Generated_Image_wywhgawywhgawywh__1_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gemini_Generated_Image_wywhgawywhgawywh__1_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Vaia Logo (Custom)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vaia Logo (Custom)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VAIA SCHOOL DEMO5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Exitbtn28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exitbtn28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VAIA SCHOOL DIFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VAIA SCHOOL DIFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Show Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Show Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +199,8 @@
   <data name="Exitbtn24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exitbtn24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VAIA SCHOOL DEMO6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,11 +232,14 @@
   <data name="Log Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Log Out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gemini_Generated_Image_wywhgawywhgawywh__1_-removebg-preview1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gemini_Generated_Image_wywhgawywhgawywh__1_-removebg-preview1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Delete2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vaia Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vaia Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exitbtn23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exitbtn23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,13 +247,10 @@
   <data name="Visit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Visit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VAIA SCHOOL DEMO1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Untitled design (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled design (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VAIA SCHOOL DEMO7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VAIA SCHOOL DEMO7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Vaia Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Vaia Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
