@@ -18,7 +18,7 @@ Public Class ucStudent
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
-        LoadData(dgvStudent, "Student")
+        LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
 
     Private Sub btnDelStudent_Click(sender As Object, e As EventArgs) Handles btnDelStudent.Click
@@ -49,7 +49,7 @@ Public Class ucStudent
         MessageBox.Show("Record deleted successfully.")
 
         ' Refresh the DataGridView
-        LoadData(dgvStudent, "Student")
+        LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
 
     Private Sub btnEditStudent_Click(sender As Object, e As EventArgs) Handles btnEditStudent.Click
@@ -63,7 +63,7 @@ Public Class ucStudent
 
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(editForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
-        LoadData(dgvStudent, "Student")
+        LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
 
     ' ------------------- IMPORT BUTTON -------------------
@@ -135,7 +135,7 @@ Public Class ucStudent
             Dim parentForm As Dashboard = Me.FindForm()
             parentForm.ShowFormWithPadding(preview, leftPadding:=470, topPadding:=150, rightPadding:=416, bottomPadding:=150)
             ' After preview closed, refresh student grid (in case they saved)
-            LoadData(dgvStudent, "student")
+            LoadDataStudent(dgvStudent, LoggedFacultyID)
         Catch ex As Exception
             MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

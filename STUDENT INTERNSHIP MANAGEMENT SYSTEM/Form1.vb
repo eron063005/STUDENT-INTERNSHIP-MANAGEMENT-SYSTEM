@@ -93,6 +93,7 @@ Partial Class LogIn
         txtPassword.Name = "txtPassword"
         txtPassword.Size = New Size(564, 65)
         txtPassword.TabIndex = 2
+        txtPassword.Text = "1234"
         ' 
         ' txtFacultyID
         ' 
@@ -102,6 +103,7 @@ Partial Class LogIn
         txtFacultyID.Name = "txtFacultyID"
         txtFacultyID.Size = New Size(564, 65)
         txtFacultyID.TabIndex = 1
+        txtFacultyID.Text = "f001"
         ' 
         ' Label3
         ' 

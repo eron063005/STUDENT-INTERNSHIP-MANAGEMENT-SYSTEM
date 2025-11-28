@@ -63,12 +63,12 @@ Public Class ucPlacement
         Dim editForm As New frmEditPlacement()
 
         ' Fill the edit form controls from the selected row
-        editForm.mtxtEditPlaceInternID.Text = row.Cells("InternshipID").Value.ToString()
-        editForm.txtEditPlaceStdID.Text = row.Cells("StudentID").Value.ToString()
-        editForm.txtEditPlaceStatus.Text = row.Cells("Status").Value.ToString()
-        editForm.dtpEditPlaceStartDate.Value = Convert.ToDateTime(row.Cells("StartDate").Value)
-        editForm.dtpEditPlaceEndDate.Value = Convert.ToDateTime(row.Cells("EndDate").Value)
-        editForm.txtEditPlaceGrade.Text = row.Cells("Grade").Value.ToString()
+        editForm.mtxtEditPlaceInternID.Text = If(row.Cells("InternshipID").Value, "").ToString()
+        editForm.txtEditPlaceStdID.Text = If(row.Cells("StudentID").Value, "").ToString()
+        editForm.txtEditPlaceStatus.Text = If(row.Cells("Status").Value, "").ToString()
+        editForm.dtpEditPlaceStartDate.Value = If(row.Cells("StartDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("StartDate").Value), DateTime.Now)
+        editForm.dtpEditPlaceEndDate.Value = If(row.Cells("EndDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("EndDate").Value), DateTime.Now)
+        'editForm.txtEditPlaceGrade.Text = If(row.Cells(5).Value, "").ToString()
 
         ' Show the edit form
         'editForm.ShowDialog()

@@ -17,7 +17,7 @@ Public Class frmEditPlacement
             Status = @Status,
             StartDate = @StartDate,
             EndDate = @EndDate,
-            Grade = @Grade
+            FGrade = @Grade
         WHERE InternshipID = @InternshipID;
     "
 
@@ -29,7 +29,7 @@ Public Class frmEditPlacement
                 cmd.Parameters.AddWithValue("@Status", txtEditPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpEditPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpEditPlaceEndDate.Value)
-                cmd.Parameters.AddWithValue("@Grade", txtEditPlaceGrade.Text.Trim())
+                cmd.Parameters.AddWithValue("@FGrade", txtEditPlaceGrade.Text.Trim())
 
                 Try
                     conn.Open()
