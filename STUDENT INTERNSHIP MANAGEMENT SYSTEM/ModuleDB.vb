@@ -5,6 +5,39 @@ Module ModuleDB
         "server=localhost; port=3306; user=root; password=; database=OJTDB_VAIA;"
     Public LoggedFacultyID As String
 
+    'Dashboard Part
+    Public Function GetOngoingCountByFaculty() As Integer
+        Dim count As Integer = 0
+
+        Dim query As String = "
+     SELECT COUNT(*)
+     FROM Internship i
+     JOIN Final_Grade fg ON i.FinalGradeId = fg.FinalGradeId
+     JOIN visit_log v ON fg.VisitId = v.VisitId
+     WHERE i.Status = 'Ongoing'
+     AND v.FacultyId = @facultyID;
+ "
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                    ' ExecuteScalar returns ONE value → COUNT(*)
+                    count = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+        Return count
+    End Function
+
     'Student Part
     Function GenerateStudentID() As String
         Dim newID As String = "S001"
