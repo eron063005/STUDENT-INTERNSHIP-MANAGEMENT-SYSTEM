@@ -108,7 +108,11 @@ Module ModuleDB
         targetGrid.ReadOnly = True
         targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
+    '
+
     '---------------
+
+
     Sub LoadData(targetGrid As DataGridView, tableName As String)
         Using con As New MySqlConnection(connString)
             Dim query As String = $"SELECT * FROM {tableName}"
@@ -125,6 +129,8 @@ Module ModuleDB
         targetGrid.ReadOnly = True
         targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
+
+
     ' Internship Part
     Public Function GenerateInternshipID() As String
         Dim newId As String = "I0001"
@@ -208,6 +214,63 @@ Module ModuleDB
 
         Return newID
     End Function
+
+    ' Supervisor Part
+    Sub LoadCompanyContacts(targetGrid As DataGridView, companyId As String)
+        Using con As New MySqlConnection(connString)
+            Dim query As String = "SELECT CompanyContactId, CFirstName, CLastName, ContactNo, Email 
+                               FROM Company_Contact 
+                               WHERE CompanyId = @CompanyId"
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@CompanyId", companyId)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+        End Using
+
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
+    Public Function GenerateCompanyContactID() As String
+        Dim newID As String = ""
+        Dim lastID As String = ""
+        Dim numberPart As Integer
+
+        Try
+            Using con As New MySqlConnection(connString)
+                con.Open()
+                ' Get the last CompanyContactId from the table
+                Dim query As String = "SELECT CompanyContactId FROM CompanyContact ORDER BY CompanyContactId DESC LIMIT 1"
+                Using cmd As New MySqlCommand(query, con)
+                    Dim result = cmd.ExecuteScalar()
+                    If result IsNot Nothing Then
+                        lastID = result.ToString()
+                        ' Extract the numeric part
+                        numberPart = Convert.ToInt32(lastID.Substring(2))
+                        ' Increment by 1
+                        numberPart += 1
+                    Else
+                        numberPart = 1 ' First entry if table is empty
+                    End If
+                End Using
+            End Using
+
+            ' Format as CC + 3-digit number (e.g., CC001)
+            newID = "CC" & numberPart.ToString("D3")
+
+        Catch ex As Exception
+            MessageBox.Show("Error generating CompanyContactId: " & ex.Message)
+        End Try
+
+        Return newID
+    End Function
+
     '---------------
     'Placement Part
     Sub LoadDataInternship(targetGrid As DataGridView)

@@ -16,7 +16,7 @@
 
     Private Sub btnViewSupervisor_Click(sender As Object, e As EventArgs) Handles btnViewSupervisor.Click
         Dim parentForm As Dashboard = Me.FindForm() ' Dashboard
-        Dim viewForm As New frmViewSupervisor()
+        Dim viewForm As New frmViewSupervisor(lblCompanyID.Text)
 
         ' Set owner para puwede mag-refer sa Dashboard sa loob ng frmViewSupervisor
         viewForm.Owner = parentForm

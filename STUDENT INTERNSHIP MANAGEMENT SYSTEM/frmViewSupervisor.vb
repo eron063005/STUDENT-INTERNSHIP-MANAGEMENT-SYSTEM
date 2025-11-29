@@ -1,4 +1,11 @@
 ﻿Public Class frmViewSupervisor
+    Dim CompanyID As String
+
+    Public Sub New(companyID As String)
+        InitializeComponent()
+        Me.CompanyID = companyID
+    End Sub
+
     Public Property ParentDashboard As Form ' Dashboard reference
     Private Sub btnAddSupervisor_Click(sender As Object, e As EventArgs) Handles btnAddSupervisor.Click
         Dim addForm As New frmAddSupervisor()
@@ -30,5 +37,9 @@
 
     Private Sub btnExitSupervisor_Click(sender As Object, e As EventArgs) Handles btnExitSupervisor.Click
         Me.Close()
+    End Sub
+
+    Private Sub frmViewSupervisor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadCompanyContacts(dgvSupervisor, CompanyID)
     End Sub
 End Class
