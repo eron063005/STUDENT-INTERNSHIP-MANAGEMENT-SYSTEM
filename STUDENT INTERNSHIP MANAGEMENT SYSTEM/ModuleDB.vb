@@ -92,7 +92,20 @@ Module ModuleDB
 
     Sub LoadDataStudent(targetGrid As DataGridView, facultyID As String)
         Using con As New MySqlConnection(connString)
-            Dim query As String = $"SELECT * FROM student WHERE facultyid = @facultyID"
+            Dim query As String = $"SELECT 
+                                    s.StudentId,
+                                    c.CourseName,
+                                    s.FirstName,
+                                    s.LastName,
+                                    s.MiddleName,
+                                    s.Birthday,
+                                    s.Sex,
+                                    s.ContactNo,
+                                    s.Email,
+                                    s.Section
+                                FROM STUDENT s
+                                JOIN COURSE c ON s.CourseId = c.CourseId
+                                WHERE facultyID = @facultyID"
             Using cmd As New MySqlCommand(query, con)
                 cmd.Parameters.AddWithValue("@facultyID", facultyID)
 
