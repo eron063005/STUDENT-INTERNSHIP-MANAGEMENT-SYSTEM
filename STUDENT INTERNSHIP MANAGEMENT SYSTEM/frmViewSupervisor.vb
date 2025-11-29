@@ -24,17 +24,26 @@
     End Sub
 
     Private Sub btnEditSupervisor_Click(sender As Object, e As EventArgs) Handles btnEditSupervisor.Click
-        Dim addForm As New frmEditSupervisor()
+        If dgvSupervisor.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a row to edit.")
+            Return
+        End If
+
+        Dim CompanyContactID As String = dgvSupervisor.SelectedRows(0).Cells("CompanyContactID").Value.ToString()
+
+        Dim editForm As New frmEditSupervisor(CompanyContactID)
 
         ' Kunin Dashboard via Owner property
         Dim parentForm As Dashboard = TryCast(Me.Owner, Dashboard)
         If parentForm IsNot Nothing Then
-            parentForm.ShowFormWithPadding(addForm, 470, 300, 416, 269)
+            parentForm.ShowFormWithPadding(editForm, 470, 300, 416, 269)
         Else
             ' fallback
-            addForm.StartPosition = FormStartPosition.CenterScreen
-            addForm.ShowDialog()
+            editForm.StartPosition = FormStartPosition.CenterScreen
+            editForm.ShowDialog()
         End If
+
+        LoadCompanyContacts(dgvSupervisor, CompanyID)
     End Sub
 
     Private Sub btnExitSupervisor_Click(sender As Object, e As EventArgs) Handles btnExitSupervisor.Click

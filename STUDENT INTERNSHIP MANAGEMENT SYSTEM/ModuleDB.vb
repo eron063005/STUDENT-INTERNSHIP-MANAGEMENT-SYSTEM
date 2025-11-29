@@ -231,7 +231,7 @@ Module ModuleDB
     ' Supervisor Part
     Sub LoadCompanyContacts(targetGrid As DataGridView, companyId As String)
         Using con As New MySqlConnection(connString)
-            Dim query As String = "SELECT CompanyContactId, CFirstName, CLastName, ContactNo, Email 
+            Dim query As String = "SELECT CompanyContactId, CFirstName, CMiddleName, CLastName, ContactNo, Email 
                                FROM Company_Contact 
                                WHERE CompanyId = @CompanyId"
             Using cmd As New MySqlCommand(query, con)
