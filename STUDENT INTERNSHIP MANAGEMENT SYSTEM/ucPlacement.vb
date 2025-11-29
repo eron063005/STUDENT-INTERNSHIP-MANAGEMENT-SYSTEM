@@ -65,10 +65,11 @@ Public Class ucPlacement
         ' Fill the edit form controls from the selected row
         editForm.mtxtEditPlaceInternID.Text = If(row.Cells("InternshipID").Value, "").ToString()
         editForm.txtEditPlaceStdID.Text = If(row.Cells("StudentID").Value, "").ToString()
+        editForm.mtxtEditPlaceCompID.Text = If(row.Cells("CompanyID").Value, "").ToString()
         editForm.txtEditPlaceStatus.Text = If(row.Cells("Status").Value, "").ToString()
         editForm.dtpEditPlaceStartDate.Value = If(row.Cells("StartDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("StartDate").Value), DateTime.Now)
         editForm.dtpEditPlaceEndDate.Value = If(row.Cells("EndDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("EndDate").Value), DateTime.Now)
-        editForm.txtEditPlaceGrade.Text = If(row.Cells("FGrade").Value, "").ToString()
+        editForm.nudEditPlaceGrade.Text = If(row.Cells("FGrade").Value, "").ToString()
 
         ' Show the edit form
         'editForm.ShowDialog()

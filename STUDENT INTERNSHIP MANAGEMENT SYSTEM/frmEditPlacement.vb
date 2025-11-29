@@ -12,13 +12,20 @@ Public Class frmEditPlacement
     Private Sub btnEditPlaceAdd_Click(sender As Object, e As EventArgs) Handles btnSavePlace.Click
         ' SQL UPDATE query
         Dim query As String = "
-        UPDATE internship
-        SET StudentID = @StudentID,
-            Status = @Status,
-            StartDate = @StartDate,
-            EndDate = @EndDate,
-            FGrade = @Grade
-        WHERE InternshipID = @InternshipID;
+            UPDATE internship i
+                JOIN final_grade fg ON i.FinalGradeId = fg.FinalGradeId
+                JOIN assessment a ON fg.AssessmentId = a.AssessmentId
+                JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
+                JOIN company c ON cc.CompanyId = c.CompanyId
+                JOIN student s ON a.StudentId = s.StudentId
+                SET 
+                    i.Status = @Status,          
+                    i.StartDate = @StartDate,    
+                    i.EndDate = @EndDate,        
+                    fg.FGrade = @FGrade,         
+                    c.CompanyID = @CompanyID, 
+                    s.StudentID = @StudentID          
+                WHERE i.InternshipId = @InternshipId
     "
 
         Using conn As New MySqlConnection(connString)
@@ -26,10 +33,11 @@ Public Class frmEditPlacement
                 ' Assign parameters from form controls
                 cmd.Parameters.AddWithValue("@InternshipID", mtxtEditPlaceInternID.Text.Trim())
                 cmd.Parameters.AddWithValue("@StudentID", txtEditPlaceStdID.Text.Trim())
+                cmd.Parameters.AddWithValue("@CompanyID", mtxtEditPlaceCompID.Text.Trim())
                 cmd.Parameters.AddWithValue("@Status", txtEditPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpEditPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpEditPlaceEndDate.Value)
-                cmd.Parameters.AddWithValue("@FGrade", txtEditPlaceGrade.Text.Trim())
+                cmd.Parameters.AddWithValue("@FGrade", nudEditPlaceGrade.Value)
 
                 Try
                     conn.Open()

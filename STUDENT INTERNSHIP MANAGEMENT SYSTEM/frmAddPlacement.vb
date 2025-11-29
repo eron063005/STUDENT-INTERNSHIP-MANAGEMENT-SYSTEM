@@ -11,8 +11,13 @@ Public Class frmAddPlacement
 
     Private Sub btnAddPlaceAdd_Click(sender As Object, e As EventArgs) Handles btnAddPlaceAdd.Click
         Dim query As String = "
-        INSERT INTO internship (InternshipID, StudentID, Status, StartDate, EndDate, Grade)
-        VALUES (@InternshipID, @StudentID, @Status, @StartDate, @EndDate, @Grade);
+        INSERT INTO internship i
+                JOIN final_grade fg ON i.FinalGradeId = fg.FinalGradeId
+                JOIN assessment a ON fg.AssessmentId = a.AssessmentId
+                JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
+                JOIN company c ON cc.CompanyId = c.CompanyId
+                JOIN student s ON a.StudentId = s.StudentId
+        VALUES (@InternshipID, @StudentID, @Status, @StartDate, @EndDate, @FGrade);
     "
 
         Using conn As New MySqlConnection(connString)
@@ -24,7 +29,7 @@ Public Class frmAddPlacement
                 cmd.Parameters.AddWithValue("@Status", txtAddPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpAddPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpAddPlaceEndDate.Value)
-                cmd.Parameters.AddWithValue("@Grade", nudAddPlaceGrade.Text.Trim())
+                cmd.Parameters.AddWithValue("@FGrade", nudAddPlaceGrade.Text.Trim())
 
                 conn.Open()
                 cmd.ExecuteNonQuery()
