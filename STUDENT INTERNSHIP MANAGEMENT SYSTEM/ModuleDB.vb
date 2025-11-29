@@ -246,7 +246,7 @@ Module ModuleDB
             Using con As New MySqlConnection(connString)
                 con.Open()
                 ' Get the last CompanyContactId from the table
-                Dim query As String = "SELECT CompanyContactId FROM CompanyContact ORDER BY CompanyContactId DESC LIMIT 1"
+                Dim query As String = "SELECT CompanyContactId FROM Company_Contact ORDER BY CompanyContactId DESC LIMIT 1"
                 Using cmd As New MySqlCommand(query, con)
                     Dim result = cmd.ExecuteScalar()
                     If result IsNot Nothing Then
@@ -270,6 +270,7 @@ Module ModuleDB
 
         Return newID
     End Function
+
 
     '---------------
     'Placement Part

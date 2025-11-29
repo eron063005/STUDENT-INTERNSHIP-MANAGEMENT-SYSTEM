@@ -8,7 +8,7 @@
 
     Public Property ParentDashboard As Form ' Dashboard reference
     Private Sub btnAddSupervisor_Click(sender As Object, e As EventArgs) Handles btnAddSupervisor.Click
-        Dim addForm As New frmAddSupervisor()
+        Dim addForm As New frmAddSupervisor(CompanyID)
 
         ' Kunin Dashboard via Owner property
         Dim parentForm As Dashboard = TryCast(Me.Owner, Dashboard)
@@ -19,6 +19,8 @@
             addForm.StartPosition = FormStartPosition.CenterScreen
             addForm.ShowDialog()
         End If
+
+        LoadCompanyContacts(dgvSupervisor, CompanyID)
     End Sub
 
     Private Sub btnEditSupervisor_Click(sender As Object, e As EventArgs) Handles btnEditSupervisor.Click
