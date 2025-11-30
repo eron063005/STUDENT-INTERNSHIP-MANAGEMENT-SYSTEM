@@ -31,7 +31,7 @@ Public Class ucStudent
         Dim studentID As String = dgvStudent.SelectedRows(0).Cells("StudentID").Value
 
         Dim result = MessageBox.Show("Are you sure you want to delete this student?",
-                                     "Confirm Delete", MessageBoxButtons.YesNo)
+                                     "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If result = DialogResult.No Then Return
 

@@ -284,6 +284,24 @@ Module ModuleDB
         Return newID
     End Function
 
+    Public Sub DeleteCompanyContact(ID As String)
+        Dim query As String = "DELETE FROM Company_contact WHERE CompanyContactID = @id"
+
+        Using con As New MySqlConnection(connString)
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@id", ID)
+
+                con.Open()
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Record deleted successfully.")
+                Else
+                    MessageBox.Show("No record found to delete.")
+                End If
+            End Using
+        End Using
+    End Sub
 
     '---------------
     'Placement Part

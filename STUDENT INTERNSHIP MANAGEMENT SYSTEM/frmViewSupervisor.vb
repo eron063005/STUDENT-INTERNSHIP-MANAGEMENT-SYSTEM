@@ -53,4 +53,27 @@
     Private Sub frmViewSupervisor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCompanyContacts(dgvSupervisor, CompanyID)
     End Sub
+
+    Private Sub btnDelSupervisor_Click(sender As Object, e As EventArgs) Handles btnDelSupervisor.Click
+        ' Check if a row is selected
+        If dgvSupervisor.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select a row to delete.")
+            Return
+        End If
+
+        ' Get the ID from the selected row
+        Dim ccID As String = dgvSupervisor.SelectedRows(0).Cells("CompanyContactID").Value.ToString()
+
+        ' Confirm delete
+        If MessageBox.Show("Are you sure you want to delete this Company Contact?",
+                           "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.No Then
+            Return
+        End If
+
+        ' Call the delete function
+        DeleteCompanyContact(ccID)
+
+        ' Refresh the datagridview after deletion
+        LoadCompanyContacts(dgvSupervisor, CompanyID)
+    End Sub
 End Class
