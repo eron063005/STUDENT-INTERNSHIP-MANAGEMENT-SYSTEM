@@ -15,7 +15,7 @@ Module ModuleDB
         JOIN visit_log v ON i.InternshipId = v.InternshipId
         WHERE i.Status = 'Ongoing'
         AND v.FacultyId = @facultyID;
- "
+        "
 
         Try
             Using conn As New MySqlConnection(connString)
@@ -36,6 +36,64 @@ Module ModuleDB
 
         Return count
     End Function
+
+    Public Function GetPendingCountByFaculty() As Integer
+        Dim count As Integer = 0
+
+        Dim query As String = "
+     SELECT COUNT(DISTINCT i.InternshipId, v.StudentId) AS Total
+        FROM internship i
+        JOIN visit_log v ON i.InternshipId = v.InternshipId
+        WHERE i.Status = 'Pending'
+        AND v.FacultyId = @facultyID;
+        "
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                    ' ExecuteScalar returns ONE value → COUNT(*)
+                    count = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+        Return count
+    End Function
+
+    Public Function GetCompaniesCount() As Integer
+        Dim count As Integer = 0
+
+        Dim query As String = "SELECT COUNT(*) FROM company"
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                    ' ExecuteScalar returns ONE value → COUNT(*)
+                    count = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+        Return count
+    End Function
+
+
 
     'Student Part
     Function GenerateStudentID() As String
