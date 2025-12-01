@@ -29,7 +29,7 @@ Partial Class ucStudent
         btnImportFile = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
         PictureBox1 = New PictureBox()
-        TextBox1 = New TextBox()
+        txtSearchBar = New TextBox()
         ComboBox1 = New ComboBox()
         PictureBox2 = New PictureBox()
         RoundedPanel2 = New RoundedPanel()
@@ -134,10 +134,11 @@ Partial Class ucStudent
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(PictureBox1)
-        RoundedPanel1.Controls.Add(TextBox1)
+        RoundedPanel1.Controls.Add(txtSearchBar)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.FillColor = Color.White
         RoundedPanel1.Location = New Point(28, 25)
@@ -155,14 +156,14 @@ Partial Class ucStudent
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
-        ' TextBox1
+        ' txtSearchBar
         ' 
-        TextBox1.BorderStyle = BorderStyle.None
-        TextBox1.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(64, 12)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(787, 41)
-        TextBox1.TabIndex = 0
+        txtSearchBar.BorderStyle = BorderStyle.None
+        txtSearchBar.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtSearchBar.Location = New Point(64, 12)
+        txtSearchBar.Name = "txtSearchBar"
+        txtSearchBar.Size = New Size(787, 41)
+        txtSearchBar.TabIndex = 0
         ' 
         ' ComboBox1
         ' 
@@ -187,6 +188,7 @@ Partial Class ucStudent
         ' 
         ' RoundedPanel2
         ' 
+        RoundedPanel2.BackColor = Color.Transparent
         RoundedPanel2.BorderColor = Color.Black
         RoundedPanel2.BorderSize = 2
         RoundedPanel2.Controls.Add(PictureBox2)
@@ -228,7 +230,7 @@ Partial Class ucStudent
     Friend WithEvents btnImportFile As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSearchBar As TextBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel2 As RoundedPanel
