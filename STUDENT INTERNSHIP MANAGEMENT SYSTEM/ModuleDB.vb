@@ -93,10 +93,8 @@ Module ModuleDB
         Return count
     End Function
 
-
-
     'Student Part
-    Function GenerateStudentID() As String
+    Function GenerateStudentID() As String                                              
         Dim newID As String = "S001"
         Dim con As New MySqlConnection(connString)
 
@@ -285,6 +283,30 @@ Module ModuleDB
 
         Return newID
     End Function
+
+    Sub LoadCompanyListComboBox(ComboBoxCompany As ComboBox)
+        Using con As New MySqlConnection(connString)
+            Dim query As String = "SELECT CompanyId, CompanyName FROM company ORDER BY CompanyName"
+
+            Using cmd As New MySqlCommand(query, con)
+                Dim dt As New DataTable()
+
+                con.Open()
+                dt.Load(cmd.ExecuteReader())
+
+                ' Add placeholder row at the top
+                Dim placeholder As DataRow = dt.NewRow()
+                placeholder("CompanyId") = 0
+                placeholder("CompanyName") = "-- Select Company ID --"
+                dt.Rows.InsertAt(placeholder, 0)
+
+                ComboBoxCompany.DataSource = dt
+                ComboBoxCompany.DisplayMember = "CompanyName"
+                ComboBoxCompany.ValueMember = "CompanyId"
+                ComboBoxCompany.SelectedIndex = 0  ' Show the placeholder
+            End Using
+        End Using
+    End Sub
 
     ' Supervisor Part
     Sub LoadCompanyContacts(targetGrid As DataGridView, companyId As String)
