@@ -289,7 +289,7 @@ Module ModuleDB
     ' Supervisor Part
     Sub LoadCompanyContacts(targetGrid As DataGridView, companyId As String)
         Using con As New MySqlConnection(connString)
-            Dim query As String = "SELECT CompanyContactId, CFirstName, CMiddleName, CLastName, ContactNo, Email 
+            Dim query As String = "SELECT CompanyContactId, CFirstName, CLastName, ContactNo, Email 
                                FROM Company_Contact 
                                WHERE CompanyId = @CompanyId"
             Using cmd As New MySqlCommand(query, con)
@@ -343,7 +343,9 @@ Module ModuleDB
     End Function
 
     Public Sub DeleteCompanyContact(ID As String)
-        Dim query As String = "DELETE FROM Company_contact WHERE CompanyContactID = @id"
+        Dim query As String = "DELETE FROM assessment WHERE CompanyContactID = @id;
+                                DELETE FROM company_contact WHERE CompanyContactID = @id;
+                               "
 
         Using con As New MySqlConnection(connString)
             Using cmd As New MySqlCommand(query, con)
@@ -368,21 +370,20 @@ Module ModuleDB
             Dim query As String =
             "SELECT DISTINCT
                 i.InternshipID,
-                v.StudentID,
+                i.StudentID,
                 CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
                 c.CompanyID,
                 c.CompanyName,
                 i.Status,
                 i.StartDate,
                 i.EndDate,
-                fg.FGrade
+                i.FGrade
             FROM internship i
-            INNER JOIN Final_Grade fg ON i.InternshipID = fg.InternshipID
-            INNER JOIN visit_log v ON i.InternshipID = v.InternshipID
-            INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
-            INNER JOIN Company_Contact cc On a.CompanyContactID = cc.CompanyContactID  
-            INNER JOIN Company c On cc.CompanyID = c.CompanyID
-            INNER JOIN student s ON v.StudentID = s.StudentID
+            INNER JOIN student s ON i.studentID = s.studentID
+            INNER JOIN assessment a ON i.studentID = a.studentID
+            INNER JOIN visit_log v ON i.InternshipId = v.InternshipId
+            INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID  
+            INNER JOIN Company c ON cc.CompanyID = c.CompanyID
             WHERE v.FacultyID = @facultyID
             "
 
@@ -414,9 +415,8 @@ Module ModuleDB
              SELECT v.*, s.FirstName, s.MiddleName, s.LastName, c.CompanyName, f.Fname, f.Lname FROM visit_log v 
                  INNER JOIN internship i ON v.InternshipID = i.InternshipID 
                  INNER JOIN student s ON v.StudentID = s.StudentID 
-                 INNER JOIN faculty f ON v.FacultyID = f.FacultyId 
-                 INNER JOIN final_grade fg ON i.FinalGradeID = fg.FinalGradeID
-                 INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
+                 INNER JOIN faculty f ON v.FacultyID = f.FacultyId
+                 INNER JOIN assessment a ON i.StudentID = a.StudentID
                  INNER JOIN company_contact cc ON a.companycontactID = cc.companycontactID
                  INNER JOIN company c ON cc.CompanyId = c.CompanyId
                  WHERE f.FacultyID = @facultyID"

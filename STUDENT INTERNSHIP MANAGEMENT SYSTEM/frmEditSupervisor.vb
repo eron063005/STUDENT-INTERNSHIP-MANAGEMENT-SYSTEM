@@ -18,7 +18,7 @@ Public Class frmEditSupervisor
         End If
 
         Dim query As String =
-        "SELECT CompanyContactId, CompanyId, CFirstName, CMiddleName, CLastName, ContactNo, Email
+        "SELECT CompanyContactId, CompanyId, CFirstName, CLastName, ContactNo, Email
          FROM company_contact
          WHERE CompanyContactId = @id"
 
@@ -34,7 +34,6 @@ Public Class frmEditSupervisor
                             ' ---------------- BASIC DETAILS ----------------
                             mtxtEditSupervisorCCID.Text = rdr("CompanyContactId").ToString()
                             txtEditSpvFirstname.Text = rdr("CFirstName").ToString()
-                            txtEditSpvMiddlename.Text = rdr("CMiddleName").ToString()
                             txtEditSpvLastname.Text = rdr("CLastName").ToString()
                             mtxtEditSpvContactNo.Text = rdr("ContactNo").ToString()
                             txtEditSpvEmail.Text = rdr("Email").ToString()
@@ -67,7 +66,6 @@ Public Class frmEditSupervisor
         Dim query As String =
         "UPDATE company_contact SET 
             CFirstName = @fn,
-            CMiddleName = @mn,
             CLastName = @ln,
             ContactNo = @contact,
             Email = @email
@@ -79,7 +77,6 @@ Public Class frmEditSupervisor
                 ' --- PARAMETERS FROM TEXTBOXES ---
                 cmd.Parameters.AddWithValue("@id", mtxtEditSupervisorCCID.Text.Trim())
                 cmd.Parameters.AddWithValue("@fn", txtEditSpvFirstname.Text.Trim())
-                cmd.Parameters.AddWithValue("@mn", txtEditSpvMiddlename.Text.Trim())
                 cmd.Parameters.AddWithValue("@ln", txtEditSpvLastname.Text.Trim())
                 cmd.Parameters.AddWithValue("@contact", mtxtEditSpvContactNo.Text.Trim())
                 cmd.Parameters.AddWithValue("@email", txtEditSpvEmail.Text.Trim())
