@@ -79,6 +79,7 @@ Partial Class frmAddSupervisor
         mtxtAddSupervisorCCID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtAddSupervisorCCID.Location = New Point(30, 212)
         mtxtAddSupervisorCCID.Name = "mtxtAddSupervisorCCID"
+        mtxtAddSupervisorCCID.ReadOnly = True
         mtxtAddSupervisorCCID.Size = New Size(244, 44)
         mtxtAddSupervisorCCID.TabIndex = 22
         ' 

@@ -254,6 +254,7 @@ Partial Class frmAddPlacement
         mtxtAddPlaceInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtAddPlaceInternID.Location = New Point(27, 185)
         mtxtAddPlaceInternID.Name = "mtxtAddPlaceInternID"
+        mtxtAddPlaceInternID.ReadOnly = True
         mtxtAddPlaceInternID.Size = New Size(244, 44)
         mtxtAddPlaceInternID.TabIndex = 21
         ' 

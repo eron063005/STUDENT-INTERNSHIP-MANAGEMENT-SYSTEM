@@ -48,6 +48,7 @@ Partial Class frmAddVisit
         mtxtAddVisitID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtAddVisitID.Location = New Point(27, 229)
         mtxtAddVisitID.Name = "mtxtAddVisitID"
+        mtxtAddVisitID.ReadOnly = True
         mtxtAddVisitID.Size = New Size(244, 44)
         mtxtAddVisitID.TabIndex = 22
         ' 

@@ -206,22 +206,33 @@ Module ModuleDB
 
     Sub LoadDataStudent(targetGrid As DataGridView, facultyID As String)
         Using con As New MySqlConnection(connString)
-            Dim query As String = $"SELECT 
-                                    s.StudentId,
-                                    c.CourseName,
-                                    s.FirstName,
-                                    s.LastName,
-                                    s.MiddleName,
-                                    s.Birthday,
-                                    s.Sex,
-                                    s.ContactNo,
-                                    s.Email,
-                                    s.Section
-                                FROM STUDENT s
-                                JOIN COURSE c ON s.CourseId = c.CourseId
-                                WHERE facultyID = @facultyID"
+            ' Base query: only non-archived students. Use LEFT JOIN so CourseName can be NULL safely.
+            Dim query As String = "SELECT 
+                                s.StudentId,
+                                c.CourseName,
+                                s.FirstName,
+                                s.LastName,
+                                s.MiddleName,
+                                s.Birthday,
+                                s.Sex,
+                                s.ContactNo,
+                                s.Email,
+                                s.Section
+                            FROM student s
+                            LEFT JOIN course c ON s.CourseId = c.CourseId
+                            WHERE (s.Archived = 0 OR s.Archived IS NULL) "
+
+            ' If a facultyID was provided, filter by it; otherwise show all non-archived (useful for admin).
+            If Not String.IsNullOrWhiteSpace(facultyID) Then
+                query &= " AND s.FacultyId = @facultyID"
+            End If
+
+            query &= " ORDER BY s.LastName, s.FirstName;"
+
             Using cmd As New MySqlCommand(query, con)
-                cmd.Parameters.AddWithValue("@facultyID", facultyID)
+                If Not String.IsNullOrWhiteSpace(facultyID) Then
+                    cmd.Parameters.AddWithValue("@facultyID", facultyID)
+                End If
 
                 Dim adapter As New MySqlDataAdapter(cmd)
                 Dim table As New DataTable()

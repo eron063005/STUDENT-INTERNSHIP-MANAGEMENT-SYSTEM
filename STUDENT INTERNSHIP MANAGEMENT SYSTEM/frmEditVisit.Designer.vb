@@ -103,6 +103,7 @@ Partial Class frmEditVisit
         mtxtEditVisitInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtEditVisitInternID.Location = New Point(27, 399)
         mtxtEditVisitInternID.Name = "mtxtEditVisitInternID"
+        mtxtEditVisitInternID.ReadOnly = True
         mtxtEditVisitInternID.Size = New Size(250, 44)
         mtxtEditVisitInternID.TabIndex = 63
         ' 
