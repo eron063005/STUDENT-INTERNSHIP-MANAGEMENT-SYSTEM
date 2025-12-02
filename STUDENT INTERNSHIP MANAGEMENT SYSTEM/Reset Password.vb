@@ -39,8 +39,8 @@ Public Class Reset_Password
         End If
 
         ' Validate email ends with @gmail.com
-        If Not email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase) Then
-            MessageBox.Show("Email must end with '@gmail.com'.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        If Not email.EndsWith("@vaia.edu.ph", StringComparison.OrdinalIgnoreCase) Then
+            MessageBox.Show("Email must end with '@vaia.edu.ph'.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtEmail.Focus()
             Exit Sub
         End If

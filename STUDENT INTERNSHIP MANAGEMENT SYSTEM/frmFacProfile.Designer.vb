@@ -41,7 +41,7 @@ Partial Class frmFacProfile
         Label8 = New Label()
         RoundedPanel1 = New RoundedPanel()
         btnFacBack = New Button()
-        RoundedButton1 = New RoundedButton()
+        btnLogOut = New RoundedButton()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -50,7 +50,7 @@ Partial Class frmFacProfile
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label1.Location = New Point(315, 65)
+        Label1.Location = New Point(327, 65)
         Label1.Name = "Label1"
         Label1.Size = New Size(115, 27)
         Label1.TabIndex = 0
@@ -60,7 +60,7 @@ Partial Class frmFacProfile
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label2.Location = New Point(315, 152)
+        Label2.Location = New Point(327, 152)
         Label2.Name = "Label2"
         Label2.Size = New Size(122, 27)
         Label2.TabIndex = 1
@@ -70,7 +70,7 @@ Partial Class frmFacProfile
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label3.Location = New Point(639, 152)
+        Label3.Location = New Point(651, 152)
         Label3.Name = "Label3"
         Label3.Size = New Size(123, 27)
         Label3.TabIndex = 2
@@ -78,9 +78,11 @@ Partial Class frmFacProfile
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(65, 184)
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(72, 168)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(177, 171)
+        PictureBox1.Size = New Size(196, 198)
+        PictureBox1.SizeMode = PictureBoxSizeMode.AutoSize
         PictureBox1.TabIndex = 3
         PictureBox1.TabStop = False
         ' 
@@ -88,7 +90,7 @@ Partial Class frmFacProfile
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label4.Location = New Point(315, 241)
+        Label4.Location = New Point(327, 241)
         Label4.Name = "Label4"
         Label4.Size = New Size(220, 27)
         Label4.TabIndex = 4
@@ -98,7 +100,7 @@ Partial Class frmFacProfile
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label5.Location = New Point(315, 329)
+        Label5.Location = New Point(327, 329)
         Label5.Name = "Label5"
         Label5.Size = New Size(73, 27)
         Label5.TabIndex = 5
@@ -108,7 +110,7 @@ Partial Class frmFacProfile
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label6.Location = New Point(639, 65)
+        Label6.Location = New Point(651, 65)
         Label6.Name = "Label6"
         Label6.Size = New Size(87, 27)
         Label6.TabIndex = 7
@@ -116,61 +118,73 @@ Partial Class frmFacProfile
         ' 
         ' txtFacultyID
         ' 
+        txtFacultyID.BackColor = SystemColors.Control
         txtFacultyID.BorderStyle = BorderStyle.FixedSingle
-        txtFacultyID.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtFacultyID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtFacultyID.ForeColor = SystemColors.WindowText
-        txtFacultyID.Location = New Point(315, 95)
+        txtFacultyID.Location = New Point(327, 95)
         txtFacultyID.Name = "txtFacultyID"
+        txtFacultyID.ReadOnly = True
         txtFacultyID.Size = New Size(286, 44)
         txtFacultyID.TabIndex = 8
         ' 
         ' txtDeptID
         ' 
+        txtDeptID.BackColor = SystemColors.Control
         txtDeptID.BorderStyle = BorderStyle.FixedSingle
-        txtDeptID.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtDeptID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtDeptID.ForeColor = SystemColors.WindowText
-        txtDeptID.Location = New Point(639, 95)
+        txtDeptID.Location = New Point(651, 95)
         txtDeptID.Name = "txtDeptID"
+        txtDeptID.ReadOnly = True
         txtDeptID.Size = New Size(286, 44)
         txtDeptID.TabIndex = 9
         ' 
         ' txtDeptName
         ' 
+        txtDeptName.BackColor = SystemColors.Control
         txtDeptName.BorderStyle = BorderStyle.FixedSingle
-        txtDeptName.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtDeptName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtDeptName.ForeColor = SystemColors.WindowText
-        txtDeptName.Location = New Point(315, 271)
+        txtDeptName.Location = New Point(327, 271)
         txtDeptName.Name = "txtDeptName"
+        txtDeptName.ReadOnly = True
         txtDeptName.Size = New Size(610, 44)
         txtDeptName.TabIndex = 10
         ' 
         ' txtLastName
         ' 
+        txtLastName.BackColor = SystemColors.Control
         txtLastName.BorderStyle = BorderStyle.FixedSingle
-        txtLastName.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtLastName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtLastName.ForeColor = SystemColors.WindowText
-        txtLastName.Location = New Point(639, 182)
+        txtLastName.Location = New Point(651, 182)
         txtLastName.Name = "txtLastName"
+        txtLastName.ReadOnly = True
         txtLastName.Size = New Size(286, 44)
         txtLastName.TabIndex = 12
         ' 
         ' txtFirstName
         ' 
+        txtFirstName.BackColor = SystemColors.Control
         txtFirstName.BorderStyle = BorderStyle.FixedSingle
-        txtFirstName.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtFirstName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtFirstName.ForeColor = SystemColors.WindowText
-        txtFirstName.Location = New Point(315, 182)
+        txtFirstName.Location = New Point(327, 182)
         txtFirstName.Name = "txtFirstName"
+        txtFirstName.ReadOnly = True
         txtFirstName.Size = New Size(286, 44)
         txtFirstName.TabIndex = 11
         ' 
         ' txtEmail
         ' 
+        txtEmail.BackColor = SystemColors.Control
         txtEmail.BorderStyle = BorderStyle.FixedSingle
-        txtEmail.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtEmail.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtEmail.ForeColor = SystemColors.WindowText
-        txtEmail.Location = New Point(315, 359)
+        txtEmail.Location = New Point(327, 359)
         txtEmail.Name = "txtEmail"
+        txtEmail.ReadOnly = True
         txtEmail.Size = New Size(610, 44)
         txtEmail.TabIndex = 13
         ' 
@@ -178,7 +192,7 @@ Partial Class frmFacProfile
         ' 
         lblFullName.AutoSize = True
         lblFullName.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        lblFullName.Location = New Point(93, 370)
+        lblFullName.Location = New Point(110, 370)
         lblFullName.Name = "lblFullName"
         lblFullName.Size = New Size(118, 27)
         lblFullName.TabIndex = 14
@@ -186,10 +200,12 @@ Partial Class frmFacProfile
         ' 
         ' txtContactNum
         ' 
+        txtContactNum.BackColor = SystemColors.Control
         txtContactNum.BorderStyle = BorderStyle.FixedSingle
-        txtContactNum.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtContactNum.Location = New Point(315, 446)
+        txtContactNum.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtContactNum.Location = New Point(327, 446)
         txtContactNum.Name = "txtContactNum"
+        txtContactNum.ReadOnly = True
         txtContactNum.Size = New Size(610, 44)
         txtContactNum.TabIndex = 15
         ' 
@@ -197,7 +213,7 @@ Partial Class frmFacProfile
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label8.Location = New Point(315, 416)
+        Label8.Location = New Point(327, 416)
         Label8.Name = "Label8"
         Label8.Size = New Size(147, 27)
         Label8.TabIndex = 16
@@ -209,7 +225,8 @@ Partial Class frmFacProfile
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(btnFacBack)
-        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.Controls.Add(btnLogOut)
+        RoundedPanel1.Controls.Add(PictureBox1)
         RoundedPanel1.CornerRadius = 2
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(0, 0)
@@ -231,32 +248,32 @@ Partial Class frmFacProfile
         btnFacBack.TabIndex = 7
         btnFacBack.UseVisualStyleBackColor = True
         ' 
-        ' RoundedButton1
+        ' btnLogOut
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton1.BorderColor = Color.Red
-        RoundedButton1.BorderSize = 4
-        RoundedButton1.CornerRadius = 18
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(254), CByte(202), CByte(202))
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        RoundedButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Century Gothic", 12.0F, FontStyle.Bold)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(240), CByte(180), CByte(180))
-        RoundedButton1.Location = New Point(795, 524)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(220), CByte(150), CByte(150))
-        RoundedButton1.Size = New Size(130, 50)
-        RoundedButton1.TabIndex = 6
-        RoundedButton1.Text = "LogOut"
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnLogOut.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnLogOut.BorderColor = Color.Red
+        btnLogOut.BorderSize = 4
+        btnLogOut.CornerRadius = 18
+        btnLogOut.Cursor = Cursors.Hand
+        btnLogOut.FillColor = Color.FromArgb(CByte(254), CByte(202), CByte(202))
+        btnLogOut.FlatAppearance.BorderSize = 0
+        btnLogOut.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnLogOut.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnLogOut.FlatStyle = FlatStyle.Flat
+        btnLogOut.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        btnLogOut.ForeColor = Color.Black
+        btnLogOut.HoverColor = Color.FromArgb(CByte(240), CByte(180), CByte(180))
+        btnLogOut.Location = New Point(795, 524)
+        btnLogOut.Name = "btnLogOut"
+        btnLogOut.PressedColor = Color.FromArgb(CByte(220), CByte(150), CByte(150))
+        btnLogOut.Size = New Size(130, 50)
+        btnLogOut.TabIndex = 6
+        btnLogOut.Text = "LogOut"
+        btnLogOut.UseVisualStyleBackColor = False
         ' 
         ' frmFacProfile
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         ClientSize = New Size(965, 601)
@@ -272,7 +289,6 @@ Partial Class frmFacProfile
         Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(PictureBox1)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -282,6 +298,7 @@ Partial Class frmFacProfile
         Text = "frmFacProfile"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -304,5 +321,5 @@ Partial Class frmFacProfile
     Friend WithEvents Label8 As Label
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents btnFacBack As Button
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents btnLogOut As RoundedButton
 End Class

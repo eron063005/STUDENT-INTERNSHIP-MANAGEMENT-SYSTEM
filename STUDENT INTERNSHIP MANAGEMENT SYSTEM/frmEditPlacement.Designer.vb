@@ -36,10 +36,10 @@ Partial Class frmEditPlacement
         mtxtEditPlaceInternID = New MaskedTextBox()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
+        txtEditPlaceStdID = New MaskedTextBox()
         Panel2 = New Panel()
         nudEditPlaceGrade = New NumericUpDown()
         cbEditPlaceStatus = New ComboBox()
-        txtEditPlaceStdID = New MaskedTextBox()
         RoundedPanel1.SuspendLayout()
         CType(nudEditPlaceGrade, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -177,6 +177,7 @@ Partial Class frmEditPlacement
         mtxtEditPlaceInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtEditPlaceInternID.Location = New Point(27, 185)
         mtxtEditPlaceInternID.Name = "mtxtEditPlaceInternID"
+        mtxtEditPlaceInternID.ReadOnly = True
         mtxtEditPlaceInternID.Size = New Size(244, 44)
         mtxtEditPlaceInternID.TabIndex = 21
         ' 
@@ -218,6 +219,15 @@ Partial Class frmEditPlacement
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
         ' 
+        ' txtEditPlaceStdID
+        ' 
+        txtEditPlaceStdID.BorderStyle = BorderStyle.FixedSingle
+        txtEditPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditPlaceStdID.Location = New Point(29, 278)
+        txtEditPlaceStdID.Name = "txtEditPlaceStdID"
+        txtEditPlaceStdID.Size = New Size(713, 44)
+        txtEditPlaceStdID.TabIndex = 72
+        ' 
         ' Panel2
         ' 
         Panel2.BackColor = Color.Silver
@@ -243,15 +253,6 @@ Partial Class frmEditPlacement
         cbEditPlaceStatus.Name = "cbEditPlaceStatus"
         cbEditPlaceStatus.Size = New Size(315, 45)
         cbEditPlaceStatus.TabIndex = 76
-        ' 
-        ' txtEditPlaceStdID
-        ' 
-        txtEditPlaceStdID.BorderStyle = BorderStyle.FixedSingle
-        txtEditPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtEditPlaceStdID.Location = New Point(29, 278)
-        txtEditPlaceStdID.Name = "txtEditPlaceStdID"
-        txtEditPlaceStdID.Size = New Size(713, 44)
-        txtEditPlaceStdID.TabIndex = 72
         ' 
         ' frmEditPlacement
         ' 

@@ -130,6 +130,7 @@ Partial Class frmEditAssessment
         mtxtEditAssessID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         mtxtEditAssessID.Location = New Point(44, 217)
         mtxtEditAssessID.Name = "mtxtEditAssessID"
+        mtxtEditAssessID.ReadOnly = True
         mtxtEditAssessID.Size = New Size(324, 44)
         mtxtEditAssessID.TabIndex = 46
         ' 
