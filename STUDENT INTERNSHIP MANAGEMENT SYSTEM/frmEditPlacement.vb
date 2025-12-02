@@ -13,17 +13,16 @@ Public Class frmEditPlacement
         ' SQL UPDATE query
         Dim query As String = "
             UPDATE internship i
-                JOIN final_grade fg ON i.FinalGradeId = fg.FinalGradeId
-                JOIN assessment a ON fg.AssessmentId = a.AssessmentId
+                
                 JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
                 JOIN company c ON cc.CompanyId = c.CompanyId
-                JOIN student s ON a.StudentId = s.StudentId
+                JOIN student s ON i.StudentId = s.StudentId
+                JOIN assessment a ON s.studentID = a.studentID
                 SET 
                     i.Status = @Status,          
                     i.StartDate = @StartDate,    
                     i.EndDate = @EndDate,        
-                    fg.FGrade = @FGrade,         
-                    c.CompanyID = @CompanyID, 
+                    i.FGrade = @FGrade,
                     s.StudentID = @StudentID          
                 WHERE i.InternshipId = @InternshipId
     "

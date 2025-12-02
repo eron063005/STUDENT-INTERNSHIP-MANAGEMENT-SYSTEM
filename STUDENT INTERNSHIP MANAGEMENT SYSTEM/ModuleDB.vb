@@ -234,23 +234,37 @@ Module ModuleDB
     Sub LoadDataInternship(targetGrid As DataGridView)
         Using con As New MySqlConnection(connString)
             Dim query As String =
-            "SELECT
-                i.InternshipID,
-                i.StudentID,
-                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
-                c.CompanyID,
-                c.CompanyName,
-                i.Status,
-                i.StartDate,
-                i.EndDate,
-                i.FGrade
-            FROM internship i
-            INNER JOIN student s ON i.studentID = s.studentID
-            INNER JOIN assessment a ON i.studentID = a.studentID
-            INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID  
-            INNER JOIN Company c ON cc.CompanyID = c.CompanyID
-            WHERE s.FacultyID = @facultyID
-            "
+                            "SELECT
+                                i.InternshipID,
+                                i.StudentID,
+                                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                                CASE
+                                    WHEN i.InternshipID = (
+                                        SELECT MIN(i2.InternshipID)
+                                        FROM internship i2
+                                        WHERE i2.StudentID = i.StudentID
+                                    )
+                                    THEN (
+                                        SELECT c.CompanyName
+                                        FROM assessment a
+                                        INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID
+                                        INNER JOIN Company c ON cc.CompanyID = c.CompanyID
+                                        WHERE a.StudentID = i.StudentID
+                                        ORDER BY a.AssessmentId ASC
+                                        LIMIT 1
+                                    )
+                                    ELSE NULL
+                                END AS CompanyName,
+                                i.Status,
+                                i.StartDate,
+                                i.EndDate,
+                                i.FGrade
+                            FROM internship i
+                            INNER JOIN student s ON i.StudentID = s.StudentID
+                            WHERE s.FacultyID = @facultyID
+                            ORDER BY i.StudentID, i.InternshipID;
+
+"
 
             Using cmd As New MySqlCommand(query, con)
                 cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
@@ -261,7 +275,6 @@ Module ModuleDB
 
                 targetGrid.DataSource = table
             End Using
-
         End Using
 
         ' Optional DGV settings
@@ -269,6 +282,7 @@ Module ModuleDB
         targetGrid.ReadOnly = True
         targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
+
     '---------------
     'Company Part
     Sub LoadCompanyCards(CompanyContainer As FlowLayoutPanel)
