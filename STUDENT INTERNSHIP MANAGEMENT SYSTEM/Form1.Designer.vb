@@ -26,7 +26,6 @@ Public Class LogIn
                     Dim f As New Dashboard()
                     f.Show()
                     Me.Hide()
-
                 Else
                     MessageBox.Show("Invalid Faculty ID or Password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If

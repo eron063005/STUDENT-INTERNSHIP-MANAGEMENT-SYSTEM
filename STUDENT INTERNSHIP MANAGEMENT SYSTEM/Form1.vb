@@ -342,10 +342,6 @@ Partial Class LogIn
     End Sub
 
     Private Sub Label8_Click(sender As Object, e As EventArgs) Handles RegisStd.Click
-        ' Dim the background
-        PictureBox2.BackColor = Color.FromArgb(255, 0, 0, 0) ' semi-transparent black overlay effect
-        PictureBox2.Refresh() ' make sure effect shows
-
         ' Hide other controls
         PictureBox1.Hide()
         Label3.Hide()
