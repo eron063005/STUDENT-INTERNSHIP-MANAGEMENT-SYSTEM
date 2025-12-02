@@ -16,8 +16,6 @@
         lblVisitStudentName.Text = FirstName + " " + MiddleName + " " + LastName
         lblVisitCompName.Text = companyName
         lblVisitFacultyName.Text = FName + " " + LName
-
-
     End Sub
 
 End Class
