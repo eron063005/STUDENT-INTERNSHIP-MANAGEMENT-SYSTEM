@@ -25,7 +25,6 @@ Partial Class ucUpcomingVisitItem
         lblUVDate = New Label()
         lblUVName = New Label()
         lblUVCompany = New Label()
-        lblUVTime = New Label()
         Panel1 = New Panel()
         RoundedPanel2 = New RoundedPanel()
         RoundedPanel2.SuspendLayout()
@@ -63,16 +62,6 @@ Partial Class ucUpcomingVisitItem
         lblUVCompany.TabIndex = 2
         lblUVCompany.Text = "TechNova Solutions Inc."
         ' 
-        ' lblUVTime
-        ' 
-        lblUVTime.AutoSize = True
-        lblUVTime.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblUVTime.Location = New Point(238, 147)
-        lblUVTime.Name = "lblUVTime"
-        lblUVTime.Size = New Size(99, 23)
-        lblUVTime.TabIndex = 3
-        lblUVTime.Text = "10:00 AM"
-        ' 
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
@@ -100,7 +89,6 @@ Partial Class ucUpcomingVisitItem
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         Controls.Add(Panel1)
-        Controls.Add(lblUVTime)
         Controls.Add(lblUVCompany)
         Controls.Add(lblUVName)
         Controls.Add(RoundedPanel2)
@@ -115,7 +103,6 @@ Partial Class ucUpcomingVisitItem
     Friend WithEvents lblUVDate As Label
     Friend WithEvents lblUVName As Label
     Friend WithEvents lblUVCompany As Label
-    Friend WithEvents lblUVTime As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents RoundedPanel2 As RoundedPanel
 

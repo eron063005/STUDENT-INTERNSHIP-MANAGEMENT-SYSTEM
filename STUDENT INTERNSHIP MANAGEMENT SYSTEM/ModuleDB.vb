@@ -93,6 +93,64 @@ Module ModuleDB
         Return count
     End Function
 
+    Sub LoadUpcomingVisits(panelUV As Panel)
+        panelUV.Controls.Clear()
+
+        Dim query As String = "
+        SELECT 
+            v.VisitId,
+            v.InternshipId,
+            v.VisitDate,
+            v.Evaluation,
+            v.Score,
+            s.FirstName,
+            s.LastName,
+            c.CompanyName
+        FROM visit_log v
+        JOIN student s ON v.StudentId = s.StudentId
+        JOIN internship i ON v.InternshipId = i.InternshipId
+        JOIN assessment a ON s.StudentId = a.StudentId
+        JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
+        JOIN company c ON cc.CompanyId = c.CompanyId
+        WHERE 
+            v.FacultyId = @fid
+            AND MONTH(v.VisitDate) = MONTH(CURRENT_DATE())
+            AND YEAR(v.VisitDate) = YEAR(CURRENT_DATE())
+        ORDER BY v.VisitDate ASC
+        LIMIT 3
+            "
+
+        Using conn As New MySqlConnection(connString),
+          cmd As New MySqlCommand(query, conn)
+
+            cmd.Parameters.AddWithValue("@fid", LoggedFacultyID)
+
+            conn.Open()
+            Using reader As MySqlDataReader = cmd.ExecuteReader()
+                Dim yOffset As Integer = 0
+
+                While reader.Read()
+                    Dim ctrl As New ucUpcomingVisitItem(
+                    reader("VisitId").ToString(),
+                    CDate(reader("VisitDate")).ToString("dd"),
+                    reader("FirstName").ToString(),
+                    reader("LastName").ToString(),
+                    reader("CompanyName").ToString()
+                )
+
+                    ctrl.Top = yOffset
+                    ctrl.Left = 0
+                    ctrl.Width = panelUV.Width - 20
+
+                    panelUV.Controls.Add(ctrl)
+
+                    yOffset += ctrl.Height + 5
+                End While
+            End Using
+        End Using
+    End Sub
+
+
     'Student Part
     Function GenerateStudentID() As String
         Dim newID As String = "S001"

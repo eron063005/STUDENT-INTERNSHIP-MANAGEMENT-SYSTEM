@@ -6,6 +6,8 @@ Public Class ucDashboard
         lblPendingIntern.Text = GetPendingCountByFaculty()
         lblPartnerComp.Text = GetCompaniesCount()
         LoadRecentPlacements()
+        LoadUpcomingVisits(panelUV)
+
     End Sub
 
     Private Sub LoadRecentPlacements()
