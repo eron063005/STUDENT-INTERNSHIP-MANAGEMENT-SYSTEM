@@ -26,12 +26,8 @@ Partial Class frmEditPlacement
         Label7 = New Label()
         btnSavePlace = New RoundedButton()
         btnEditPlaceCancel = New RoundedButton()
-        txtEditPlaceStatus = New TextBox()
-        Label4 = New Label()
         Label5 = New Label()
         btnExitEditPlace = New Button()
-        mtxtEditPlaceCompID = New MaskedTextBox()
-        txtEditPlaceStdID = New TextBox()
         Label9 = New Label()
         Label3 = New Label()
         Label6 = New Label()
@@ -42,6 +38,8 @@ Partial Class frmEditPlacement
         RoundedPanel1 = New RoundedPanel()
         Panel2 = New Panel()
         nudEditPlaceGrade = New NumericUpDown()
+        cbEditPlaceStatus = New ComboBox()
+        txtEditPlaceStdID = New MaskedTextBox()
         RoundedPanel1.SuspendLayout()
         CType(nudEditPlaceGrade, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -101,25 +99,6 @@ Partial Class frmEditPlacement
         btnEditPlaceCancel.Text = "Cancel "
         btnEditPlaceCancel.UseVisualStyleBackColor = False
         ' 
-        ' txtEditPlaceStatus
-        ' 
-        txtEditPlaceStatus.BorderStyle = BorderStyle.FixedSingle
-        txtEditPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtEditPlaceStatus.Location = New Point(746, 274)
-        txtEditPlaceStatus.Name = "txtEditPlaceStatus"
-        txtEditPlaceStatus.Size = New Size(323, 44)
-        txtEditPlaceStatus.TabIndex = 59
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label4.Location = New Point(371, 244)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(152, 27)
-        Label4.TabIndex = 54
-        Label4.Text = "Company ID"
-        ' 
         ' Label5
         ' 
         Label5.AutoSize = True
@@ -144,24 +123,6 @@ Partial Class frmEditPlacement
         btnExitEditPlace.Size = New Size(55, 57)
         btnExitEditPlace.TabIndex = 68
         btnExitEditPlace.UseVisualStyleBackColor = False
-        ' 
-        ' mtxtEditPlaceCompID
-        ' 
-        mtxtEditPlaceCompID.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditPlaceCompID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        mtxtEditPlaceCompID.Location = New Point(368, 274)
-        mtxtEditPlaceCompID.Name = "mtxtEditPlaceCompID"
-        mtxtEditPlaceCompID.Size = New Size(365, 44)
-        mtxtEditPlaceCompID.TabIndex = 69
-        ' 
-        ' txtEditPlaceStdID
-        ' 
-        txtEditPlaceStdID.BorderStyle = BorderStyle.FixedSingle
-        txtEditPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtEditPlaceStdID.Location = New Point(27, 274)
-        txtEditPlaceStdID.Name = "txtEditPlaceStdID"
-        txtEditPlaceStdID.Size = New Size(326, 44)
-        txtEditPlaceStdID.TabIndex = 57
         ' 
         ' Label9
         ' 
@@ -234,25 +195,22 @@ Partial Class frmEditPlacement
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(txtEditPlaceStdID)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(nudEditPlaceGrade)
         RoundedPanel1.Controls.Add(mtxtEditPlaceInternID)
         RoundedPanel1.Controls.Add(btnExitEditPlace)
-        RoundedPanel1.Controls.Add(mtxtEditPlaceCompID)
         RoundedPanel1.Controls.Add(btnSavePlace)
         RoundedPanel1.Controls.Add(dtpEditPlaceEndDate)
         RoundedPanel1.Controls.Add(btnEditPlaceCancel)
         RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.Controls.Add(txtEditPlaceStatus)
         RoundedPanel1.Controls.Add(Label7)
         RoundedPanel1.Controls.Add(Label5)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.Controls.Add(dtpEditPlaceStartDate)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Label3)
-        RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(Label9)
-        RoundedPanel1.Controls.Add(txtEditPlaceStdID)
         RoundedPanel1.CornerRadius = 2
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(0, 0)
@@ -276,12 +234,32 @@ Partial Class frmEditPlacement
         nudEditPlaceGrade.Size = New Size(72, 44)
         nudEditPlaceGrade.TabIndex = 70
         ' 
+        ' cbEditPlaceStatus
+        ' 
+        cbEditPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbEditPlaceStatus.FormattingEnabled = True
+        cbEditPlaceStatus.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
+        cbEditPlaceStatus.Location = New Point(746, 278)
+        cbEditPlaceStatus.Name = "cbEditPlaceStatus"
+        cbEditPlaceStatus.Size = New Size(315, 45)
+        cbEditPlaceStatus.TabIndex = 76
+        ' 
+        ' txtEditPlaceStdID
+        ' 
+        txtEditPlaceStdID.BorderStyle = BorderStyle.FixedSingle
+        txtEditPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        txtEditPlaceStdID.Location = New Point(29, 278)
+        txtEditPlaceStdID.Name = "txtEditPlaceStdID"
+        txtEditPlaceStdID.Size = New Size(713, 44)
+        txtEditPlaceStdID.TabIndex = 72
+        ' 
         ' frmEditPlacement
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         ClientSize = New Size(1086, 601)
+        Controls.Add(cbEditPlaceStatus)
         Controls.Add(RoundedPanel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmEditPlacement"
@@ -296,12 +274,8 @@ Partial Class frmEditPlacement
     Friend WithEvents Label7 As Label
     Friend WithEvents btnSavePlace As RoundedButton
     Friend WithEvents btnEditPlaceCancel As RoundedButton
-    Friend WithEvents txtEditPlaceStatus As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents btnExitEditPlace As Button
-    Friend WithEvents mtxtEditPlaceCompID As MaskedTextBox
-    Friend WithEvents txtEditPlaceStdID As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
@@ -313,4 +287,6 @@ Partial Class frmEditPlacement
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents nudEditPlaceGrade As NumericUpDown
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents cbEditPlaceStatus As ComboBox
+    Friend WithEvents txtEditPlaceStdID As MaskedTextBox
 End Class

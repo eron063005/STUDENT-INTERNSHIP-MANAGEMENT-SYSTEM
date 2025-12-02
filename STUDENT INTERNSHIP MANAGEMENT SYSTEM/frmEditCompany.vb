@@ -1,9 +1,105 @@
-﻿Public Class frmEditCompany
+﻿Imports MySql.Data.MySqlClient
+
+Public Class frmEditCompany
+
     Private Sub btnEditCompCancel_Click(sender As Object, e As EventArgs) Handles btnEditCompCancel.Click
         Me.Close()
     End Sub
 
     Private Sub btdExitAdd_Click(sender As Object, e As EventArgs) Handles btnExitEditComp.Click
-        Close
+        Close()
+    End Sub
+
+    Private Sub frmEditCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadCompanyListComboBox(cbEditCompID)
+    End Sub
+
+    Private Sub cbEditCompID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbEditCompID.SelectedIndexChanged
+        If cbEditCompID.SelectedIndex = -1 Then
+            Exit Sub
+        End If
+
+        Dim compId As String = cbEditCompID.SelectedValue.ToString
+
+        Using con As New MySqlConnection(connString)
+            Dim query As String =
+                "SELECT CompanyName, Address, CompanyContactNo, CompanyEmail 
+             FROM company WHERE CompanyId = @id"
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@id", compId)
+
+                con.Open()
+                Using dr As MySqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        txtEditCompName.Text = dr("CompanyName").ToString()
+                        txtEditCompAddress.Text = dr("Address").ToString()
+                        mtxtEditCompConNo.Text = dr("CompanyContactNo").ToString()
+                        txtEditCompEmail.Text = dr("CompanyEmail").ToString()
+                    End If
+                End Using
+            End Using
+        End Using
+    End Sub
+    Private Sub UpdateCompany()
+        ' Check if a company is selected
+        If cbEditCompID.SelectedIndex = -1 Then
+            MessageBox.Show("Please select a company to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' Get selected CompanyId
+        Dim compId As String = cbEditCompID.SelectedValue.ToString
+
+        ' Get values from textboxes
+        Dim compName As String = txtEditCompName.Text.Trim()
+        Dim compAddress As String = txtEditCompAddress.Text.Trim()
+        Dim compConNo As String = mtxtEditCompConNo.Text.Trim()
+        Dim compEmail As String = txtEditCompEmail.Text.Trim()
+
+        ' Validation (optional, can expand)
+        If String.IsNullOrEmpty(compName) Then
+            MessageBox.Show("Company Name cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        Using con As New MySqlConnection(connString)
+            Dim query As String =
+            "UPDATE company 
+             SET CompanyName = @name, 
+                 Address = @address, 
+                 CompanyContactNo = @conNo, 
+                 CompanyEmail = @email 
+             WHERE CompanyId = @id"
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@name", compName)
+                cmd.Parameters.AddWithValue("@address", compAddress)
+                cmd.Parameters.AddWithValue("@conNo", compConNo)
+                cmd.Parameters.AddWithValue("@email", compEmail)
+                cmd.Parameters.AddWithValue("@id", compId)
+
+                Try
+                    con.Open()
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+                    If rowsAffected > 0 Then
+                        MessageBox.Show("Company details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Update failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+
+                Catch ex As Exception
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+
+
+    Private Sub btnSaveComp_Click(sender As Object, e As EventArgs) Handles btnSaveComp.Click
+        UpdateCompany()
+        Me.Close()
     End Sub
 End Class
