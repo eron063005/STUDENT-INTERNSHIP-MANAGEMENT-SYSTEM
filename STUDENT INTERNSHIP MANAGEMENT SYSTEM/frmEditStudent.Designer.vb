@@ -279,6 +279,7 @@ Partial Class frmEditStudent
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(dtpEditBirthday)
@@ -328,7 +329,7 @@ Partial Class frmEditStudent
         ' 
         Label12.AutoSize = True
         Label12.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(417, 537)
+        Label12.Location = New Point(549, 524)
         Label12.Name = "Label12"
         Label12.Size = New Size(110, 27)
         Label12.TabIndex = 56

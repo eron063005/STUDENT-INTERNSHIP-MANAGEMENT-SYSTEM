@@ -13,18 +13,11 @@ Public Class frmEditPlacement
         ' SQL UPDATE query
         Dim query As String = "
             UPDATE internship i
-                JOIN final_grade fg ON i.FinalGradeId = fg.FinalGradeId
-                JOIN assessment a ON fg.AssessmentId = a.AssessmentId
-                JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
-                JOIN company c ON cc.CompanyId = c.CompanyId
-                JOIN student s ON a.StudentId = s.StudentId
                 SET 
                     i.Status = @Status,          
                     i.StartDate = @StartDate,    
                     i.EndDate = @EndDate,        
-                    fg.FGrade = @FGrade,         
-                    c.CompanyID = @CompanyID, 
-                    s.StudentID = @StudentID          
+                    i.FGrade = @FGrade    
                 WHERE i.InternshipId = @InternshipId
     "
 
@@ -33,8 +26,7 @@ Public Class frmEditPlacement
                 ' Assign parameters from form controls
                 cmd.Parameters.AddWithValue("@InternshipID", mtxtEditPlaceInternID.Text.Trim())
                 cmd.Parameters.AddWithValue("@StudentID", txtEditPlaceStdID.Text.Trim())
-                cmd.Parameters.AddWithValue("@CompanyID", mtxtEditPlaceCompID.Text.Trim())
-                cmd.Parameters.AddWithValue("@Status", txtEditPlaceStatus.Text.Trim())
+                cmd.Parameters.AddWithValue("@Status", cbEditPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpEditPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpEditPlaceEndDate.Value)
                 cmd.Parameters.AddWithValue("@FGrade", nudEditPlaceGrade.Value)
@@ -54,5 +46,10 @@ Public Class frmEditPlacement
                 End Try
             End Using
         End Using
+    End Sub
+
+
+    Private Sub frmEditPlacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

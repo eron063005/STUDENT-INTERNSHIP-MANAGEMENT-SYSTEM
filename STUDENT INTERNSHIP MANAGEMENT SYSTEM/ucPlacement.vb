@@ -64,9 +64,11 @@ Public Class ucPlacement
 
         ' Fill the edit form controls from the selected row
         editForm.mtxtEditPlaceInternID.Text = If(row.Cells("InternshipID").Value, "").ToString()
-        editForm.txtEditPlaceStdID.Text = If(row.Cells("StudentID").Value, "").ToString()
-        editForm.mtxtEditPlaceCompID.Text = If(row.Cells("CompanyID").Value, "").ToString()
-        editForm.txtEditPlaceStatus.Text = If(row.Cells("Status").Value, "").ToString()
+
+        ' Combine FullName and Section for the Student TextBox
+        Dim fullNameSection As String = $"{row.Cells("StudentName").Value} - {row.Cells("Section").Value}"
+        editForm.txtEditPlaceStdID.Text = fullNameSection
+        editForm.cbEditPlaceStatus.Text = If(row.Cells("Status").Value, "").ToString()
         editForm.dtpEditPlaceStartDate.Value = If(row.Cells("StartDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("StartDate").Value), DateTime.Now)
         editForm.dtpEditPlaceEndDate.Value = If(row.Cells("EndDate").Value IsNot Nothing, Convert.ToDateTime(row.Cells("EndDate").Value), DateTime.Now)
         editForm.nudEditPlaceGrade.Text = If(row.Cells("FGrade").Value, "").ToString()
@@ -74,9 +76,11 @@ Public Class ucPlacement
         ' Show the edit form
         'editForm.ShowDialog()
 
-        ' Kunin parent form (Dashboard) at tawagin ang helper
+        ' Get parent form (Dashboard) and call helper to show edit form
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(editForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+
         LoadDataInternship(dgvPlacement)
     End Sub
+
 End Class

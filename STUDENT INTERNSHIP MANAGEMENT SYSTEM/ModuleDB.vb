@@ -15,7 +15,63 @@ Module ModuleDB
         JOIN visit_log v ON i.InternshipId = v.InternshipId
         WHERE i.Status = 'Ongoing'
         AND v.FacultyId = @facultyID;
- "
+        "
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                    ' ExecuteScalar returns ONE value → COUNT(*)
+                    count = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+        Return count
+    End Function
+
+    Public Function GetPendingCountByFaculty() As Integer
+        Dim count As Integer = 0
+
+        Dim query As String = "
+     SELECT COUNT(DISTINCT i.InternshipId, v.StudentId) AS Total
+        FROM internship i
+        JOIN visit_log v ON i.InternshipId = v.InternshipId
+        WHERE i.Status = 'Pending'
+        AND v.FacultyId = @facultyID;
+        "
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Using cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                    ' ExecuteScalar returns ONE value → COUNT(*)
+                    count = Convert.ToInt32(cmd.ExecuteScalar())
+                End Using
+
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+        Return count
+    End Function
+
+    Public Function GetCompaniesCount() As Integer
+        Dim count As Integer = 0
+
+        Dim query As String = "SELECT COUNT(*) FROM company"
 
         Try
             Using conn As New MySqlConnection(connString)
@@ -38,7 +94,7 @@ Module ModuleDB
     End Function
 
     'Student Part
-    Function GenerateStudentID() As String
+    Function GenerateStudentID() As String                                              
         Dim newID As String = "S001"
         Dim con As New MySqlConnection(connString)
 
@@ -175,6 +231,59 @@ Module ModuleDB
         Return newId
     End Function
 
+    Sub LoadDataInternship(targetGrid As DataGridView)
+        Using con As New MySqlConnection(connString)
+            Dim query As String =
+                            "SELECT
+                                i.InternshipID,
+                                i.StudentID,
+                                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                                s.Section,
+                                CASE
+                                    WHEN i.InternshipID = (
+                                        SELECT MIN(i2.InternshipID)
+                                        FROM internship i2
+                                        WHERE i2.StudentID = i.StudentID
+                                    )
+                                    THEN (
+                                        SELECT c.CompanyName
+                                        FROM assessment a
+                                        INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID
+                                        INNER JOIN Company c ON cc.CompanyID = c.CompanyID
+                                        WHERE a.StudentID = i.StudentID
+                                        ORDER BY a.AssessmentId ASC
+                                        LIMIT 1
+                                    )
+                                    ELSE NULL
+                                END AS CompanyName,
+                                i.Status,
+                                i.StartDate,
+                                i.EndDate,
+                                i.FGrade
+                            FROM internship i
+                            INNER JOIN student s ON i.StudentID = s.StudentID
+                            WHERE s.FacultyID = @facultyID
+                            ORDER BY i.StudentID, i.InternshipID;
+
+"
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+        End Using
+
+        ' Optional DGV settings
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
     '---------------
     'Company Part
     Sub LoadCompanyCards(CompanyContainer As FlowLayoutPanel)
@@ -227,6 +336,30 @@ Module ModuleDB
 
         Return newID
     End Function
+
+    Sub LoadCompanyListComboBox(ComboBoxCompany As ComboBox)
+        Using con As New MySqlConnection(connString)
+            Dim query As String = "SELECT CompanyId, CompanyName FROM company ORDER BY CompanyName"
+
+            Using cmd As New MySqlCommand(query, con)
+                Dim dt As New DataTable()
+
+                con.Open()
+                dt.Load(cmd.ExecuteReader())
+
+                ' Add placeholder row at the top
+                Dim placeholder As DataRow = dt.NewRow()
+                placeholder("CompanyId") = 0
+                placeholder("CompanyName") = "-- Select Company ID --"
+                dt.Rows.InsertAt(placeholder, 0)
+
+                ComboBoxCompany.DataSource = dt
+                ComboBoxCompany.DisplayMember = "CompanyName"
+                ComboBoxCompany.ValueMember = "CompanyId"
+                ComboBoxCompany.SelectedIndex = 0  ' Show the placeholder
+            End Using
+        End Using
+    End Sub
 
     ' Supervisor Part
     Sub LoadCompanyContacts(targetGrid As DataGridView, companyId As String)
@@ -284,53 +417,59 @@ Module ModuleDB
         Return newID
     End Function
 
+    Public Sub DeleteCompanyContact(ID As String)
+        Dim query As String = "DELETE FROM assessment WHERE CompanyContactID = @id;
+                                DELETE FROM company_contact WHERE CompanyContactID = @id;
+                               "
 
-    '---------------
-    'Placement Part
-    Sub LoadDataInternship(targetGrid As DataGridView)
         Using con As New MySqlConnection(connString)
-            Dim query As String =
-            "SELECT DISTINCT
-                i.InternshipID,
-                v.StudentID,
-                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
-                c.CompanyID,
-                c.CompanyName,
-                i.Status,
-                i.StartDate,
-                i.EndDate,
-                fg.FGrade
-            FROM internship i
-            INNER JOIN Final_Grade fg ON i.InternshipID = fg.InternshipID
-            INNER JOIN visit_log v ON i.InternshipID = v.InternshipID
-            INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
-            INNER JOIN Company_Contact cc On a.CompanyContactID = cc.CompanyContactID  
-            INNER JOIN Company c On cc.CompanyID = c.CompanyID
-            INNER JOIN student s ON v.StudentID = s.StudentID
-            WHERE v.FacultyID = @facultyID
-            "
-
             Using cmd As New MySqlCommand(query, con)
-                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+                cmd.Parameters.AddWithValue("@id", ID)
 
-                Dim adapter As New MySqlDataAdapter(cmd)
-                Dim table As New DataTable()
-                adapter.Fill(table)
+                con.Open()
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
-                targetGrid.DataSource = table
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Record deleted successfully.")
+                Else
+                    MessageBox.Show("No record found to delete.")
+                End If
             End Using
-
         End Using
-
-        ' Optional DGV settings
-        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        targetGrid.ReadOnly = True
-        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
 
 
+
     'Visit Part
+    Function GenerateVisitID() As String
+        Dim newID As String = "V0001"
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Dim query As String = "SELECT VisitId FROM visit_log ORDER BY VisitId DESC LIMIT 1"
+                Using cmd As New MySqlCommand(query, conn)
+                    Dim result As Object = cmd.ExecuteScalar()
+
+                    If result IsNot Nothing Then
+                        Dim lastID As String = result.ToString()   ' e.g., "V0043"
+                        Dim numberPart As Integer = Integer.Parse(lastID.Substring(1)) ' remove the "V"
+
+                        numberPart += 1
+                        newID = "V" & numberPart.ToString("D4") ' Format with 4 digits
+                    End If
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error generating VisitID: " & ex.Message)
+        End Try
+
+        Return newID
+    End Function
+
     Sub LoadVisitCards(panelVisit As Panel)
         panelVisit.Controls.Clear()
 
@@ -338,9 +477,8 @@ Module ModuleDB
              SELECT v.*, s.FirstName, s.MiddleName, s.LastName, c.CompanyName, f.Fname, f.Lname FROM visit_log v 
                  INNER JOIN internship i ON v.InternshipID = i.InternshipID 
                  INNER JOIN student s ON v.StudentID = s.StudentID 
-                 INNER JOIN faculty f ON v.FacultyID = f.FacultyId 
-                 INNER JOIN final_grade fg ON i.FinalGradeID = fg.FinalGradeID
-                 INNER JOIN assessment a ON fg.AssessmentID = a.AssessmentID
+                 INNER JOIN faculty f ON v.FacultyID = f.FacultyId
+                 INNER JOIN assessment a ON i.StudentID = a.StudentID
                  INNER JOIN company_contact cc ON a.companycontactID = cc.companycontactID
                  INNER JOIN company c ON cc.CompanyId = c.CompanyId
                  WHERE f.FacultyID = @facultyID"

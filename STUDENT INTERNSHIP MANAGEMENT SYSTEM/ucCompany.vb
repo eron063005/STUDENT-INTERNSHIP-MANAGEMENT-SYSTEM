@@ -12,6 +12,7 @@
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+        LoadCompanyCards(CompanyContainer)
     End Sub
     Private Sub ucCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCompanyCards(CompanyContainer)

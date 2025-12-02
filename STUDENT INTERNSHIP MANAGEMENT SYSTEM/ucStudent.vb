@@ -31,7 +31,7 @@ Public Class ucStudent
         Dim studentID As String = dgvStudent.SelectedRows(0).Cells("StudentID").Value
 
         Dim result = MessageBox.Show("Are you sure you want to delete this student?",
-                                     "Confirm Delete", MessageBoxButtons.YesNo)
+                                     "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If result = DialogResult.No Then Return
 
@@ -140,4 +140,39 @@ Public Class ucStudent
             MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged
+        SearchStudents(txtSearchBar.Text)
+    End Sub
+
+    Private Sub SearchStudents(searchText As String)
+        Try
+            ' Build query to search across multiple columns
+            Dim query As String = "SELECT StudentId, FirstName, LastName, MiddleName, " &
+                      "IF(Birthday='0000-00-00', NULL, Birthday) AS Birthday, " &
+                      "Sex, ContactNo, Email, CourseId, FacultyId, Section " &
+                      "FROM STUDENT " &
+                      "WHERE StudentId LIKE @search OR FirstName LIKE @search OR LastName LIKE @search OR MiddleName LIKE @search " &
+                      "OR Birthday LIKE @search OR Sex LIKE @search OR ContactNo LIKE @search OR Email LIKE @search " &
+                      "OR CourseId LIKE @search OR FacultyId LIKE @search OR Section LIKE @search"
+
+
+            Using con As New MySqlConnection(connString)
+                Using cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
+
+                    Dim dt As New DataTable()
+                    Dim adapter As New MySqlDataAdapter(cmd)
+                    adapter.Fill(dt)
+
+                    dgvStudent.DataSource = dt
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+
 End Class

@@ -23,7 +23,6 @@ Partial Class frmEditCompany
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         btnExitEditComp = New Button()
-        mtxtEditCompanyID = New MaskedTextBox()
         btnSaveComp = New RoundedButton()
         btnEditCompCancel = New RoundedButton()
         txtEditCompEmail = New TextBox()
@@ -35,9 +34,10 @@ Partial Class frmEditCompany
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        Panel2 = New Panel()
+        cbEditCompID = New ComboBox()
         txtEditCompName = New TextBox()
         Label4 = New Label()
+        Panel2 = New Panel()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -54,15 +54,6 @@ Partial Class frmEditCompany
         btnExitEditComp.Size = New Size(55, 57)
         btnExitEditComp.TabIndex = 33
         btnExitEditComp.UseVisualStyleBackColor = False
-        ' 
-        ' mtxtEditCompanyID
-        ' 
-        mtxtEditCompanyID.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditCompanyID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        mtxtEditCompanyID.Location = New Point(27, 205)
-        mtxtEditCompanyID.Name = "mtxtEditCompanyID"
-        mtxtEditCompanyID.Size = New Size(244, 44)
-        mtxtEditCompanyID.TabIndex = 21
         ' 
         ' btnSaveComp
         ' 
@@ -181,11 +172,12 @@ Partial Class frmEditCompany
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbEditCompID)
         RoundedPanel1.Controls.Add(txtEditCompName)
         RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(mtxtEditCompanyID)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Controls.Add(Label2)
@@ -196,13 +188,14 @@ Partial Class frmEditCompany
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
         ' 
-        ' Panel2
+        ' cbEditCompID
         ' 
-        Panel2.BackColor = Color.Silver
-        Panel2.Location = New Point(44, 131)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(990, 4)
-        Panel2.TabIndex = 56
+        cbEditCompID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbEditCompID.FormattingEnabled = True
+        cbEditCompID.Location = New Point(27, 205)
+        cbEditCompID.Name = "cbEditCompID"
+        cbEditCompID.Size = New Size(258, 45)
+        cbEditCompID.TabIndex = 81
         ' 
         ' txtEditCompName
         ' 
@@ -222,6 +215,14 @@ Partial Class frmEditCompany
         Label4.Size = New Size(199, 27)
         Label4.TabIndex = 80
         Label4.Text = "Company Name"
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Silver
+        Panel2.Location = New Point(44, 131)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(990, 4)
+        Panel2.TabIndex = 56
         ' 
         ' frmEditCompany
         ' 
@@ -249,7 +250,6 @@ Partial Class frmEditCompany
         PerformLayout()
     End Sub
     Friend WithEvents btnExitEditComp As Button
-    Friend WithEvents mtxtEditCompanyID As MaskedTextBox
     Friend WithEvents btnSaveComp As RoundedButton
     Friend WithEvents btnEditCompCancel As RoundedButton
     Friend WithEvents txtEditCompEmail As TextBox
@@ -264,4 +264,5 @@ Partial Class frmEditCompany
     Friend WithEvents Panel2 As Panel
     Friend WithEvents txtEditCompName As TextBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents cbEditCompID As ComboBox
 End Class
