@@ -26,7 +26,6 @@ Partial Class ucAssessment
         btnDelAssessment = New RoundedButton()
         btnEditAssessment = New RoundedButton()
         btnAddAssessment = New RoundedButton()
-        RoundedButton2 = New RoundedButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -102,31 +101,10 @@ Partial Class ucAssessment
         btnAddAssessment.Text = "Add Assessment "
         btnAddAssessment.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton2
-        ' 
-        RoundedButton2.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedButton2.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton2.BorderSize = 5
-        RoundedButton2.CornerRadius = 18
-        RoundedButton2.Cursor = Cursors.Hand
-        RoundedButton2.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton2.Location = New Point(1251, 752)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton2.Size = New Size(219, 77)
-        RoundedButton2.TabIndex = 8
-        RoundedButton2.Text = "Display"
-        RoundedButton2.UseVisualStyleBackColor = False
-        ' 
         ' ucAssessment
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        Controls.Add(RoundedButton2)
         Controls.Add(btnDelAssessment)
         Controls.Add(btnEditAssessment)
         Controls.Add(btnAddAssessment)
@@ -141,6 +119,5 @@ Partial Class ucAssessment
     Friend WithEvents btnDelAssessment As RoundedButton
     Friend WithEvents btnEditAssessment As RoundedButton
     Friend WithEvents btnAddAssessment As RoundedButton
-    Friend WithEvents RoundedButton2 As RoundedButton
 
 End Class
