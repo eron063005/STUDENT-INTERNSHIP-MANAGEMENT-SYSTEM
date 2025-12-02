@@ -193,6 +193,7 @@ Partial Class frmAddSupervisor
         ' btnExitAddSpv
         ' 
         btnExitAddSpv.BackColor = Color.Transparent
+        btnExitAddSpv.Cursor = Cursors.Hand
         btnExitAddSpv.FlatAppearance.BorderSize = 0
         btnExitAddSpv.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddSpv.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -210,14 +211,15 @@ Partial Class frmAddSupervisor
         btnAddSpvAdd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddSpvAdd.BorderSize = 5
         btnAddSpvAdd.CornerRadius = 10
+        btnAddSpvAdd.Cursor = Cursors.Hand
         btnAddSpvAdd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddSpvAdd.FlatStyle = FlatStyle.Flat
         btnAddSpvAdd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddSpvAdd.ForeColor = SystemColors.ControlText
-        btnAddSpvAdd.HoverColor = Color.Yellow
+        btnAddSpvAdd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddSpvAdd.Location = New Point(891, 519)
         btnAddSpvAdd.Name = "btnAddSpvAdd"
-        btnAddSpvAdd.PressedColor = Color.Red
+        btnAddSpvAdd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddSpvAdd.Size = New Size(171, 63)
         btnAddSpvAdd.TabIndex = 82
         btnAddSpvAdd.Text = "Add"
@@ -229,14 +231,15 @@ Partial Class frmAddSupervisor
         btnAddSpvCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddSpvCancel.BorderSize = 5
         btnAddSpvCancel.CornerRadius = 10
+        btnAddSpvCancel.Cursor = Cursors.Hand
         btnAddSpvCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddSpvCancel.FlatStyle = FlatStyle.Flat
         btnAddSpvCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddSpvCancel.ForeColor = SystemColors.ControlText
-        btnAddSpvCancel.HoverColor = Color.Yellow
+        btnAddSpvCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddSpvCancel.Location = New Point(700, 519)
         btnAddSpvCancel.Name = "btnAddSpvCancel"
-        btnAddSpvCancel.PressedColor = Color.Red
+        btnAddSpvCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddSpvCancel.Size = New Size(171, 63)
         btnAddSpvCancel.TabIndex = 81
         btnAddSpvCancel.Text = "Cancel "

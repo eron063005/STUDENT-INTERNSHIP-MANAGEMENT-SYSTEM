@@ -197,7 +197,7 @@ Public Class Dashboard
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles LogOut.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Dim result As DialogResult
         result = MessageBox.Show("Are you sure you want to Log Out?",
                                  "Log Out Confirmation",
@@ -205,9 +205,16 @@ Public Class Dashboard
                                  MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
-            Dim loginForm As New LogIn() ' Create a new instance
+            Dim loginForm As New LogIn ' Create a new instance
             loginForm.Show()
-            Me.Close() ' Optionally close the current form
+            Close() ' Optionally close the current form
         End If
+    End Sub
+
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim addForm As New frmFacProfile()
+        ' Kunin parent form (Dashboard) at tawagin ang helper
+        Dim parentForm As Dashboard = Me.FindForm()
+        parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
     End Sub
 End Class

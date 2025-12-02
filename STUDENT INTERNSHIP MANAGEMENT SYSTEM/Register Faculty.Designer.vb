@@ -22,7 +22,6 @@ Partial Class Register_Faculty
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Panel1 = New Panel()
         Label3 = New Label()
         PictureBox1 = New PictureBox()
         RoundedPanel1 = New RoundedPanel()
@@ -58,19 +57,11 @@ Partial Class Register_Faculty
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.FromArgb(CByte(150), CByte(150), CByte(150))
-        Panel1.Location = New Point(912, 66)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(16, 923)
-        Panel1.TabIndex = 10
-        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 40.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.FromArgb(CByte(222), CByte(237), CByte(238))
+        Label3.ForeColor = Color.White
         Label3.Location = New Point(100, 791)
         Label3.Name = "Label3"
         Label3.Size = New Size(723, 160)
@@ -191,6 +182,7 @@ Partial Class Register_Faculty
         ' 
         ' MaskedTextBox1
         ' 
+        MaskedTextBox1.BorderStyle = BorderStyle.FixedSingle
         MaskedTextBox1.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         MaskedTextBox1.Location = New Point(392, 466)
         MaskedTextBox1.Name = "MaskedTextBox1"
@@ -438,7 +430,6 @@ Partial Class Register_Faculty
         Controls.Add(RoundedPanel1)
         Controls.Add(Label3)
         Controls.Add(PictureBox1)
-        Controls.Add(Panel1)
         Controls.Add(PictureBox2)
         FormBorderStyle = FormBorderStyle.None
         Name = "Register_Faculty"
@@ -451,8 +442,6 @@ Partial Class Register_Faculty
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel

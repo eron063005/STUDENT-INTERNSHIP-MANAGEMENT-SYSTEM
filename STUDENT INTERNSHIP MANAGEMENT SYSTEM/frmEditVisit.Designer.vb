@@ -54,6 +54,7 @@ Partial Class frmEditVisit
         ' btnExitEditVisit
         ' 
         btnExitEditVisit.BackColor = Color.Transparent
+        btnExitEditVisit.Cursor = Cursors.Hand
         btnExitEditVisit.FlatAppearance.BorderSize = 0
         btnExitEditVisit.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditVisit.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -71,14 +72,15 @@ Partial Class frmEditVisit
         btnSaveVisit.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnSaveVisit.BorderSize = 5
         btnSaveVisit.CornerRadius = 10
+        btnSaveVisit.Cursor = Cursors.Hand
         btnSaveVisit.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnSaveVisit.FlatStyle = FlatStyle.Flat
         btnSaveVisit.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveVisit.ForeColor = Color.Black
-        btnSaveVisit.HoverColor = Color.Yellow
+        btnSaveVisit.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveVisit.Location = New Point(891, 519)
         btnSaveVisit.Name = "btnSaveVisit"
-        btnSaveVisit.PressedColor = Color.Red
+        btnSaveVisit.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveVisit.Size = New Size(171, 63)
         btnSaveVisit.TabIndex = 66
         btnSaveVisit.Text = "Save"
@@ -90,14 +92,15 @@ Partial Class frmEditVisit
         btnEditVisitCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnEditVisitCancel.BorderSize = 5
         btnEditVisitCancel.CornerRadius = 10
+        btnEditVisitCancel.Cursor = Cursors.Hand
         btnEditVisitCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnEditVisitCancel.FlatStyle = FlatStyle.Flat
         btnEditVisitCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditVisitCancel.ForeColor = Color.Black
-        btnEditVisitCancel.HoverColor = Color.Yellow
+        btnEditVisitCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditVisitCancel.Location = New Point(700, 519)
         btnEditVisitCancel.Name = "btnEditVisitCancel"
-        btnEditVisitCancel.PressedColor = Color.Red
+        btnEditVisitCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditVisitCancel.Size = New Size(171, 63)
         btnEditVisitCancel.TabIndex = 65
         btnEditVisitCancel.Text = "Cancel "
@@ -191,6 +194,7 @@ Partial Class frmEditVisit
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(nudEditVisitScore)

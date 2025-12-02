@@ -140,4 +140,11 @@ Public Class ucStudent
             MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub btnarchStudents_Click(sender As Object, e As EventArgs) Handles btnarchStudents.Click
+        Dim addForm As New archStudent()
+        ' Kunin parent form (Dashboard) at tawagin ang helper
+        Dim parentForm As Dashboard = Me.FindForm()
+        parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+    End Sub
 End Class

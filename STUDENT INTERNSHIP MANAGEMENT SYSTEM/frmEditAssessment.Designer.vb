@@ -107,14 +107,15 @@ Partial Class frmEditAssessment
         btnSaveAssess.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnSaveAssess.BorderSize = 5
         btnSaveAssess.CornerRadius = 10
+        btnSaveAssess.Cursor = Cursors.Hand
         btnSaveAssess.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnSaveAssess.FlatStyle = FlatStyle.Flat
         btnSaveAssess.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveAssess.ForeColor = Color.Black
-        btnSaveAssess.HoverColor = Color.Yellow
+        btnSaveAssess.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveAssess.Location = New Point(753, 513)
         btnSaveAssess.Name = "btnSaveAssess"
-        btnSaveAssess.PressedColor = Color.Red
+        btnSaveAssess.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveAssess.Size = New Size(171, 63)
         btnSaveAssess.TabIndex = 45
         btnSaveAssess.Text = "Save"
@@ -126,14 +127,15 @@ Partial Class frmEditAssessment
         btnEditAssessCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnEditAssessCancel.BorderSize = 5
         btnEditAssessCancel.CornerRadius = 10
+        btnEditAssessCancel.Cursor = Cursors.Hand
         btnEditAssessCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnEditAssessCancel.FlatStyle = FlatStyle.Flat
         btnEditAssessCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditAssessCancel.ForeColor = Color.Black
-        btnEditAssessCancel.HoverColor = Color.Yellow
+        btnEditAssessCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditAssessCancel.Location = New Point(562, 513)
         btnEditAssessCancel.Name = "btnEditAssessCancel"
-        btnEditAssessCancel.PressedColor = Color.Red
+        btnEditAssessCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditAssessCancel.Size = New Size(171, 63)
         btnEditAssessCancel.TabIndex = 44
         btnEditAssessCancel.Text = "Cancel "
@@ -200,6 +202,7 @@ Partial Class frmEditAssessment
         ' btnExitEditAssessment
         ' 
         btnExitEditAssessment.BackColor = Color.Transparent
+        btnExitEditAssessment.Cursor = Cursors.Hand
         btnExitEditAssessment.FlatAppearance.BorderSize = 0
         btnExitEditAssessment.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditAssessment.FlatAppearance.MouseOverBackColor = Color.Transparent

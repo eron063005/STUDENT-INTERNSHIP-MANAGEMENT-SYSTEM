@@ -109,7 +109,7 @@ Partial Class LogIn
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 40.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.FromArgb(CByte(222), CByte(237), CByte(238))
+        Label3.ForeColor = Color.White
         Label3.Location = New Point(101, 791)
         Label3.Name = "Label3"
         Label3.Size = New Size(723, 160)

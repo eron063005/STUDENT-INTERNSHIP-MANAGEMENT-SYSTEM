@@ -56,6 +56,7 @@ Partial Class frmAddStudent
         ' btnExitAddStd
         ' 
         btnExitAddStd.BackColor = Color.Transparent
+        btnExitAddStd.Cursor = Cursors.Hand
         btnExitAddStd.FlatAppearance.BorderSize = 0
         btnExitAddStd.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddStd.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -246,14 +247,15 @@ Partial Class frmAddStudent
         btnAddStdCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddStdCancel.BorderSize = 5
         btnAddStdCancel.CornerRadius = 10
+        btnAddStdCancel.Cursor = Cursors.Hand
         btnAddStdCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddStdCancel.FlatStyle = FlatStyle.Flat
         btnAddStdCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddStdCancel.ForeColor = Color.Black
-        btnAddStdCancel.HoverColor = Color.Yellow
+        btnAddStdCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddStdCancel.Location = New Point(697, 618)
         btnAddStdCancel.Name = "btnAddStdCancel"
-        btnAddStdCancel.PressedColor = Color.Red
+        btnAddStdCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddStdCancel.Size = New Size(171, 63)
         btnAddStdCancel.TabIndex = 30
         btnAddStdCancel.Text = "Cancel "
@@ -265,14 +267,15 @@ Partial Class frmAddStudent
         btnAddStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddStd.BorderSize = 5
         btnAddStd.CornerRadius = 10
+        btnAddStd.Cursor = Cursors.Hand
         btnAddStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddStd.FlatStyle = FlatStyle.Flat
         btnAddStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddStd.ForeColor = Color.Black
-        btnAddStd.HoverColor = Color.Yellow
+        btnAddStd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddStd.Location = New Point(891, 618)
         btnAddStd.Name = "btnAddStd"
-        btnAddStd.PressedColor = Color.Red
+        btnAddStd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddStd.Size = New Size(171, 63)
         btnAddStd.TabIndex = 31
         btnAddStd.Text = "Add"

@@ -30,7 +30,7 @@ Partial Class ucReport
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Name = "ucReport"
-        Size = New Size(1513, 884)
+        Size = New Size(1496, 884)
         ResumeLayout(False)
     End Sub
 

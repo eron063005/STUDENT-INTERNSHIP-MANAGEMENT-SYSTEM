@@ -35,15 +35,16 @@ Partial Class frmEditCompany
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        Panel2 = New Panel()
         txtEditCompName = New TextBox()
         Label4 = New Label()
+        Panel2 = New Panel()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnExitEditComp
         ' 
         btnExitEditComp.BackColor = Color.Transparent
+        btnExitEditComp.Cursor = Cursors.Hand
         btnExitEditComp.FlatAppearance.BorderSize = 0
         btnExitEditComp.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditComp.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -70,14 +71,15 @@ Partial Class frmEditCompany
         btnSaveComp.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnSaveComp.BorderSize = 5
         btnSaveComp.CornerRadius = 10
+        btnSaveComp.Cursor = Cursors.Hand
         btnSaveComp.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnSaveComp.FlatStyle = FlatStyle.Flat
         btnSaveComp.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveComp.ForeColor = Color.Black
-        btnSaveComp.HoverColor = Color.Yellow
+        btnSaveComp.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveComp.Location = New Point(891, 519)
         btnSaveComp.Name = "btnSaveComp"
-        btnSaveComp.PressedColor = Color.Red
+        btnSaveComp.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveComp.Size = New Size(171, 63)
         btnSaveComp.TabIndex = 54
         btnSaveComp.Text = "Save"
@@ -89,14 +91,15 @@ Partial Class frmEditCompany
         btnEditCompCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnEditCompCancel.BorderSize = 5
         btnEditCompCancel.CornerRadius = 10
+        btnEditCompCancel.Cursor = Cursors.Hand
         btnEditCompCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnEditCompCancel.FlatStyle = FlatStyle.Flat
         btnEditCompCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditCompCancel.ForeColor = Color.Black
-        btnEditCompCancel.HoverColor = Color.Yellow
+        btnEditCompCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditCompCancel.Location = New Point(700, 519)
         btnEditCompCancel.Name = "btnEditCompCancel"
-        btnEditCompCancel.PressedColor = Color.Red
+        btnEditCompCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditCompCancel.Size = New Size(171, 63)
         btnEditCompCancel.TabIndex = 53
         btnEditCompCancel.Text = "Cancel "
@@ -181,6 +184,7 @@ Partial Class frmEditCompany
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(txtEditCompName)
@@ -195,14 +199,6 @@ Partial Class frmEditCompany
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.Silver
-        Panel2.Location = New Point(44, 131)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(990, 4)
-        Panel2.TabIndex = 56
         ' 
         ' txtEditCompName
         ' 
@@ -222,6 +218,14 @@ Partial Class frmEditCompany
         Label4.Size = New Size(199, 27)
         Label4.TabIndex = 80
         Label4.Text = "Company Name"
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Silver
+        Panel2.Location = New Point(44, 131)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(990, 4)
+        Panel2.TabIndex = 56
         ' 
         ' frmEditCompany
         ' 

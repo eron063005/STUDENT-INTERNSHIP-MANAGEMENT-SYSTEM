@@ -37,6 +37,7 @@ Partial Class ucCompanyCard
         ' 
         ' panelCard
         ' 
+        panelCard.BackColor = Color.Transparent
         panelCard.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
         panelCard.BorderSize = 5
         panelCard.Controls.Add(lblCompanyEmail)
@@ -149,14 +150,15 @@ Partial Class ucCompanyCard
         btnViewSupervisor.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
         btnViewSupervisor.BorderSize = 5
         btnViewSupervisor.CornerRadius = 10
+        btnViewSupervisor.Cursor = Cursors.Hand
         btnViewSupervisor.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         btnViewSupervisor.FlatStyle = FlatStyle.Flat
         btnViewSupervisor.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnViewSupervisor.ForeColor = Color.Black
-        btnViewSupervisor.HoverColor = Color.Yellow
+        btnViewSupervisor.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnViewSupervisor.Location = New Point(396, 423)
         btnViewSupervisor.Name = "btnViewSupervisor"
-        btnViewSupervisor.PressedColor = Color.Red
+        btnViewSupervisor.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnViewSupervisor.Size = New Size(233, 64)
         btnViewSupervisor.TabIndex = 0
         btnViewSupervisor.Text = "View Supervisor "

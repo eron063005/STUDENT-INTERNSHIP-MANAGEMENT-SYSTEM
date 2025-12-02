@@ -19,7 +19,7 @@ Public Class LogIn
                 Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
 
                 If count > 0 Then
-                    MessageBox.Show("Login Successful!")
+                    MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     '🔹 Open next form (dashboard)
                     LoggedFacultyID = txtFacultyID.Text

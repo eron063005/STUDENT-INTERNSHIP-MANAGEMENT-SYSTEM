@@ -57,16 +57,17 @@ Partial Class frmViewSupervisor
         btnDelSupervisor.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnDelSupervisor.BorderSize = 5
         btnDelSupervisor.CornerRadius = 10
+        btnDelSupervisor.Cursor = Cursors.Hand
         btnDelSupervisor.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnDelSupervisor.FlatStyle = FlatStyle.Flat
         btnDelSupervisor.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnDelSupervisor.ForeColor = Color.Black
-        btnDelSupervisor.HoverColor = Color.Yellow
+        btnDelSupervisor.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnDelSupervisor.Image = My.Resources.Resources.Delete2
         btnDelSupervisor.ImageAlign = ContentAlignment.MiddleLeft
         btnDelSupervisor.Location = New Point(502, 511)
         btnDelSupervisor.Name = "btnDelSupervisor"
-        btnDelSupervisor.PressedColor = Color.Red
+        btnDelSupervisor.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnDelSupervisor.Size = New Size(203, 60)
         btnDelSupervisor.TabIndex = 79
         btnDelSupervisor.Text = "Delete "
@@ -79,14 +80,15 @@ Partial Class frmViewSupervisor
         btnAddSupervisor.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddSupervisor.BorderSize = 5
         btnAddSupervisor.CornerRadius = 10
+        btnAddSupervisor.Cursor = Cursors.Hand
         btnAddSupervisor.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddSupervisor.FlatStyle = FlatStyle.Flat
         btnAddSupervisor.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddSupervisor.ForeColor = Color.Black
-        btnAddSupervisor.HoverColor = Color.Yellow
+        btnAddSupervisor.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddSupervisor.Location = New Point(26, 511)
         btnAddSupervisor.Name = "btnAddSupervisor"
-        btnAddSupervisor.PressedColor = Color.Red
+        btnAddSupervisor.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddSupervisor.Size = New Size(273, 60)
         btnAddSupervisor.TabIndex = 77
         btnAddSupervisor.Text = "Add Supervisor"
@@ -98,14 +100,15 @@ Partial Class frmViewSupervisor
         btnEditSupervisor.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnEditSupervisor.BorderSize = 5
         btnEditSupervisor.CornerRadius = 10
+        btnEditSupervisor.Cursor = Cursors.Hand
         btnEditSupervisor.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnEditSupervisor.FlatStyle = FlatStyle.Flat
         btnEditSupervisor.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnEditSupervisor.ForeColor = Color.Black
-        btnEditSupervisor.HoverColor = Color.Yellow
+        btnEditSupervisor.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditSupervisor.Location = New Point(310, 511)
         btnEditSupervisor.Name = "btnEditSupervisor"
-        btnEditSupervisor.PressedColor = Color.Red
+        btnEditSupervisor.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditSupervisor.Size = New Size(182, 60)
         btnEditSupervisor.TabIndex = 78
         btnEditSupervisor.Text = "Edit"
@@ -123,6 +126,7 @@ Partial Class frmViewSupervisor
         ' btnExitSupervisor
         ' 
         btnExitSupervisor.BackColor = Color.Transparent
+        btnExitSupervisor.Cursor = Cursors.Hand
         btnExitSupervisor.FlatAppearance.BorderSize = 0
         btnExitSupervisor.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitSupervisor.FlatAppearance.MouseOverBackColor = Color.Transparent

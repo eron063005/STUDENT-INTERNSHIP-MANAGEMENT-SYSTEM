@@ -22,12 +22,14 @@ Partial Class ucPlacement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucPlacement))
         dgvPlacement = New DataGridView()
         btnDelPlacement = New RoundedButton()
         btnEditPlacement = New RoundedButton()
         btnAddPlacement = New RoundedButton()
         RoundedPanel3 = New RoundedPanel()
         ComboBox2 = New ComboBox()
+        btnarchPlacement = New Button()
         CType(dgvPlacement, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel3.SuspendLayout()
         SuspendLayout()
@@ -49,15 +51,16 @@ Partial Class ucPlacement
         btnDelPlacement.CornerRadius = 18
         btnDelPlacement.Cursor = Cursors.Hand
         btnDelPlacement.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnDelPlacement.FlatAppearance.BorderSize = 0
         btnDelPlacement.FlatStyle = FlatStyle.Flat
         btnDelPlacement.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnDelPlacement.ForeColor = Color.Black
-        btnDelPlacement.HoverColor = Color.Yellow
+        btnDelPlacement.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnDelPlacement.Image = My.Resources.Resources.Delete2
         btnDelPlacement.ImageAlign = ContentAlignment.MiddleLeft
-        btnDelPlacement.Location = New Point(602, 737)
+        btnDelPlacement.Location = New Point(602, 752)
         btnDelPlacement.Name = "btnDelPlacement"
-        btnDelPlacement.PressedColor = Color.Red
+        btnDelPlacement.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnDelPlacement.Size = New Size(209, 77)
         btnDelPlacement.TabIndex = 6
         btnDelPlacement.Text = "Delete "
@@ -72,13 +75,14 @@ Partial Class ucPlacement
         btnEditPlacement.CornerRadius = 18
         btnEditPlacement.Cursor = Cursors.Hand
         btnEditPlacement.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnEditPlacement.FlatAppearance.BorderSize = 0
         btnEditPlacement.FlatStyle = FlatStyle.Flat
         btnEditPlacement.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnEditPlacement.ForeColor = Color.Black
-        btnEditPlacement.HoverColor = Color.Yellow
-        btnEditPlacement.Location = New Point(355, 737)
+        btnEditPlacement.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnEditPlacement.Location = New Point(355, 752)
         btnEditPlacement.Name = "btnEditPlacement"
-        btnEditPlacement.PressedColor = Color.Red
+        btnEditPlacement.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditPlacement.Size = New Size(219, 77)
         btnEditPlacement.TabIndex = 5
         btnEditPlacement.Text = "Edit"
@@ -92,13 +96,14 @@ Partial Class ucPlacement
         btnAddPlacement.CornerRadius = 18
         btnAddPlacement.Cursor = Cursors.Hand
         btnAddPlacement.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddPlacement.FlatAppearance.BorderSize = 0
         btnAddPlacement.FlatStyle = FlatStyle.Flat
         btnAddPlacement.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddPlacement.ForeColor = Color.Black
-        btnAddPlacement.HoverColor = Color.Yellow
-        btnAddPlacement.Location = New Point(28, 737)
+        btnAddPlacement.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnAddPlacement.Location = New Point(28, 752)
         btnAddPlacement.Name = "btnAddPlacement"
-        btnAddPlacement.PressedColor = Color.Red
+        btnAddPlacement.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddPlacement.Size = New Size(290, 77)
         btnAddPlacement.TabIndex = 4
         btnAddPlacement.Text = "Add Placement "
@@ -106,6 +111,7 @@ Partial Class ucPlacement
         ' 
         ' RoundedPanel3
         ' 
+        RoundedPanel3.BackColor = Color.Transparent
         RoundedPanel3.BorderColor = Color.Black
         RoundedPanel3.BorderSize = 2
         RoundedPanel3.Controls.Add(ComboBox2)
@@ -127,18 +133,33 @@ Partial Class ucPlacement
         ComboBox2.Size = New Size(236, 40)
         ComboBox2.TabIndex = 6
         ' 
+        ' btnarchPlacement
+        ' 
+        btnarchPlacement.Cursor = Cursors.Hand
+        btnarchPlacement.FlatAppearance.BorderSize = 0
+        btnarchPlacement.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        btnarchPlacement.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        btnarchPlacement.FlatStyle = FlatStyle.Flat
+        btnarchPlacement.Image = CType(resources.GetObject("btnarchPlacement.Image"), Image)
+        btnarchPlacement.Location = New Point(1342, 730)
+        btnarchPlacement.Name = "btnarchPlacement"
+        btnarchPlacement.Size = New Size(128, 119)
+        btnarchPlacement.TabIndex = 12
+        btnarchPlacement.UseVisualStyleBackColor = True
+        ' 
         ' ucPlacement
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        Controls.Add(btnarchPlacement)
         Controls.Add(RoundedPanel3)
         Controls.Add(btnDelPlacement)
         Controls.Add(btnEditPlacement)
         Controls.Add(btnAddPlacement)
         Controls.Add(dgvPlacement)
         Name = "ucPlacement"
-        Size = New Size(1513, 884)
+        Size = New Size(1496, 884)
         CType(dgvPlacement, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel3.ResumeLayout(False)
         ResumeLayout(False)
@@ -150,5 +171,6 @@ Partial Class ucPlacement
     Friend WithEvents btnAddPlacement As RoundedButton
     Friend WithEvents RoundedPanel3 As RoundedPanel
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents btnarchPlacement As Button
 
 End Class

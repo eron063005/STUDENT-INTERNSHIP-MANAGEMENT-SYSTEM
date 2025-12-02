@@ -187,6 +187,7 @@ Partial Class frmEditSupervisor
         ' btnExitEditSpv
         ' 
         btnExitEditSpv.BackColor = Color.Transparent
+        btnExitEditSpv.Cursor = Cursors.Hand
         btnExitEditSpv.FlatAppearance.BorderSize = 0
         btnExitEditSpv.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditSpv.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -208,10 +209,10 @@ Partial Class frmEditSupervisor
         btnSaveSpv.FlatStyle = FlatStyle.Flat
         btnSaveSpv.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveSpv.ForeColor = Color.Black
-        btnSaveSpv.HoverColor = Color.Yellow
+        btnSaveSpv.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveSpv.Location = New Point(891, 519)
         btnSaveSpv.Name = "btnSaveSpv"
-        btnSaveSpv.PressedColor = Color.Red
+        btnSaveSpv.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveSpv.Size = New Size(171, 63)
         btnSaveSpv.TabIndex = 82
         btnSaveSpv.Text = "Save"
@@ -227,10 +228,10 @@ Partial Class frmEditSupervisor
         btnEditSpvCancel.FlatStyle = FlatStyle.Flat
         btnEditSpvCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditSpvCancel.ForeColor = Color.Black
-        btnEditSpvCancel.HoverColor = Color.Yellow
+        btnEditSpvCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditSpvCancel.Location = New Point(700, 519)
         btnEditSpvCancel.Name = "btnEditSpvCancel"
-        btnEditSpvCancel.PressedColor = Color.Red
+        btnEditSpvCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditSpvCancel.Size = New Size(171, 63)
         btnEditSpvCancel.TabIndex = 81
         btnEditSpvCancel.Text = "Cancel "

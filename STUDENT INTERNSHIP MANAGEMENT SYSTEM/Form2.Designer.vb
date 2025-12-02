@@ -22,18 +22,16 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Panel1 = New Panel()
+        Button1 = New Button()
         lblSubTxt = New Label()
-        LogOut = New Button()
         btnExit = New Button()
         lblTitleNav = New Label()
         btnDashboard = New Button()
         Panel2 = New Panel()
-        btnAssessment = New Button()
-        Panel3 = New Panel()
         Label2 = New Label()
         Label1 = New Label()
-        PictureBox1 = New PictureBox()
         btnAssessment = New Button()
         Panel3 = New Panel()
         btnReport = New Button()
@@ -41,6 +39,7 @@ Partial Class Dashboard
         btnPlacement = New Button()
         btnCompany = New Button()
         btnStudent = New Button()
+        PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         panelMain = New Panel()
         Panel1.SuspendLayout()
@@ -52,14 +51,28 @@ Partial Class Dashboard
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
+        Panel1.Controls.Add(Button1)
         Panel1.Controls.Add(lblSubTxt)
-        Panel1.Controls.Add(LogOut)
         Panel1.Controls.Add(btnExit)
         Panel1.Controls.Add(lblTitleNav)
         Panel1.Location = New Point(400, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(1520, 196)
         Panel1.TabIndex = 1
+        ' 
+        ' Button1
+        ' 
+        Button1.Cursor = Cursors.Hand
+        Button1.FlatAppearance.BorderSize = 0
+        Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
+        Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
+        Button1.FlatStyle = FlatStyle.Flat
+        Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
+        Button1.Location = New Point(1293, 23)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(146, 143)
+        Button1.TabIndex = 11
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' lblSubTxt
         ' 
@@ -70,20 +83,6 @@ Partial Class Dashboard
         lblSubTxt.Size = New Size(104, 34)
         lblSubTxt.TabIndex = 10
         lblSubTxt.Text = "Label3"
-        ' 
-        ' LogOut
-        ' 
-        LogOut.Cursor = Cursors.Hand
-        LogOut.FlatAppearance.BorderSize = 0
-        LogOut.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
-        LogOut.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
-        LogOut.FlatStyle = FlatStyle.Flat
-        LogOut.Image = My.Resources.Resources.Log_Out
-        LogOut.Location = New Point(1406, 54)
-        LogOut.Name = "LogOut"
-        LogOut.Size = New Size(72, 86)
-        LogOut.TabIndex = 9
-        LogOut.UseVisualStyleBackColor = True
         ' 
         ' btnExit
         ' 
@@ -103,7 +102,7 @@ Partial Class Dashboard
         ' lblTitleNav
         ' 
         lblTitleNav.AutoSize = True
-        lblTitleNav.Font = New Font("Century Gothic", 75.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTitleNav.Font = New Font("Century Gothic", 75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblTitleNav.ForeColor = Color.White
         lblTitleNav.Location = New Point(17, 19)
         lblTitleNav.Name = "lblTitleNav"
@@ -132,11 +131,8 @@ Partial Class Dashboard
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
-        Panel2.Controls.Add(btnAssessment)
-        Panel2.Controls.Add(Panel3)
         Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(PictureBox1)
         Panel2.Controls.Add(btnAssessment)
         Panel2.Controls.Add(Panel3)
         Panel2.Controls.Add(btnReport)
@@ -157,8 +153,8 @@ Partial Class Dashboard
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.FromArgb(CByte(173), CByte(181), CByte(189))
+        Label2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.White
         Label2.Location = New Point(92, 368)
         Label2.Name = "Label2"
         Label2.Size = New Size(211, 28)
@@ -169,25 +165,13 @@ Partial Class Dashboard
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(173), CByte(181), CByte(189))
+        Label1.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
         Label1.Location = New Point(63, 328)
         Label1.Name = "Label1"
         Label1.Size = New Size(282, 41)
         Label1.TabIndex = 3
         Label1.Text = "Student Internship"
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.ErrorImage = Nothing
-        PictureBox1.Image = My.Resources.Resources.Vaia_Logo__Custom_1
-        PictureBox1.Location = New Point(53, 23)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(292, 288)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 3
-        PictureBox1.TabStop = False
         ' 
         ' btnAssessment
         ' 
@@ -195,7 +179,7 @@ Partial Class Dashboard
         btnAssessment.Cursor = Cursors.Hand
         btnAssessment.FlatAppearance.BorderColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         btnAssessment.FlatStyle = FlatStyle.Flat
-        btnAssessment.Font = New Font("Century Gothic", 30.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnAssessment.Font = New Font("Century Gothic", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAssessment.ForeColor = Color.White
         btnAssessment.Image = My.Resources.Resources.Assessment
         btnAssessment.ImageAlign = ContentAlignment.MiddleLeft
@@ -215,35 +199,13 @@ Partial Class Dashboard
         Panel3.Size = New Size(318, 7)
         Panel3.TabIndex = 10
         ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.FromArgb(CByte(173), CByte(181), CByte(189))
-        Label2.Location = New Point(92, 368)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(211, 28)
-        Label2.TabIndex = 9
-        Label2.Text = "Management System"
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(173), CByte(181), CByte(189))
-        Label1.Location = New Point(63, 328)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(282, 41)
-        Label1.TabIndex = 3
-        Label1.Text = "Student Internship"
-        ' 
         ' btnReport
         ' 
         btnReport.BackColor = Color.FromArgb(CByte(80), CByte(111), CByte(138))
         btnReport.Cursor = Cursors.Hand
         btnReport.FlatAppearance.BorderColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         btnReport.FlatStyle = FlatStyle.Flat
-        btnReport.Font = New Font("Century Gothic", 30.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnReport.Font = New Font("Century Gothic", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnReport.ForeColor = Color.White
         btnReport.Image = My.Resources.Resources.Report1
         btnReport.ImageAlign = ContentAlignment.MiddleLeft
@@ -260,7 +222,7 @@ Partial Class Dashboard
         btnVisit.Cursor = Cursors.Hand
         btnVisit.FlatAppearance.BorderColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         btnVisit.FlatStyle = FlatStyle.Flat
-        btnVisit.Font = New Font("Century Gothic", 30.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnVisit.Font = New Font("Century Gothic", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnVisit.ForeColor = Color.White
         btnVisit.Image = My.Resources.Resources.Visit1
         btnVisit.ImageAlign = ContentAlignment.MiddleLeft
@@ -295,7 +257,7 @@ Partial Class Dashboard
         btnCompany.Cursor = Cursors.Hand
         btnCompany.FlatAppearance.BorderColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         btnCompany.FlatStyle = FlatStyle.Flat
-        btnCompany.Font = New Font("Century Gothic", 30.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCompany.Font = New Font("Century Gothic", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCompany.ForeColor = Color.White
         btnCompany.Image = My.Resources.Resources.Company
         btnCompany.ImageAlign = ContentAlignment.MiddleLeft
@@ -313,7 +275,7 @@ Partial Class Dashboard
         btnStudent.Cursor = Cursors.Hand
         btnStudent.FlatAppearance.BorderColor = Color.FromArgb(CByte(23), CByte(31), CByte(38))
         btnStudent.FlatStyle = FlatStyle.Flat
-        btnStudent.Font = New Font("Century Gothic", 36.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnStudent.Font = New Font("Century Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnStudent.ForeColor = Color.White
         btnStudent.Image = My.Resources.Resources.Students
         btnStudent.ImageAlign = ContentAlignment.MiddleLeft
@@ -324,6 +286,18 @@ Partial Class Dashboard
         btnStudent.Text = "Student "
         btnStudent.TextAlign = ContentAlignment.MiddleRight
         btnStudent.UseVisualStyleBackColor = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.ErrorImage = Nothing
+        PictureBox1.Image = My.Resources.Resources.Vaia_Logo__Custom_1
+        PictureBox1.Location = New Point(53, 23)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(292, 288)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 3
+        PictureBox1.TabStop = False
         ' 
         ' PictureBox2
         ' 
@@ -343,7 +317,7 @@ Partial Class Dashboard
         ' 
         ' Dashboard
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         ClientSize = New Size(1920, 1080)
@@ -379,7 +353,7 @@ Partial Class Dashboard
     Friend WithEvents btnExit As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnAssessment As Button
-    Friend WithEvents LogOut As Button
     Friend WithEvents lblSubTxt As Label
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

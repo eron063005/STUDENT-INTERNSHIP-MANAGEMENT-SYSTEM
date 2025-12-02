@@ -56,6 +56,7 @@ Partial Class frmEditStudent
         ' btnExitEditStd
         ' 
         btnExitEditStd.BackColor = Color.Transparent
+        btnExitEditStd.Cursor = Cursors.Hand
         btnExitEditStd.FlatAppearance.BorderSize = 0
         btnExitEditStd.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditStd.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -82,14 +83,15 @@ Partial Class frmEditStudent
         btnSaveStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnSaveStd.BorderSize = 5
         btnSaveStd.CornerRadius = 10
+        btnSaveStd.Cursor = Cursors.Hand
         btnSaveStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnSaveStd.FlatStyle = FlatStyle.Flat
         btnSaveStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSaveStd.ForeColor = Color.Black
-        btnSaveStd.HoverColor = Color.Yellow
+        btnSaveStd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveStd.Location = New Point(891, 618)
         btnSaveStd.Name = "btnSaveStd"
-        btnSaveStd.PressedColor = Color.Red
+        btnSaveStd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveStd.Size = New Size(171, 63)
         btnSaveStd.TabIndex = 53
         btnSaveStd.Text = "Save"
@@ -101,14 +103,15 @@ Partial Class frmEditStudent
         btnEditStdCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnEditStdCancel.BorderSize = 5
         btnEditStdCancel.CornerRadius = 10
+        btnEditStdCancel.Cursor = Cursors.Hand
         btnEditStdCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnEditStdCancel.FlatStyle = FlatStyle.Flat
         btnEditStdCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditStdCancel.ForeColor = Color.Black
-        btnEditStdCancel.HoverColor = Color.Yellow
+        btnEditStdCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditStdCancel.Location = New Point(697, 618)
         btnEditStdCancel.Name = "btnEditStdCancel"
-        btnEditStdCancel.PressedColor = Color.Red
+        btnEditStdCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditStdCancel.Size = New Size(171, 63)
         btnEditStdCancel.TabIndex = 52
         btnEditStdCancel.Text = "Cancel "
@@ -279,6 +282,7 @@ Partial Class frmEditStudent
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(dtpEditBirthday)
@@ -328,7 +332,7 @@ Partial Class frmEditStudent
         ' 
         Label12.AutoSize = True
         Label12.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label12.Location = New Point(417, 537)
+        Label12.Location = New Point(549, 524)
         Label12.Name = "Label12"
         Label12.Size = New Size(110, 27)
         Label12.TabIndex = 56

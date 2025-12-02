@@ -153,6 +153,7 @@ Partial Class frmAddAssessment
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(nudAddAssessGrade)
@@ -224,6 +225,7 @@ Partial Class frmAddAssessment
         ' btnExitAddAssessment
         ' 
         btnExitAddAssessment.BackColor = Color.Transparent
+        btnExitAddAssessment.Cursor = Cursors.Hand
         btnExitAddAssessment.FlatAppearance.BorderSize = 0
         btnExitAddAssessment.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddAssessment.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -250,14 +252,15 @@ Partial Class frmAddAssessment
         btnAddAssess.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddAssess.BorderSize = 5
         btnAddAssess.CornerRadius = 10
+        btnAddAssess.Cursor = Cursors.Hand
         btnAddAssess.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddAssess.FlatStyle = FlatStyle.Flat
         btnAddAssess.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddAssess.ForeColor = Color.Black
-        btnAddAssess.HoverColor = Color.Yellow
+        btnAddAssess.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddAssess.Location = New Point(753, 513)
         btnAddAssess.Name = "btnAddAssess"
-        btnAddAssess.PressedColor = Color.Red
+        btnAddAssess.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddAssess.Size = New Size(171, 63)
         btnAddAssess.TabIndex = 55
         btnAddAssess.Text = "Add"
@@ -280,14 +283,15 @@ Partial Class frmAddAssessment
         btnAddAssessCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddAssessCancel.BorderSize = 5
         btnAddAssessCancel.CornerRadius = 10
+        btnAddAssessCancel.Cursor = Cursors.Hand
         btnAddAssessCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddAssessCancel.FlatStyle = FlatStyle.Flat
         btnAddAssessCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddAssessCancel.ForeColor = Color.Black
-        btnAddAssessCancel.HoverColor = Color.Yellow
+        btnAddAssessCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddAssessCancel.Location = New Point(562, 513)
         btnAddAssessCancel.Name = "btnAddAssessCancel"
-        btnAddAssessCancel.PressedColor = Color.Red
+        btnAddAssessCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddAssessCancel.Size = New Size(171, 63)
         btnAddAssessCancel.TabIndex = 54
         btnAddAssessCancel.Text = "Cancel "

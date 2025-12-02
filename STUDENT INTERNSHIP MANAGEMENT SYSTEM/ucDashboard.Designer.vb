@@ -65,16 +65,15 @@ Partial Class ucDashboard
         ' RoundedPanel11
         ' 
         RoundedPanel11.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel11.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel11.BorderColor = Color.Black
         RoundedPanel11.BorderSize = 5
-        RoundedPanel11.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel11.Controls.Add(lblActiveIntern)
         RoundedPanel11.Controls.Add(Label1)
         RoundedPanel11.CornerRadius = 20
         RoundedPanel11.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel11.Location = New Point(44, 26)
         RoundedPanel11.Name = "RoundedPanel11"
-        RoundedPanel11.Size = New Size(329, 215)
+        RoundedPanel11.Size = New Size(353, 215)
         RoundedPanel11.TabIndex = 0
         ' 
         ' lblActiveIntern
@@ -82,7 +81,7 @@ Partial Class ucDashboard
         lblActiveIntern.AutoSize = True
         lblActiveIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         lblActiveIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblActiveIntern.Location = New Point(120, 69)
+        lblActiveIntern.Location = New Point(137, 69)
         lblActiveIntern.Name = "lblActiveIntern"
         lblActiveIntern.Size = New Size(84, 96)
         lblActiveIntern.TabIndex = 1
@@ -102,16 +101,15 @@ Partial Class ucDashboard
         ' RoundedPanel1
         ' 
         RoundedPanel1.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel1.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
-        RoundedPanel1.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel1.Controls.Add(lblPendingIntern)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel1.Location = New Point(401, 26)
+        RoundedPanel1.Location = New Point(405, 26)
         RoundedPanel1.Name = "RoundedPanel1"
-        RoundedPanel1.Size = New Size(329, 215)
+        RoundedPanel1.Size = New Size(353, 215)
         RoundedPanel1.TabIndex = 1
         ' 
         ' lblPendingIntern
@@ -119,7 +117,7 @@ Partial Class ucDashboard
         lblPendingIntern.AutoSize = True
         lblPendingIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         lblPendingIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPendingIntern.Location = New Point(124, 69)
+        lblPendingIntern.Location = New Point(145, 69)
         lblPendingIntern.Name = "lblPendingIntern"
         lblPendingIntern.Size = New Size(84, 96)
         lblPendingIntern.TabIndex = 2
@@ -139,16 +137,15 @@ Partial Class ucDashboard
         ' RoundedPanel2
         ' 
         RoundedPanel2.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel2.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel2.BorderColor = Color.Black
         RoundedPanel2.BorderSize = 5
-        RoundedPanel2.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel2.Controls.Add(lblPartnerComp)
         RoundedPanel2.Controls.Add(Label3)
         RoundedPanel2.CornerRadius = 20
         RoundedPanel2.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel2.Location = New Point(765, 26)
+        RoundedPanel2.Location = New Point(766, 26)
         RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(329, 215)
+        RoundedPanel2.Size = New Size(353, 215)
         RoundedPanel2.TabIndex = 2
         ' 
         ' lblPartnerComp
@@ -156,7 +153,7 @@ Partial Class ucDashboard
         lblPartnerComp.AutoSize = True
         lblPartnerComp.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         lblPartnerComp.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPartnerComp.Location = New Point(121, 69)
+        lblPartnerComp.Location = New Point(144, 69)
         lblPartnerComp.Name = "lblPartnerComp"
         lblPartnerComp.Size = New Size(84, 96)
         lblPartnerComp.TabIndex = 4
@@ -176,16 +173,15 @@ Partial Class ucDashboard
         ' RoundedPanel3
         ' 
         RoundedPanel3.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel3.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel3.BorderColor = Color.Black
         RoundedPanel3.BorderSize = 5
-        RoundedPanel3.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel3.Controls.Add(lblFacultyVisit)
         RoundedPanel3.Controls.Add(Label4)
         RoundedPanel3.CornerRadius = 20
         RoundedPanel3.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel3.Location = New Point(1117, 26)
+        RoundedPanel3.Location = New Point(1127, 26)
         RoundedPanel3.Name = "RoundedPanel3"
-        RoundedPanel3.Size = New Size(329, 215)
+        RoundedPanel3.Size = New Size(353, 215)
         RoundedPanel3.TabIndex = 3
         ' 
         ' lblFacultyVisit
@@ -193,7 +189,7 @@ Partial Class ucDashboard
         lblFacultyVisit.AutoSize = True
         lblFacultyVisit.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         lblFacultyVisit.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblFacultyVisit.Location = New Point(128, 69)
+        lblFacultyVisit.Location = New Point(150, 69)
         lblFacultyVisit.Name = "lblFacultyVisit"
         lblFacultyVisit.Size = New Size(84, 96)
         lblFacultyVisit.TabIndex = 4
@@ -213,9 +209,8 @@ Partial Class ucDashboard
         ' RoundedPanel4
         ' 
         RoundedPanel4.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel4.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel4.BorderColor = Color.Black
         RoundedPanel4.BorderSize = 5
-        RoundedPanel4.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel4.Controls.Add(RoundedPanel8)
         RoundedPanel4.Controls.Add(RoundedPanel7)
         RoundedPanel4.Controls.Add(Label9)
@@ -224,23 +219,22 @@ Partial Class ucDashboard
         RoundedPanel4.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel4.Location = New Point(44, 297)
         RoundedPanel4.Name = "RoundedPanel4"
-        RoundedPanel4.Size = New Size(686, 511)
+        RoundedPanel4.Size = New Size(686, 557)
         RoundedPanel4.TabIndex = 1
         ' 
         ' RoundedPanel8
         ' 
         RoundedPanel8.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel8.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel8.BorderColor = Color.Black
         RoundedPanel8.BorderSize = 5
-        RoundedPanel8.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel8.Controls.Add(lblRPStatus3)
         RoundedPanel8.Controls.Add(lblRPCompany3)
         RoundedPanel8.Controls.Add(lblRPName3)
         RoundedPanel8.CornerRadius = 20
         RoundedPanel8.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        RoundedPanel8.Location = New Point(37, 351)
+        RoundedPanel8.Location = New Point(37, 383)
         RoundedPanel8.Name = "RoundedPanel8"
-        RoundedPanel8.Size = New Size(606, 122)
+        RoundedPanel8.Size = New Size(606, 141)
         RoundedPanel8.TabIndex = 3
         ' 
         ' lblRPStatus3
@@ -279,17 +273,16 @@ Partial Class ucDashboard
         ' RoundedPanel7
         ' 
         RoundedPanel7.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel7.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel7.BorderColor = Color.Black
         RoundedPanel7.BorderSize = 5
-        RoundedPanel7.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel7.Controls.Add(lblRPStatus2)
         RoundedPanel7.Controls.Add(lblRPCompany2)
         RoundedPanel7.Controls.Add(lblRPName2)
         RoundedPanel7.CornerRadius = 20
         RoundedPanel7.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        RoundedPanel7.Location = New Point(37, 206)
+        RoundedPanel7.Location = New Point(37, 224)
         RoundedPanel7.Name = "RoundedPanel7"
-        RoundedPanel7.Size = New Size(606, 122)
+        RoundedPanel7.Size = New Size(606, 141)
         RoundedPanel7.TabIndex = 3
         ' 
         ' lblRPStatus2
@@ -339,9 +332,8 @@ Partial Class ucDashboard
         ' RoundedPanel6
         ' 
         RoundedPanel6.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel6.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel6.BorderColor = Color.Black
         RoundedPanel6.BorderSize = 5
-        RoundedPanel6.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel6.Controls.Add(lblRPStatus1)
         RoundedPanel6.Controls.Add(lblRPCompany1)
         RoundedPanel6.Controls.Add(lblRPName1)
@@ -349,7 +341,7 @@ Partial Class ucDashboard
         RoundedPanel6.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         RoundedPanel6.Location = New Point(37, 65)
         RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(606, 122)
+        RoundedPanel6.Size = New Size(606, 141)
         RoundedPanel6.TabIndex = 2
         ' 
         ' lblRPStatus1
@@ -388,24 +380,23 @@ Partial Class ucDashboard
         ' RoundedPanel5
         ' 
         RoundedPanel5.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        RoundedPanel5.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel5.BorderColor = Color.Black
         RoundedPanel5.BorderSize = 5
-        RoundedPanel5.BorderStyle = BorderStyle.FixedSingle
         RoundedPanel5.Controls.Add(panelUV)
         RoundedPanel5.Controls.Add(Label19)
         RoundedPanel5.CornerRadius = 20
         RoundedPanel5.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel5.Location = New Point(760, 297)
         RoundedPanel5.Name = "RoundedPanel5"
-        RoundedPanel5.Size = New Size(686, 511)
+        RoundedPanel5.Size = New Size(716, 557)
         RoundedPanel5.TabIndex = 2
         ' 
         ' panelUV
         ' 
         panelUV.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        panelUV.Location = New Point(28, 62)
+        panelUV.Location = New Point(25, 62)
         panelUV.Name = "panelUV"
-        panelUV.Size = New Size(633, 423)
+        panelUV.Size = New Size(666, 477)
         panelUV.TabIndex = 5
         ' 
         ' Label19
@@ -425,13 +416,13 @@ Partial Class ucDashboard
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Controls.Add(RoundedPanel5)
+        Controls.Add(RoundedPanel11)
         Controls.Add(RoundedPanel4)
         Controls.Add(RoundedPanel3)
         Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
-        Controls.Add(RoundedPanel11)
         Name = "ucDashboard"
-        Size = New Size(1513, 884)
+        Size = New Size(1496, 884)
         RoundedPanel11.ResumeLayout(False)
         RoundedPanel11.PerformLayout()
         RoundedPanel1.ResumeLayout(False)

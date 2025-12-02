@@ -56,14 +56,15 @@ Partial Class frmAddCompany
         btnAddCompAdd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddCompAdd.BorderSize = 5
         btnAddCompAdd.CornerRadius = 10
+        btnAddCompAdd.Cursor = Cursors.Hand
         btnAddCompAdd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddCompAdd.FlatStyle = FlatStyle.Flat
         btnAddCompAdd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddCompAdd.ForeColor = Color.Black
-        btnAddCompAdd.HoverColor = Color.Yellow
+        btnAddCompAdd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddCompAdd.Location = New Point(891, 519)
         btnAddCompAdd.Name = "btnAddCompAdd"
-        btnAddCompAdd.PressedColor = Color.Red
+        btnAddCompAdd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddCompAdd.Size = New Size(171, 63)
         btnAddCompAdd.TabIndex = 43
         btnAddCompAdd.Text = "Add"
@@ -75,14 +76,15 @@ Partial Class frmAddCompany
         btnAddCompCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddCompCancel.BorderSize = 5
         btnAddCompCancel.CornerRadius = 10
+        btnAddCompCancel.Cursor = Cursors.Hand
         btnAddCompCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddCompCancel.FlatStyle = FlatStyle.Flat
         btnAddCompCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddCompCancel.ForeColor = Color.Black
-        btnAddCompCancel.HoverColor = Color.Yellow
+        btnAddCompCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddCompCancel.Location = New Point(700, 519)
         btnAddCompCancel.Name = "btnAddCompCancel"
-        btnAddCompCancel.PressedColor = Color.Red
+        btnAddCompCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddCompCancel.Size = New Size(171, 63)
         btnAddCompCancel.TabIndex = 42
         btnAddCompCancel.Text = "Cancel "
@@ -168,6 +170,7 @@ Partial Class frmAddCompany
         ' btnExitAddComp
         ' 
         btnExitAddComp.BackColor = Color.Transparent
+        btnExitAddComp.Cursor = Cursors.Hand
         btnExitAddComp.FlatAppearance.BorderSize = 0
         btnExitAddComp.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddComp.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -181,6 +184,7 @@ Partial Class frmAddCompany
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(txtAddCompName)

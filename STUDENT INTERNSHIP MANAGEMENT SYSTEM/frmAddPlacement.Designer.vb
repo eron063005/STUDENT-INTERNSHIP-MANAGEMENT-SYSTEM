@@ -52,14 +52,15 @@ Partial Class frmAddPlacement
         btnAddPlaceAdd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddPlaceAdd.BorderSize = 5
         btnAddPlaceAdd.CornerRadius = 10
+        btnAddPlaceAdd.Cursor = Cursors.Hand
         btnAddPlaceAdd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddPlaceAdd.FlatStyle = FlatStyle.Flat
         btnAddPlaceAdd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddPlaceAdd.ForeColor = Color.Black
-        btnAddPlaceAdd.HoverColor = Color.Yellow
+        btnAddPlaceAdd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddPlaceAdd.Location = New Point(891, 519)
         btnAddPlaceAdd.Name = "btnAddPlaceAdd"
-        btnAddPlaceAdd.PressedColor = Color.Red
+        btnAddPlaceAdd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddPlaceAdd.Size = New Size(171, 63)
         btnAddPlaceAdd.TabIndex = 44
         btnAddPlaceAdd.Text = "Add"
@@ -71,14 +72,15 @@ Partial Class frmAddPlacement
         btnAddPlaceCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddPlaceCancel.BorderSize = 5
         btnAddPlaceCancel.CornerRadius = 10
+        btnAddPlaceCancel.Cursor = Cursors.Hand
         btnAddPlaceCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddPlaceCancel.FlatStyle = FlatStyle.Flat
         btnAddPlaceCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddPlaceCancel.ForeColor = Color.Black
-        btnAddPlaceCancel.HoverColor = Color.Yellow
+        btnAddPlaceCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddPlaceCancel.Location = New Point(700, 519)
         btnAddPlaceCancel.Name = "btnAddPlaceCancel"
-        btnAddPlaceCancel.PressedColor = Color.Red
+        btnAddPlaceCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddPlaceCancel.Size = New Size(171, 63)
         btnAddPlaceCancel.TabIndex = 43
         btnAddPlaceCancel.Text = "Cancel "
@@ -199,6 +201,7 @@ Partial Class frmAddPlacement
         ' btnExitAddPlace
         ' 
         btnExitAddPlace.BackColor = Color.Transparent
+        btnExitAddPlace.Cursor = Cursors.Hand
         btnExitAddPlace.FlatAppearance.BorderSize = 0
         btnExitAddPlace.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddPlace.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -221,6 +224,7 @@ Partial Class frmAddPlacement
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(Panel2)

@@ -49,12 +49,12 @@ Partial Class ucAssessment
         btnDelAssessment.FlatStyle = FlatStyle.Flat
         btnDelAssessment.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnDelAssessment.ForeColor = Color.Black
-        btnDelAssessment.HoverColor = Color.Yellow
+        btnDelAssessment.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnDelAssessment.Image = My.Resources.Resources.Delete2
         btnDelAssessment.ImageAlign = ContentAlignment.MiddleLeft
-        btnDelAssessment.Location = New Point(602, 737)
+        btnDelAssessment.Location = New Point(602, 752)
         btnDelAssessment.Name = "btnDelAssessment"
-        btnDelAssessment.PressedColor = Color.Red
+        btnDelAssessment.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnDelAssessment.Size = New Size(209, 77)
         btnDelAssessment.TabIndex = 6
         btnDelAssessment.Text = "Delete "
@@ -72,10 +72,10 @@ Partial Class ucAssessment
         btnEditAssessment.FlatStyle = FlatStyle.Flat
         btnEditAssessment.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnEditAssessment.ForeColor = Color.Black
-        btnEditAssessment.HoverColor = Color.Yellow
-        btnEditAssessment.Location = New Point(355, 737)
+        btnEditAssessment.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnEditAssessment.Location = New Point(355, 752)
         btnEditAssessment.Name = "btnEditAssessment"
-        btnEditAssessment.PressedColor = Color.Red
+        btnEditAssessment.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditAssessment.Size = New Size(219, 77)
         btnEditAssessment.TabIndex = 5
         btnEditAssessment.Text = "Edit"
@@ -92,10 +92,10 @@ Partial Class ucAssessment
         btnAddAssessment.FlatStyle = FlatStyle.Flat
         btnAddAssessment.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddAssessment.ForeColor = Color.Black
-        btnAddAssessment.HoverColor = Color.Yellow
-        btnAddAssessment.Location = New Point(28, 737)
+        btnAddAssessment.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnAddAssessment.Location = New Point(28, 752)
         btnAddAssessment.Name = "btnAddAssessment"
-        btnAddAssessment.PressedColor = Color.Red
+        btnAddAssessment.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddAssessment.Size = New Size(290, 77)
         btnAddAssessment.TabIndex = 4
         btnAddAssessment.Text = "Add Assessment "
@@ -110,7 +110,7 @@ Partial Class ucAssessment
         Controls.Add(btnAddAssessment)
         Controls.Add(DataGridView1)
         Name = "ucAssessment"
-        Size = New Size(1496, 837)
+        Size = New Size(1496, 884)
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub

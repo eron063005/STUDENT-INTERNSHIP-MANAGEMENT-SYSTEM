@@ -73,10 +73,10 @@ Partial Class frmEditPlacement
         btnSavePlace.FlatStyle = FlatStyle.Flat
         btnSavePlace.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnSavePlace.ForeColor = Color.Black
-        btnSavePlace.HoverColor = Color.Yellow
+        btnSavePlace.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSavePlace.Location = New Point(891, 519)
         btnSavePlace.Name = "btnSavePlace"
-        btnSavePlace.PressedColor = Color.Red
+        btnSavePlace.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSavePlace.Size = New Size(171, 63)
         btnSavePlace.TabIndex = 61
         btnSavePlace.Text = "Save"
@@ -92,10 +92,10 @@ Partial Class frmEditPlacement
         btnEditPlaceCancel.FlatStyle = FlatStyle.Flat
         btnEditPlaceCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnEditPlaceCancel.ForeColor = Color.Black
-        btnEditPlaceCancel.HoverColor = Color.Yellow
+        btnEditPlaceCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnEditPlaceCancel.Location = New Point(700, 519)
         btnEditPlaceCancel.Name = "btnEditPlaceCancel"
-        btnEditPlaceCancel.PressedColor = Color.Red
+        btnEditPlaceCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditPlaceCancel.Size = New Size(171, 63)
         btnEditPlaceCancel.TabIndex = 60
         btnEditPlaceCancel.Text = "Cancel "
@@ -133,6 +133,7 @@ Partial Class frmEditPlacement
         ' btnExitEditPlace
         ' 
         btnExitEditPlace.BackColor = Color.Transparent
+        btnExitEditPlace.Cursor = Cursors.Hand
         btnExitEditPlace.FlatAppearance.BorderSize = 0
         btnExitEditPlace.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitEditPlace.FlatAppearance.MouseOverBackColor = Color.Transparent

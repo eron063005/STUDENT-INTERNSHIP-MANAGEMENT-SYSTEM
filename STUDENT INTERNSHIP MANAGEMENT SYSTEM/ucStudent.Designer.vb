@@ -22,6 +22,7 @@ Partial Class ucStudent
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ucStudent))
         dgvStudent = New DataGridView()
         btnEditStudent = New RoundedButton()
         btnDelStudent = New RoundedButton()
@@ -29,10 +30,11 @@ Partial Class ucStudent
         btnImportFile = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
         PictureBox1 = New PictureBox()
-        TextBox1 = New TextBox()
-        ComboBox1 = New ComboBox()
+        txtStdSearchBox = New TextBox()
+        cmbFilterCourseName = New ComboBox()
         PictureBox2 = New PictureBox()
         RoundedPanel2 = New RoundedPanel()
+        btnarchStudents = New Button()
         CType(dgvStudent, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -57,13 +59,14 @@ Partial Class ucStudent
         btnEditStudent.CornerRadius = 18
         btnEditStudent.Cursor = Cursors.Hand
         btnEditStudent.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnEditStudent.FlatAppearance.BorderSize = 0
         btnEditStudent.FlatStyle = FlatStyle.Flat
         btnEditStudent.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnEditStudent.ForeColor = Color.Black
-        btnEditStudent.HoverColor = Color.Yellow
-        btnEditStudent.Location = New Point(355, 737)
+        btnEditStudent.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnEditStudent.Location = New Point(355, 752)
         btnEditStudent.Name = "btnEditStudent"
-        btnEditStudent.PressedColor = Color.Red
+        btnEditStudent.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnEditStudent.Size = New Size(219, 77)
         btnEditStudent.TabIndex = 2
         btnEditStudent.Text = "Edit"
@@ -77,15 +80,16 @@ Partial Class ucStudent
         btnDelStudent.CornerRadius = 18
         btnDelStudent.Cursor = Cursors.Hand
         btnDelStudent.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnDelStudent.FlatAppearance.BorderSize = 0
         btnDelStudent.FlatStyle = FlatStyle.Flat
         btnDelStudent.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnDelStudent.ForeColor = Color.Black
-        btnDelStudent.HoverColor = Color.Yellow
+        btnDelStudent.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnDelStudent.Image = My.Resources.Resources.Delete2
         btnDelStudent.ImageAlign = ContentAlignment.MiddleLeft
-        btnDelStudent.Location = New Point(602, 737)
+        btnDelStudent.Location = New Point(602, 752)
         btnDelStudent.Name = "btnDelStudent"
-        btnDelStudent.PressedColor = Color.Red
+        btnDelStudent.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnDelStudent.Size = New Size(209, 77)
         btnDelStudent.TabIndex = 3
         btnDelStudent.Text = "Delete "
@@ -100,13 +104,14 @@ Partial Class ucStudent
         btnAddStudent.CornerRadius = 18
         btnAddStudent.Cursor = Cursors.Hand
         btnAddStudent.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddStudent.FlatAppearance.BorderSize = 0
         btnAddStudent.FlatStyle = FlatStyle.Flat
         btnAddStudent.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnAddStudent.ForeColor = Color.Black
-        btnAddStudent.HoverColor = Color.Yellow
-        btnAddStudent.Location = New Point(28, 737)
+        btnAddStudent.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnAddStudent.Location = New Point(28, 752)
         btnAddStudent.Name = "btnAddStudent"
-        btnAddStudent.PressedColor = Color.Red
+        btnAddStudent.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddStudent.Size = New Size(290, 77)
         btnAddStudent.TabIndex = 1
         btnAddStudent.Text = "Add Student"
@@ -120,13 +125,14 @@ Partial Class ucStudent
         btnImportFile.CornerRadius = 18
         btnImportFile.Cursor = Cursors.Hand
         btnImportFile.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnImportFile.FlatAppearance.BorderSize = 0
         btnImportFile.FlatStyle = FlatStyle.Flat
         btnImportFile.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnImportFile.ForeColor = Color.Black
-        btnImportFile.HoverColor = Color.Yellow
-        btnImportFile.Location = New Point(1225, 737)
+        btnImportFile.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnImportFile.Location = New Point(1083, 752)
         btnImportFile.Name = "btnImportFile"
-        btnImportFile.PressedColor = Color.Red
+        btnImportFile.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnImportFile.Size = New Size(219, 77)
         btnImportFile.TabIndex = 4
         btnImportFile.Text = "Import"
@@ -134,10 +140,11 @@ Partial Class ucStudent
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(PictureBox1)
-        RoundedPanel1.Controls.Add(TextBox1)
+        RoundedPanel1.Controls.Add(txtStdSearchBox)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.FillColor = Color.White
         RoundedPanel1.Location = New Point(28, 25)
@@ -155,25 +162,25 @@ Partial Class ucStudent
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
-        ' TextBox1
+        ' txtStdSearchBox
         ' 
-        TextBox1.BorderStyle = BorderStyle.None
-        TextBox1.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        TextBox1.Location = New Point(64, 12)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(787, 41)
-        TextBox1.TabIndex = 0
+        txtStdSearchBox.BorderStyle = BorderStyle.None
+        txtStdSearchBox.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        txtStdSearchBox.Location = New Point(64, 12)
+        txtStdSearchBox.Name = "txtStdSearchBox"
+        txtStdSearchBox.Size = New Size(787, 41)
+        txtStdSearchBox.TabIndex = 0
         ' 
-        ' ComboBox1
+        ' cmbFilterCourseName
         ' 
-        ComboBox1.FlatStyle = FlatStyle.Flat
-        ComboBox1.Font = New Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"All Departments"})
-        ComboBox1.Location = New Point(62, 13)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(235, 40)
-        ComboBox1.TabIndex = 6
+        cmbFilterCourseName.FlatStyle = FlatStyle.Flat
+        cmbFilterCourseName.Font = New Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbFilterCourseName.FormattingEnabled = True
+        cmbFilterCourseName.Items.AddRange(New Object() {"All Departments"})
+        cmbFilterCourseName.Location = New Point(62, 13)
+        cmbFilterCourseName.Name = "cmbFilterCourseName"
+        cmbFilterCourseName.Size = New Size(234, 40)
+        cmbFilterCourseName.TabIndex = 6
         ' 
         ' PictureBox2
         ' 
@@ -187,10 +194,11 @@ Partial Class ucStudent
         ' 
         ' RoundedPanel2
         ' 
+        RoundedPanel2.BackColor = Color.Transparent
         RoundedPanel2.BorderColor = Color.Black
         RoundedPanel2.BorderSize = 2
         RoundedPanel2.Controls.Add(PictureBox2)
-        RoundedPanel2.Controls.Add(ComboBox1)
+        RoundedPanel2.Controls.Add(cmbFilterCourseName)
         RoundedPanel2.CornerRadius = 2
         RoundedPanel2.FillColor = Color.White
         RoundedPanel2.Location = New Point(909, 25)
@@ -198,11 +206,25 @@ Partial Class ucStudent
         RoundedPanel2.Size = New Size(299, 65)
         RoundedPanel2.TabIndex = 8
         ' 
+        ' btnarchStudents
+        ' 
+        btnarchStudents.FlatAppearance.BorderSize = 0
+        btnarchStudents.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        btnarchStudents.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        btnarchStudents.FlatStyle = FlatStyle.Flat
+        btnarchStudents.Image = CType(resources.GetObject("btnarchStudents.Image"), Image)
+        btnarchStudents.Location = New Point(1342, 730)
+        btnarchStudents.Name = "btnarchStudents"
+        btnarchStudents.Size = New Size(128, 119)
+        btnarchStudents.TabIndex = 9
+        btnarchStudents.UseVisualStyleBackColor = True
+        ' 
         ' ucStudent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        Controls.Add(btnarchStudents)
         Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
         Controls.Add(btnImportFile)
@@ -210,8 +232,9 @@ Partial Class ucStudent
         Controls.Add(btnEditStudent)
         Controls.Add(btnAddStudent)
         Controls.Add(dgvStudent)
+        Cursor = Cursors.Hand
         Name = "ucStudent"
-        Size = New Size(1496, 837)
+        Size = New Size(1496, 884)
         CType(dgvStudent, ComponentModel.ISupportInitialize).EndInit()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
@@ -228,9 +251,10 @@ Partial Class ucStudent
     Friend WithEvents btnImportFile As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtStdSearchBox As TextBox
+    Friend WithEvents cmbFilterCourseName As ComboBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel2 As RoundedPanel
+    Friend WithEvents btnarchStudents As Button
 
 End Class

@@ -15,5 +15,12 @@
     Private Sub ucVisit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadVisitCards(panelVisit)
     End Sub
+
+    Private Sub btnarchVisit_Click(sender As Object, e As EventArgs) Handles btnarchVisit.Click
+        Dim addForm As New archVisit()
+        ' Kunin parent form (Dashboard) at tawagin ang helper
+        Dim parentForm As Dashboard = Me.FindForm()
+        parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+    End Sub
     'cge
 End Class

@@ -23,8 +23,8 @@ Partial Class frmPreviewStudent
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         RoundedPanel1 = New RoundedPanel()
-        btnAddStd = New RoundedButton()
         btnAddStdCancel = New RoundedButton()
+        btnAddStd = New RoundedButton()
         Label1 = New Label()
         dgvPreview = New DataGridView()
         btnCancelPreview = New RoundedButton()
@@ -47,25 +47,6 @@ Partial Class frmPreviewStudent
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 78
         ' 
-        ' btnAddStd
-        ' 
-        btnAddStd.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        btnAddStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        btnAddStd.BorderSize = 5
-        btnAddStd.CornerRadius = 10
-        btnAddStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        btnAddStd.FlatStyle = FlatStyle.Flat
-        btnAddStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        btnAddStd.ForeColor = Color.Black
-        btnAddStd.HoverColor = Color.Yellow
-        btnAddStd.Location = New Point(891, 618)
-        btnAddStd.Name = "btnAddStd"
-        btnAddStd.PressedColor = Color.Red
-        btnAddStd.Size = New Size(171, 63)
-        btnAddStd.TabIndex = 31
-        btnAddStd.Text = "Add"
-        btnAddStd.UseVisualStyleBackColor = False
-        ' 
         ' btnAddStdCancel
         ' 
         btnAddStdCancel.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
@@ -85,12 +66,31 @@ Partial Class frmPreviewStudent
         btnAddStdCancel.Text = "Cancel "
         btnAddStdCancel.UseVisualStyleBackColor = False
         ' 
+        ' btnAddStd
+        ' 
+        btnAddStd.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnAddStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnAddStd.BorderSize = 5
+        btnAddStd.CornerRadius = 10
+        btnAddStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddStd.FlatStyle = FlatStyle.Flat
+        btnAddStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        btnAddStd.ForeColor = Color.Black
+        btnAddStd.HoverColor = Color.Yellow
+        btnAddStd.Location = New Point(891, 618)
+        btnAddStd.Name = "btnAddStd"
+        btnAddStd.PressedColor = Color.Red
+        btnAddStd.Size = New Size(171, 63)
+        btnAddStd.TabIndex = 31
+        btnAddStd.Text = "Add"
+        btnAddStd.UseVisualStyleBackColor = False
+        ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.White
         Label1.Font = New Font("Impact", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(317, 6)
+        Label1.Location = New Point(327, 6)
         Label1.Name = "Label1"
         Label1.Size = New Size(458, 59)
         Label1.TabIndex = 7
@@ -111,14 +111,16 @@ Partial Class frmPreviewStudent
         btnCancelPreview.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnCancelPreview.BorderSize = 5
         btnCancelPreview.CornerRadius = 18
+        btnCancelPreview.Cursor = Cursors.Hand
         btnCancelPreview.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnCancelPreview.FlatAppearance.BorderSize = 0
         btnCancelPreview.FlatStyle = FlatStyle.Flat
         btnCancelPreview.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancelPreview.ForeColor = Color.Black
-        btnCancelPreview.HoverColor = Color.Yellow
+        btnCancelPreview.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnCancelPreview.Location = New Point(22, 494)
         btnCancelPreview.Name = "btnCancelPreview"
-        btnCancelPreview.PressedColor = Color.Red
+        btnCancelPreview.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnCancelPreview.Size = New Size(498, 95)
         btnCancelPreview.TabIndex = 5
         btnCancelPreview.Text = "Cancel"
@@ -130,14 +132,16 @@ Partial Class frmPreviewStudent
         btnSaveDB.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnSaveDB.BorderSize = 5
         btnSaveDB.CornerRadius = 18
+        btnSaveDB.Cursor = Cursors.Hand
         btnSaveDB.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnSaveDB.FlatAppearance.BorderSize = 0
         btnSaveDB.FlatStyle = FlatStyle.Flat
         btnSaveDB.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnSaveDB.ForeColor = Color.Black
-        btnSaveDB.HoverColor = Color.Yellow
+        btnSaveDB.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnSaveDB.Location = New Point(551, 494)
         btnSaveDB.Name = "btnSaveDB"
-        btnSaveDB.PressedColor = Color.Red
+        btnSaveDB.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnSaveDB.Size = New Size(498, 95)
         btnSaveDB.TabIndex = 6
         btnSaveDB.Text = "Save to Database"

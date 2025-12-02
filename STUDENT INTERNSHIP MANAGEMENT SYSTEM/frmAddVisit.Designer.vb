@@ -36,8 +36,8 @@ Partial Class frmAddVisit
         Label1 = New Label()
         txtAddVisitEval = New TextBox()
         RoundedPanel1 = New RoundedPanel()
-        Panel2 = New Panel()
         nudAddVisitScore = New NumericUpDown()
+        Panel2 = New Panel()
         RoundedPanel1.SuspendLayout()
         CType(nudAddVisitScore, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -71,6 +71,7 @@ Partial Class frmAddVisit
         ' btnExitAddVisit
         ' 
         btnExitAddVisit.BackColor = Color.Transparent
+        btnExitAddVisit.Cursor = Cursors.Hand
         btnExitAddVisit.FlatAppearance.BorderSize = 0
         btnExitAddVisit.FlatAppearance.MouseDownBackColor = Color.Transparent
         btnExitAddVisit.FlatAppearance.MouseOverBackColor = Color.Transparent
@@ -84,13 +85,19 @@ Partial Class frmAddVisit
         ' 
         ' btnAddVisitAdd
         ' 
+        btnAddVisitAdd.BackColor = Color.Transparent
         btnAddVisitAdd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddVisitAdd.BorderSize = 5
         btnAddVisitAdd.CornerRadius = 10
+        btnAddVisitAdd.Cursor = Cursors.Hand
         btnAddVisitAdd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddVisitAdd.FlatStyle = FlatStyle.Flat
         btnAddVisitAdd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        btnAddVisitAdd.ForeColor = Color.Black
+        btnAddVisitAdd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddVisitAdd.Location = New Point(891, 519)
         btnAddVisitAdd.Name = "btnAddVisitAdd"
+        btnAddVisitAdd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddVisitAdd.Size = New Size(171, 63)
         btnAddVisitAdd.TabIndex = 82
         btnAddVisitAdd.Text = "Add"
@@ -98,13 +105,19 @@ Partial Class frmAddVisit
         ' 
         ' btnAddVisitCancel
         ' 
+        btnAddVisitCancel.BackColor = Color.Transparent
         btnAddVisitCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddVisitCancel.BorderSize = 5
         btnAddVisitCancel.CornerRadius = 10
+        btnAddVisitCancel.Cursor = Cursors.Hand
         btnAddVisitCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddVisitCancel.FlatStyle = FlatStyle.Flat
         btnAddVisitCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        btnAddVisitCancel.ForeColor = Color.Black
+        btnAddVisitCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddVisitCancel.Location = New Point(700, 519)
         btnAddVisitCancel.Name = "btnAddVisitCancel"
+        btnAddVisitCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddVisitCancel.Size = New Size(171, 63)
         btnAddVisitCancel.TabIndex = 81
         btnAddVisitCancel.Text = "Cancel "
@@ -181,6 +194,7 @@ Partial Class frmAddVisit
         ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(nudAddVisitScore)
@@ -205,14 +219,6 @@ Partial Class frmAddVisit
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 88
         ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.Silver
-        Panel2.Location = New Point(44, 131)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(990, 4)
-        Panel2.TabIndex = 95
-        ' 
         ' nudAddVisitScore
         ' 
         nudAddVisitScore.BorderStyle = BorderStyle.FixedSingle
@@ -221,6 +227,14 @@ Partial Class frmAddVisit
         nudAddVisitScore.Name = "nudAddVisitScore"
         nudAddVisitScore.Size = New Size(129, 44)
         nudAddVisitScore.TabIndex = 96
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Silver
+        Panel2.Location = New Point(44, 131)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(990, 4)
+        Panel2.TabIndex = 95
         ' 
         ' frmAddVisit
         ' 
