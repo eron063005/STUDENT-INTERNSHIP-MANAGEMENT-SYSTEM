@@ -36,7 +36,7 @@ Partial Class Reset_Password
         Label13 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Label7 = New Label()
+        lblBackLog = New Label()
         Label6 = New Label()
         Panel2 = New Panel()
         Label9 = New Label()
@@ -100,7 +100,7 @@ Partial Class Reset_Password
         RoundedPanel1.Controls.Add(Label13)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.Controls.Add(Label7)
+        RoundedPanel1.Controls.Add(lblBackLog)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label9)
@@ -146,6 +146,7 @@ Partial Class Reset_Password
         txtConfirmPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
         txtConfirmPassword.Location = New Point(382, 349)
         txtConfirmPassword.Name = "txtConfirmPassword"
+        txtConfirmPassword.PasswordChar = "*"c
         txtConfirmPassword.Size = New Size(299, 65)
         txtConfirmPassword.TabIndex = 23
         ' 
@@ -155,6 +156,7 @@ Partial Class Reset_Password
         txtNewPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
         txtNewPassword.Location = New Point(67, 349)
         txtNewPassword.Name = "txtNewPassword"
+        txtNewPassword.PasswordChar = "*"c
         txtNewPassword.Size = New Size(299, 65)
         txtNewPassword.TabIndex = 22
         ' 
@@ -224,18 +226,18 @@ Partial Class Reset_Password
         Label1.TabIndex = 12
         Label1.Text = "Faculty ID"
         ' 
-        ' Label7
+        ' lblBackLog
         ' 
-        Label7.AutoSize = True
-        Label7.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        Label7.Cursor = Cursors.Hand
-        Label7.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.ForeColor = Color.Black
-        Label7.Location = New Point(388, 584)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(148, 23)
-        Label7.TabIndex = 10
-        Label7.Text = "Back to Log In"
+        lblBackLog.AutoSize = True
+        lblBackLog.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        lblBackLog.Cursor = Cursors.Hand
+        lblBackLog.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblBackLog.ForeColor = Color.Black
+        lblBackLog.Location = New Point(388, 584)
+        lblBackLog.Name = "lblBackLog"
+        lblBackLog.Size = New Size(148, 23)
+        lblBackLog.TabIndex = 10
+        lblBackLog.Text = "Back to Log In"
         ' 
         ' Label6
         ' 
@@ -354,7 +356,7 @@ Partial Class Reset_Password
     Friend WithEvents Label13 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblBackLog As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label

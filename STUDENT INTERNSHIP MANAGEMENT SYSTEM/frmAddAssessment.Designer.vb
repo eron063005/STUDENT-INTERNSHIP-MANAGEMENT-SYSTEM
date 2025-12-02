@@ -33,8 +33,10 @@ Partial Class frmAddAssessment
         Label2 = New Label()
         Label12 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        cmbCCId = New ComboBox()
-        cmbStudentId = New ComboBox()
+        cmbAddInternID = New ComboBox()
+        Label6 = New Label()
+        cmbAddCCId = New ComboBox()
+        cmbAddStudentId = New ComboBox()
         Panel2 = New Panel()
         Label4 = New Label()
         btnExitAddAssessment = New Button()
@@ -153,8 +155,10 @@ Partial Class frmAddAssessment
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
-        RoundedPanel1.Controls.Add(cmbCCId)
-        RoundedPanel1.Controls.Add(cmbStudentId)
+        RoundedPanel1.Controls.Add(cmbAddInternID)
+        RoundedPanel1.Controls.Add(Label6)
+        RoundedPanel1.Controls.Add(cmbAddCCId)
+        RoundedPanel1.Controls.Add(cmbAddStudentId)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(btnExitAddAssessment)
@@ -171,23 +175,43 @@ Partial Class frmAddAssessment
         RoundedPanel1.Size = New Size(965, 601)
         RoundedPanel1.TabIndex = 0
         ' 
-        ' cmbCCId
+        ' cmbAddInternID
         ' 
-        cmbCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbCCId.FormattingEnabled = True
-        cmbCCId.Location = New Point(533, 343)
-        cmbCCId.Name = "cmbCCId"
-        cmbCCId.Size = New Size(324, 45)
-        cmbCCId.TabIndex = 60
+        cmbAddInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbAddInternID.FormattingEnabled = True
+        cmbAddInternID.Location = New Point(44, 343)
+        cmbAddInternID.Name = "cmbAddInternID"
+        cmbAddInternID.Size = New Size(324, 45)
+        cmbAddInternID.TabIndex = 62
         ' 
-        ' cmbStudentId
+        ' Label6
         ' 
-        cmbStudentId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbStudentId.FormattingEnabled = True
-        cmbStudentId.Location = New Point(44, 343)
-        cmbStudentId.Name = "cmbStudentId"
-        cmbStudentId.Size = New Size(362, 45)
-        cmbStudentId.TabIndex = 59
+        Label6.AutoSize = True
+        Label6.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        Label6.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(44, 289)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(148, 27)
+        Label6.TabIndex = 61
+        Label6.Text = "Internship ID"
+        ' 
+        ' cmbAddCCId
+        ' 
+        cmbAddCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbAddCCId.FormattingEnabled = True
+        cmbAddCCId.Location = New Point(533, 343)
+        cmbAddCCId.Name = "cmbAddCCId"
+        cmbAddCCId.Size = New Size(362, 45)
+        cmbAddCCId.TabIndex = 60
+        ' 
+        ' cmbAddStudentId
+        ' 
+        cmbAddStudentId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbAddStudentId.FormattingEnabled = True
+        cmbAddStudentId.Location = New Point(533, 216)
+        cmbAddStudentId.Name = "cmbAddStudentId"
+        cmbAddStudentId.Size = New Size(362, 45)
+        cmbAddStudentId.TabIndex = 59
         ' 
         ' Panel2
         ' 
@@ -288,7 +312,7 @@ Partial Class frmAddAssessment
         Label7.AutoSize = True
         Label7.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         Label7.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.Location = New Point(44, 289)
+        Label7.Location = New Point(533, 162)
         Label7.Name = "Label7"
         Label7.Size = New Size(124, 27)
         Label7.TabIndex = 51
@@ -342,6 +366,8 @@ Partial Class frmAddAssessment
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents cmbCCId As ComboBox
-    Friend WithEvents cmbStudentId As ComboBox
+    Friend WithEvents cmbAddCCId As ComboBox
+    Friend WithEvents cmbAddStudentId As ComboBox
+    Friend WithEvents cmbAddInternID As ComboBox
+    Friend WithEvents Label6 As Label
 End Class

@@ -91,6 +91,7 @@ Partial Class LogIn
         txtPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
         txtPassword.Location = New Point(93, 361)
         txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(564, 65)
         txtPassword.TabIndex = 2
         txtPassword.Text = "1234"
@@ -331,12 +332,14 @@ Partial Class LogIn
         End If
     End Sub
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles ResetPassword.Click
+        Me.Hide()
         Dim frm As New Reset_Password
         frm.Show()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles RegisFaculty.Click
         Dim frm As New Register_Faculty
+        Me.Hide()
         frm.Show()
         Me.Hide()
     End Sub
@@ -356,6 +359,15 @@ Partial Class LogIn
         PictureBox1.Show()
         Label3.Show()
         RoundedPanel1.Show()
-        PictureBox2.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub btnShowPass_Click(sender As Object, e As EventArgs) Handles btnShowPass.Click
+        ' If password is currently hidden, show it
+        If txtPassword.PasswordChar = "*"c Then
+            txtPassword.PasswordChar = ControlChars.NullChar   ' Show password
+        Else
+            ' If password is visible, hide it again
+            txtPassword.PasswordChar = "*"c
+        End If
     End Sub
 End Class

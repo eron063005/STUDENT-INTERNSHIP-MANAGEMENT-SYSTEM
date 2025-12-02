@@ -9,7 +9,7 @@ Public Class frmAddAssessment
     Private Sub frmAddAssessment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadNextAssessmentId()
         LoadStudentComboBox()
-        cmbCCId.Enabled = False ' Disable until student is selected
+        cmbAddCCId.Enabled = False ' Disable until student is selected
     End Sub
 
     '----------------------------
@@ -50,10 +50,10 @@ Public Class frmAddAssessment
                     Dim dt As New DataTable()
                     Dim adapter As New MySqlDataAdapter(cmd)
                     adapter.Fill(dt)
-                    cmbStudentId.DisplayMember = "FullName"
-                    cmbStudentId.ValueMember = "StudentId"
-                    cmbStudentId.DataSource = dt
-                    cmbStudentId.SelectedIndex = -1
+                    cmbAddStudentId.DisplayMember = "FullName"
+                    cmbAddStudentId.ValueMember = "StudentId"
+                    cmbAddStudentId.DataSource = dt
+                    cmbAddStudentId.SelectedIndex = -1
                 End Using
             End Using
         Catch ex As Exception
@@ -64,14 +64,14 @@ Public Class frmAddAssessment
     '----------------------------
     ' Student selection changes Company Contact ComboBox
     '----------------------------
-    Private Sub cmbStudentId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbStudentId.SelectedIndexChanged
-        If cmbStudentId.SelectedIndex = -1 Then
-            cmbCCId.DataSource = Nothing
-            cmbCCId.Enabled = False
+    Private Sub cmbStudentId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbAddStudentId.SelectedIndexChanged
+        If cmbAddStudentId.SelectedIndex = -1 Then
+            cmbAddCCId.DataSource = Nothing
+            cmbAddCCId.Enabled = False
             Return
         End If
 
-        LoadCompanyContactComboBox(cmbStudentId.SelectedValue.ToString())
+        LoadCompanyContactComboBox(cmbAddStudentId.SelectedValue.ToString())
     End Sub
 
     '----------------------------
@@ -92,11 +92,11 @@ Public Class frmAddAssessment
                     Dim dt As New DataTable()
                     Dim adapter As New MySqlDataAdapter(cmd)
                     adapter.Fill(dt)
-                    cmbCCId.DisplayMember = "FullName"
-                    cmbCCId.ValueMember = "CompanyContactId"
-                    cmbCCId.DataSource = dt
-                    cmbCCId.SelectedIndex = -1
-                    cmbCCId.Enabled = True
+                    cmbAddCCId.DisplayMember = "FullName"
+                    cmbAddCCId.ValueMember = "CompanyContactId"
+                    cmbAddCCId.DataSource = dt
+                    cmbAddCCId.SelectedIndex = -1
+                    cmbAddCCId.Enabled = True
                 End Using
             End Using
         Catch ex As Exception
@@ -108,7 +108,7 @@ Public Class frmAddAssessment
     ' Add Assessment
     '----------------------------
     Private Sub btnAddAssess_Click(sender As Object, e As EventArgs) Handles btnAddAssess.Click
-        If cmbStudentId.SelectedIndex = -1 Or cmbCCId.SelectedIndex = -1 Then
+        If cmbAddStudentId.SelectedIndex = -1 Or cmbAddCCId.SelectedIndex = -1 Then
             MessageBox.Show("Please select both a student and a company contact.")
             Return
         End If
@@ -120,8 +120,8 @@ Public Class frmAddAssessment
                                             "VALUES (@aid, @sid, @ccid, @grade, 0)"
                 Using cmd As New MySqlCommand(insertQuery, conn)
                     cmd.Parameters.AddWithValue("@aid", mtxtAddAssessID.Text)
-                    cmd.Parameters.AddWithValue("@sid", cmbStudentId.SelectedValue)
-                    cmd.Parameters.AddWithValue("@ccid", cmbCCId.SelectedValue)
+                    cmd.Parameters.AddWithValue("@sid", cmbAddStudentId.SelectedValue)
+                    cmd.Parameters.AddWithValue("@ccid", cmbAddCCId.SelectedValue)
                     cmd.Parameters.AddWithValue("@grade", 0)
                     cmd.ExecuteNonQuery()
                 End Using
@@ -130,9 +130,9 @@ Public Class frmAddAssessment
             MessageBox.Show("Assessment added successfully.")
 
             ' Clear fields for next entry
-            cmbStudentId.SelectedIndex = -1
-            cmbCCId.DataSource = Nothing
-            cmbCCId.Enabled = False
+            cmbAddStudentId.SelectedIndex = -1
+            cmbAddCCId.DataSource = Nothing
+            cmbAddCCId.Enabled = False
             LoadNextAssessmentId()
 
         Catch ex As Exception

@@ -74,6 +74,20 @@ Public Class frmPreviewStudent
                         Dim sectionVal As String = If(sourceTable.Columns.Contains("Section"), r("Section").ToString().Trim(), "")
                         Dim facultyVal As String = If(sourceTable.Columns.Contains("FacultyId"), r("FacultyId").ToString().Trim(), "")
 
+                        ' Validate foreign keys first
+                        If Not String.IsNullOrEmpty(facultyVal) Then
+                            Using cmdCheck As New MySqlCommand("SELECT FacultyId FROM faculty WHERE FacultyId=@fid", con)
+                                cmdCheck.Parameters.AddWithValue("@fid", facultyVal)
+                                If cmdCheck.ExecuteScalar() Is Nothing Then
+                                    errors.Add($"Row {rowIndex + 1}: FacultyId '{facultyVal}' does not exist. Skipped.")
+                                    Continue For
+                                End If
+                            End Using
+                        Else
+                            errors.Add($"Row {rowIndex + 1}: FacultyId is empty. Skipped.")
+                            Continue For
+                        End If
+
                         ' Birthday handling
                         Dim birthdayValObj As Object = DBNull.Value
                         If sourceTable.Columns.Contains("Birthday") Then
@@ -124,9 +138,9 @@ Public Class frmPreviewStudent
                             cmd.Parameters.Add("@Birthday", MySqlDbType.Date).Value = If(birthdayValObj Is DBNull.Value, DBNull.Value, CType(birthdayValObj, Date))
                             cmd.Parameters.Add("@Sex", MySqlDbType.VarChar).Value = sexVal
                             cmd.Parameters.Add("@CourseId", MySqlDbType.VarChar).Value = If(String.IsNullOrEmpty(courseIdResolved), DBNull.Value, courseIdResolved)
-                            cmd.Parameters.Add("@ContactNo", MySqlDbType.VarChar).Value = contactVal
-                            cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = emailVal
-                            cmd.Parameters.Add("@Section", MySqlDbType.VarChar).Value = sectionVal
+                            cmd.Parameters.Add("@ContactNo", MySqlDbType.VarChar).Value = If(String.IsNullOrEmpty(contactVal), DBNull.Value, contactVal)
+                            cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = If(String.IsNullOrEmpty(emailVal), DBNull.Value, emailVal)
+                            cmd.Parameters.Add("@Section", MySqlDbType.VarChar).Value = If(String.IsNullOrEmpty(sectionVal), DBNull.Value, sectionVal)
                             cmd.Parameters.Add("@FacultyId", MySqlDbType.VarChar).Value = facultyVal
 
                             cmd.ExecuteNonQuery()

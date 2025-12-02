@@ -151,14 +151,21 @@ Public Class ucStudent
     Private Sub SearchStudents(searchText As String)
         Try
             ' Build query to search across multiple columns but only for the logged-in faculty
-            Dim query As String = "SELECT StudentId, FirstName, LastName, MiddleName, " &
-                              "IF(Birthday='0000-00-00', NULL, Birthday) AS Birthday, " &
-                              "Sex, ContactNo, Email, CourseId, FacultyId, Section " &
-                              "FROM STUDENT " &
-                              "WHERE FacultyId = @facultyId AND (" &
-                              "StudentId LIKE @search OR FirstName LIKE @search OR LastName LIKE @search OR MiddleName LIKE @search " &
-                              "OR Birthday LIKE @search OR Sex LIKE @search OR ContactNo LIKE @search OR Email LIKE @search " &
-                              "OR CourseId LIKE @search OR Section LIKE @search)" ' Removed FacultyId from search
+            Dim query As String = $"SELECT 
+                        s.StudentId,
+                        c.CourseName,
+                        s.FirstName,
+                        s.LastName,
+                        s.MiddleName,
+                        s.Birthday,
+                        s.Sex,
+                        s.ContactNo,
+                        s.Email,
+                        s.Section
+                      FROM STUDENT s
+                      LEFT JOIN COURSE c ON s.CourseId = c.CourseId
+                      WHERE s.facultyID = @facultyID"
+            ' Removed FacultyId from search
 
             Using con As New MySqlConnection(connString)
                 Using cmd As New MySqlCommand(query, con)

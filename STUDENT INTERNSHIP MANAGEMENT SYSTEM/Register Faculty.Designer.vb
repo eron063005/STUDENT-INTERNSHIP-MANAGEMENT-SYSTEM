@@ -28,27 +28,27 @@ Partial Class Register_Faculty
         btnShowConfirm = New Button()
         btnShowPass = New Button()
         Label5 = New Label()
-        TextBox7 = New TextBox()
-        TextBox5 = New TextBox()
-        TextBox6 = New TextBox()
-        MaskedTextBox1 = New MaskedTextBox()
-        ComboBox1 = New ComboBox()
-        TextBox4 = New TextBox()
-        TextBox3 = New TextBox()
+        txtLastName = New TextBox()
+        txtConfirmPass = New TextBox()
+        txtPassword = New TextBox()
+        mtbContactNo = New MaskedTextBox()
+        cmbFacDept = New ComboBox()
+        txtFacEmailAdd = New TextBox()
+        txtFacID = New TextBox()
         Label14 = New Label()
         Label13 = New Label()
         Label12 = New Label()
         Label4 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        Label7 = New Label()
+        lblBackLog = New Label()
         Label6 = New Label()
         Panel2 = New Panel()
         Label9 = New Label()
         btnRegisFaculty = New RoundedButton()
         Label10 = New Label()
         Label11 = New Label()
-        TextBox1 = New TextBox()
+        txtFirstName = New TextBox()
         TextBox2 = New TextBox()
         btnExitFaculRegis = New Button()
         PictureBox2 = New PictureBox()
@@ -86,27 +86,27 @@ Partial Class Register_Faculty
         RoundedPanel1.Controls.Add(btnShowConfirm)
         RoundedPanel1.Controls.Add(btnShowPass)
         RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(TextBox7)
-        RoundedPanel1.Controls.Add(TextBox5)
-        RoundedPanel1.Controls.Add(TextBox6)
-        RoundedPanel1.Controls.Add(MaskedTextBox1)
-        RoundedPanel1.Controls.Add(ComboBox1)
-        RoundedPanel1.Controls.Add(TextBox4)
-        RoundedPanel1.Controls.Add(TextBox3)
+        RoundedPanel1.Controls.Add(txtLastName)
+        RoundedPanel1.Controls.Add(txtConfirmPass)
+        RoundedPanel1.Controls.Add(txtPassword)
+        RoundedPanel1.Controls.Add(mtbContactNo)
+        RoundedPanel1.Controls.Add(cmbFacDept)
+        RoundedPanel1.Controls.Add(txtFacEmailAdd)
+        RoundedPanel1.Controls.Add(txtFacID)
         RoundedPanel1.Controls.Add(Label14)
         RoundedPanel1.Controls.Add(Label13)
         RoundedPanel1.Controls.Add(Label12)
         RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.Controls.Add(Label1)
-        RoundedPanel1.Controls.Add(Label7)
+        RoundedPanel1.Controls.Add(lblBackLog)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(Label9)
         RoundedPanel1.Controls.Add(btnRegisFaculty)
         RoundedPanel1.Controls.Add(Label10)
         RoundedPanel1.Controls.Add(Label11)
-        RoundedPanel1.Controls.Add(TextBox1)
+        RoundedPanel1.Controls.Add(txtFirstName)
         RoundedPanel1.Controls.Add(TextBox2)
         RoundedPanel1.CornerRadius = 50
         RoundedPanel1.FillColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
@@ -153,68 +153,70 @@ Partial Class Register_Faculty
         Label5.TabIndex = 25
         Label5.Text = "Last Name"
         ' 
-        ' TextBox7
+        ' txtLastName
         ' 
-        TextBox7.BorderStyle = BorderStyle.FixedSingle
-        TextBox7.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox7.Location = New Point(392, 251)
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(299, 65)
-        TextBox7.TabIndex = 24
+        txtLastName.BorderStyle = BorderStyle.FixedSingle
+        txtLastName.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtLastName.Location = New Point(392, 251)
+        txtLastName.Name = "txtLastName"
+        txtLastName.Size = New Size(299, 65)
+        txtLastName.TabIndex = 24
         ' 
-        ' TextBox5
+        ' txtConfirmPass
         ' 
-        TextBox5.BorderStyle = BorderStyle.FixedSingle
-        TextBox5.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox5.Location = New Point(390, 573)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(299, 65)
-        TextBox5.TabIndex = 23
+        txtConfirmPass.BorderStyle = BorderStyle.FixedSingle
+        txtConfirmPass.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtConfirmPass.Location = New Point(390, 573)
+        txtConfirmPass.Name = "txtConfirmPass"
+        txtConfirmPass.PasswordChar = "*"c
+        txtConfirmPass.Size = New Size(299, 65)
+        txtConfirmPass.TabIndex = 23
         ' 
-        ' TextBox6
+        ' txtPassword
         ' 
-        TextBox6.BorderStyle = BorderStyle.FixedSingle
-        TextBox6.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox6.Location = New Point(75, 573)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(299, 65)
-        TextBox6.TabIndex = 22
+        txtPassword.BorderStyle = BorderStyle.FixedSingle
+        txtPassword.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtPassword.Location = New Point(75, 573)
+        txtPassword.Name = "txtPassword"
+        txtPassword.PasswordChar = "*"c
+        txtPassword.Size = New Size(299, 65)
+        txtPassword.TabIndex = 22
         ' 
-        ' MaskedTextBox1
+        ' mtbContactNo
         ' 
-        MaskedTextBox1.BorderStyle = BorderStyle.FixedSingle
-        MaskedTextBox1.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        MaskedTextBox1.Location = New Point(392, 466)
-        MaskedTextBox1.Name = "MaskedTextBox1"
-        MaskedTextBox1.Size = New Size(299, 65)
-        MaskedTextBox1.TabIndex = 21
+        mtbContactNo.BorderStyle = BorderStyle.FixedSingle
+        mtbContactNo.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        mtbContactNo.Location = New Point(392, 466)
+        mtbContactNo.Name = "mtbContactNo"
+        mtbContactNo.Size = New Size(299, 65)
+        mtbContactNo.TabIndex = 21
         ' 
-        ' ComboBox1
+        ' cmbFacDept
         ' 
-        ComboBox1.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(77, 466)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(299, 67)
-        ComboBox1.TabIndex = 20
+        cmbFacDept.Font = New Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbFacDept.FormattingEnabled = True
+        cmbFacDept.Location = New Point(77, 466)
+        cmbFacDept.Name = "cmbFacDept"
+        cmbFacDept.Size = New Size(299, 67)
+        cmbFacDept.TabIndex = 20
         ' 
-        ' TextBox4
+        ' txtFacEmailAdd
         ' 
-        TextBox4.BorderStyle = BorderStyle.FixedSingle
-        TextBox4.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox4.Location = New Point(392, 358)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(299, 65)
-        TextBox4.TabIndex = 19
+        txtFacEmailAdd.BorderStyle = BorderStyle.FixedSingle
+        txtFacEmailAdd.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtFacEmailAdd.Location = New Point(392, 358)
+        txtFacEmailAdd.Name = "txtFacEmailAdd"
+        txtFacEmailAdd.Size = New Size(299, 65)
+        txtFacEmailAdd.TabIndex = 19
         ' 
-        ' TextBox3
+        ' txtFacID
         ' 
-        TextBox3.BorderStyle = BorderStyle.FixedSingle
-        TextBox3.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox3.Location = New Point(77, 358)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(299, 65)
-        TextBox3.TabIndex = 18
+        txtFacID.BorderStyle = BorderStyle.FixedSingle
+        txtFacID.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtFacID.Location = New Point(77, 358)
+        txtFacID.Name = "txtFacID"
+        txtFacID.Size = New Size(299, 65)
+        txtFacID.TabIndex = 18
         ' 
         ' Label14
         ' 
@@ -288,18 +290,18 @@ Partial Class Register_Faculty
         Label1.TabIndex = 12
         Label1.Text = "Faculty ID"
         ' 
-        ' Label7
+        ' lblBackLog
         ' 
-        Label7.AutoSize = True
-        Label7.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
-        Label7.Cursor = Cursors.Hand
-        Label7.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label7.ForeColor = Color.Black
-        Label7.Location = New Point(433, 808)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(148, 23)
-        Label7.TabIndex = 10
-        Label7.Text = "Back to Log In"
+        lblBackLog.AutoSize = True
+        lblBackLog.BackColor = Color.FromArgb(CByte(243), CByte(244), CByte(246))
+        lblBackLog.Cursor = Cursors.Hand
+        lblBackLog.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblBackLog.ForeColor = Color.Black
+        lblBackLog.Location = New Point(433, 808)
+        lblBackLog.Name = "lblBackLog"
+        lblBackLog.Size = New Size(148, 23)
+        lblBackLog.TabIndex = 10
+        lblBackLog.Text = "Back to Log In"
         ' 
         ' Label6
         ' 
@@ -377,14 +379,14 @@ Partial Class Register_Faculty
         Label11.TabIndex = 4
         Label11.Text = "First Name"
         ' 
-        ' TextBox1
+        ' txtFirstName
         ' 
-        TextBox1.BorderStyle = BorderStyle.FixedSingle
-        TextBox1.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
-        TextBox1.Location = New Point(77, 251)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(299, 65)
-        TextBox1.TabIndex = 2
+        txtFirstName.BorderStyle = BorderStyle.FixedSingle
+        txtFirstName.Font = New Font("Century Gothic", 28.2F, FontStyle.Bold)
+        txtFirstName.Location = New Point(77, 251)
+        txtFirstName.Name = "txtFirstName"
+        txtFirstName.Size = New Size(299, 65)
+        txtFirstName.TabIndex = 2
         ' 
         ' TextBox2
         ' 
@@ -445,13 +447,13 @@ Partial Class Register_Faculty
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblBackLog As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents btnRegisFaculty As RoundedButton
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtFirstName As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btnExitFaculRegis As Button
     Friend WithEvents Label14 As Label
@@ -460,13 +462,13 @@ Partial Class Register_Faculty
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents mtbContactNo As MaskedTextBox
+    Friend WithEvents cmbFacDept As ComboBox
+    Friend WithEvents txtFacEmailAdd As TextBox
+    Friend WithEvents txtFacID As TextBox
+    Friend WithEvents txtConfirmPass As TextBox
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents txtLastName As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents btnShowConfirm As Button

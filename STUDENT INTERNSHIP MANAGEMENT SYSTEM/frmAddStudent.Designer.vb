@@ -50,6 +50,10 @@ Partial Class frmAddStudent
         Label11 = New Label()
         txtAddStdSection = New TextBox()
         Panel2 = New Panel()
+        cmbAddCCId = New ComboBox()
+        cmbAddCompName = New ComboBox()
+        Label13 = New Label()
+        Label14 = New Label()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -174,7 +178,7 @@ Partial Class frmAddStudent
         mtxtAddStudentID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtAddStudentID.Location = New Point(27, 184)
         mtxtAddStudentID.Name = "mtxtAddStudentID"
-        mtxtAddStudentID.Size = New Size(244, 44)
+        mtxtAddStudentID.Size = New Size(326, 44)
         mtxtAddStudentID.TabIndex = 21
         ' 
         ' txtAddStdFirstname
@@ -286,6 +290,10 @@ Partial Class frmAddStudent
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cmbAddCCId)
+        RoundedPanel1.Controls.Add(cmbAddCompName)
+        RoundedPanel1.Controls.Add(Label13)
+        RoundedPanel1.Controls.Add(Label14)
         RoundedPanel1.Controls.Add(dtpAddBirthday)
         RoundedPanel1.Controls.Add(cmbAddStdProf)
         RoundedPanel1.Controls.Add(Label12)
@@ -371,6 +379,46 @@ Partial Class frmAddStudent
         Panel2.Size = New Size(990, 4)
         Panel2.TabIndex = 39
         ' 
+        ' cmbAddCCId
+        ' 
+        cmbAddCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbAddCCId.FormattingEnabled = True
+        cmbAddCCId.Location = New Point(739, 184)
+        cmbAddCCId.Name = "cmbAddCCId"
+        cmbAddCCId.Size = New Size(326, 45)
+        cmbAddCCId.TabIndex = 68
+        ' 
+        ' cmbAddCompName
+        ' 
+        cmbAddCompName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbAddCompName.FormattingEnabled = True
+        cmbAddCompName.Location = New Point(367, 183)
+        cmbAddCompName.Name = "cmbAddCompName"
+        cmbAddCompName.Size = New Size(362, 45)
+        cmbAddCompName.TabIndex = 67
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        Label13.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.Location = New Point(367, 153)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(205, 27)
+        Label13.TabIndex = 65
+        Label13.Text = "Company Name "
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        Label14.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label14.Location = New Point(739, 154)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(249, 27)
+        Label14.TabIndex = 66
+        Label14.Text = "Company Contact ID"
+        ' 
         ' frmAddStudent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -418,4 +466,8 @@ Partial Class frmAddStudent
     Friend WithEvents cmbAddStdProf As ComboBox
     Friend WithEvents Label12 As Label
     Friend WithEvents dtpAddBirthday As DateTimePicker
+    Friend WithEvents cmbAddCCId As ComboBox
+    Friend WithEvents cmbAddCompName As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label14 As Label
 End Class
