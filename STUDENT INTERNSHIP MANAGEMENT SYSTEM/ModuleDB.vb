@@ -94,7 +94,7 @@ Module ModuleDB
     End Function
 
     'Student Part
-    Function GenerateStudentID() As String                                              
+    Function GenerateStudentID() As String
         Dim newID As String = "S001"
         Dim con As New MySqlConnection(connString)
 
