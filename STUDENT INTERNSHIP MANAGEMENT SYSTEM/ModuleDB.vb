@@ -2,7 +2,7 @@
 
 Module ModuleDB
     Public connString As String =
-        "server=localhost; port=3306; user=root; password=; database=OJTDB_VAIA;"
+        "server=localhost; port=3307; user=root; password=; database=OJTDB_VAIA;"
     Public LoggedFacultyID As String
 
     'Dashboard Part

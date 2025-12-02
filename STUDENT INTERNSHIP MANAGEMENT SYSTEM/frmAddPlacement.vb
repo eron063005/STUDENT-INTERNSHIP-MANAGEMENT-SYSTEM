@@ -10,31 +10,38 @@ Public Class frmAddPlacement
     End Sub
 
     Private Sub btnAddPlaceAdd_Click(sender As Object, e As EventArgs) Handles btnAddPlaceAdd.Click
+        Dim newInternshipID As String = GenerateInternshipID()
+        Dim studentID As String = cbAddPlaceStdID.SelectedValue.ToString()
 
-        Dim query As String = "
-        INSERT INTO internship 
-            (InternshipId, StudentId, Status, StartDate, EndDate, FGrade)
-        VALUES 
-            (@InternshipID, @StudentID, @Status, @StartDate, @EndDate, @FGrade);
-    "
+        ' Insert internship
+        Dim insertQuery As String = "
+    INSERT INTO internship 
+        (InternshipId, StudentId, Status, StartDate, EndDate, FGrade)
+    VALUES 
+        (@InternshipID, @StudentID, @Status, @StartDate, @EndDate, @FGrade);
+"
 
         Using conn As New MySqlConnection(connString)
-            Using cmd As New MySqlCommand(query, conn)
-
-                cmd.Parameters.AddWithValue("@InternshipID", GenerateInternshipID())
-                cmd.Parameters.AddWithValue("@StudentID", cbAddPlaceStdID.SelectedValue.ToString())
+            conn.Open()
+            Using cmd As New MySqlCommand(insertQuery, conn)
+                cmd.Parameters.AddWithValue("@InternshipID", newInternshipID)
+                cmd.Parameters.AddWithValue("@StudentID", studentID)
                 cmd.Parameters.AddWithValue("@Status", cbAddPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpAddPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpAddPlaceEndDate.Value)
                 cmd.Parameters.AddWithValue("@FGrade", nudAddPlaceGrade.Value)
-
-                conn.Open()
                 cmd.ExecuteNonQuery()
-                MessageBox.Show("Internship record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End Using
 
+            ' Update StudentSupervisor table to fill null InternshipId
+            Using cmd As New MySqlCommand("UPDATE StudentSupervisor SET InternshipId=@InternshipID WHERE StudentId=@StudentID AND InternshipId IS NULL", conn)
+                cmd.Parameters.AddWithValue("@InternshipID", newInternshipID)
+                cmd.Parameters.AddWithValue("@StudentID", studentID)
+                cmd.ExecuteNonQuery()
             End Using
         End Using
 
+        MessageBox.Show("Internship record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         clearAll()
 
     End Sub

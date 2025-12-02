@@ -186,6 +186,8 @@ Public Class ucStudent
     End Sub
 
 
+
+
     Private Sub txtStdSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtStdSearchBox.TextChanged
         SearchStudents(txtStdSearchBox.Text)
     End Sub
