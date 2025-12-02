@@ -11,7 +11,38 @@ Public Class frmEditVisit
     End Sub
 
     Private Sub btnSaveVisit_Click(sender As Object, e As EventArgs) Handles btnSaveVisit.Click
+        If cbEditVisitID.SelectedIndex = -1 Then
+            MessageBox.Show("Please select a Visit ID first.")
+            Exit Sub
+        End If
 
+        ' Extract VisitId again
+        Dim selectedText As String = cbEditVisitID.SelectedItem.ToString()
+        Dim visitId As String = selectedText.Split("-"c)(0).Trim()
+
+        Dim query As String = "
+        UPDATE visit_log
+        SET 
+            VisitDate = @VisitDate,
+            Evaluation = @Evaluation,
+            Score = @Score
+        WHERE VisitId = @VisitId
+    "
+
+        Using conn As New MySqlConnection(connString),
+              cmd As New MySqlCommand(query, conn)
+
+            cmd.Parameters.AddWithValue("@VisitDate", dtpEditVisitDate.Value)
+            cmd.Parameters.AddWithValue("@Evaluation", txtEditVisitEval.Text)
+            cmd.Parameters.AddWithValue("@Score", Convert.ToInt32(nudEditVisitScore.Text))
+            cmd.Parameters.AddWithValue("@VisitId", visitId)
+
+            conn.Open()
+            cmd.ExecuteNonQuery()
+        End Using
+
+        MessageBox.Show("Visit details updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.Close()
     End Sub
 
     Private Sub LoadVisitID()

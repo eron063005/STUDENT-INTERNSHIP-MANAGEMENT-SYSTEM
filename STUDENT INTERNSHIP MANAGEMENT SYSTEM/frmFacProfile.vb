@@ -1,5 +1,5 @@
 ﻿Public Class frmFacProfile
-    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles RoundedButton1.Click, RoundedButton1.Click
+    Private Sub RoundedButton1_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         Dim result As DialogResult
         result = MessageBox.Show("Are you sure you want to Log Out?",
                                  "Log Out Confirmation",
@@ -8,8 +8,8 @@
 
         If result = DialogResult.Yes Then
             Dim loginForm As New LogIn ' Create a new instance
-            loginForm.Show
-            Close ' Optionally close the current form
+            loginForm.Show()
+            Close() ' Optionally close the current form
         End If
     End Sub
 

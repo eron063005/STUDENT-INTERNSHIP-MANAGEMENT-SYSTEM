@@ -78,6 +78,7 @@ Partial Class frmEditStudent
         mtxtEditStudentID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtEditStudentID.Location = New Point(27, 184)
         mtxtEditStudentID.Name = "mtxtEditStudentID"
+        mtxtEditStudentID.ReadOnly = True
         mtxtEditStudentID.Size = New Size(326, 44)
         mtxtEditStudentID.TabIndex = 21
         ' 

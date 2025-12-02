@@ -24,7 +24,7 @@ Partial Class Dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Panel1 = New Panel()
-        Button1 = New Button()
+        frmFacProfile = New Button()
         lblSubTxt = New Label()
         btnExit = New Button()
         lblTitleNav = New Label()
@@ -51,7 +51,7 @@ Partial Class Dashboard
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(frmFacProfile)
         Panel1.Controls.Add(lblSubTxt)
         Panel1.Controls.Add(btnExit)
         Panel1.Controls.Add(lblTitleNav)
@@ -60,19 +60,19 @@ Partial Class Dashboard
         Panel1.Size = New Size(1520, 196)
         Panel1.TabIndex = 1
         ' 
-        ' Button1
+        ' frmFacProfile
         ' 
-        Button1.Cursor = Cursors.Hand
-        Button1.FlatAppearance.BorderSize = 0
-        Button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
-        Button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.Location = New Point(1293, 23)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(146, 143)
-        Button1.TabIndex = 11
-        Button1.UseVisualStyleBackColor = True
+        frmFacProfile.Cursor = Cursors.Hand
+        frmFacProfile.FlatAppearance.BorderSize = 0
+        frmFacProfile.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
+        frmFacProfile.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(122), CByte(141), CByte(158))
+        frmFacProfile.FlatStyle = FlatStyle.Flat
+        frmFacProfile.Image = CType(resources.GetObject("frmFacProfile.Image"), Image)
+        frmFacProfile.Location = New Point(1293, 23)
+        frmFacProfile.Name = "frmFacProfile"
+        frmFacProfile.Size = New Size(146, 143)
+        frmFacProfile.TabIndex = 11
+        frmFacProfile.UseVisualStyleBackColor = True
         ' 
         ' lblSubTxt
         ' 
@@ -355,5 +355,5 @@ Partial Class Dashboard
     Friend WithEvents btnAssessment As Button
     Friend WithEvents lblSubTxt As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents frmFacProfile As Button
 End Class

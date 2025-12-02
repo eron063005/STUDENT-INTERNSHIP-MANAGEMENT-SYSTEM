@@ -47,7 +47,6 @@ Public Class frmAddVisit
     Private Sub btnAddVisitAdd_Click(sender As Object, e As EventArgs) Handles btnAddVisitAdd.Click
         ' Validate Internship combo selection
         If cbAddVisitInternID.SelectedIndex = -1 Then
-            MessageBox.Show("Please select an Internship ID.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 

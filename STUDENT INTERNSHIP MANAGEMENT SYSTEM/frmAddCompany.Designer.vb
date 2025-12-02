@@ -47,6 +47,7 @@ Partial Class frmAddCompany
         mtxtAddCompanyID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         mtxtAddCompanyID.Location = New Point(27, 205)
         mtxtAddCompanyID.Name = "mtxtAddCompanyID"
+        mtxtAddCompanyID.ReadOnly = True
         mtxtAddCompanyID.Size = New Size(244, 44)
         mtxtAddCompanyID.TabIndex = 21
         ' 

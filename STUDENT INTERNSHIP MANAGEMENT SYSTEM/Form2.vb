@@ -132,6 +132,7 @@ Public Class Dashboard
         lblTitleNav.Text = "Dashboard"
         lblSubTxt.Text = "Overview of internship management system"
         SetActiveNavButton(DirectCast(sender, Button))
+        LoadUpcomingVisits(ucDash.panelUV)
     End Sub
 
     Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click
@@ -211,7 +212,7 @@ Public Class Dashboard
         End If
     End Sub
 
-    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_2(sender As Object, e As EventArgs) Handles frmFacProfile.Click
         Dim addForm As New frmFacProfile()
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
