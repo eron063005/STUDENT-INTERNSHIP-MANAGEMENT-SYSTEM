@@ -33,11 +33,10 @@ Partial Class frmAddAssessment
         Label2 = New Label()
         Label12 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        nudAddAssessGrade = New NumericUpDown()
+        cmbCCId = New ComboBox()
+        cmbStudentId = New ComboBox()
         Panel2 = New Panel()
-        mtxtAddComConID = New MaskedTextBox()
         Label4 = New Label()
-        mtxtAddStdID = New MaskedTextBox()
         btnExitAddAssessment = New Button()
         mtxtAddAssessID = New MaskedTextBox()
         btnAddAssess = New RoundedButton()
@@ -45,11 +44,9 @@ Partial Class frmAddAssessment
         btnAddAssessCancel = New RoundedButton()
         Label7 = New Label()
         Label5 = New Label()
-        Label6 = New Label()
         CType(nudAddStdAge, ComponentModel.ISupportInitialize).BeginInit()
         Panel1.SuspendLayout()
         RoundedPanel1.SuspendLayout()
-        CType(nudAddAssessGrade, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' TextBox2
@@ -156,11 +153,10 @@ Partial Class frmAddAssessment
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
-        RoundedPanel1.Controls.Add(nudAddAssessGrade)
+        RoundedPanel1.Controls.Add(cmbCCId)
+        RoundedPanel1.Controls.Add(cmbStudentId)
         RoundedPanel1.Controls.Add(Panel2)
-        RoundedPanel1.Controls.Add(mtxtAddComConID)
         RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(mtxtAddStdID)
         RoundedPanel1.Controls.Add(btnExitAddAssessment)
         RoundedPanel1.Controls.Add(mtxtAddAssessID)
         RoundedPanel1.Controls.Add(btnAddAssess)
@@ -168,7 +164,6 @@ Partial Class frmAddAssessment
         RoundedPanel1.Controls.Add(btnAddAssessCancel)
         RoundedPanel1.Controls.Add(Label7)
         RoundedPanel1.Controls.Add(Label5)
-        RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.CornerRadius = 2
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(0, 0)
@@ -176,14 +171,23 @@ Partial Class frmAddAssessment
         RoundedPanel1.Size = New Size(965, 601)
         RoundedPanel1.TabIndex = 0
         ' 
-        ' nudAddAssessGrade
+        ' cmbCCId
         ' 
-        nudAddAssessGrade.BorderStyle = BorderStyle.FixedSingle
-        nudAddAssessGrade.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        nudAddAssessGrade.Location = New Point(44, 439)
-        nudAddAssessGrade.Name = "nudAddAssessGrade"
-        nudAddAssessGrade.Size = New Size(72, 44)
-        nudAddAssessGrade.TabIndex = 59
+        cmbCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbCCId.FormattingEnabled = True
+        cmbCCId.Location = New Point(533, 343)
+        cmbCCId.Name = "cmbCCId"
+        cmbCCId.Size = New Size(324, 45)
+        cmbCCId.TabIndex = 60
+        ' 
+        ' cmbStudentId
+        ' 
+        cmbStudentId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        cmbStudentId.FormattingEnabled = True
+        cmbStudentId.Location = New Point(44, 343)
+        cmbStudentId.Name = "cmbStudentId"
+        cmbStudentId.Size = New Size(362, 45)
+        cmbStudentId.TabIndex = 59
         ' 
         ' Panel2
         ' 
@@ -192,15 +196,6 @@ Partial Class frmAddAssessment
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(850, 4)
         Panel2.TabIndex = 38
-        ' 
-        ' mtxtAddComConID
-        ' 
-        mtxtAddComConID.BorderStyle = BorderStyle.FixedSingle
-        mtxtAddComConID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        mtxtAddComConID.Location = New Point(533, 338)
-        mtxtAddComConID.Name = "mtxtAddComConID"
-        mtxtAddComConID.Size = New Size(324, 44)
-        mtxtAddComConID.TabIndex = 58
         ' 
         ' Label4
         ' 
@@ -212,15 +207,6 @@ Partial Class frmAddAssessment
         Label4.Size = New Size(585, 80)
         Label4.TabIndex = 35
         Label4.Text = "Add Assessment "
-        ' 
-        ' mtxtAddStdID
-        ' 
-        mtxtAddStdID.BorderStyle = BorderStyle.FixedSingle
-        mtxtAddStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        mtxtAddStdID.Location = New Point(44, 338)
-        mtxtAddStdID.Name = "mtxtAddStdID"
-        mtxtAddStdID.Size = New Size(324, 44)
-        mtxtAddStdID.TabIndex = 57
         ' 
         ' btnExitAddAssessment
         ' 
@@ -319,17 +305,6 @@ Partial Class frmAddAssessment
         Label5.TabIndex = 53
         Label5.Text = "Company Contact ID"
         ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        Label6.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(44, 395)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(89, 27)
-        Label6.TabIndex = 52
-        Label6.Text = "Grade "
-        ' 
         ' frmAddAssessment
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -344,7 +319,6 @@ Partial Class frmAddAssessment
         Panel1.PerformLayout()
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
-        CType(nudAddAssessGrade, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents TextBox2 As TextBox
@@ -363,13 +337,11 @@ Partial Class frmAddAssessment
     Friend WithEvents btnExitAddAssessment As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents nudAddAssessGrade As NumericUpDown
-    Friend WithEvents mtxtAddComConID As MaskedTextBox
-    Friend WithEvents mtxtAddStdID As MaskedTextBox
     Friend WithEvents mtxtAddAssessID As MaskedTextBox
     Friend WithEvents btnAddAssess As RoundedButton
     Friend WithEvents Label9 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents cmbCCId As ComboBox
+    Friend WithEvents cmbStudentId As ComboBox
 End Class
