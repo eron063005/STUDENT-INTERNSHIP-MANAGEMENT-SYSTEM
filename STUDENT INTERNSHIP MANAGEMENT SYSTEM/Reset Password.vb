@@ -77,7 +77,6 @@ Public Class Reset_Password
                 End Using
 
                 MessageBox.Show("Password successfully reset!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Me.Close()
 
             Catch ex As MySqlException
                 MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

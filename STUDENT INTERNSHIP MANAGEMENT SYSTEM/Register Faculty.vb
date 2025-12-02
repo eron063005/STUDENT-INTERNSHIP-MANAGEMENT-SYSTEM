@@ -24,7 +24,6 @@ Public Class Register_Faculty
         If result = DialogResult.Yes Then Application.Exit()
     End Sub
 
-    'Show/Hide Password
     Private Sub btnShowPass_Click(sender As Object, e As EventArgs) Handles btnShowPass.Click
         If txtPassword.PasswordChar = "*"c Then
             txtPassword.PasswordChar = ControlChars.NullChar
@@ -65,14 +64,12 @@ Public Class Register_Faculty
             Exit Sub
         End If
 
-        ' Email validation
         If Not email.EndsWith("@gmail.com", StringComparison.OrdinalIgnoreCase) Then
             MessageBox.Show("Email must end with '@gmail.com'.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtFacEmailAdd.Focus()
             Exit Sub
         End If
 
-        ' Password match
         If pass <> confirmPass Then
             MessageBox.Show("Password and Confirm Password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtPassword.Focus()
@@ -81,7 +78,6 @@ Public Class Register_Faculty
 
         ' Save to database
         Using con As New MySqlConnection(connString)
-            Try
                 con.Open()
 
                 ' Get DeptId from department name
@@ -117,58 +113,11 @@ Public Class Register_Faculty
                 txtPassword.Clear()
                 txtConfirmPass.Clear()
                 cmbFacDept.SelectedIndex = -1
-                txtFacID.Text = GetNextFacultyID()
 
             Catch ex As MySqlException
                 MessageBox.Show("Database error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Catch ex As Exception
                 MessageBox.Show("Unexpected error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
-        End Using
     End Sub
-
-    ' Load Departments into ComboBox
-    Private Sub LoadDepartments()
-        Using con As New MySqlConnection(connString)
-            Try
-                con.Open()
-                Dim query As String = "SELECT DepartmentName FROM departments ORDER BY DepartmentName"
-                Using cmd As New MySqlCommand(query, con)
-                    Using reader = cmd.ExecuteReader()
-                        cmbFacDept.Items.Clear()
-                        While reader.Read()
-                            cmbFacDept.Items.Add(reader("DepartmentName").ToString())
-                        End While
-                    End Using
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Failed to load departments: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End Using
-    End Sub
-
-    ' Get Next FacultyID
-    Private Function GetNextFacultyID() As String
-        Dim nextID As String = "F001"
-        Using con As New MySqlConnection(connString)
-            Try
-                con.Open()
-                Dim query As String = "SELECT FacultyId FROM faculty ORDER BY FacultyId DESC LIMIT 1"
-                Using cmd As New MySqlCommand(query, con)
-                    Dim result = cmd.ExecuteScalar()
-                    If result IsNot Nothing Then
-                        Dim lastID As String = result.ToString()
-                        Dim num As Integer
-                        If Integer.TryParse(lastID.Substring(1), num) Then
-                            num += 1
-                            nextID = "F" & num.ToString("D3") 'Pad to 3 digits
-                        End If
-                    End If
-                End Using
-            Catch ex As Exception
-                MessageBox.Show("Failed to generate Faculty ID: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End Using
-        Return nextID
-    End Function
 End Class
