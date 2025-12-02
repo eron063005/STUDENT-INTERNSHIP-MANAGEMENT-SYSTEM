@@ -141,33 +141,29 @@ Public Class ucStudent
         End Try
     End Sub
 
-<<<<<<< HEAD
     Private Sub btnarchStudents_Click(sender As Object, e As EventArgs) Handles btnarchStudents.Click
         Dim addForm As New archStudent()
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
     End Sub
-=======
-    Private Sub txtSearchBar_TextChanged(sender As Object, e As EventArgs) Handles txtSearchBar.TextChanged
-        SearchStudents(txtSearchBar.Text)
-    End Sub
 
     Private Sub SearchStudents(searchText As String)
         Try
-            ' Build query to search across multiple columns
+            ' Build query to search across multiple columns but only for the logged-in faculty
             Dim query As String = "SELECT StudentId, FirstName, LastName, MiddleName, " &
-                      "IF(Birthday='0000-00-00', NULL, Birthday) AS Birthday, " &
-                      "Sex, ContactNo, Email, CourseId, FacultyId, Section " &
-                      "FROM STUDENT " &
-                      "WHERE StudentId LIKE @search OR FirstName LIKE @search OR LastName LIKE @search OR MiddleName LIKE @search " &
-                      "OR Birthday LIKE @search OR Sex LIKE @search OR ContactNo LIKE @search OR Email LIKE @search " &
-                      "OR CourseId LIKE @search OR FacultyId LIKE @search OR Section LIKE @search"
-
+                              "IF(Birthday='0000-00-00', NULL, Birthday) AS Birthday, " &
+                              "Sex, ContactNo, Email, CourseId, FacultyId, Section " &
+                              "FROM STUDENT " &
+                              "WHERE FacultyId = @facultyId AND (" &
+                              "StudentId LIKE @search OR FirstName LIKE @search OR LastName LIKE @search OR MiddleName LIKE @search " &
+                              "OR Birthday LIKE @search OR Sex LIKE @search OR ContactNo LIKE @search OR Email LIKE @search " &
+                              "OR CourseId LIKE @search OR Section LIKE @search)" ' Removed FacultyId from search
 
             Using con As New MySqlConnection(connString)
                 Using cmd As New MySqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@search", "%" & searchText & "%")
+                    cmd.Parameters.AddWithValue("@facultyId", LoggedFacultyID) ' Filter by logged-in faculty
 
                     Dim dt As New DataTable()
                     Dim adapter As New MySqlDataAdapter(cmd)
@@ -183,5 +179,7 @@ Public Class ucStudent
     End Sub
 
 
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
+    Private Sub txtStdSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtStdSearchBox.TextChanged
+        SearchStudents(txtStdSearchBox.Text)
+    End Sub
 End Class

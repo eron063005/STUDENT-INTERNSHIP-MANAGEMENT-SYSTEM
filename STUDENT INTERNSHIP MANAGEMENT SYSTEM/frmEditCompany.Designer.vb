@@ -34,10 +34,8 @@ Partial Class frmEditCompany
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
-<<<<<<< HEAD
-=======
+
         cbEditCompID = New ComboBox()
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
         txtEditCompName = New TextBox()
         Label4 = New Label()
         Panel2 = New Panel()
@@ -194,10 +192,8 @@ Partial Class frmEditCompany
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
         ' 
-<<<<<<< HEAD
-=======
         ' cbEditCompID
-        ' 
+        '
         cbEditCompID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cbEditCompID.FormattingEnabled = True
         cbEditCompID.Location = New Point(27, 205)
@@ -205,7 +201,6 @@ Partial Class frmEditCompany
         cbEditCompID.Size = New Size(258, 45)
         cbEditCompID.TabIndex = 81
         ' 
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
         ' txtEditCompName
         ' 
         txtEditCompName.BorderStyle = BorderStyle.FixedSingle

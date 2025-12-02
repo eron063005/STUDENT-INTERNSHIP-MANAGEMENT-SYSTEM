@@ -30,13 +30,8 @@ Partial Class ucStudent
         btnImportFile = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
         PictureBox1 = New PictureBox()
-<<<<<<< HEAD
         txtStdSearchBox = New TextBox()
         cmbFilterCourseName = New ComboBox()
-=======
-        txtSearchBar = New TextBox()
-        ComboBox1 = New ComboBox()
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
         PictureBox2 = New PictureBox()
         RoundedPanel2 = New RoundedPanel()
         btnarchStudents = New Button()
@@ -149,11 +144,7 @@ Partial Class ucStudent
         RoundedPanel1.BorderColor = Color.FromArgb(CByte(80), CByte(118), CByte(133))
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(PictureBox1)
-<<<<<<< HEAD
         RoundedPanel1.Controls.Add(txtStdSearchBox)
-=======
-        RoundedPanel1.Controls.Add(txtSearchBar)
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.FillColor = Color.White
         RoundedPanel1.Location = New Point(28, 25)
@@ -171,7 +162,6 @@ Partial Class ucStudent
         PictureBox1.TabIndex = 1
         PictureBox1.TabStop = False
         ' 
-<<<<<<< HEAD
         ' txtStdSearchBox
         ' 
         txtStdSearchBox.BorderStyle = BorderStyle.None
@@ -180,16 +170,6 @@ Partial Class ucStudent
         txtStdSearchBox.Name = "txtStdSearchBox"
         txtStdSearchBox.Size = New Size(787, 41)
         txtStdSearchBox.TabIndex = 0
-=======
-        ' txtSearchBar
-        ' 
-        txtSearchBar.BorderStyle = BorderStyle.None
-        txtSearchBar.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtSearchBar.Location = New Point(64, 12)
-        txtSearchBar.Name = "txtSearchBar"
-        txtSearchBar.Size = New Size(787, 41)
-        txtSearchBar.TabIndex = 0
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
         ' 
         ' cmbFilterCourseName
         ' 
@@ -271,13 +251,8 @@ Partial Class ucStudent
     Friend WithEvents btnImportFile As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox1 As PictureBox
-<<<<<<< HEAD
     Friend WithEvents txtStdSearchBox As TextBox
     Friend WithEvents cmbFilterCourseName As ComboBox
-=======
-    Friend WithEvents txtSearchBar As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents btnarchStudents As Button

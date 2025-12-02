@@ -83,13 +83,10 @@ Public Class ucPlacement
         LoadDataInternship(dgvPlacement)
     End Sub
 
-<<<<<<< HEAD
     Private Sub btnarchPlacement_Click(sender As Object, e As EventArgs) Handles btnarchPlacement.Click
         Dim addForm As New archPlacement()
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
     End Sub
-=======
->>>>>>> 5ada02cf639284031368c037ba74dab8c0806329
 End Class
