@@ -17,7 +17,7 @@ Public Class ucAssessment
     End Sub
 
     Private Sub LoadAssessmentData()
-        Dim query As String = "SELECT AssessmentId, StudentId, CompanyContactId, AssessmentGrade, Archived FROM assessment"
+        Dim query As String = "SELECT AssessmentId, StudentId, CompanyContactId, AssessmentGrade, Archived FROM assessment a"
 
         Try
             Using conn As New MySqlConnection(connString)

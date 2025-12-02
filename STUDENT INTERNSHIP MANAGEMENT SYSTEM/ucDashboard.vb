@@ -7,7 +7,6 @@ Public Class ucDashboard
         lblPartnerComp.Text = GetCompaniesCount()
         LoadRecentPlacements()
         LoadUpcomingVisits(panelUV)
-
     End Sub
 
     Private Sub LoadRecentPlacements()

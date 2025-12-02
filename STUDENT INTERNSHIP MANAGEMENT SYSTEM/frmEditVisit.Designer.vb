@@ -176,7 +176,7 @@ Partial Class frmEditVisit
         ' txtEditVisitEval
         ' 
         txtEditVisitEval.BorderStyle = BorderStyle.FixedSingle
-        txtEditVisitEval.Font = New Font("Century Gothic", 18F)
+        txtEditVisitEval.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         txtEditVisitEval.ForeColor = SystemColors.WindowText
         txtEditVisitEval.Location = New Point(309, 309)
         txtEditVisitEval.Name = "txtEditVisitEval"

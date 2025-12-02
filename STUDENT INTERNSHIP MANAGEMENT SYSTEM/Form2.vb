@@ -132,6 +132,7 @@ Public Class Dashboard
         lblTitleNav.Text = "Dashboard"
         lblSubTxt.Text = "Overview of internship management system"
         SetActiveNavButton(DirectCast(sender, Button))
+        LoadUpcomingVisits(ucDash.panelUV)
     End Sub
 
     Private Sub btnStudent_Click(sender As Object, e As EventArgs) Handles btnStudent.Click

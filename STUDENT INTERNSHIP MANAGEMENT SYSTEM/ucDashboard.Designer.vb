@@ -45,12 +45,12 @@ Partial Class ucDashboard
         lblRPName2 = New Label()
         Label9 = New Label()
         rp1 = New RoundedPanel()
+        lblRPStatus1 = New Label()
         lblRPCompany1 = New Label()
         lblRPName1 = New Label()
         RoundedPanel5 = New RoundedPanel()
         panelUV = New Panel()
         Label19 = New Label()
-        lblRPStatus1 = New Label()
         RoundedPanel11.SuspendLayout()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
@@ -80,7 +80,7 @@ Partial Class ucDashboard
         ' 
         lblActiveIntern.AutoSize = True
         lblActiveIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblActiveIntern.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblActiveIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblActiveIntern.Location = New Point(137, 69)
         lblActiveIntern.Name = "lblActiveIntern"
         lblActiveIntern.Size = New Size(84, 96)
@@ -116,7 +116,7 @@ Partial Class ucDashboard
         ' 
         lblPendingIntern.AutoSize = True
         lblPendingIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblPendingIntern.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPendingIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPendingIntern.Location = New Point(145, 69)
         lblPendingIntern.Name = "lblPendingIntern"
         lblPendingIntern.Size = New Size(84, 96)
@@ -152,7 +152,7 @@ Partial Class ucDashboard
         ' 
         lblPartnerComp.AutoSize = True
         lblPartnerComp.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblPartnerComp.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPartnerComp.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPartnerComp.Location = New Point(144, 69)
         lblPartnerComp.Name = "lblPartnerComp"
         lblPartnerComp.Size = New Size(84, 96)
@@ -188,7 +188,7 @@ Partial Class ucDashboard
         ' 
         lblFacultyVisit.AutoSize = True
         lblFacultyVisit.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblFacultyVisit.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblFacultyVisit.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblFacultyVisit.Location = New Point(150, 69)
         lblFacultyVisit.Name = "lblFacultyVisit"
         lblFacultyVisit.Size = New Size(84, 96)
@@ -344,6 +344,17 @@ Partial Class ucDashboard
         rp1.Size = New Size(606, 141)
         rp1.TabIndex = 2
         ' 
+        ' lblRPStatus1
+        ' 
+        lblRPStatus1.AutoSize = True
+        lblRPStatus1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
+        lblRPStatus1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblRPStatus1.Location = New Point(458, 44)
+        lblRPStatus1.Name = "lblRPStatus1"
+        lblRPStatus1.Size = New Size(74, 26)
+        lblRPStatus1.TabIndex = 4
+        lblRPStatus1.Text = "Status"
+        ' 
         ' lblRPCompany1
         ' 
         lblRPCompany1.AutoSize = True
@@ -399,20 +410,9 @@ Partial Class ucDashboard
         Label19.TabIndex = 4
         Label19.Text = "Upcoming Visits"
         ' 
-        ' lblRPStatus1
-        ' 
-        lblRPStatus1.AutoSize = True
-        lblRPStatus1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        lblRPStatus1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPStatus1.Location = New Point(458, 44)
-        lblRPStatus1.Name = "lblRPStatus1"
-        lblRPStatus1.Size = New Size(74, 26)
-        lblRPStatus1.TabIndex = 4
-        lblRPStatus1.Text = "Status"
-        ' 
         ' ucDashboard
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Controls.Add(RoundedPanel5)
@@ -471,7 +471,7 @@ Partial Class ucDashboard
     Friend WithEvents lblRPName2 As Label
     Friend WithEvents lblRPCompany1 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents panelUV As Panel
     Friend WithEvents lblRPStatus1 As Label
+    Public WithEvents panelUV As Panel
 
 End Class
