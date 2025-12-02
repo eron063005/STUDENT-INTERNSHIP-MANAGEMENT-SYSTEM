@@ -126,13 +126,6 @@ Public Class ucStudent
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> dea32a5cf1a64c29cd82b59e299d6336c1b9a405
     Private Sub txtStdSearchBox_TextChanged(sender As Object, e As EventArgs) Handles txtStdSearchBox.TextChanged
         SearchStudents(txtStdSearchBox.Text)
     End Sub

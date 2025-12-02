@@ -187,7 +187,6 @@ Public Class frmAddStudent
         conn.Close()
     End Sub
 
-<<<<<<< HEAD
     Private Sub AddStudent()
         Dim con As New MySqlConnection(connString)
 
@@ -280,6 +279,3 @@ Public Class frmAddStudent
 
 
 End Class
-=======
-End Class
->>>>>>> dea32a5cf1a64c29cd82b59e299d6336c1b9a405

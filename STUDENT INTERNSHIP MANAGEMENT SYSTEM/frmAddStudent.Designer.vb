@@ -420,7 +420,6 @@ Partial Class frmAddStudent
         Panel2.Size = New Size(990, 4)
         Panel2.TabIndex = 39
         ' 
-<<<<<<< HEAD
         ' cmbAddCCId
         ' 
         cmbAddCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0)
@@ -461,8 +460,6 @@ Partial Class frmAddStudent
         Label14.TabIndex = 66
         Label14.Text = "Company Contact ID"
         ' 
-=======
->>>>>>> dea32a5cf1a64c29cd82b59e299d6336c1b9a405
         ' frmAddStudent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)

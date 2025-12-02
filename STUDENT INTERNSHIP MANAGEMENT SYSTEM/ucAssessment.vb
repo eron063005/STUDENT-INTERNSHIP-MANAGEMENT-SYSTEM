@@ -17,16 +17,6 @@ Public Class ucAssessment
     End Sub
 
     Private Sub LoadAssessmentData()
-<<<<<<< HEAD
-        Dim currentFacultyId As String = LoggedFacultyID
-
-        ' Updated query to include InternshipId by joining Internship table
-        Dim sql As String = "SELECT a.AssessmentId, a.StudentId, i.InternshipId, a.CompanyContactId, a.AssessmentGrade, a.Archived
-                     FROM assessment a
-                     JOIN student s ON a.StudentId = s.StudentId
-                     LEFT JOIN internship i ON a.StudentId = i.StudentId AND i.Status = 'Ongoing'
-                     WHERE s.FacultyId = @facultyId"
-=======
 
         Dim currentFacultyId As String = LoggedFacultyID
 
@@ -44,7 +34,6 @@ Public Class ucAssessment
         JOIN company c ON cc.CompanyId = c.CompanyId
         WHERE s.FacultyId = @facultyId
     "
->>>>>>> dea32a5cf1a64c29cd82b59e299d6336c1b9a405
 
         Try
             Using conn As New MySqlConnection(connString)
@@ -71,11 +60,6 @@ Public Class ucAssessment
         Catch ex As Exception
             MessageBox.Show("Error loading assessment data: " & ex.Message)
         End Try
-
-<<<<<<< HEAD
-
-=======
->>>>>>> dea32a5cf1a64c29cd82b59e299d6336c1b9a405
     End Sub
 
 
