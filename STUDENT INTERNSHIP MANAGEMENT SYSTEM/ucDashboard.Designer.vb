@@ -35,30 +35,30 @@ Partial Class ucDashboard
         lblFacultyVisit = New Label()
         Label4 = New Label()
         RoundedPanel4 = New RoundedPanel()
-        RoundedPanel8 = New RoundedPanel()
+        rp3 = New RoundedPanel()
         lblRPStatus3 = New Label()
         lblRPCompany3 = New Label()
         lblRPName3 = New Label()
-        RoundedPanel7 = New RoundedPanel()
+        rp2 = New RoundedPanel()
         lblRPStatus2 = New Label()
         lblRPCompany2 = New Label()
         lblRPName2 = New Label()
         Label9 = New Label()
-        RoundedPanel6 = New RoundedPanel()
-        lblRPStatus1 = New Label()
+        rp1 = New RoundedPanel()
         lblRPCompany1 = New Label()
         lblRPName1 = New Label()
         RoundedPanel5 = New RoundedPanel()
         panelUV = New Panel()
         Label19 = New Label()
+        lblRPStatus1 = New Label()
         RoundedPanel11.SuspendLayout()
         RoundedPanel1.SuspendLayout()
         RoundedPanel2.SuspendLayout()
         RoundedPanel3.SuspendLayout()
         RoundedPanel4.SuspendLayout()
-        RoundedPanel8.SuspendLayout()
-        RoundedPanel7.SuspendLayout()
-        RoundedPanel6.SuspendLayout()
+        rp3.SuspendLayout()
+        rp2.SuspendLayout()
+        rp1.SuspendLayout()
         RoundedPanel5.SuspendLayout()
         SuspendLayout()
         ' 
@@ -80,7 +80,7 @@ Partial Class ucDashboard
         ' 
         lblActiveIntern.AutoSize = True
         lblActiveIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblActiveIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblActiveIntern.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblActiveIntern.Location = New Point(137, 69)
         lblActiveIntern.Name = "lblActiveIntern"
         lblActiveIntern.Size = New Size(84, 96)
@@ -116,7 +116,7 @@ Partial Class ucDashboard
         ' 
         lblPendingIntern.AutoSize = True
         lblPendingIntern.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblPendingIntern.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPendingIntern.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPendingIntern.Location = New Point(145, 69)
         lblPendingIntern.Name = "lblPendingIntern"
         lblPendingIntern.Size = New Size(84, 96)
@@ -152,7 +152,7 @@ Partial Class ucDashboard
         ' 
         lblPartnerComp.AutoSize = True
         lblPartnerComp.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblPartnerComp.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblPartnerComp.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPartnerComp.Location = New Point(144, 69)
         lblPartnerComp.Name = "lblPartnerComp"
         lblPartnerComp.Size = New Size(84, 96)
@@ -188,7 +188,7 @@ Partial Class ucDashboard
         ' 
         lblFacultyVisit.AutoSize = True
         lblFacultyVisit.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        lblFacultyVisit.Font = New Font("Rockwell", 48F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblFacultyVisit.Font = New Font("Rockwell", 48.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblFacultyVisit.Location = New Point(150, 69)
         lblFacultyVisit.Name = "lblFacultyVisit"
         lblFacultyVisit.Size = New Size(84, 96)
@@ -211,10 +211,10 @@ Partial Class ucDashboard
         RoundedPanel4.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         RoundedPanel4.BorderColor = Color.Black
         RoundedPanel4.BorderSize = 5
-        RoundedPanel4.Controls.Add(RoundedPanel8)
-        RoundedPanel4.Controls.Add(RoundedPanel7)
+        RoundedPanel4.Controls.Add(rp3)
+        RoundedPanel4.Controls.Add(rp2)
         RoundedPanel4.Controls.Add(Label9)
-        RoundedPanel4.Controls.Add(RoundedPanel6)
+        RoundedPanel4.Controls.Add(rp1)
         RoundedPanel4.CornerRadius = 20
         RoundedPanel4.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel4.Location = New Point(44, 297)
@@ -222,27 +222,27 @@ Partial Class ucDashboard
         RoundedPanel4.Size = New Size(686, 557)
         RoundedPanel4.TabIndex = 1
         ' 
-        ' RoundedPanel8
+        ' rp3
         ' 
-        RoundedPanel8.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel8.BorderColor = Color.Black
-        RoundedPanel8.BorderSize = 5
-        RoundedPanel8.Controls.Add(lblRPStatus3)
-        RoundedPanel8.Controls.Add(lblRPCompany3)
-        RoundedPanel8.Controls.Add(lblRPName3)
-        RoundedPanel8.CornerRadius = 20
-        RoundedPanel8.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        RoundedPanel8.Location = New Point(37, 383)
-        RoundedPanel8.Name = "RoundedPanel8"
-        RoundedPanel8.Size = New Size(606, 141)
-        RoundedPanel8.TabIndex = 3
+        rp3.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        rp3.BorderColor = Color.Black
+        rp3.BorderSize = 5
+        rp3.Controls.Add(lblRPStatus3)
+        rp3.Controls.Add(lblRPCompany3)
+        rp3.Controls.Add(lblRPName3)
+        rp3.CornerRadius = 20
+        rp3.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
+        rp3.Location = New Point(37, 383)
+        rp3.Name = "rp3"
+        rp3.Size = New Size(606, 141)
+        rp3.TabIndex = 3
         ' 
         ' lblRPStatus3
         ' 
         lblRPStatus3.AutoSize = True
         lblRPStatus3.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         lblRPStatus3.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPStatus3.Location = New Point(539, 45)
+        lblRPStatus3.Location = New Point(469, 39)
         lblRPStatus3.Name = "lblRPStatus3"
         lblRPStatus3.Size = New Size(28, 26)
         lblRPStatus3.TabIndex = 7
@@ -270,27 +270,27 @@ Partial Class ucDashboard
         lblRPName3.TabIndex = 5
         lblRPName3.Text = "--"
         ' 
-        ' RoundedPanel7
+        ' rp2
         ' 
-        RoundedPanel7.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel7.BorderColor = Color.Black
-        RoundedPanel7.BorderSize = 5
-        RoundedPanel7.Controls.Add(lblRPStatus2)
-        RoundedPanel7.Controls.Add(lblRPCompany2)
-        RoundedPanel7.Controls.Add(lblRPName2)
-        RoundedPanel7.CornerRadius = 20
-        RoundedPanel7.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        RoundedPanel7.Location = New Point(37, 224)
-        RoundedPanel7.Name = "RoundedPanel7"
-        RoundedPanel7.Size = New Size(606, 141)
-        RoundedPanel7.TabIndex = 3
+        rp2.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        rp2.BorderColor = Color.Black
+        rp2.BorderSize = 5
+        rp2.Controls.Add(lblRPStatus2)
+        rp2.Controls.Add(lblRPCompany2)
+        rp2.Controls.Add(lblRPName2)
+        rp2.CornerRadius = 20
+        rp2.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
+        rp2.Location = New Point(37, 224)
+        rp2.Name = "rp2"
+        rp2.Size = New Size(606, 141)
+        rp2.TabIndex = 3
         ' 
         ' lblRPStatus2
         ' 
         lblRPStatus2.AutoSize = True
         lblRPStatus2.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         lblRPStatus2.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPStatus2.Location = New Point(539, 45)
+        lblRPStatus2.Location = New Point(469, 43)
         lblRPStatus2.Name = "lblRPStatus2"
         lblRPStatus2.Size = New Size(28, 26)
         lblRPStatus2.TabIndex = 7
@@ -325,35 +325,24 @@ Partial Class ucDashboard
         Label9.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label9.Location = New Point(28, 22)
         Label9.Name = "Label9"
-        Label9.Size = New Size(200, 26)
+        Label9.Size = New Size(84, 26)
         Label9.TabIndex = 2
-        Label9.Text = "Recent Placement"
+        Label9.Text = "Recent"
         ' 
-        ' RoundedPanel6
+        ' rp1
         ' 
-        RoundedPanel6.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedPanel6.BorderColor = Color.Black
-        RoundedPanel6.BorderSize = 5
-        RoundedPanel6.Controls.Add(lblRPStatus1)
-        RoundedPanel6.Controls.Add(lblRPCompany1)
-        RoundedPanel6.Controls.Add(lblRPName1)
-        RoundedPanel6.CornerRadius = 20
-        RoundedPanel6.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        RoundedPanel6.Location = New Point(37, 65)
-        RoundedPanel6.Name = "RoundedPanel6"
-        RoundedPanel6.Size = New Size(606, 141)
-        RoundedPanel6.TabIndex = 2
-        ' 
-        ' lblRPStatus1
-        ' 
-        lblRPStatus1.AutoSize = True
-        lblRPStatus1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
-        lblRPStatus1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPStatus1.Location = New Point(508, 47)
-        lblRPStatus1.Name = "lblRPStatus1"
-        lblRPStatus1.Size = New Size(74, 26)
-        lblRPStatus1.TabIndex = 4
-        lblRPStatus1.Text = "Status"
+        rp1.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        rp1.BorderColor = Color.Black
+        rp1.BorderSize = 5
+        rp1.Controls.Add(lblRPStatus1)
+        rp1.Controls.Add(lblRPCompany1)
+        rp1.Controls.Add(lblRPName1)
+        rp1.CornerRadius = 20
+        rp1.FillColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
+        rp1.Location = New Point(37, 65)
+        rp1.Name = "rp1"
+        rp1.Size = New Size(606, 141)
+        rp1.TabIndex = 2
         ' 
         ' lblRPCompany1
         ' 
@@ -410,9 +399,20 @@ Partial Class ucDashboard
         Label19.TabIndex = 4
         Label19.Text = "Upcoming Visits"
         ' 
+        ' lblRPStatus1
+        ' 
+        lblRPStatus1.AutoSize = True
+        lblRPStatus1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
+        lblRPStatus1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblRPStatus1.Location = New Point(458, 44)
+        lblRPStatus1.Name = "lblRPStatus1"
+        lblRPStatus1.Size = New Size(74, 26)
+        lblRPStatus1.TabIndex = 4
+        lblRPStatus1.Text = "Status"
+        ' 
         ' ucDashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Controls.Add(RoundedPanel5)
@@ -433,12 +433,12 @@ Partial Class ucDashboard
         RoundedPanel3.PerformLayout()
         RoundedPanel4.ResumeLayout(False)
         RoundedPanel4.PerformLayout()
-        RoundedPanel8.ResumeLayout(False)
-        RoundedPanel8.PerformLayout()
-        RoundedPanel7.ResumeLayout(False)
-        RoundedPanel7.PerformLayout()
-        RoundedPanel6.ResumeLayout(False)
-        RoundedPanel6.PerformLayout()
+        rp3.ResumeLayout(False)
+        rp3.PerformLayout()
+        rp2.ResumeLayout(False)
+        rp2.PerformLayout()
+        rp1.ResumeLayout(False)
+        rp1.PerformLayout()
         RoundedPanel5.ResumeLayout(False)
         RoundedPanel5.PerformLayout()
         ResumeLayout(False)
@@ -458,10 +458,10 @@ Partial Class ucDashboard
     Friend WithEvents Label3 As Label
     Friend WithEvents lblFacultyVisit As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents RoundedPanel8 As RoundedPanel
-    Friend WithEvents RoundedPanel7 As RoundedPanel
+    Friend WithEvents rp3 As RoundedPanel
+    Friend WithEvents rp2 As RoundedPanel
     Friend WithEvents Label9 As Label
-    Friend WithEvents RoundedPanel6 As RoundedPanel
+    Friend WithEvents rp1 As RoundedPanel
     Friend WithEvents lblRPName1 As Label
     Friend WithEvents lblRPStatus3 As Label
     Friend WithEvents lblRPCompany3 As Label
@@ -469,9 +469,9 @@ Partial Class ucDashboard
     Friend WithEvents lblRPStatus2 As Label
     Friend WithEvents lblRPCompany2 As Label
     Friend WithEvents lblRPName2 As Label
-    Friend WithEvents lblRPStatus1 As Label
     Friend WithEvents lblRPCompany1 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents panelUV As Panel
+    Friend WithEvents lblRPStatus1 As Label
 
 End Class

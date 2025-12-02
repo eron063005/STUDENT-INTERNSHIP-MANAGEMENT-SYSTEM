@@ -105,18 +105,13 @@ Public Class frmAddStudent
                            FROM Faculty WHERE DeptID = @dept"
         Dim profCmd As New MySqlCommand(profQuery, conn)
         profCmd.Parameters.AddWithValue("@dept", deptID)
-
         Dim da As New MySqlDataAdapter(profCmd)
         Dim dt As New DataTable()
         da.Fill(dt)
-
-
         cmbAddStdProf.DataSource = dt
         cmbAddStdProf.DisplayMember = "FullName"
         cmbAddStdProf.ValueMember = "FacultyID"
-
-
         conn.Close()
-
     End Sub
+
 End Class
