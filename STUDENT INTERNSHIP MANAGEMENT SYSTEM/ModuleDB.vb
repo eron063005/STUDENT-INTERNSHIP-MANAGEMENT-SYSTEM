@@ -231,6 +231,44 @@ Module ModuleDB
         Return newId
     End Function
 
+    Sub LoadDataInternship(targetGrid As DataGridView)
+        Using con As New MySqlConnection(connString)
+            Dim query As String =
+            "SELECT
+                i.InternshipID,
+                i.StudentID,
+                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                c.CompanyID,
+                c.CompanyName,
+                i.Status,
+                i.StartDate,
+                i.EndDate,
+                i.FGrade
+            FROM internship i
+            INNER JOIN student s ON i.studentID = s.studentID
+            INNER JOIN assessment a ON i.studentID = a.studentID
+            INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID  
+            INNER JOIN Company c ON cc.CompanyID = c.CompanyID
+            WHERE s.FacultyID = @facultyID
+            "
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+
+        End Using
+
+        ' Optional DGV settings
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
     '---------------
     'Company Part
     Sub LoadCompanyCards(CompanyContainer As FlowLayoutPanel)
@@ -385,51 +423,38 @@ Module ModuleDB
         End Using
     End Sub
 
-    '---------------
-    'Placement Part
-    Sub LoadDataInternship(targetGrid As DataGridView)
-        Using con As New MySqlConnection(connString)
-            Dim query As String =
-            "SELECT DISTINCT
-                i.InternshipID,
-                i.StudentID,
-                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
-                c.CompanyID,
-                c.CompanyName,
-                i.Status,
-                i.StartDate,
-                i.EndDate,
-                i.FGrade
-            FROM internship i
-            INNER JOIN student s ON i.studentID = s.studentID
-            INNER JOIN assessment a ON i.studentID = a.studentID
-            INNER JOIN visit_log v ON i.InternshipId = v.InternshipId
-            INNER JOIN Company_Contact cc ON a.CompanyContactID = cc.CompanyContactID  
-            INNER JOIN Company c ON cc.CompanyID = c.CompanyID
-            WHERE v.FacultyID = @facultyID
-            "
-
-            Using cmd As New MySqlCommand(query, con)
-                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
-
-                Dim adapter As New MySqlDataAdapter(cmd)
-                Dim table As New DataTable()
-                adapter.Fill(table)
-
-                targetGrid.DataSource = table
-            End Using
-
-        End Using
-
-        ' Optional DGV settings
-        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        targetGrid.ReadOnly = True
-        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    End Sub
 
 
 
     'Visit Part
+    Function GenerateVisitID() As String
+        Dim newID As String = "V0001"
+
+        Try
+            Using conn As New MySqlConnection(connString)
+                conn.Open()
+
+                Dim query As String = "SELECT VisitId FROM visit_log ORDER BY VisitId DESC LIMIT 1"
+                Using cmd As New MySqlCommand(query, conn)
+                    Dim result As Object = cmd.ExecuteScalar()
+
+                    If result IsNot Nothing Then
+                        Dim lastID As String = result.ToString()   ' e.g., "V0043"
+                        Dim numberPart As Integer = Integer.Parse(lastID.Substring(1)) ' remove the "V"
+
+                        numberPart += 1
+                        newID = "V" & numberPart.ToString("D4") ' Format with 4 digits
+                    End If
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error generating VisitID: " & ex.Message)
+        End Try
+
+        Return newID
+    End Function
+
     Sub LoadVisitCards(panelVisit As Panel)
         panelVisit.Controls.Clear()
 

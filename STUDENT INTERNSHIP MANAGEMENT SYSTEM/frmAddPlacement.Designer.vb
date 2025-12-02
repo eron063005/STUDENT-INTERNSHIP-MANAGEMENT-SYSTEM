@@ -24,11 +24,8 @@ Partial Class frmAddPlacement
     Private Sub InitializeComponent()
         btnAddPlaceAdd = New RoundedButton()
         btnAddPlaceCancel = New RoundedButton()
-        txtAddPlaceStatus = New TextBox()
-        txtAddPlaceStdID = New TextBox()
         Label9 = New Label()
         Label5 = New Label()
-        Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
@@ -37,8 +34,9 @@ Partial Class frmAddPlacement
         Label7 = New Label()
         dtpAddPlaceEndDate = New DateTimePicker()
         btnExitAddPlace = New Button()
-        mtxtEditPlaceCompID = New MaskedTextBox()
         RoundedPanel1 = New RoundedPanel()
+        cbAddPlaceStdID = New ComboBox()
+        cbAddPlaceStatus = New ComboBox()
         Panel2 = New Panel()
         nudAddPlaceGrade = New NumericUpDown()
         mtxtAddPlaceInternID = New MaskedTextBox()
@@ -84,24 +82,6 @@ Partial Class frmAddPlacement
         btnAddPlaceCancel.Text = "Cancel "
         btnAddPlaceCancel.UseVisualStyleBackColor = False
         ' 
-        ' txtAddPlaceStatus
-        ' 
-        txtAddPlaceStatus.BorderStyle = BorderStyle.FixedSingle
-        txtAddPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtAddPlaceStatus.Location = New Point(748, 274)
-        txtAddPlaceStatus.Name = "txtAddPlaceStatus"
-        txtAddPlaceStatus.Size = New Size(323, 44)
-        txtAddPlaceStatus.TabIndex = 41
-        ' 
-        ' txtAddPlaceStdID
-        ' 
-        txtAddPlaceStdID.BorderStyle = BorderStyle.FixedSingle
-        txtAddPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtAddPlaceStdID.Location = New Point(29, 274)
-        txtAddPlaceStdID.Name = "txtAddPlaceStdID"
-        txtAddPlaceStdID.Size = New Size(326, 44)
-        txtAddPlaceStdID.TabIndex = 39
-        ' 
         ' Label9
         ' 
         Label9.AutoSize = True
@@ -121,16 +101,6 @@ Partial Class frmAddPlacement
         Label5.Size = New Size(77, 27)
         Label5.TabIndex = 37
         Label5.Text = "Status"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label4.Location = New Point(368, 244)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(152, 27)
-        Label4.TabIndex = 36
-        Label4.Text = "Company ID"
         ' 
         ' Label3
         ' 
@@ -210,33 +180,23 @@ Partial Class frmAddPlacement
         btnExitAddPlace.TabIndex = 51
         btnExitAddPlace.UseVisualStyleBackColor = False
         ' 
-        ' mtxtEditPlaceCompID
-        ' 
-        mtxtEditPlaceCompID.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditPlaceCompID.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        mtxtEditPlaceCompID.Location = New Point(368, 274)
-        mtxtEditPlaceCompID.Name = "mtxtEditPlaceCompID"
-        mtxtEditPlaceCompID.Size = New Size(365, 44)
-        mtxtEditPlaceCompID.TabIndex = 70
-        ' 
         ' RoundedPanel1
         ' 
+        RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbAddPlaceStdID)
+        RoundedPanel1.Controls.Add(cbAddPlaceStatus)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(nudAddPlaceGrade)
         RoundedPanel1.Controls.Add(mtxtAddPlaceInternID)
         RoundedPanel1.Controls.Add(btnExitAddPlace)
-        RoundedPanel1.Controls.Add(mtxtEditPlaceCompID)
         RoundedPanel1.Controls.Add(btnAddPlaceAdd)
-        RoundedPanel1.Controls.Add(txtAddPlaceStdID)
         RoundedPanel1.Controls.Add(btnAddPlaceCancel)
-        RoundedPanel1.Controls.Add(txtAddPlaceStatus)
         RoundedPanel1.Controls.Add(dtpAddPlaceEndDate)
         RoundedPanel1.Controls.Add(Label5)
         RoundedPanel1.Controls.Add(Label7)
         RoundedPanel1.Controls.Add(dtpAddPlaceStartDate)
-        RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(Label6)
         RoundedPanel1.Controls.Add(Label9)
         RoundedPanel1.Controls.Add(Label1)
@@ -248,6 +208,26 @@ Partial Class frmAddPlacement
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
+        ' 
+        ' cbAddPlaceStdID
+        ' 
+        cbAddPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbAddPlaceStdID.FormattingEnabled = True
+        cbAddPlaceStdID.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
+        cbAddPlaceStdID.Location = New Point(27, 273)
+        cbAddPlaceStdID.Name = "cbAddPlaceStdID"
+        cbAddPlaceStdID.Size = New Size(712, 45)
+        cbAddPlaceStdID.TabIndex = 74
+        ' 
+        ' cbAddPlaceStatus
+        ' 
+        cbAddPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbAddPlaceStatus.FormattingEnabled = True
+        cbAddPlaceStatus.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
+        cbAddPlaceStatus.Location = New Point(747, 273)
+        cbAddPlaceStatus.Name = "cbAddPlaceStatus"
+        cbAddPlaceStatus.Size = New Size(315, 45)
+        cbAddPlaceStatus.TabIndex = 73
         ' 
         ' Panel2
         ' 
@@ -292,11 +272,8 @@ Partial Class frmAddPlacement
     End Sub
     Friend WithEvents btnAddPlaceAdd As RoundedButton
     Friend WithEvents btnAddPlaceCancel As RoundedButton
-    Friend WithEvents txtAddPlaceStatus As TextBox
-    Friend WithEvents txtAddPlaceStdID As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -305,9 +282,10 @@ Partial Class frmAddPlacement
     Friend WithEvents Label7 As Label
     Friend WithEvents dtpAddPlaceEndDate As DateTimePicker
     Friend WithEvents btnExitAddPlace As Button
-    Friend WithEvents mtxtEditPlaceCompID As MaskedTextBox
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents mtxtAddPlaceInternID As MaskedTextBox
     Friend WithEvents nudAddPlaceGrade As NumericUpDown
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents cbAddPlaceStatus As ComboBox
+    Friend WithEvents cbAddPlaceStdID As ComboBox
 End Class
