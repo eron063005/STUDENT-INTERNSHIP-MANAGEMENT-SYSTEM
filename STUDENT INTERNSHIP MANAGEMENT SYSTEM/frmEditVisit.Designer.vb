@@ -22,7 +22,6 @@ Partial Class frmEditVisit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        mtxtEditVisitID = New MaskedTextBox()
         btnExitEditVisit = New Button()
         btnSaveVisit = New RoundedButton()
         btnEditVisitCancel = New RoundedButton()
@@ -36,20 +35,12 @@ Partial Class frmEditVisit
         dtpEditVisitDate = New DateTimePicker()
         txtEditVisitEval = New TextBox()
         RoundedPanel1 = New RoundedPanel()
+        cbEditVisitID = New ComboBox()
         nudEditVisitScore = New NumericUpDown()
         Panel2 = New Panel()
         RoundedPanel1.SuspendLayout()
         CType(nudEditVisitScore, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' mtxtEditVisitID
-        ' 
-        mtxtEditVisitID.BorderStyle = BorderStyle.FixedSingle
-        mtxtEditVisitID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        mtxtEditVisitID.Location = New Point(27, 229)
-        mtxtEditVisitID.Name = "mtxtEditVisitID"
-        mtxtEditVisitID.Size = New Size(244, 44)
-        mtxtEditVisitID.TabIndex = 22
         ' 
         ' btnExitEditVisit
         ' 
@@ -197,8 +188,8 @@ Partial Class frmEditVisit
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbEditVisitID)
         RoundedPanel1.Controls.Add(nudEditVisitScore)
-        RoundedPanel1.Controls.Add(mtxtEditVisitID)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(btnSaveVisit)
         RoundedPanel1.Controls.Add(btnEditVisitCancel)
@@ -218,6 +209,15 @@ Partial Class frmEditVisit
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 74
+        ' 
+        ' cbEditVisitID
+        ' 
+        cbEditVisitID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbEditVisitID.FormattingEnabled = True
+        cbEditVisitID.Location = New Point(27, 220)
+        cbEditVisitID.Name = "cbEditVisitID"
+        cbEditVisitID.Size = New Size(1035, 45)
+        cbEditVisitID.TabIndex = 97
         ' 
         ' nudEditVisitScore
         ' 
@@ -252,7 +252,6 @@ Partial Class frmEditVisit
         CType(nudEditVisitScore, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-    Friend WithEvents mtxtEditVisitID As MaskedTextBox
     Friend WithEvents btnExitEditVisit As Button
     Friend WithEvents btnSaveVisit As RoundedButton
     Friend WithEvents btnEditVisitCancel As RoundedButton
@@ -268,4 +267,5 @@ Partial Class frmEditVisit
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents nudEditVisitScore As NumericUpDown
+    Friend WithEvents cbEditVisitID As ComboBox
 End Class
