@@ -4,6 +4,7 @@
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+        LoadVisitCards(panelVisit)
     End Sub
 
     Private Sub btnEditVisit_Click(sender As Object, e As EventArgs) Handles btnEditVisit.Click
@@ -11,6 +12,8 @@
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+        LoadVisitCards(panelVisit)
+
     End Sub
     Private Sub ucVisit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadVisitCards(panelVisit)
@@ -21,6 +24,6 @@
         ' Kunin parent form (Dashboard) at tawagin ang helper
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+
     End Sub
-    'cge
 End Class

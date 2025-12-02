@@ -445,30 +445,23 @@ Module ModuleDB
     Function GenerateVisitID() As String
         Dim newID As String = "V0001"
 
-        Try
-            Using conn As New MySqlConnection(connString)
-                conn.Open()
+        Dim query As String = "SELECT VisitId FROM visit_log ORDER BY VisitId DESC LIMIT 1"
+        Using conn As New MySqlConnection(connString)
+            conn.Open()
+            Using cmd As New MySqlCommand(query, conn)
+                Dim result = cmd.ExecuteScalar()
 
-                Dim query As String = "SELECT VisitId FROM visit_log ORDER BY VisitId DESC LIMIT 1"
-                Using cmd As New MySqlCommand(query, conn)
-                    Dim result As Object = cmd.ExecuteScalar()
-
-                    If result IsNot Nothing Then
-                        Dim lastID As String = result.ToString()   ' e.g., "V0043"
-                        Dim numberPart As Integer = Integer.Parse(lastID.Substring(1)) ' remove the "V"
-
-                        numberPart += 1
-                        newID = "V" & numberPart.ToString("D4") ' Format with 4 digits
-                    End If
-                End Using
+                If result IsNot Nothing Then
+                    Dim lastId As String = result.ToString()
+                    Dim num As Integer = Integer.Parse(lastId.Substring(1))
+                    newID = "V" & (num + 1).ToString("D4")
+                End If
             End Using
-
-        Catch ex As Exception
-            MessageBox.Show("Error generating VisitID: " & ex.Message)
-        End Try
+        End Using
 
         Return newID
     End Function
+
 
     Sub LoadVisitCards(panelVisit As Panel)
         panelVisit.Controls.Clear()

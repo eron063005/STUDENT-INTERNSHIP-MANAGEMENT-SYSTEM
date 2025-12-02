@@ -28,7 +28,6 @@ Partial Class frmAddVisit
         btnExitAddVisit = New Button()
         btnAddVisitAdd = New RoundedButton()
         btnAddVisitCancel = New RoundedButton()
-        mtxtAddVisitInternID = New MaskedTextBox()
         Label7 = New Label()
         Label6 = New Label()
         Label3 = New Label()
@@ -36,6 +35,7 @@ Partial Class frmAddVisit
         Label1 = New Label()
         txtAddVisitEval = New TextBox()
         RoundedPanel1 = New RoundedPanel()
+        cbAddVisitInternID = New ComboBox()
         nudAddVisitScore = New NumericUpDown()
         Panel2 = New Panel()
         RoundedPanel1.SuspendLayout()
@@ -123,20 +123,11 @@ Partial Class frmAddVisit
         btnAddVisitCancel.Text = "Cancel "
         btnAddVisitCancel.UseVisualStyleBackColor = True
         ' 
-        ' mtxtAddVisitInternID
-        ' 
-        mtxtAddVisitInternID.BorderStyle = BorderStyle.FixedSingle
-        mtxtAddVisitInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        mtxtAddVisitInternID.Location = New Point(27, 399)
-        mtxtAddVisitInternID.Name = "mtxtAddVisitInternID"
-        mtxtAddVisitInternID.Size = New Size(250, 44)
-        mtxtAddVisitInternID.TabIndex = 80
-        ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label7.Location = New Point(309, 369)
+        Label7.Location = New Point(27, 458)
         Label7.Name = "Label7"
         Label7.Size = New Size(76, 27)
         Label7.TabIndex = 79
@@ -185,7 +176,7 @@ Partial Class frmAddVisit
         ' txtAddVisitEval
         ' 
         txtAddVisitEval.BorderStyle = BorderStyle.FixedSingle
-        txtAddVisitEval.Font = New Font("Century Gothic", 18F)
+        txtAddVisitEval.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         txtAddVisitEval.ForeColor = SystemColors.WindowText
         txtAddVisitEval.Location = New Point(309, 309)
         txtAddVisitEval.Name = "txtAddVisitEval"
@@ -197,6 +188,7 @@ Partial Class frmAddVisit
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbAddVisitInternID)
         RoundedPanel1.Controls.Add(nudAddVisitScore)
         RoundedPanel1.Controls.Add(mtxtAddVisitID)
         RoundedPanel1.Controls.Add(Panel2)
@@ -208,7 +200,6 @@ Partial Class frmAddVisit
         RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Controls.Add(Label2)
         RoundedPanel1.Controls.Add(txtAddVisitEval)
-        RoundedPanel1.Controls.Add(mtxtAddVisitInternID)
         RoundedPanel1.Controls.Add(Label7)
         RoundedPanel1.Controls.Add(Label3)
         RoundedPanel1.Controls.Add(Label6)
@@ -219,11 +210,20 @@ Partial Class frmAddVisit
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 88
         ' 
+        ' cbAddVisitInternID
+        ' 
+        cbAddVisitInternID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbAddVisitInternID.FormattingEnabled = True
+        cbAddVisitInternID.Location = New Point(27, 399)
+        cbAddVisitInternID.Name = "cbAddVisitInternID"
+        cbAddVisitInternID.Size = New Size(1035, 45)
+        cbAddVisitInternID.TabIndex = 97
+        ' 
         ' nudAddVisitScore
         ' 
         nudAddVisitScore.BorderStyle = BorderStyle.FixedSingle
         nudAddVisitScore.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        nudAddVisitScore.Location = New Point(309, 399)
+        nudAddVisitScore.Location = New Point(27, 488)
         nudAddVisitScore.Name = "nudAddVisitScore"
         nudAddVisitScore.Size = New Size(129, 44)
         nudAddVisitScore.TabIndex = 96
@@ -258,7 +258,6 @@ Partial Class frmAddVisit
     Friend WithEvents btnExitAddVisit As Button
     Friend WithEvents btnAddVisitAdd As RoundedButton
     Friend WithEvents btnAddVisitCancel As RoundedButton
-    Friend WithEvents mtxtAddVisitInternID As MaskedTextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label3 As Label
@@ -268,4 +267,5 @@ Partial Class frmAddVisit
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents nudAddVisitScore As NumericUpDown
+    Friend WithEvents cbAddVisitInternID As ComboBox
 End Class
