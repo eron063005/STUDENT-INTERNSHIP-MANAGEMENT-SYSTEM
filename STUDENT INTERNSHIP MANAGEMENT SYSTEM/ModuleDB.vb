@@ -238,6 +238,7 @@ Module ModuleDB
                                 i.InternshipID,
                                 i.StudentID,
                                 CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                                s.Section,
                                 CASE
                                     WHEN i.InternshipID = (
                                         SELECT MIN(i2.InternshipID)
