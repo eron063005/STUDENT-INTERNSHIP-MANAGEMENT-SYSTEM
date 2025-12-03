@@ -10,30 +10,44 @@ Public Class ucAssessment
     End Sub
 
     Private Sub btnEditAssessment_Click(sender As Object, e As EventArgs) Handles btnEditAssessment.Click
-        Dim editForm As New frmEditAssessment()
+        ' Make sure a row is selected
+        If DataGridView1.SelectedRows.Count = 0 Then
+            MessageBox.Show("Please select an assessment to edit.")
+            Return
+        End If
+
+        Dim selectedRow = DataGridView1.SelectedRows(0)
+        Dim assessmentId As String = selectedRow.Cells("AssessmentId").Value.ToString()
+
+        ' Open edit form
+        Dim editForm As New frmEditAssessment(assessmentId)
+
+
+        ' Use your parent form ShowFormWithPadding
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(editForm, leftPadding:=500, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+
+        ' Refresh after editing
         LoadAssessmentData()
     End Sub
 
-    Private Sub LoadAssessmentData()
 
+    Public Sub LoadAssessmentData()
         Dim currentFacultyId As String = LoggedFacultyID
 
-        'a.InternshipID,
         Dim sql As String = "
-        SELECT 
-            a.AssessmentId,
-            CONCAT(s.FirstName, ' ', s.LastName) AS StudentName,
-            CONCAT(cc.CFirstName, ' ', cc.CLastName) AS CompanyContactName,
-            c.CompanyName,
-            a.AssessmentGrade
-        FROM assessment a
-        JOIN student s ON a.StudentId = s.StudentId
-        JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
-        JOIN company c ON cc.CompanyId = c.CompanyId
-        WHERE s.FacultyId = @facultyId
-    "
+    SELECT 
+        a.AssessmentId,
+        CONCAT(s.FirstName, ' ', s.LastName) AS StudentName,
+        CONCAT(cc.CFirstName, ' ', cc.CLastName) AS CompanyContactName,
+        c.CompanyName,
+        a.AssessmentGrade
+    FROM assessment a
+    JOIN student s ON a.StudentId = s.StudentId
+    JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
+    JOIN company c ON cc.CompanyId = c.CompanyId
+    WHERE s.FacultyId = @facultyId
+"
 
         Try
             Using conn As New MySqlConnection(connString)
@@ -66,6 +80,25 @@ Public Class ucAssessment
     Private Sub ucAssessment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAssessmentData()
     End Sub
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        ' Ensure a valid row is clicked
+        If e.RowIndex >= 0 Then
+            Dim selectedRow = DataGridView1.Rows(e.RowIndex)
+
+            ' Get the AssessmentId of the clicked row
+            Dim assessmentId As String = selectedRow.Cells("AssessmentId").Value.ToString()
+
+            ' Open edit form and pass the selected AssessmentId
+            Dim editForm As New frmEditAssessment(assessmentId)
+            editForm.AssessmentIdToEdit = assessmentId
+            editForm.ShowDialog()
+
+            ' Refresh DataGridView after editing
+            LoadAssessmentData() ' <-- use the correct method from this UserControl
+        End If
+    End Sub
+
+
 
 
 End Class
