@@ -13,31 +13,22 @@ Module ModulePY
         psi.RedirectStandardError = True
         psi.CreateNoWindow = True
 
-        Dim process As Process = Process.Start(psi)
+        Dim process As Process = process.Start(psi)
 
         Dim output As String = process.StandardOutput.ReadToEnd()
         Dim errors As String = process.StandardError.ReadToEnd()
         process.WaitForExit()
 
-        Console.WriteLine("Python Output:")
+        ' Optional: print Python output
         Console.WriteLine(output)
+        If Not String.IsNullOrEmpty(errors) Then Console.WriteLine(errors)
 
-        If Not String.IsNullOrEmpty(errors) Then
-            Console.WriteLine("Python Errors:")
-            Console.WriteLine(errors)
-        End If
+        ' Load saved images into PictureBoxes (WinForms)
+        Dim countplotPath As String = "Resources\countplot.png"
+        Dim confusionMatrixPath As String = "Resources\confusion_matrix.png"
 
-        ' Paths to saved images
-        Dim countplotPath As String = "C:\Users\HP\Desktop\VScode\Final Case Study OJT\countplot.png"
-        Dim confusionMatrixPath As String = "C:\Users\HP\Desktop\VScode\Final Case Study OJT\confusion_matrix.png"
-
-        ' Example: display images in Windows Forms PictureBox
-        ' Dim pbCountplot As New PictureBox()
-        ' pbCountplot.Image = Image.FromFile(countplotPath)
-        ' Dim pbConfusion As New PictureBox()
-        ' pbConfusion.Image = Image.FromFile(confusionMatrixPath)
-
-        Console.WriteLine("Plots saved successfully.")
-        'Console.ReadKey()
+        ' Example: in your Form you can have PictureBox1 and PictureBox2
+        ' PictureBox1.Image = Image.FromFile(countplotPath)
+        ' PictureBox2.Image = Image.FromFile(confusionMatrixPath)
     End Sub
 End Module
