@@ -1,5 +1,4 @@
-/* Global Styles */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,34 +12,30 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
 header {
     background: #7eb4e5;
     color: white;
-    padding: 1.5rem 1rem; /* Bawasan ang padding */
+    padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center; 
     justify-content: center; 
     position: relative; 
-    flex-wrap: wrap; /* Para mag-stack sa maliit na screen */
+    flex-wrap: wrap; 
 }
 
 .logo {
-    width: 80px; /* Bawasan ang laki ng logo */
+    width: 80px;
     margin-right: 1rem;
 }
 
 header h1 {
-    font-size: 1.8rem; /* Bawasan ang laki ng font */
+    font-size: 1.8rem; 
     font-weight: 300;
     text-align: center;
 }
-/* Alisin ang original na header h1 comment para gumana ang font size */
 
-
-/* Main Content */
 main {
     display: flex;
     flex-direction: row;
@@ -48,7 +43,7 @@ main {
     justify-content: center; 
     align-items: flex-start;
     gap: 2rem;
-    padding: 2rem 1rem; /* Bawasan ang horizontal padding */
+    padding: 2rem 1rem; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -60,7 +55,7 @@ main {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 450px;
-    width: 100%; /* Siguraduhin na 100% ang width para umakma sa lalagyan */
+    width: 100%; 
 }
 
 .visual-container:hover {
@@ -104,7 +99,7 @@ main {
     color: black;
 }
 
-/* Modals */
+
 .modal {
     display: none;
     position: fixed;
@@ -116,16 +111,16 @@ main {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Nagdagdag ng padding para di dumikit sa edge ng screen */
-    overflow-y: auto; /* Para mag-scroll ang modal kung mataas ang content */
+    padding: 1rem; 
+    overflow-y: auto; 
 }
 
 .modal-content {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    max-width: 90%; /* Pinalaki ang max-width, dati 1000px */
-    width: 90%; /* Pinalaki ang width, dati 40% */
+    max-width: 90%;
+    width: 90%;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.3s ease;
@@ -162,12 +157,11 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Footer */
 footer {
     background: #7eb4e5;
     color: white;
     text-align: center;
-    padding: 2rem 1rem; /* Bawasan ang horizontal padding */
+    padding: 2rem 1rem; 
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -176,20 +170,18 @@ footer p {
     font-weight: 300;
 }
 
-/* Responsive Design */
-/* Para sa malalaking phone at small tablet (max-width: 768px) */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* I-stack ang logo at title */
+        flex-direction: column;
     }
 
     .logo {
         margin-right: 0;
-        margin-bottom: 0.5rem; /* Magdagdag ng espasyo sa ibaba ng logo */
+        margin-bottom: 0.5rem; 
     }
 
     header h1 {
-        font-size: 1.5rem; /* Higit pang bawasan ang laki ng font */
+        font-size: 1.5rem; 
         text-align: center;
     }
 
@@ -199,24 +191,24 @@ footer p {
     }
 
     .visual-container {
-        max-width: 100%; /* Hayaan itong gamitin ang buong available width */
+        max-width: 100%; 
     }
 
     .modal-content {
         padding: 1rem;
-        width: 95%; /* Palakihin pa ang modal sa halos buong screen */
+        width: 95%; 
         max-width: 95%;
     }
 }
 
-/* Para sa napakaliit na phone (max-width: 480px) */
+
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.2rem; /* Higit pang bawasan ang laki ng font */
+        font-size: 1.2rem;
     }
 
     .logo {
-        width: 60px; /* Maliit na logo */
+        width: 60px; 
     }
     
     .modal-content {
