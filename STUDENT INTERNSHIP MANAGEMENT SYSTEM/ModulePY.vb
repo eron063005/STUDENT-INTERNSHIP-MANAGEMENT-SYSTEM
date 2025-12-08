@@ -13,7 +13,7 @@ Module ModulePY
         psi.RedirectStandardError = True
         psi.CreateNoWindow = True
 
-        Dim process As Process = process.Start(psi)
+        Dim process As Process = Process.Start(psi)
 
         Dim output As String = process.StandardOutput.ReadToEnd()
         Dim errors As String = process.StandardError.ReadToEnd()
