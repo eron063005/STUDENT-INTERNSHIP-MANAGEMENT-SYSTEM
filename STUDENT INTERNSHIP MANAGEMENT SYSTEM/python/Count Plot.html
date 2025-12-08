@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VAIA TECH Data Visualization</title>
+        <link rel="icon" type="image/png" href="Count Plot/Vaia Logo.png">
+        <link rel="stylesheet" href="Count Plot.css">
+    </head>
+    <body>  
+        <header>
+            <img src="Count Plot/Vaia Logo.png" class="logo" alt="vtu logo">
+            <h1>VAIA Tech University Data Visualization</h1>
+        </header>
+        <main>
+            <div class="visual-container">
+                <div class="visual">
+                    <img src="Count Plot/countplot.png" alt="Visual 1">
+                </div>
+                <button class="btn" onclick="openModal('modal1')">View Details</button>
+            </div>
+            <!-- Modals -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal1')">&times;</span>
+                    <img src="image/countplot.png" alt="Visual 1 Large" class="modal-image">
+                    <h2>Distribution of Passed vs Failed</h2>
+                    <p>This countplot visually compares the number of students who passed versus those who failed based on an unspecified evaluation. The "Passed" category shows a significantly higher count, approximately 28 students, while the "Failed" category includes only about 2 students. The vertical axis measures the number of students, ranging from 0 to 30 in increments of 5.</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h1>Conclusion</h1>
+            <p>The data indicates a strong positive outcome, with the vast majority of students passing the evaluation.<br>The extremely low number of failures suggests the assessment was either well-aligned with student preparation or overall performance was high. <br>This distribution highlights a successful outcome for the group being measured.</p>
+        </footer>
+
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = 'flex';
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = 'none';
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,247 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+    background: #7eb4e5;
+    color: white;
+    padding: 1.5rem 1rem; /* Bawasan ang padding */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+    flex-wrap: wrap; /* Kritikal: para mag-wrap sa maliit na screen */
+}
+
+.logo {
+    width: 90px; /* Bawasan ang laki ng logo */
+    margin-right: 1rem;
+}
+
+header h1 {
+    font-size: 2.2rem; /* I-set ang default size */
+    font-weight: 300;
+} 
+
+/* --- Main Content --- */
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 1rem; /* Bawasan ang horizontal padding */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.visual-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.visual-container:hover {
+    transform: translateY(-5px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15),
+               0 0 20px 5px rgba(120, 201, 221, 0.7); 
+}
+
+.visual {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.visual:hover img {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #78c9dd;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #8cdceb;
+    color: black;
+
+}
+
+/* --- Modals --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    /* Tiyakin na ang modal ay pwedeng mag-scroll kung mataas ang content */
+    padding: 1rem; 
+    overflow-y: auto; 
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 90%; /* Pinalaki para sa mas mahusay na view sa desktop/tablet */
+    width: 60%; /* Gawin itong mas malapad kaysa 40% */
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 5px; /* Binawasan ang top value */
+    right: 5px; /* Binawasan ang right value */
+    font-size: 2.5rem; /* Bahagyang pinaki-laki para mas madaling pindutin */
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    padding: 5px; /* Nagdagdag ng padding para mas malaki ang clickable area */
+    line-height: 1; /* Tiyakin na hindi ito magdadagdag ng labis na taas */
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    text-align: center; /* Gawin itong nakasentro sa modal */
+}
+
+.modal-content p {
+    text-align: justify; /* Para mas maayos basahin ang teksto */
+}
+
+.modal-image {
+    width: 100%; /* Ginawang 100% ang lapad para umakma sa lalagyan nito */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    /* Alisin ang auto margins dahil 100% na ang width */
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+/* --- Footer --- */
+footer {
+    background: #7eb4e5;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem; /* Bawasan ang horizontal padding */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Tablet at Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Header Adjustments */
+    header {
+        padding: 1.5rem 1rem;
+        flex-direction: column; /* I-stack ang logo at title */
+    }
+    .logo {
+        width: 80px;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Main Content Adjustments */
+    main {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .visual-container {
+        max-width: none;
+    }
+
+    /* Modal Adjustments para mas makita sa maliit na screen */
+    .modal-content {
+        padding: 1rem;
+        width: 95%; 
+        max-width: 95%;
+        margin: 1rem 0;
+    }
+    
+    .close {
+        top: 0px; /* Mas malapit sa gilid sa mobile */
+        right: 0px;
+        font-size: 2rem; /* Bahagyang binawasan ang laki sa mobile */
+        /* Dahil ang .modal-content ay may padding na 1rem (16px), 
+           ang 0px right/top ay maglalagay sa 'X' sa mismong dulo ng padding,
+           na titiyak na may espasyo pa rin sa gilid. */
+    }
+}
+
+/* Specific Media Query para sa mas maliit na screen (gaya ng 642px at pababa) */
+@media (max-width: 650px) {
+    header h1 {
+        font-size: 1.5rem; /* Bawasan pa ang font size ng header */
+    }
+
+    /* Tiyakin na ang modal ay hindi masyadong malaki */
+    .modal-content {
+        padding: 0.8rem;
+        max-height: 90vh; /* Limitahan ang taas ng modal para makita ang close button */
+        overflow-y: auto; /* Tiyakin na may scroll bar sa loob */
+    }
+}

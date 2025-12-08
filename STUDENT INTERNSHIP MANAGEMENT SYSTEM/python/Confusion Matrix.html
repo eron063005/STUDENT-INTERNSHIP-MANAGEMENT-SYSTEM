@@ -1,0 +1,54 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> VAIA TECH Data Visualization</title>
+        <link rel="icon" type="image/png" href="Confusion Matrix//Vaia Logo.png">
+        <link rel="stylesheet" href="Confusion Matrix.css">
+    </head>
+    <body>  
+        <header>
+            <img src="Confusion Matrix/Vaia Logo.png" class="logo" alt="vtu logo">
+            <h1>VAIA Tech University Data Visualization</h1>
+        </header>
+        <main>
+            <div class="visual-container">
+                <div class="visual">
+                    <img src="Confusion Matrix/confusion.png" alt="Visual 2">
+                </div>
+                <button class="btn" onclick="openModal('modal2')">View Details</button>
+            </div>
+            <!-- Modals -->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal2')">&times;</span>
+                    <img src="image/confusion.png" alt="Visual 2 Large" class="modal-image">
+                    <h2>Confusion Matrix</h2>
+                    <p>This output describes the results of a predictive model for student outcomes, classifying them as either "Passed" or "Failed." The numbers suggest the model made very few errors, with possible values like 1 and 0 indicating minimal misclassifications and a larger number like 9 representing correct predictions. However, the data is unclearly formatted, making the exact counts for True Positives, False Negatives, True Negatives, and False Positives difficult to confirm.</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <h1>Conclusion</h1>
+            <p>The numbers suggest the model performed with high accuracy, successfully predicting the majority of student outcomes. <br>The low error counts (like 1 and 0) imply strong performance for this specific dataset,<br> but proper evaluation requires a correctly structured confusion matrix to confirm metrics like precision and recall.</p>
+        </footer>
+
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = 'flex';
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = 'none';
+            }
+
+            // Close modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+    </html>

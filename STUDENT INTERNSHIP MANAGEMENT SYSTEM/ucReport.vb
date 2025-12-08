@@ -8,14 +8,14 @@ Public Class ucReport
     End Sub
 
     Private Async Sub btnViewCountPlot_Click(sender As Object, e As EventArgs) Handles btnViewCountPlot.Click
-        Dim htmlPath As String = "C:\Users\User\Downloads\cluster-main\index.html"
+        Dim htmlPath As String = "C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\python\Count Plot.html"
         If Not IO.File.Exists(htmlPath) Then Return
         Await WebView21Report.EnsureCoreWebView2Async()
         WebView21Report.CoreWebView2.Navigate(New Uri(htmlPath).AbsoluteUri)
     End Sub
 
     Private Async Sub btnViewConfuseMatriz_Click(sender As Object, e As EventArgs) Handles btnViewConfuseMatriz.Click
-        Dim htmlPath As String = "C:\Users\User\Downloads\cluster-main\index - Copy.html"
+        Dim htmlPath As String = "C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\python\Confusion Matrix.html"
         If Not IO.File.Exists(htmlPath) Then Return
         Await WebView22Report.EnsureCoreWebView2Async()
         WebView22Report.CoreWebView2.Navigate(New Uri(htmlPath).AbsoluteUri)
