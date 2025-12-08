@@ -94,7 +94,7 @@ Partial Class LogIn
         txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(564, 65)
         txtPassword.TabIndex = 2
-        txtPassword.Text = "1234"
+        txtPassword.Text = "12345"
         ' 
         ' txtFacultyID
         ' 

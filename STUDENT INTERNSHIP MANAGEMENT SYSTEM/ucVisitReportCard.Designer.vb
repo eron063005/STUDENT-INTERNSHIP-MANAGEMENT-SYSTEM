@@ -42,7 +42,8 @@ Partial Class ucVisitReportCard
         ' 
         ' RoundedPanel1
         ' 
-        RoundedPanel1.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        RoundedPanel1.BackColor = Color.Transparent
+        RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(Panel1)
         RoundedPanel1.Controls.Add(lblVisitID)

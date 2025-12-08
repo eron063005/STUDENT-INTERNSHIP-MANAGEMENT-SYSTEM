@@ -38,7 +38,7 @@ Partial Class ucCompanyCard
         ' panelCard
         ' 
         panelCard.BackColor = Color.Transparent
-        panelCard.BorderColor = Color.FromArgb(CByte(159), CByte(177), CByte(195))
+        panelCard.BorderColor = Color.Black
         panelCard.BorderSize = 5
         panelCard.Controls.Add(lblCompanyEmail)
         panelCard.Controls.Add(Label7)

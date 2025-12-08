@@ -2,8 +2,8 @@
 
 Module ModulePY
     Sub RunPythonScript()
-        Dim pythonExe As String = "C:\Users\HP\AppData\Local\Microsoft\WindowsApps\python3.13.exe"
-        Dim scriptPath As String = "C:\Users\HP\Desktop\VScode\Final Case Study OJT\Final Case Study Platech.py"
+        Dim pythonExe As String = "C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe"
+        Dim scriptPath As String = "C:\Users\User\Documents\VBNET\STUDENT INTERNSHIP MANAGEMENT SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\Final Case Study Platech.py"
 
         Dim psi As New ProcessStartInfo()
         psi.FileName = pythonExe
