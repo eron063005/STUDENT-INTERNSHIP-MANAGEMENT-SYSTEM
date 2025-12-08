@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 
-df = pd.read_csv(r"C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\VAIA_OJT_INFORMATION.csv")
+df = pd.read_csv(r"resources\VAIA_OJT_INFORMATION.csv")
 
 
 
@@ -77,7 +77,7 @@ print(df['Remark'].value_counts())
 # 6.Data Visualization
 #Use charts to understand relationships and patterns:
 # ----- Countplot -----
-plt.figure(figsize=(6,4))
+# plt.figure(figsize=(6,4))
 df['Remark_label'] = df['Remark'].map({0.0: 'Failed', 1.0: 'Passed'})
 ax = sns.countplot(x='Remark_label', data=df, palette="Set1")
 plt.title("Number of Students by Remark", fontsize=14)
@@ -87,9 +87,9 @@ plt.ylabel("Number of Students")
 for p in ax.patches:
     height = int(p.get_height())
     ax.text(p.get_x() + p.get_width()/2, height/2, str(height), ha='center', va='center', color='white', fontsize=12, fontweight='bold')
-
+plt.ioff()  # turn off interactive mode
 # Save figure
-plt.savefig(r"C:\Users\HP\Desktop\VScode\Final Case Study OJT\countplot.png")
+plt.savefig("resources/countplot.png")
 plt.close()  # close the plot so it doesn't display interactively
 
 # In[294]:
@@ -145,12 +145,13 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_predict)
 
-plt.figure(figsize=(6,4))
+# plt.figure(figsize=(6,4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Failed','Passed'], yticklabels=['Failed','Passed'])
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
-plt.savefig(r"C:\Users\HP\Desktop\VScode\Final Case Study OJT\confusion_matrix.png")
+plt.ioff()  # turn off interactive mode
+plt.savefig("resources/confusion_matrix.png")
 plt.close()
 
 
