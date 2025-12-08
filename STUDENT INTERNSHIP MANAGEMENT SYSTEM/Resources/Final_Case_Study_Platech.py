@@ -1,32 +1,22 @@
 
-# Platform Technology
-# Final Case Study
-# 
-# BSIT - 2D 
-# 
-# MEMBERS:    
-# Sam Aidan C. Gonzaga
-# Aaron G. Cayabyab
-# Vehniah P. Samson
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 
 
-df = pd.read_csv(r"C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\VAIA_OJT_INFORMATION.csv")
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
 
+df = pd.read_csv("Resources/VAIA_OJT_INFORMATION.csv")
 
 
 # Get summary Statistics for numeric columns 
 df.describe()
 
-
 df.shape
 
 df.isnull().sum()
-
-
 
 
 df['StudentID'] = df['StudentID'].astype(str).str.extract(r'(\d+)').astype(int)
@@ -44,15 +34,6 @@ rating_map = {
 # Map text labels to numeric
 df['Equivalent Rating'] = df['Equivalent Rating'].map(rating_map)
 
-
-
-
-
-# In[292]:
-
-
-# 5.Data Engineering / Pre-processing
-#Convert, normalize, or encode your features before modeling
 
 from sklearn.preprocessing import StandardScaler
 
@@ -87,9 +68,9 @@ plt.ylabel("Number of Students")
 for p in ax.patches:
     height = int(p.get_height())
     ax.text(p.get_x() + p.get_width()/2, height/2, str(height), ha='center', va='center', color='white', fontsize=12, fontweight='bold')
-
+plt.savefig("countplot.png")
+# plt.ioff()  # turn off interactive mode
 # Save figure
-plt.savefig(r"C:\Users\HP\Desktop\VScode\Final Case Study OJT\countplot.png")
 plt.close()  # close the plot so it doesn't display interactively
 
 # In[294]:
@@ -135,14 +116,7 @@ error
 print(X_test)
 
 
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
-
-
 # ----- Confusion Matrix -----
-from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_predict)
 
 plt.figure(figsize=(6,4))
@@ -150,7 +124,8 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Failed','Passed
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
-plt.savefig(r"C:\Users\HP\Desktop\VScode\Final Case Study OJT\confusion_matrix.png")
+plt.savefig("confusion_matrix.png")
+# plt.ioff()  # turn off interactive mode
 plt.close()
 
 
@@ -171,4 +146,7 @@ print("Accuracy:", acc)
 
 cm = confusion_matrix(y_test, y_pred)
 print("\nConfusion Matrix:\n", cm)
+
+
+
 
