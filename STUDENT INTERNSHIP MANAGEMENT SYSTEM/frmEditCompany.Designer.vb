@@ -34,7 +34,6 @@ Partial Class frmEditCompany
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
-
         cbEditCompID = New ComboBox()
         txtEditCompName = New TextBox()
         Label4 = New Label()
@@ -193,7 +192,7 @@ Partial Class frmEditCompany
         RoundedPanel1.TabIndex = 75
         ' 
         ' cbEditCompID
-        '
+        ' 
         cbEditCompID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cbEditCompID.FormattingEnabled = True
         cbEditCompID.Location = New Point(27, 205)

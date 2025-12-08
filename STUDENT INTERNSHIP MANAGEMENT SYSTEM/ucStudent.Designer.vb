@@ -31,15 +31,10 @@ Partial Class ucStudent
         RoundedPanel1 = New RoundedPanel()
         PictureBox1 = New PictureBox()
         txtStdSearchBox = New TextBox()
-        cmbFilterCourseName = New ComboBox()
-        PictureBox2 = New PictureBox()
-        RoundedPanel2 = New RoundedPanel()
         btnarchStudents = New Button()
         CType(dgvStudent, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        RoundedPanel2.SuspendLayout()
         SuspendLayout()
         ' 
         ' dgvStudent
@@ -171,41 +166,6 @@ Partial Class ucStudent
         txtStdSearchBox.Size = New Size(787, 41)
         txtStdSearchBox.TabIndex = 0
         ' 
-        ' cmbFilterCourseName
-        ' 
-        cmbFilterCourseName.FlatStyle = FlatStyle.Flat
-        cmbFilterCourseName.Font = New Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbFilterCourseName.FormattingEnabled = True
-        cmbFilterCourseName.Items.AddRange(New Object() {"All Departments"})
-        cmbFilterCourseName.Location = New Point(62, 13)
-        cmbFilterCourseName.Name = "cmbFilterCourseName"
-        cmbFilterCourseName.Size = New Size(234, 40)
-        cmbFilterCourseName.TabIndex = 6
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.BackColor = Color.Transparent
-        PictureBox2.Image = My.Resources.Resources.Filter
-        PictureBox2.Location = New Point(3, 3)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(59, 59)
-        PictureBox2.TabIndex = 7
-        PictureBox2.TabStop = False
-        ' 
-        ' RoundedPanel2
-        ' 
-        RoundedPanel2.BackColor = Color.Transparent
-        RoundedPanel2.BorderColor = Color.Black
-        RoundedPanel2.BorderSize = 2
-        RoundedPanel2.Controls.Add(PictureBox2)
-        RoundedPanel2.Controls.Add(cmbFilterCourseName)
-        RoundedPanel2.CornerRadius = 2
-        RoundedPanel2.FillColor = Color.White
-        RoundedPanel2.Location = New Point(909, 25)
-        RoundedPanel2.Name = "RoundedPanel2"
-        RoundedPanel2.Size = New Size(299, 65)
-        RoundedPanel2.TabIndex = 8
-        ' 
         ' btnarchStudents
         ' 
         btnarchStudents.FlatAppearance.BorderSize = 0
@@ -225,7 +185,6 @@ Partial Class ucStudent
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Controls.Add(btnarchStudents)
-        Controls.Add(RoundedPanel2)
         Controls.Add(RoundedPanel1)
         Controls.Add(btnImportFile)
         Controls.Add(btnDelStudent)
@@ -239,8 +198,6 @@ Partial Class ucStudent
         RoundedPanel1.ResumeLayout(False)
         RoundedPanel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        RoundedPanel2.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -252,9 +209,6 @@ Partial Class ucStudent
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents txtStdSearchBox As TextBox
-    Friend WithEvents cmbFilterCourseName As ComboBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents RoundedPanel2 As RoundedPanel
     Friend WithEvents btnarchStudents As Button
 
 End Class

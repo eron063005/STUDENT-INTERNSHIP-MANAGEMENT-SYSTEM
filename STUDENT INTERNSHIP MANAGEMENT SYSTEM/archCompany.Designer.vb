@@ -28,8 +28,8 @@ Partial Class archCompany
         btnCompExit = New Button()
         Label2 = New Label()
         btnCompBack = New Button()
-        RoundedButton2 = New RoundedButton()
-        RoundedButton1 = New RoundedButton()
+        btnDeletePermanent = New RoundedButton()
+        btnRestore = New RoundedButton()
         CType(dgvarchCompany, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -97,55 +97,55 @@ Partial Class archCompany
         btnCompBack.TabIndex = 6
         btnCompBack.UseVisualStyleBackColor = True
         ' 
-        ' RoundedButton2
+        ' btnDeletePermanent
         ' 
-        RoundedButton2.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton2.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton2.BorderSize = 3
-        RoundedButton2.CornerRadius = 20
-        RoundedButton2.Cursor = Cursors.Hand
-        RoundedButton2.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton2.FlatAppearance.BorderSize = 0
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton2.Location = New Point(716, 526)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton2.Size = New Size(222, 59)
-        RoundedButton2.TabIndex = 22
-        RoundedButton2.Text = "Delete Permanently"
-        RoundedButton2.UseVisualStyleBackColor = False
+        btnDeletePermanent.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnDeletePermanent.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnDeletePermanent.BorderSize = 3
+        btnDeletePermanent.CornerRadius = 20
+        btnDeletePermanent.Cursor = Cursors.Hand
+        btnDeletePermanent.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnDeletePermanent.FlatAppearance.BorderSize = 0
+        btnDeletePermanent.FlatStyle = FlatStyle.Flat
+        btnDeletePermanent.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        btnDeletePermanent.ForeColor = Color.Black
+        btnDeletePermanent.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnDeletePermanent.Location = New Point(716, 526)
+        btnDeletePermanent.Name = "btnDeletePermanent"
+        btnDeletePermanent.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnDeletePermanent.Size = New Size(222, 59)
+        btnDeletePermanent.TabIndex = 22
+        btnDeletePermanent.Text = "Delete Permanently"
+        btnDeletePermanent.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton1
+        ' btnRestore
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 3
-        RoundedButton1.CornerRadius = 20
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton1.Location = New Point(524, 526)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton1.Size = New Size(186, 59)
-        RoundedButton1.TabIndex = 21
-        RoundedButton1.Text = "Restore"
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnRestore.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnRestore.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnRestore.BorderSize = 3
+        btnRestore.CornerRadius = 20
+        btnRestore.Cursor = Cursors.Hand
+        btnRestore.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnRestore.FlatAppearance.BorderSize = 0
+        btnRestore.FlatStyle = FlatStyle.Flat
+        btnRestore.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        btnRestore.ForeColor = Color.Black
+        btnRestore.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnRestore.Location = New Point(524, 526)
+        btnRestore.Name = "btnRestore"
+        btnRestore.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnRestore.Size = New Size(186, 59)
+        btnRestore.TabIndex = 21
+        btnRestore.Text = "Restore"
+        btnRestore.UseVisualStyleBackColor = False
         ' 
         ' archCompany
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(965, 601)
-        Controls.Add(RoundedButton2)
-        Controls.Add(RoundedButton1)
+        Controls.Add(btnDeletePermanent)
+        Controls.Add(btnRestore)
         Controls.Add(dgvarchCompany)
         Controls.Add(RoundedPanel1)
         FormBorderStyle = FormBorderStyle.None
@@ -162,6 +162,6 @@ Partial Class archCompany
     Friend WithEvents btnCompExit As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents btnCompBack As Button
-    Friend WithEvents RoundedButton2 As RoundedButton
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents btnDeletePermanent As RoundedButton
+    Friend WithEvents btnRestore As RoundedButton
 End Class

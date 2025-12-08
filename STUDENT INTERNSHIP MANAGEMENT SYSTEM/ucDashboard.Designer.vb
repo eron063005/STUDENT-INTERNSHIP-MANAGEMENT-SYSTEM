@@ -349,7 +349,7 @@ Partial Class ucDashboard
         lblRPStatus1.AutoSize = True
         lblRPStatus1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         lblRPStatus1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPStatus1.Location = New Point(458, 44)
+        lblRPStatus1.Location = New Point(458, 56)
         lblRPStatus1.Name = "lblRPStatus1"
         lblRPStatus1.Size = New Size(74, 26)
         lblRPStatus1.TabIndex = 4
@@ -360,7 +360,7 @@ Partial Class ucDashboard
         lblRPCompany1.AutoSize = True
         lblRPCompany1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         lblRPCompany1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPCompany1.Location = New Point(31, 69)
+        lblRPCompany1.Location = New Point(31, 79)
         lblRPCompany1.Name = "lblRPCompany1"
         lblRPCompany1.Size = New Size(120, 26)
         lblRPCompany1.TabIndex = 3
@@ -371,7 +371,7 @@ Partial Class ucDashboard
         lblRPName1.AutoSize = True
         lblRPName1.BackColor = Color.FromArgb(CByte(218), CByte(248), CByte(255))
         lblRPName1.Font = New Font("Rockwell", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRPName1.Location = New Point(31, 26)
+        lblRPName1.Location = New Point(31, 36)
         lblRPName1.Name = "lblRPName1"
         lblRPName1.Size = New Size(74, 26)
         lblRPName1.TabIndex = 2
