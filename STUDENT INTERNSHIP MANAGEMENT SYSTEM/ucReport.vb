@@ -21,3 +21,4 @@ Public Class ucReport
         WebView22Report.CoreWebView2.Navigate(New Uri(htmlPath).AbsoluteUri)
     End Sub
 End Class
+
