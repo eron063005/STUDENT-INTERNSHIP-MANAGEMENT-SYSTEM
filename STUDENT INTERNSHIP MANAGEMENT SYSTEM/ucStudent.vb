@@ -79,8 +79,77 @@ Public Class ucStudent
     End Sub
 
     Private Sub btnImportFile_Click(sender As Object, e As EventArgs) Handles btnImportFile.Click
-        ' keep your import logic as before (unchanged)
-        '... (existing code)
+        Dim ofd As New OpenFileDialog() With {
+            .Filter = "Excel Files|*.xlsx;*.xls",
+            .Title = "Select Excel file (only .xls/.xlsx allowed)",
+            .Multiselect = False
+        }
+
+        If ofd.ShowDialog() <> DialogResult.OK Then Return
+
+        Dim filePath As String = ofd.FileName
+        Dim ext As String = Path.GetExtension(filePath).ToLower()
+
+        ' Reject non-excel explicitly: if user tries PDF (or other) show message
+        If ext <> ".xlsx" AndAlso ext <> ".xls" Then
+            MessageBox.Show("Only Excel files (.xlsx, .xls) are supported for import. If you selected a PDF, convert it to Excel first.", "Unsupported File", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Read Excel into DataTable (ExcelDataReader)
+        Dim dt As DataTable = Nothing
+        Try
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
+            Using stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read)
+                Using reader = ExcelReaderFactory.CreateReader(stream)
+                    Dim conf = New ExcelDataSetConfiguration() With {
+                        .ConfigureDataTable = Function(__) New ExcelDataTableConfiguration() With {.UseHeaderRow = True}
+                    }
+                    Dim ds As DataSet = reader.AsDataSet(conf)
+                    If ds IsNot Nothing AndAlso ds.Tables.Count > 0 Then
+                        dt = ds.Tables(0)
+                    Else
+                        MessageBox.Show("No sheets found in the Excel file.", "Empty File", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        Return
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error reading Excel file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
+
+        ' Show the required double-check message (NO auto-mapping as requested)
+        Dim checkMsg As String = "Please DOUBLE-CHECK the column names in your Excel file." & vbCrLf & vbCrLf &
+                                 "Expected column names (exact):" & vbCrLf &
+                                 "- StudentId" & vbCrLf &
+                                 "- FirstName" & vbCrLf &
+                                 "- MiddleName" & vbCrLf &
+                                 "- LastName" & vbCrLf &
+                                 "- Suffix" & vbCrLf &
+                                 "- Birthday" & vbCrLf &
+                                 "- Sex" & vbCrLf &
+                                 "- ContactNo" & vbCrLf &
+                                 "- Email" & vbCrLf &
+                                 "- CourseId" & vbCrLf &
+                                 "- Section" & vbCrLf &
+                                 "- FacultyId" & vbCrLf &
+                                 "If column names are different, the program will still try to save but may produce empty values or errors." & vbCrLf & vbCrLf &
+                                 "Continue to preview?"
+        Dim resp = MessageBox.Show(checkMsg, "Double-check columns", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If resp = DialogResult.No Then Return
+
+        ' Show preview form (modal) via Dashboard helper so it centers nicely
+        Try
+            Dim preview As New frmPreviewStudent(dt)
+            Dim parentForm As Dashboard = Me.FindForm()
+            parentForm.ShowFormWithPadding(preview, leftPadding:=470, topPadding:=150, rightPadding:=416, bottomPadding:=150)
+            ' After preview closed, refresh student grid (in case they saved)
+            LoadDataStudent(dgvStudent, LoggedFacultyID)
+        Catch ex As Exception
+            MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     ' --- Open Archive form ---
