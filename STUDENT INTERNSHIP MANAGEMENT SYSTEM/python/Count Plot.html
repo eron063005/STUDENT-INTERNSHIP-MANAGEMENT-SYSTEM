@@ -19,7 +19,6 @@
                 </div>
                 <button class="btn" onclick="openModal('modal1')">View Details</button>
             </div>
-            <!-- Modals -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal('modal1')">&times;</span>
@@ -43,7 +42,6 @@
                 document.getElementById(modalId).style.display = 'none';
             }
 
-            // Close modal when clicking outside
             window.onclick = function(event) {
                 if (event.target.classList.contains('modal')) {
                     event.target.style.display = 'none';
