@@ -28,6 +28,7 @@ Partial Class ucReport
         RoundedPanel1 = New RoundedPanel()
         WebView22Report = New Microsoft.Web.WebView2.WinForms.WebView2()
         btnViewConfuseMatriz = New RoundedButton()
+        btnImportFile = New RoundedButton()
         panelCard.SuspendLayout()
         CType(WebView21Report, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
@@ -45,7 +46,7 @@ Partial Class ucReport
         panelCard.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         panelCard.Location = New Point(38, 26)
         panelCard.Name = "panelCard"
-        panelCard.Size = New Size(696, 823)
+        panelCard.Size = New Size(696, 618)
         panelCard.TabIndex = 1
         ' 
         ' WebView21Report
@@ -55,7 +56,7 @@ Partial Class ucReport
         WebView21Report.DefaultBackgroundColor = Color.White
         WebView21Report.Location = New Point(27, 30)
         WebView21Report.Name = "WebView21Report"
-        WebView21Report.Size = New Size(642, 662)
+        WebView21Report.Size = New Size(642, 458)
         WebView21Report.TabIndex = 3
         WebView21Report.ZoomFactor = 1R
         ' 
@@ -71,7 +72,7 @@ Partial Class ucReport
         btnViewCountPlot.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnViewCountPlot.ForeColor = Color.Black
         btnViewCountPlot.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        btnViewCountPlot.Location = New Point(27, 713)
+        btnViewCountPlot.Location = New Point(27, 503)
         btnViewCountPlot.Name = "btnViewCountPlot"
         btnViewCountPlot.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnViewCountPlot.Size = New Size(642, 85)
@@ -124,11 +125,33 @@ Partial Class ucReport
         btnViewConfuseMatriz.Text = "Generate"
         btnViewConfuseMatriz.UseVisualStyleBackColor = False
         ' 
+        ' btnImportFile
+        ' 
+        btnImportFile.BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        btnImportFile.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnImportFile.BorderSize = 5
+        btnImportFile.CornerRadius = 18
+        btnImportFile.Cursor = Cursors.Hand
+        btnImportFile.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnImportFile.FlatAppearance.BorderSize = 0
+        btnImportFile.FlatStyle = FlatStyle.Flat
+        btnImportFile.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnImportFile.ForeColor = Color.Black
+        btnImportFile.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnImportFile.Location = New Point(38, 772)
+        btnImportFile.Name = "btnImportFile"
+        btnImportFile.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnImportFile.Size = New Size(219, 77)
+        btnImportFile.TabIndex = 5
+        btnImportFile.Text = "Import"
+        btnImportFile.UseVisualStyleBackColor = False
+        ' 
         ' ucReport
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        Controls.Add(btnImportFile)
         Controls.Add(RoundedPanel1)
         Controls.Add(panelCard)
         Name = "ucReport"
@@ -146,5 +169,6 @@ Partial Class ucReport
     Friend WithEvents btnViewConfuseMatriz As RoundedButton
     Friend WithEvents WebView21Report As Microsoft.Web.WebView2.WinForms.WebView2
     Friend WithEvents WebView22Report As Microsoft.Web.WebView2.WinForms.WebView2
+    Friend WithEvents btnImportFile As RoundedButton
 
 End Class

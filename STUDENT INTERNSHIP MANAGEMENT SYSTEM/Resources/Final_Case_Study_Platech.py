@@ -1,4 +1,3 @@
-
 # Platform Technology
 # Final Case Study
 # 
@@ -12,9 +11,27 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+import sys
+
+# sys.argv[0] is the script name, sys.argv[1] is the first argument
 
 
-df = pd.read_csv(r"resources\VAIA_OJT_INFORMATION.csv")
+file_path = sys.argv[1]
+
+# Now you can read CSV/Excel
+if file_path.lower().endswith(".csv"):
+    df = pd.read_csv(file_path)
+elif file_path.lower().endswith((".xls", ".xlsx")):
+    import openpyxl  # or xlrd for older Excel
+    df = pd.read_excel(file_path)
+else:
+    print("Unsupported file type.")
+    sys.exit(1)
+
+print("Data loaded successfully!")
+print(df.head())
 
 
 
@@ -44,14 +61,7 @@ rating_map = {
 # Map text labels to numeric
 df['Equivalent Rating'] = df['Equivalent Rating'].map(rating_map)
 
-
-
-
-
-# In[292]:
-
-
-# 5.Data Engineering / Pre-processing
+# Data Engineering / Pre-processing
 #Convert, normalize, or encode your features before modeling
 
 from sklearn.preprocessing import StandardScaler
@@ -70,32 +80,7 @@ df['Remark'] = df['Remark'].replace({'Passed': 1.0, 'Failed': 0.0}).astype(float
 
 print(df['Remark'].value_counts())
 
-
-# In[293]:
-
-
-# 6.Data Visualization
-#Use charts to understand relationships and patterns:
-# ----- Countplot -----
-# plt.figure(figsize=(6,4))
-df['Remark_label'] = df['Remark'].map({0.0: 'Failed', 1.0: 'Passed'})
-ax = sns.countplot(x='Remark_label', data=df, palette="Set1")
-plt.title("Number of Students by Remark", fontsize=14)
-plt.xlabel("Remark")
-plt.ylabel("Number of Students")
-
-for p in ax.patches:
-    height = int(p.get_height())
-    ax.text(p.get_x() + p.get_width()/2, height/2, str(height), ha='center', va='center', color='white', fontsize=12, fontweight='bold')
-plt.ioff()  # turn off interactive mode
-# Save figure
-plt.savefig("resources/countplot.png")
-plt.close()  # close the plot so it doesn't display interactively
-
-# In[294]:
-
-
-# 7. Data Splitting (Training and Testing Set)
+# Data Splitting (Training and Testing Set)
 # Separate your data into training and testing portions:
 
 from sklearn.model_selection import train_test_split
@@ -125,8 +110,6 @@ model.fit(X_train, y_train)
 train_acc = model.score(X_train, y_train)
 print("Training Accuracy:", train_acc)
 
-
-
 y_predict= model.predict(X_test)
 print(y_predict)
 
@@ -134,32 +117,64 @@ error=y_predict - y_test
 error
 print(X_test)
 
+# ----- Combined Graph: Count Plot + Confusion Matrix -----
 
+# Create a single figure with 2 side-by-side subplots
+fig, axes = plt.subplots(1, 2, figsize=(9, 4))
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
+# =======================
+#   COUNT PLOT
+# =======================
+sns.countplot(x='Remark', data=df, ax=axes[0], palette="Set1")
 
+axes[0].set_title("Number of Students by Remark", fontsize=14)
+axes[0].set_xlabel("Remark")
+axes[0].set_ylabel("Number of Students")
 
-# ----- Confusion Matrix -----
-from sklearn.metrics import confusion_matrix
+for p in axes[0].patches:
+    height = int(p.get_height())
+    axes[0].text(
+        p.get_x() + p.get_width()/2,  # x position: center of bar
+        height/2,                     # y position: middle of bar
+        str(height),                  # text to display
+        ha='center',                  # horizontal alignment
+        va='center',                  # vertical alignment
+        color='white',                # text color
+        fontsize=12,
+        fontweight='bold'
+    )
+    axes[0].legend(
+    title="Legend",
+    labels=["Failed", "Passed"]
+)
+
+# =======================
+#   CONFUSION MATRIX
+# =======================
 cm = confusion_matrix(y_test, y_predict)
 
-# plt.figure(figsize=(6,4))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['Failed','Passed'], yticklabels=['Failed','Passed'])
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
-plt.title("Confusion Matrix")
-plt.ioff()  # turn off interactive mode
-plt.savefig("resources/confusion_matrix.png")
-plt.close()
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt='d',
+    cmap='Blues',
+    xticklabels=['Failed', 'Passed'],
+    yticklabels=['Failed', 'Passed'],
+    ax=axes[1]
+)
+
+axes[1].set_title("Confusion Matrix", fontsize=14)
+axes[1].set_xlabel("Predicted")
+axes[1].set_ylabel("Actual")
+
+# Adjust layout and save
+plt.tight_layout()
+plt.savefig("combined_graph.png")
+plt.show()
 
 
 
-# In[298]:
-
-
-# 11. Performance Metrics
+# Performance Metrics
 
 from sklearn.metrics import accuracy_score, confusion_matrix
 
@@ -172,4 +187,7 @@ print("Accuracy:", acc)
 
 cm = confusion_matrix(y_test, y_pred)
 print("\nConfusion Matrix:\n", cm)
+
+
+
 
