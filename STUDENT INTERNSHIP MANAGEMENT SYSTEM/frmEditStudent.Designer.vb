@@ -44,10 +44,6 @@ Partial Class frmEditStudent
         Label2 = New Label()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
-        cmbEditCCId = New ComboBox()
-        cmbEditCompName = New ComboBox()
-        Label13 = New Label()
-        Label14 = New Label()
         dtpEditBirthday = New DateTimePicker()
         cmbEditStdProf = New ComboBox()
         Label12 = New Label()
@@ -290,10 +286,6 @@ Partial Class frmEditStudent
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
-        RoundedPanel1.Controls.Add(cmbEditCCId)
-        RoundedPanel1.Controls.Add(cmbEditCompName)
-        RoundedPanel1.Controls.Add(Label13)
-        RoundedPanel1.Controls.Add(Label14)
         RoundedPanel1.Controls.Add(dtpEditBirthday)
         RoundedPanel1.Controls.Add(cmbEditStdProf)
         RoundedPanel1.Controls.Add(Label12)
@@ -320,46 +312,6 @@ Partial Class frmEditStudent
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1086, 699)
         RoundedPanel1.TabIndex = 77
-        ' 
-        ' cmbEditCCId
-        ' 
-        cmbEditCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbEditCCId.FormattingEnabled = True
-        cmbEditCCId.Location = New Point(736, 184)
-        cmbEditCCId.Name = "cmbEditCCId"
-        cmbEditCCId.Size = New Size(326, 45)
-        cmbEditCCId.TabIndex = 64
-        ' 
-        ' cmbEditCompName
-        ' 
-        cmbEditCompName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbEditCompName.FormattingEnabled = True
-        cmbEditCompName.Location = New Point(364, 183)
-        cmbEditCompName.Name = "cmbEditCompName"
-        cmbEditCompName.Size = New Size(362, 45)
-        cmbEditCompName.TabIndex = 63
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        Label13.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(364, 153)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(205, 27)
-        Label13.TabIndex = 61
-        Label13.Text = "Company Name "
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        Label14.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(736, 154)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(249, 27)
-        Label14.TabIndex = 62
-        Label14.Text = "Company Contact ID"
         ' 
         ' dtpEditBirthday
         ' 
@@ -466,8 +418,4 @@ Partial Class frmEditStudent
     Friend WithEvents txtEditStdSection As TextBox
     Friend WithEvents cmbEditStdProf As ComboBox
     Friend WithEvents dtpEditBirthday As DateTimePicker
-    Friend WithEvents cmbEditCCId As ComboBox
-    Friend WithEvents cmbEditCompName As ComboBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
 End Class

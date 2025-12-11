@@ -44,10 +44,6 @@ Partial Class frmAddStudent
         btnAddStdCancel = New RoundedButton()
         btnAddStd = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
-        cmbAddCCId = New ComboBox()
-        cmbAddCompName = New ComboBox()
-        Label13 = New Label()
-        Label14 = New Label()
         dtpAddBirthday = New DateTimePicker()
         cmbAddStdProf = New ComboBox()
         Label12 = New Label()
@@ -75,7 +71,7 @@ Partial Class frmAddStudent
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Century Gothic", 40.2F, FontStyle.Bold, GraphicsUnit.Point, 0)
+        Label1.Font = New Font("Century Gothic", 40.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(44, 37)
         Label1.Name = "Label1"
         Label1.Size = New Size(433, 80)
@@ -248,19 +244,19 @@ Partial Class frmAddStudent
         ' 
         ' btnAddStdCancel
         ' 
-        btnAddStdCancel.BackColor = Color.FromArgb(200, 236, 245)
-        btnAddStdCancel.BorderColor = Color.FromArgb(49, 119, 180)
+        btnAddStdCancel.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnAddStdCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddStdCancel.BorderSize = 5
         btnAddStdCancel.CornerRadius = 10
         btnAddStdCancel.Cursor = Cursors.Hand
-        btnAddStdCancel.FillColor = Color.FromArgb(120, 201, 221)
+        btnAddStdCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddStdCancel.FlatStyle = FlatStyle.Flat
         btnAddStdCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddStdCancel.ForeColor = Color.Black
-        btnAddStdCancel.HoverColor = Color.FromArgb(140, 220, 235)
+        btnAddStdCancel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddStdCancel.Location = New Point(697, 618)
         btnAddStdCancel.Name = "btnAddStdCancel"
-        btnAddStdCancel.PressedColor = Color.FromArgb(100, 180, 200)
+        btnAddStdCancel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddStdCancel.Size = New Size(171, 63)
         btnAddStdCancel.TabIndex = 30
         btnAddStdCancel.Text = "Cancel "
@@ -268,19 +264,19 @@ Partial Class frmAddStudent
         ' 
         ' btnAddStd
         ' 
-        btnAddStd.BackColor = Color.FromArgb(200, 236, 245)
-        btnAddStd.BorderColor = Color.FromArgb(49, 119, 180)
+        btnAddStd.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnAddStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
         btnAddStd.BorderSize = 5
         btnAddStd.CornerRadius = 10
         btnAddStd.Cursor = Cursors.Hand
-        btnAddStd.FillColor = Color.FromArgb(120, 201, 221)
+        btnAddStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnAddStd.FlatStyle = FlatStyle.Flat
         btnAddStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
         btnAddStd.ForeColor = Color.Black
-        btnAddStd.HoverColor = Color.FromArgb(140, 220, 235)
+        btnAddStd.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnAddStd.Location = New Point(891, 618)
         btnAddStd.Name = "btnAddStd"
-        btnAddStd.PressedColor = Color.FromArgb(100, 180, 200)
+        btnAddStd.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnAddStd.Size = New Size(171, 63)
         btnAddStd.TabIndex = 31
         btnAddStd.Text = "Add"
@@ -291,10 +287,6 @@ Partial Class frmAddStudent
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
-        RoundedPanel1.Controls.Add(cmbAddCCId)
-        RoundedPanel1.Controls.Add(cmbAddCompName)
-        RoundedPanel1.Controls.Add(Label13)
-        RoundedPanel1.Controls.Add(Label14)
         RoundedPanel1.Controls.Add(dtpAddBirthday)
         RoundedPanel1.Controls.Add(cmbAddStdProf)
         RoundedPanel1.Controls.Add(Label12)
@@ -321,51 +313,11 @@ Partial Class frmAddStudent
         RoundedPanel1.Controls.Add(Label8)
         RoundedPanel1.Controls.Add(Label7)
         RoundedPanel1.CornerRadius = 2
-        RoundedPanel1.FillColor = Color.FromArgb(200, 236, 245)
+        RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(-1, -1)
         RoundedPanel1.Name = "RoundedPanel1"
         RoundedPanel1.Size = New Size(1087, 700)
         RoundedPanel1.TabIndex = 77
-        ' 
-        ' cmbAddCCId
-        ' 
-        cmbAddCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbAddCCId.FormattingEnabled = True
-        cmbAddCCId.Location = New Point(739, 184)
-        cmbAddCCId.Name = "cmbAddCCId"
-        cmbAddCCId.Size = New Size(326, 45)
-        cmbAddCCId.TabIndex = 68
-        ' 
-        ' cmbAddCompName
-        ' 
-        cmbAddCompName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        cmbAddCompName.FormattingEnabled = True
-        cmbAddCompName.Location = New Point(367, 183)
-        cmbAddCompName.Name = "cmbAddCompName"
-        cmbAddCompName.Size = New Size(362, 45)
-        cmbAddCompName.TabIndex = 67
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        Label13.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.Location = New Point(367, 153)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(205, 27)
-        Label13.TabIndex = 65
-        Label13.Text = "Company Name "
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        Label14.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(739, 154)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(249, 27)
-        Label14.TabIndex = 66
-        Label14.Text = "Company Contact ID"
         ' 
         ' dtpAddBirthday
         ' 
@@ -420,51 +372,11 @@ Partial Class frmAddStudent
         Panel2.Size = New Size(990, 4)
         Panel2.TabIndex = 39
         ' 
-        ' cmbAddCCId
-        ' 
-        cmbAddCCId.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0)
-        cmbAddCCId.FormattingEnabled = True
-        cmbAddCCId.Location = New Point(739, 184)
-        cmbAddCCId.Name = "cmbAddCCId"
-        cmbAddCCId.Size = New Size(326, 45)
-        cmbAddCCId.TabIndex = 68
-        ' 
-        ' cmbAddCompName
-        ' 
-        cmbAddCompName.Font = New Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0)
-        cmbAddCompName.FormattingEnabled = True
-        cmbAddCompName.Location = New Point(367, 183)
-        cmbAddCompName.Name = "cmbAddCompName"
-        cmbAddCompName.Size = New Size(362, 45)
-        cmbAddCompName.TabIndex = 67
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.BackColor = Color.FromArgb(200, 236, 245)
-        Label13.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0)
-        Label13.Location = New Point(367, 153)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(205, 27)
-        Label13.TabIndex = 65
-        Label13.Text = "Company Name "
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.BackColor = Color.FromArgb(200, 236, 245)
-        Label14.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0)
-        Label14.Location = New Point(739, 154)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(249, 27)
-        Label14.TabIndex = 66
-        Label14.Text = "Company Contact ID"
-        ' 
         ' frmAddStudent
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(200, 236, 245)
+        BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         ClientSize = New Size(1086, 697)
         Controls.Add(Label2)
         Controls.Add(btnExitAddStd)
@@ -507,8 +419,4 @@ Partial Class frmAddStudent
     Friend WithEvents cmbAddStdProf As ComboBox
     Friend WithEvents Label12 As Label
     Friend WithEvents dtpAddBirthday As DateTimePicker
-    Friend WithEvents cmbAddCCId As ComboBox
-    Friend WithEvents cmbAddCompName As ComboBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
 End Class
