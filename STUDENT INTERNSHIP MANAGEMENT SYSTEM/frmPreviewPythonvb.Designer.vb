@@ -26,7 +26,11 @@ Partial Class frmPreviewPythonvb
         btnCancelPreview = New RoundedButton()
         Label1 = New Label()
         dgvPreview = New DataGridView()
+        RoundedPanel1 = New RoundedPanel()
+        btnAddStdCancel = New RoundedButton()
+        btnAddStd = New RoundedButton()
         CType(dgvPreview, ComponentModel.ISupportInitialize).BeginInit()
+        RoundedPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnGenGraph
@@ -42,7 +46,7 @@ Partial Class frmPreviewPythonvb
         btnGenGraph.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnGenGraph.ForeColor = Color.Black
         btnGenGraph.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        btnGenGraph.Location = New Point(576, 494)
+        btnGenGraph.Location = New Point(551, 494)
         btnGenGraph.Name = "btnGenGraph"
         btnGenGraph.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnGenGraph.Size = New Size(498, 95)
@@ -63,7 +67,7 @@ Partial Class frmPreviewPythonvb
         btnCancelPreview.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCancelPreview.ForeColor = Color.Black
         btnCancelPreview.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        btnCancelPreview.Location = New Point(12, 494)
+        btnCancelPreview.Location = New Point(22, 494)
         btnCancelPreview.Name = "btnCancelPreview"
         btnCancelPreview.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
         btnCancelPreview.Size = New Size(498, 95)
@@ -91,6 +95,58 @@ Partial Class frmPreviewPythonvb
         dgvPreview.Size = New Size(1062, 416)
         dgvPreview.TabIndex = 9
         ' 
+        ' RoundedPanel1
+        ' 
+        RoundedPanel1.BackColor = Color.Transparent
+        RoundedPanel1.BorderColor = Color.Black
+        RoundedPanel1.BorderSize = 6
+        RoundedPanel1.Controls.Add(btnAddStdCancel)
+        RoundedPanel1.Controls.Add(btnAddStd)
+        RoundedPanel1.CornerRadius = 2
+        RoundedPanel1.FillColor = Color.White
+        RoundedPanel1.Location = New Point(0, 0)
+        RoundedPanel1.Name = "RoundedPanel1"
+        RoundedPanel1.Size = New Size(1086, 601)
+        RoundedPanel1.TabIndex = 79
+        ' 
+        ' btnAddStdCancel
+        ' 
+        btnAddStdCancel.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnAddStdCancel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnAddStdCancel.BorderSize = 5
+        btnAddStdCancel.CornerRadius = 10
+        btnAddStdCancel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddStdCancel.FlatStyle = FlatStyle.Flat
+        btnAddStdCancel.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        btnAddStdCancel.ForeColor = Color.Black
+        btnAddStdCancel.HoverColor = Color.Yellow
+        btnAddStdCancel.Location = New Point(697, 618)
+        btnAddStdCancel.Name = "btnAddStdCancel"
+        btnAddStdCancel.PressedColor = Color.Red
+        btnAddStdCancel.Size = New Size(171, 63)
+        btnAddStdCancel.TabIndex = 30
+        btnAddStdCancel.Text = "Cancel "
+        btnAddStdCancel.UseVisualStyleBackColor = False
+        ' 
+        ' btnAddStd
+        ' 
+        btnAddStd.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnAddStd.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnAddStd.BorderSize = 5
+        btnAddStd.CornerRadius = 10
+        btnAddStd.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnAddStd.FlatStyle = FlatStyle.Flat
+        btnAddStd.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        btnAddStd.ForeColor = Color.Black
+        btnAddStd.HoverColor = Color.Yellow
+        btnAddStd.Location = New Point(891, 618)
+        btnAddStd.Name = "btnAddStd"
+        btnAddStd.PressedColor = Color.Red
+        btnAddStd.Size = New Size(171, 63)
+        btnAddStd.TabIndex = 31
+        btnAddStd.Text = "Add"
+        btnAddStd.UseVisualStyleBackColor = False
+        ' 
         ' frmPreviewPythonvb
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -100,10 +156,12 @@ Partial Class frmPreviewPythonvb
         Controls.Add(dgvPreview)
         Controls.Add(btnGenGraph)
         Controls.Add(btnCancelPreview)
+        Controls.Add(RoundedPanel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "frmPreviewPythonvb"
         Text = "frmPreviewPythonvb"
         CType(dgvPreview, ComponentModel.ISupportInitialize).EndInit()
+        RoundedPanel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -112,4 +170,7 @@ Partial Class frmPreviewPythonvb
     Friend WithEvents btnCancelPreview As RoundedButton
     Friend WithEvents Label1 As Label
     Friend WithEvents dgvPreview As DataGridView
+    Friend WithEvents RoundedPanel1 As RoundedPanel
+    Friend WithEvents btnAddStdCancel As RoundedButton
+    Friend WithEvents btnAddStd As RoundedButton
 End Class

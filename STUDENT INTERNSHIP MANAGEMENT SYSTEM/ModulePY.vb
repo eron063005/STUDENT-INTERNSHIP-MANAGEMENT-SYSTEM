@@ -2,10 +2,10 @@
 
 Module ModulePY
     Sub RunPythonScript(filePath As String)
-        'Dim pythonExe As String = "C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe"
-        'Dim scriptPath As String = "C:\Users\User\Documents\VBNET\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\Final Case Study Platech.py"
-        Dim pythonExe As String = "C:\Users\HP\AppData\Local\Microsoft\WindowsApps\python3.13.exe"
-        Dim scriptPath As String = "C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\Final_Case_Study_Platech.py"
+        Dim pythonExe As String = "C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe"
+        Dim scriptPath As String = "C:\Users\User\Documents\VBNET\STUDENT INTERNSHIP MANAGEMENT SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\Final_Case_Study_Platech.py"
+        'Dim pythonExe As String = "C:\Users\HP\AppData\Local\Microsoft\WindowsApps\python3.13.exe"
+        'Dim scriptPath As String = "C:\Users\HP\source\repos\eron063005\STUDENT-INTERNSHIP-MANAGEMENT-SYSTEM\STUDENT INTERNSHIP MANAGEMENT SYSTEM\Resources\Final_Case_Study_Platech.py"
 
 
         Dim psi As New ProcessStartInfo()
