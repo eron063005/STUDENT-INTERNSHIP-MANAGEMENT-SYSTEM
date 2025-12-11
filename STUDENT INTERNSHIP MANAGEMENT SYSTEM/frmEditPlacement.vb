@@ -5,27 +5,54 @@ Public Class frmEditPlacement
         Me.Close()
     End Sub
 
-    Private Sub btdExitAdd_Click(sender As Object, e As EventArgs) Handles btnExitEditPlace.Click
-        Close()
+    Private Sub btnExitEditPlace_Click(sender As Object, e As EventArgs) Handles btnExitEditPlace.Click
+        Me.Close()
     End Sub
 
-    Private Sub btnEditPlaceAdd_Click(sender As Object, e As EventArgs) Handles btnSavePlace.Click
+    Private Sub frmEditPlacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Load all company contacts into combo box
+        LoadCompanyContactsToComboBox()
+    End Sub
+
+    Private Sub LoadCompanyContactsToComboBox()
+        Dim query As String = "
+            SELECT CompanyContactID,
+                   CONCAT(CFirstName, ' ', CLastName) AS FullName
+            FROM company_contact
+            ORDER BY CFirstName, CLastName;
+        "
+
+        Using conn As New MySqlConnection(connString)
+            Using cmd As New MySqlCommand(query, conn)
+                Dim dt As New DataTable()
+                conn.Open()
+                dt.Load(cmd.ExecuteReader())
+                cbEditPlaceComCon.DataSource = dt
+                cbEditPlaceComCon.DisplayMember = "FullName"
+                cbEditPlaceComCon.ValueMember = "CompanyContactID"
+                cbEditPlaceComCon.SelectedIndex = -1 ' optional: no selection by default
+            End Using
+        End Using
+    End Sub
+
+    Private Sub btnSavePlace_Click(sender As Object, e As EventArgs) Handles btnSavePlace.Click
         ' SQL UPDATE query
         Dim query As String = "
-            UPDATE internship i
-                SET 
-                    i.Status = @Status,          
-                    i.StartDate = @StartDate,    
-                    i.EndDate = @EndDate,        
-                    i.FGrade = @FGrade    
-                WHERE i.InternshipId = @InternshipId
-    "
+            UPDATE internship
+            SET 
+                CompanyContactID = @CompanyContactID,
+                Status = @Status,
+                StartDate = @StartDate,
+                EndDate = @EndDate,
+                FGrade = @FGrade
+            WHERE InternshipId = @InternshipId
+        "
 
         Using conn As New MySqlConnection(connString)
             Using cmd As New MySqlCommand(query, conn)
                 ' Assign parameters from form controls
-                cmd.Parameters.AddWithValue("@InternshipID", mtxtEditPlaceInternID.Text.Trim())
-                cmd.Parameters.AddWithValue("@StudentID", txtEditPlaceStdID.Text.Trim())
+                cmd.Parameters.AddWithValue("@InternshipId", mtxtEditPlaceInternID.Text.Trim())
+                cmd.Parameters.AddWithValue("@CompanyContactID", If(cbEditPlaceComCon.SelectedValue IsNot Nothing, cbEditPlaceComCon.SelectedValue, DBNull.Value))
                 cmd.Parameters.AddWithValue("@Status", cbEditPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpEditPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpEditPlaceEndDate.Value)
@@ -37,7 +64,7 @@ Public Class frmEditPlacement
 
                     If rowsAffected > 0 Then
                         MessageBox.Show("Record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Me.Close() ' Close the edit form after updating
+                        Me.Close()
                     Else
                         MessageBox.Show("No record found to update.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
@@ -46,10 +73,5 @@ Public Class frmEditPlacement
                 End Try
             End Using
         End Using
-    End Sub
-
-
-    Private Sub frmEditPlacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class
