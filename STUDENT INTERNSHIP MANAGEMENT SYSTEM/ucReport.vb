@@ -6,7 +6,7 @@ Imports Microsoft.Web.WebView2.Core
 Public Class ucReport
 
     Private Sub btnImportFile_Click(sender As Object, e As EventArgs) Handles btnImportFile.Click
-        Dim ofd As New OpenFileDialogWith {
+        Dim ofd As New OpenFileDialog With {
     .Filter = "Excel/CSV Files|*.xlsx;*.xls;*.csv",
     .Title = "Select Excel or CSV file",
     .Multiselect = False
@@ -56,8 +56,8 @@ Public Class ucReport
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance)
                 Using stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.Read)
                     Using reader = ExcelReaderFactory.CreateReader(stream)
-                        Dim conf = New ExcelDataSetConfigurationWith {
-                    .ConfigureDataTable = Function(__) New ExcelDataTableConfigurationWith {.UseHeaderRow = True}
+                        Dim conf = New ExcelDataSetConfiguration With {
+                    .ConfigureDataTable = Function(__) New ExcelDataTableConfiguration With {.UseHeaderRow = True}
                 }
                         Dim ds = reader.AsDataSet(conf)
                         dt = ds.Tables(0)
