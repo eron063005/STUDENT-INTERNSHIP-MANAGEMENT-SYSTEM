@@ -22,10 +22,16 @@ Public Class ucStudent
 
     Private Sub btnAddStudent_Click(sender As Object, e As EventArgs) Handles btnAddStudent.Click
         Dim addForm As New frmAddStudent()
+
+        ' Assign a callback to refresh the grid after adding
+        addForm.OnStudentAdded = Sub()
+                                     LoadDataStudent(dgvStudent, LoggedFacultyID)
+                                 End Sub
+
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
-        LoadDataStudent(dgvStudent, LoggedFacultyID)
     End Sub
+
 
     ' --- ARCHIVE (instead of permanent delete) ---
     Private Sub btnDelStudent_Click(sender As Object, e As EventArgs) Handles btnDelStudent.Click
