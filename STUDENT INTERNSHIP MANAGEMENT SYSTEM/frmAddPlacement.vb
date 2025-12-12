@@ -30,7 +30,7 @@ Public Class frmAddPlacement
                 cmd.Parameters.AddWithValue("@Status", cbAddPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpAddPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpAddPlaceEndDate.Value)
-                cmd.Parameters.AddWithValue("@FGrade", nudAddPlaceGrade.Value)
+
                 cmd.ExecuteNonQuery()
             End Using
         End Using
