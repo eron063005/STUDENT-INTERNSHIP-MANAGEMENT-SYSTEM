@@ -26,6 +26,7 @@ Partial Class ucReport
         Label2 = New Label()
         Label1 = New Label()
         btnImportFile = New RoundedButton()
+        btnPrintSummary = New RoundedButton()
         panelCard.SuspendLayout()
         SuspendLayout()
         ' 
@@ -86,11 +87,33 @@ Partial Class ucReport
         btnImportFile.Text = "Import"
         btnImportFile.UseVisualStyleBackColor = False
         ' 
+        ' btnPrintSummary
+        ' 
+        btnPrintSummary.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnPrintSummary.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnPrintSummary.BorderSize = 5
+        btnPrintSummary.CornerRadius = 18
+        btnPrintSummary.Cursor = Cursors.Hand
+        btnPrintSummary.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnPrintSummary.FlatAppearance.BorderSize = 0
+        btnPrintSummary.FlatStyle = FlatStyle.Flat
+        btnPrintSummary.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnPrintSummary.ForeColor = Color.Black
+        btnPrintSummary.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnPrintSummary.Location = New Point(65, 779)
+        btnPrintSummary.Name = "btnPrintSummary"
+        btnPrintSummary.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnPrintSummary.Size = New Size(277, 69)
+        btnPrintSummary.TabIndex = 13
+        btnPrintSummary.Text = "Import"
+        btnPrintSummary.UseVisualStyleBackColor = False
+        ' 
         ' ucReport
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
+        Controls.Add(btnPrintSummary)
         Controls.Add(panelCard)
         Name = "ucReport"
         Size = New Size(1496, 884)
@@ -103,5 +126,6 @@ Partial Class ucReport
     Friend WithEvents btnImportFile As RoundedButton
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnPrintSummary As RoundedButton
 
 End Class

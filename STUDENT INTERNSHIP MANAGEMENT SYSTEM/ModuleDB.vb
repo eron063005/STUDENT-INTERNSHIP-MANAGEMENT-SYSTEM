@@ -582,4 +582,48 @@ Module ModuleDB
             End Using
         End Using
     End Sub
+
+    'Report Part
+    Sub LoadAssessmentData(dgvPreview As DataGridView)
+
+        Dim query As String = "
+        SELECT 
+            a.AssessmentId,
+            CONCAT(s.FirstName, ' ', s.LastName) AS StudentName,
+            s.Section,
+            c.CompanyName,
+            CONCAT(cc.CFirstName, ' ', cc.CLastName) AS SupervisorName,
+            i.status,
+            a.AssessmentGrade
+        FROM assessment a
+        INNER JOIN student s ON a.StudentId = s.StudentId
+        INNER JOIN internship i ON a.InternshipId = i.InternshipId
+        INNER JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
+        INNER JOIN company c ON cc.CompanyId = c.CompanyId
+        WHERE s.FacultyId = @FacultyId;
+    "
+
+        Using conn As New MySqlConnection(connString)
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@FacultyId", LoggedFacultyID)
+
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+
+            dgvPreview.DataSource = table
+        End Using
+
+        ' Enable scrollbars
+        dgvPreview.ScrollBars = ScrollBars.Both
+
+        dgvPreview.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        dgvPreview.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+        dgvPreview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvPreview.ReadOnly = True
+        dgvPreview.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
+
 End Module

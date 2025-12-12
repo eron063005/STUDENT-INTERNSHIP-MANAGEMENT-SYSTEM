@@ -79,5 +79,16 @@ Public Class ucReport
         End Try
 
     End Sub
+
+    Private Sub btnPrintSummary_Click(sender As Object, e As EventArgs) Handles btnPrintSummary.Click
+        ' Show preview form (modal) via Dashboard helper so it centers nicely
+        Try
+            Dim preview As New frmPrintSummary()
+            Dim parentForm As Dashboard = Me.FindForm()
+            parentForm.ShowFormWithPadding(preview, leftPadding:=470, topPadding:=150, rightPadding:=416, bottomPadding:=150)
+        Catch ex As Exception
+            MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class
 

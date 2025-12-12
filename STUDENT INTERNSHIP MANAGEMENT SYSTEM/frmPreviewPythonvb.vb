@@ -3,7 +3,6 @@ Imports System.Text
 Imports ClosedXML.Excel
 
 Public Class frmPreviewPythonvb
-    'DITO YA LAHAT NG CODE DITO COPY PASTE LANG MASKI YANG IMPORT
     Private sourceTable As DataTable
     Private filePath As String
 
