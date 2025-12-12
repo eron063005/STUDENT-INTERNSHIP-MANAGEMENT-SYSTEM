@@ -38,6 +38,7 @@ Partial Class frmPreviewStudent
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 6
+        RoundedPanel1.Controls.Add(Label1)
         RoundedPanel1.Controls.Add(btnAddStdCancel)
         RoundedPanel1.Controls.Add(btnAddStd)
         RoundedPanel1.CornerRadius = 2
@@ -90,7 +91,7 @@ Partial Class frmPreviewStudent
         Label1.AutoSize = True
         Label1.BackColor = Color.White
         Label1.Font = New Font("Impact", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(327, 6)
+        Label1.Location = New Point(313, 6)
         Label1.Name = "Label1"
         Label1.Size = New Size(458, 59)
         Label1.TabIndex = 7
@@ -153,7 +154,6 @@ Partial Class frmPreviewStudent
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
         ClientSize = New Size(1086, 601)
-        Controls.Add(Label1)
         Controls.Add(btnSaveDB)
         Controls.Add(dgvPreview)
         Controls.Add(btnCancelPreview)
@@ -162,9 +162,9 @@ Partial Class frmPreviewStudent
         Name = "frmPreviewStudent"
         Text = "frmPreview"
         RoundedPanel1.ResumeLayout(False)
+        RoundedPanel1.PerformLayout()
         CType(dgvPreview, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents RoundedPanel1 As RoundedPanel

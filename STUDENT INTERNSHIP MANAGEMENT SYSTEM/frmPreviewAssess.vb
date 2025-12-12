@@ -6,6 +6,10 @@ Public Class frmPreviewAssess
     Private _data As DataTable
     Private _filePath As String
 
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     ' Constructor that accepts DataTable and file path
     Public Sub New(data As DataTable, filePath As String)
         InitializeComponent()
