@@ -59,18 +59,30 @@ Public Class frmAddVisit
         Dim visitDate As Date = dtpAddVisitDate.Value
         Dim score As Integer = nudAddVisitScore.Value
 
-        Dim query As String =
-            "INSERT INTO visit_log (VisitId, StudentId, InternshipId, FacultyId, VisitDate, Evaluation, Score)
+        Dim insertQuery As String =
+        "INSERT INTO visit_log (VisitId, StudentId, InternshipId, FacultyId, VisitDate, Evaluation, Score)
          SELECT @VisitId, s.StudentId, i.InternshipId, @FacultyId, @VisitDate, @Evaluation, @Score
          FROM internship i
          JOIN student s ON i.StudentId = s.StudentId
          WHERE i.InternshipId = @InternshipId;"
 
+        ' Query to update FGrade after inserting visit
+        Dim updateFGradeQuery As String = "UPDATE internship i " &
+        "JOIN assessment a ON a.StudentId = i.StudentId " &
+        "LEFT JOIN ( " &
+        "    SELECT InternshipId, SUM(Score) AS TotalScore " &
+        "    FROM visit_log " &
+        "    GROUP BY InternshipId " &
+        ") v ON v.InternshipId = i.InternshipId " &
+        "SET i.FGrade = (a.AssessmentGrade + IFNULL(v.TotalScore,0))/2 " &
+        "WHERE i.InternshipId = @InternshipId;"
+
         Try
             Using conn As New MySqlConnection(connString)
                 conn.Open()
 
-                Using cmd As New MySqlCommand(query, conn)
+                ' Insert visit
+                Using cmd As New MySqlCommand(insertQuery, conn)
                     cmd.Parameters.AddWithValue("@VisitId", visitId)
                     cmd.Parameters.AddWithValue("@InternshipId", internshipId)
                     cmd.Parameters.AddWithValue("@FacultyId", LoggedFacultyID)
@@ -81,7 +93,13 @@ Public Class frmAddVisit
                     Dim rows As Integer = cmd.ExecuteNonQuery()
 
                     If rows > 0 Then
-                        MessageBox.Show("Visit Log successfully added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        ' Update FGrade immediately after adding the visit
+                        Using updateCmd As New MySqlCommand(updateFGradeQuery, conn)
+                            updateCmd.Parameters.AddWithValue("@InternshipId", internshipId)
+                            updateCmd.ExecuteNonQuery()
+                        End Using
+
+                        MessageBox.Show("Visit Log successfully added and FGrade updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
                         MessageBox.Show("Failed to insert visit log.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
@@ -91,8 +109,13 @@ Public Class frmAddVisit
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
         ClearAll()
     End Sub
+
+
+
+
     Private Sub ClearAll()
         mtxtAddVisitID.Clear()
         txtAddVisitEval.Clear()

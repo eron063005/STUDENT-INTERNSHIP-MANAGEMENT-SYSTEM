@@ -2,9 +2,15 @@
 Imports System.Text
 Imports ExcelDataReader
 Imports System.Data
+Imports MySql.Data.MySqlClient
+
 Public Class frmPreviewAssess
     Private _data As DataTable
     Private _filePath As String
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
 
     ' Constructor that accepts DataTable and file path
     Public Sub New(data As DataTable, filePath As String)
@@ -105,6 +111,17 @@ Public Class frmPreviewAssess
         ' ==============================
         Try
             dgvPreviewAssess.DataSource = dt
+
+            Try
+                SaveToAssessmentCriteria(dt)
+                MessageBox.Show("Data successfully saved to AssessmentCriteria!", "Saved",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error saving to database: " & ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+
+
             dgvPreviewAssess.AutoGenerateColumns = True
 
             ' Column settings
@@ -134,5 +151,72 @@ Public Class frmPreviewAssess
         Catch ex As Exception
             MessageBox.Show("Error displaying data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        Try
+            Dim parent As Dashboard = Me.FindForm()
+            If parent IsNot Nothing Then
+                ' Assuming your ucAssessment control is named "ucAssessment1"
+                Dim assessControl = parent.Controls.OfType(Of ucAssessment)().FirstOrDefault()
+                If assessControl IsNot Nothing Then
+                    assessControl.LoadAssessmentData()
+                End If
+            End If
+        Catch
+        End Try
+
     End Sub
+
+    Private Sub SaveToAssessmentCriteria(dt As DataTable)
+        Using conn As New MySqlConnection(connString)
+            conn.Open()
+
+            For Each row As DataRow In dt.Rows
+                Dim query As String = "
+                INSERT INTO AssessmentCriteria
+                (AssessmentId, Criteria1, Criteria2, Criteria3, Criteria4, Criteria5,
+                 Criteria6, Criteria7, Criteria8, Criteria9, Criteria10,
+                 Criteria11, Criteria12, Criteria13, Criteria14, Criteria15,
+                 Criteria16, Criteria17, Criteria18, Criteria19, Criteria20, Remarks)
+                VALUES
+                (@AssessmentId, @C1, @C2, @C3, @C4, @C5,
+                 @C6, @C7, @C8, @C9, @C10,
+                 @C11, @C12, @C13, @C14, @C15,
+                 @C16, @C17, @C18, @C19, @C20, @Remarks)
+                ON DUPLICATE KEY UPDATE
+                    Criteria1=@C1, Criteria2=@C2, Criteria3=@C3, Criteria4=@C4, Criteria5=@C5,
+                    Criteria6=@C6, Criteria7=@C7, Criteria8=@C8, Criteria9=@C9, Criteria10=@C10,
+                    Criteria11=@C11, Criteria12=@C12, Criteria13=@C13, Criteria14=@C14, Criteria15=@C15,
+                    Criteria16=@C16, Criteria17=@C17, Criteria18=@C18, Criteria19=@C19, Criteria20=@C20,
+                    Remarks=@Remarks
+            "
+
+                Using cmd As New MySqlCommand(query, conn)
+
+                    ' REQUIRED
+                    cmd.Parameters.AddWithValue("@AssessmentId", row("AssessmentId"))
+
+                    ' Handle Criteria1–20
+                    For i As Integer = 1 To 20
+                        If dt.Columns.Contains("Criteria" & i) Then
+                            cmd.Parameters.AddWithValue("@C" & i, row("Criteria" & i))
+                        Else
+                            cmd.Parameters.AddWithValue("@C" & i, DBNull.Value)
+                        End If
+                    Next
+
+                    ' Remarks
+                    If dt.Columns.Contains("Remarks") Then
+                        cmd.Parameters.AddWithValue("@Remarks", row("Remarks"))
+                    Else
+                        cmd.Parameters.AddWithValue("@Remarks", DBNull.Value)
+                    End If
+
+                    cmd.ExecuteNonQuery()
+                End Using
+            Next
+        End Using
+    End Sub
+
+
+
 End Class
