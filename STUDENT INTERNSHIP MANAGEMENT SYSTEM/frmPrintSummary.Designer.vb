@@ -40,9 +40,9 @@ Partial Class frmPrintSummary
         Label1.Font = New Font("Impact", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(12, 6)
         Label1.Name = "Label1"
-        Label1.Size = New Size(196, 59)
+        Label1.Size = New Size(220, 59)
         Label1.TabIndex = 82
-        Label1.Text = "PREVIEW"
+        Label1.Text = "SUMMARY"
         ' 
         ' btnPrintSummary
         ' 

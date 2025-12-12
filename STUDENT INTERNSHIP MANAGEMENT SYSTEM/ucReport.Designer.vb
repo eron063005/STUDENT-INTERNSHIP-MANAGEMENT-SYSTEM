@@ -26,11 +26,10 @@ Partial Class ucReport
         Label2 = New Label()
         Label1 = New Label()
         btnImportFile = New RoundedButton()
-        btnPrintSummary = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
         Label3 = New Label()
         Label4 = New Label()
-        RoundedButton1 = New RoundedButton()
+        btnCreateSummary = New RoundedButton()
         panelCard.SuspendLayout()
         RoundedPanel1.SuspendLayout()
         SuspendLayout()
@@ -81,7 +80,7 @@ Partial Class ucReport
         btnImportFile.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnImportFile.FlatAppearance.BorderSize = 0
         btnImportFile.FlatStyle = FlatStyle.Flat
-        btnImportFile.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnImportFile.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnImportFile.ForeColor = Color.Black
         btnImportFile.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnImportFile.Location = New Point(283, 332)
@@ -92,27 +91,6 @@ Partial Class ucReport
         btnImportFile.Text = "Import"
         btnImportFile.UseVisualStyleBackColor = False
         ' 
-        ' btnPrintSummary
-        ' 
-        btnPrintSummary.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        btnPrintSummary.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        btnPrintSummary.BorderSize = 5
-        btnPrintSummary.CornerRadius = 18
-        btnPrintSummary.Cursor = Cursors.Hand
-        btnPrintSummary.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        btnPrintSummary.FlatAppearance.BorderSize = 0
-        btnPrintSummary.FlatStyle = FlatStyle.Flat
-        btnPrintSummary.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnPrintSummary.ForeColor = Color.Black
-        btnPrintSummary.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        btnPrintSummary.Location = New Point(65, 779)
-        btnPrintSummary.Name = "btnPrintSummary"
-        btnPrintSummary.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        btnPrintSummary.Size = New Size(277, 69)
-        btnPrintSummary.TabIndex = 13
-        btnPrintSummary.Text = "Import"
-        btnPrintSummary.UseVisualStyleBackColor = False
-        ' 
         ' RoundedPanel1
         ' 
         RoundedPanel1.BackColor = Color.Transparent
@@ -120,7 +98,7 @@ Partial Class ucReport
         RoundedPanel1.BorderSize = 5
         RoundedPanel1.Controls.Add(Label3)
         RoundedPanel1.Controls.Add(Label4)
-        RoundedPanel1.Controls.Add(RoundedButton1)
+        RoundedPanel1.Controls.Add(btnCreateSummary)
         RoundedPanel1.CornerRadius = 20
         RoundedPanel1.FillColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         RoundedPanel1.Location = New Point(644, 26)
@@ -149,33 +127,32 @@ Partial Class ucReport
         Label4.Size = New Size(0, 59)
         Label4.TabIndex = 11
         ' 
-        ' RoundedButton1
+        ' btnCreateSummary
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 5
-        RoundedButton1.CornerRadius = 18
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton1.Location = New Point(283, 332)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton1.Size = New Size(277, 69)
-        RoundedButton1.TabIndex = 5
-        RoundedButton1.Text = "Create Summary"
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnCreateSummary.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnCreateSummary.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnCreateSummary.BorderSize = 5
+        btnCreateSummary.CornerRadius = 18
+        btnCreateSummary.Cursor = Cursors.Hand
+        btnCreateSummary.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnCreateSummary.FlatAppearance.BorderSize = 0
+        btnCreateSummary.FlatStyle = FlatStyle.Flat
+        btnCreateSummary.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCreateSummary.ForeColor = Color.Black
+        btnCreateSummary.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnCreateSummary.Location = New Point(283, 332)
+        btnCreateSummary.Name = "btnCreateSummary"
+        btnCreateSummary.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnCreateSummary.Size = New Size(277, 69)
+        btnCreateSummary.TabIndex = 5
+        btnCreateSummary.Text = "Create Summary"
+        btnCreateSummary.UseVisualStyleBackColor = False
         ' 
         ' ucReport
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
-        Controls.Add(btnPrintSummary)
         Controls.Add(RoundedPanel1)
         Controls.Add(panelCard)
         Name = "ucReport"
@@ -191,10 +168,9 @@ Partial Class ucReport
     Friend WithEvents btnImportFile As RoundedButton
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnPrintSummary As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents btnCreateSummary As RoundedButton
 
 End Class

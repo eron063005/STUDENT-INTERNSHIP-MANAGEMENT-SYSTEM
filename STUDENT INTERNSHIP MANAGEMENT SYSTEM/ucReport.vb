@@ -80,8 +80,7 @@ Public Class ucReport
 
     End Sub
 
-    Private Sub btnPrintSummary_Click(sender As Object, e As EventArgs) Handles btnPrintSummary.Click
-        ' Show preview form (modal) via Dashboard helper so it centers nicely
+    Private Sub btnCreateSummary_Click(sender As Object, e As EventArgs) Handles btnCreateSummary.Click
         Try
             Dim preview As New frmPrintSummary()
             Dim parentForm As Dashboard = Me.FindForm()
