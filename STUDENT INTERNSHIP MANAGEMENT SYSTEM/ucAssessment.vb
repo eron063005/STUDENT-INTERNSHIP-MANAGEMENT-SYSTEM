@@ -44,13 +44,23 @@ Public Class ucAssessment
         CONCAT(s.FirstName, ' ', s.LastName) AS StudentName,
         CONCAT(cc.CFirstName, ' ', cc.CLastName) AS CompanyContactName,
         c.CompanyName,
-        a.AssessmentGrade
+        -- Get sum of criteria as AssessmentGrade
+        (
+            SELECT COALESCE(
+                Criteria1 + Criteria2 + Criteria3 + Criteria4 + Criteria5 +
+                Criteria6 + Criteria7 + Criteria8 + Criteria9 + Criteria10 +
+                Criteria11 + Criteria12 + Criteria13 + Criteria14 + Criteria15 +
+                Criteria16 + Criteria17 + Criteria18 + Criteria19 + Criteria20,
+            0)
+            FROM assessmentcriteria ac
+            WHERE ac.AssessmentId = a.AssessmentId
+        ) AS AssessmentGrade
     FROM assessment a
     JOIN student s ON a.StudentId = s.StudentId
     JOIN company_contact cc ON a.CompanyContactId = cc.CompanyContactId
     JOIN company c ON cc.CompanyId = c.CompanyId
     WHERE s.FacultyId = @facultyId
-"
+    "
 
         Try
             Using conn As New MySqlConnection(connString)
@@ -105,6 +115,8 @@ Public Class ucAssessment
         Dim assess As New frmPreviewAssess()
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(assess, leftPadding:=500, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+        LoadAssessmentData()
+
     End Sub
 End Class
 

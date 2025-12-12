@@ -17,6 +17,7 @@ Public Class frmAddStudent
 
     Private Sub btnAddStdClick(sender As Object, e As EventArgs) Handles btnAddStd.Click
         AddStudent()
+        mtxtAddStudentID.Text = GenerateStudentID()
     End Sub
 
     Private Sub clearAll()
