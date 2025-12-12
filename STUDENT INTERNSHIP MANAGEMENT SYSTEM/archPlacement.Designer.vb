@@ -27,8 +27,8 @@ Partial Class archPlacement
         Label1 = New Label()
         btnPlaceExit = New Button()
         btnPlaceBack = New Button()
-        RoundedButton2 = New RoundedButton()
-        RoundedButton1 = New RoundedButton()
+        btnPlacePermaDel = New RoundedButton()
+        btnPlaceRestore = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
         CType(dgvarchPlacement, ComponentModel.ISupportInitialize).BeginInit()
         RoundedPanel1.SuspendLayout()
@@ -78,47 +78,47 @@ Partial Class archPlacement
         btnPlaceBack.TabIndex = 6
         btnPlaceBack.UseVisualStyleBackColor = True
         ' 
-        ' RoundedButton2
+        ' btnPlacePermaDel
         ' 
-        RoundedButton2.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton2.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton2.BorderSize = 3
-        RoundedButton2.CornerRadius = 20
-        RoundedButton2.Cursor = Cursors.Hand
-        RoundedButton2.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton2.FlatAppearance.BorderSize = 0
-        RoundedButton2.FlatStyle = FlatStyle.Flat
-        RoundedButton2.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        RoundedButton2.ForeColor = Color.Black
-        RoundedButton2.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton2.Location = New Point(716, 526)
-        RoundedButton2.Name = "RoundedButton2"
-        RoundedButton2.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton2.Size = New Size(222, 59)
-        RoundedButton2.TabIndex = 25
-        RoundedButton2.Text = "Delete Permanently"
-        RoundedButton2.UseVisualStyleBackColor = False
+        btnPlacePermaDel.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnPlacePermaDel.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnPlacePermaDel.BorderSize = 3
+        btnPlacePermaDel.CornerRadius = 20
+        btnPlacePermaDel.Cursor = Cursors.Hand
+        btnPlacePermaDel.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnPlacePermaDel.FlatAppearance.BorderSize = 0
+        btnPlacePermaDel.FlatStyle = FlatStyle.Flat
+        btnPlacePermaDel.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        btnPlacePermaDel.ForeColor = Color.Black
+        btnPlacePermaDel.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnPlacePermaDel.Location = New Point(716, 526)
+        btnPlacePermaDel.Name = "btnPlacePermaDel"
+        btnPlacePermaDel.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnPlacePermaDel.Size = New Size(222, 59)
+        btnPlacePermaDel.TabIndex = 25
+        btnPlacePermaDel.Text = "Delete Permanently"
+        btnPlacePermaDel.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton1
+        ' btnPlaceRestore
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
-        RoundedButton1.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        RoundedButton1.BorderSize = 3
-        RoundedButton1.CornerRadius = 20
-        RoundedButton1.Cursor = Cursors.Hand
-        RoundedButton1.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        RoundedButton1.FlatStyle = FlatStyle.Flat
-        RoundedButton1.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        RoundedButton1.ForeColor = Color.Black
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        RoundedButton1.Location = New Point(524, 526)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        RoundedButton1.Size = New Size(186, 59)
-        RoundedButton1.TabIndex = 24
-        RoundedButton1.Text = "Restore"
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnPlaceRestore.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnPlaceRestore.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnPlaceRestore.BorderSize = 3
+        btnPlaceRestore.CornerRadius = 20
+        btnPlaceRestore.Cursor = Cursors.Hand
+        btnPlaceRestore.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnPlaceRestore.FlatAppearance.BorderSize = 0
+        btnPlaceRestore.FlatStyle = FlatStyle.Flat
+        btnPlaceRestore.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        btnPlaceRestore.ForeColor = Color.Black
+        btnPlaceRestore.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnPlaceRestore.Location = New Point(524, 526)
+        btnPlaceRestore.Name = "btnPlaceRestore"
+        btnPlaceRestore.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnPlaceRestore.Size = New Size(186, 59)
+        btnPlaceRestore.TabIndex = 24
+        btnPlaceRestore.Text = "Restore"
+        btnPlaceRestore.UseVisualStyleBackColor = False
         ' 
         ' RoundedPanel1
         ' 
@@ -141,8 +141,8 @@ Partial Class archPlacement
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(965, 601)
         Controls.Add(dgvarchPlacement)
-        Controls.Add(RoundedButton2)
-        Controls.Add(RoundedButton1)
+        Controls.Add(btnPlacePermaDel)
+        Controls.Add(btnPlaceRestore)
         Controls.Add(RoundedPanel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "archPlacement"
@@ -157,7 +157,7 @@ Partial Class archPlacement
     Friend WithEvents Label1 As Label
     Friend WithEvents btnPlaceExit As Button
     Friend WithEvents btnPlaceBack As Button
-    Friend WithEvents RoundedButton2 As RoundedButton
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents btnPlacePermaDel As RoundedButton
+    Friend WithEvents btnPlaceRestore As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
 End Class

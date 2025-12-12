@@ -98,7 +98,8 @@ Public Class ucAssessment
         End If
     End Sub
 
-
-
-
+    Private Sub btnDisplay_Click(sender As Object, e As EventArgs) Handles btnDisplay.Click
+        Dim parentForm As Dashboard = Me.FindForm()
+        parentForm.ShowFormWithPadding(frmPreviewAssess, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
+    End Sub
 End Class

@@ -23,7 +23,7 @@ Partial Class frmPreviewAssess
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Label1 = New Label()
-        btnSaveDBAssess = New RoundedButton()
+        btnImport = New RoundedButton()
         dgvPreviewAssess = New DataGridView()
         btnCancelPreviewAssess = New RoundedButton()
         RoundedPanel1 = New RoundedPanel()
@@ -38,32 +38,32 @@ Partial Class frmPreviewAssess
         Label1.AutoSize = True
         Label1.BackColor = Color.White
         Label1.Font = New Font("Impact", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(314, 6)
+        Label1.Location = New Point(326, 6)
         Label1.Name = "Label1"
         Label1.Size = New Size(443, 59)
         Label1.TabIndex = 82
         Label1.Text = "ASSESSMENT GRADES "
         ' 
-        ' btnSaveDBAssess
+        ' btnImport
         ' 
-        btnSaveDBAssess.BackColor = SystemColors.Control
-        btnSaveDBAssess.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
-        btnSaveDBAssess.BorderSize = 5
-        btnSaveDBAssess.CornerRadius = 18
-        btnSaveDBAssess.Cursor = Cursors.Hand
-        btnSaveDBAssess.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
-        btnSaveDBAssess.FlatAppearance.BorderSize = 0
-        btnSaveDBAssess.FlatStyle = FlatStyle.Flat
-        btnSaveDBAssess.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSaveDBAssess.ForeColor = Color.Black
-        btnSaveDBAssess.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
-        btnSaveDBAssess.Location = New Point(551, 494)
-        btnSaveDBAssess.Name = "btnSaveDBAssess"
-        btnSaveDBAssess.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
-        btnSaveDBAssess.Size = New Size(498, 95)
-        btnSaveDBAssess.TabIndex = 81
-        btnSaveDBAssess.Text = "Save to Database"
-        btnSaveDBAssess.UseVisualStyleBackColor = False
+        btnImport.BackColor = SystemColors.Control
+        btnImport.BorderColor = Color.FromArgb(CByte(49), CByte(119), CByte(180))
+        btnImport.BorderSize = 5
+        btnImport.CornerRadius = 18
+        btnImport.Cursor = Cursors.Hand
+        btnImport.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
+        btnImport.FlatAppearance.BorderSize = 0
+        btnImport.FlatStyle = FlatStyle.Flat
+        btnImport.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnImport.ForeColor = Color.Black
+        btnImport.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
+        btnImport.Location = New Point(551, 494)
+        btnImport.Name = "btnImport"
+        btnImport.PressedColor = Color.FromArgb(CByte(100), CByte(180), CByte(200))
+        btnImport.Size = New Size(498, 95)
+        btnImport.TabIndex = 81
+        btnImport.Text = "Import"
+        btnImport.UseVisualStyleBackColor = False
         ' 
         ' dgvPreviewAssess
         ' 
@@ -153,7 +153,7 @@ Partial Class frmPreviewAssess
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1086, 601)
-        Controls.Add(btnSaveDBAssess)
+        Controls.Add(btnImport)
         Controls.Add(dgvPreviewAssess)
         Controls.Add(btnCancelPreviewAssess)
         Controls.Add(RoundedPanel1)
@@ -167,7 +167,7 @@ Partial Class frmPreviewAssess
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnSaveDBAssess As RoundedButton
+    Friend WithEvents btnImport As RoundedButton
     Friend WithEvents dgvPreviewAssess As DataGridView
     Friend WithEvents btnCancelPreviewAssess As RoundedButton
     Friend WithEvents RoundedPanel1 As RoundedPanel
