@@ -27,6 +27,7 @@ Public Class frmPreviewAssess
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect,
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         }
+    End Sub
 
     Private Sub btnCancelPreviewAssess_Click(sender As Object, e As EventArgs) Handles btnCancelPreviewAssess.Click
         Me.Close()
