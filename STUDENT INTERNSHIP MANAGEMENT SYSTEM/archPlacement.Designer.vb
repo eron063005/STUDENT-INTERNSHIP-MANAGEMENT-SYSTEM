@@ -55,7 +55,7 @@ Partial Class archPlacement
         ' 
         ' btnPlaceExit
         ' 
-        btnPlaceExit.BackColor = Color.Transparent
+        btnPlaceExit.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         btnPlaceExit.Cursor = Cursors.Hand
         btnPlaceExit.FlatAppearance.BorderSize = 0
         btnPlaceExit.FlatStyle = FlatStyle.Flat
@@ -68,15 +68,18 @@ Partial Class archPlacement
         ' 
         ' btnPlaceBack
         ' 
+        btnPlaceBack.BackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         btnPlaceBack.Cursor = Cursors.Hand
         btnPlaceBack.FlatAppearance.BorderSize = 0
+        btnPlaceBack.FlatAppearance.MouseDownBackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
+        btnPlaceBack.FlatAppearance.MouseOverBackColor = Color.FromArgb(CByte(200), CByte(236), CByte(245))
         btnPlaceBack.FlatStyle = FlatStyle.Flat
         btnPlaceBack.Image = CType(resources.GetObject("btnPlaceBack.Image"), Image)
         btnPlaceBack.Location = New Point(26, 21)
         btnPlaceBack.Name = "btnPlaceBack"
         btnPlaceBack.Size = New Size(74, 59)
         btnPlaceBack.TabIndex = 6
-        btnPlaceBack.UseVisualStyleBackColor = True
+        btnPlaceBack.UseVisualStyleBackColor = False
         ' 
         ' btnPlacePermaDel
         ' 

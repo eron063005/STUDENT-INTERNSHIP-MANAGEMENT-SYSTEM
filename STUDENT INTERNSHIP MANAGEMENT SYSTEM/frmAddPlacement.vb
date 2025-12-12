@@ -2,7 +2,7 @@
 
 Public Class frmAddPlacement
     Private Sub btnExitAddPlace_Click(sender As Object, e As EventArgs) Handles btnExitAddPlace.Click
-        Close()
+        Me.Close()
     End Sub
 
     Private Sub btnAddPlaceCancel_Click(sender As Object, e As EventArgs) Handles btnAddPlaceCancel.Click
@@ -30,6 +30,8 @@ Public Class frmAddPlacement
                 cmd.Parameters.AddWithValue("@Status", cbAddPlaceStatus.Text.Trim())
                 cmd.Parameters.AddWithValue("@StartDate", dtpAddPlaceStartDate.Value)
                 cmd.Parameters.AddWithValue("@EndDate", dtpAddPlaceEndDate.Value)
+                cmd.Parameters.AddWithValue("@FGrade", nudAddPlaceGrade.Value)
+
 
                 cmd.ExecuteNonQuery()
             End Using
@@ -97,9 +99,5 @@ Public Class frmAddPlacement
         nudAddPlaceGrade.Value = 0
         cbAddPlaceComCon.SelectedIndex = -1
         cbAddPlaceStdID.SelectedIndex = -1
-    End Sub
-
-    Private Sub RoundedPanel1_Paint(sender As Object, e As PaintEventArgs) Handles RoundedPanel1.Paint
-        ' Optional: custom painting
     End Sub
 End Class

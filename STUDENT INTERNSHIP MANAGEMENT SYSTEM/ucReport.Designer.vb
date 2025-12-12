@@ -80,7 +80,7 @@ Partial Class ucReport
         btnImportFile.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnImportFile.FlatAppearance.BorderSize = 0
         btnImportFile.FlatStyle = FlatStyle.Flat
-        btnImportFile.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnImportFile.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnImportFile.ForeColor = Color.Black
         btnImportFile.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnImportFile.Location = New Point(283, 332)
@@ -113,9 +113,9 @@ Partial Class ucReport
         Label3.Font = New Font("Century Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(27, 28)
         Label3.Name = "Label3"
-        Label3.Size = New Size(418, 280)
+        Label3.Size = New Size(405, 280)
         Label3.TabIndex = 12
-        Label3.Text = "Used to import and" & vbCrLf & "preview student " & vbCrLf & "internship data from" & vbCrLf & " a CSV file, enabling the " & vbCrLf & "generation of " & vbCrLf & "visualization graphs" & vbCrLf & "via Python."
+        Label3.Text = "Generates a summary " & vbCrLf & "listing students’ grades, " & vbCrLf & "total points, supervisor, " & vbCrLf & "company, and creates" & vbCrLf & "a performance" & vbCrLf & "evaluation document" & vbCrLf & "automatically."
         ' 
         ' Label4
         ' 
@@ -137,7 +137,7 @@ Partial Class ucReport
         btnCreateSummary.FillColor = Color.FromArgb(CByte(120), CByte(201), CByte(221))
         btnCreateSummary.FlatAppearance.BorderSize = 0
         btnCreateSummary.FlatStyle = FlatStyle.Flat
-        btnCreateSummary.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCreateSummary.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCreateSummary.ForeColor = Color.Black
         btnCreateSummary.HoverColor = Color.FromArgb(CByte(140), CByte(220), CByte(235))
         btnCreateSummary.Location = New Point(283, 332)
@@ -150,7 +150,7 @@ Partial Class ucReport
         ' 
         ' ucReport
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(236), CByte(236), CByte(236))
         Controls.Add(RoundedPanel1)
