@@ -36,6 +36,8 @@ Partial Class frmEditPlacement
         mtxtEditPlaceInternID = New MaskedTextBox()
         Label1 = New Label()
         RoundedPanel1 = New RoundedPanel()
+        cbEditPlaceComCon = New ComboBox()
+        Label4 = New Label()
         txtEditPlaceStdID = New MaskedTextBox()
         Panel2 = New Panel()
         nudEditPlaceGrade = New NumericUpDown()
@@ -103,7 +105,7 @@ Partial Class frmEditPlacement
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label5.Location = New Point(744, 244)
+        Label5.Location = New Point(29, 241)
         Label5.Name = "Label5"
         Label5.Size = New Size(77, 27)
         Label5.TabIndex = 55
@@ -138,7 +140,7 @@ Partial Class frmEditPlacement
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label3.Location = New Point(27, 244)
+        Label3.Location = New Point(300, 150)
         Label3.Name = "Label3"
         Label3.Size = New Size(124, 27)
         Label3.TabIndex = 53
@@ -196,6 +198,8 @@ Partial Class frmEditPlacement
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbEditPlaceComCon)
+        RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(txtEditPlaceStdID)
         RoundedPanel1.Controls.Add(Panel2)
         RoundedPanel1.Controls.Add(nudEditPlaceGrade)
@@ -219,13 +223,32 @@ Partial Class frmEditPlacement
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
         ' 
+        ' cbEditPlaceComCon
+        ' 
+        cbEditPlaceComCon.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbEditPlaceComCon.FormattingEnabled = True
+        cbEditPlaceComCon.Location = New Point(300, 270)
+        cbEditPlaceComCon.Name = "cbEditPlaceComCon"
+        cbEditPlaceComCon.Size = New Size(734, 45)
+        cbEditPlaceComCon.TabIndex = 78
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        Label4.Location = New Point(300, 241)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(221, 27)
+        Label4.TabIndex = 77
+        Label4.Text = "Company Contact"
+        ' 
         ' txtEditPlaceStdID
         ' 
         txtEditPlaceStdID.BorderStyle = BorderStyle.FixedSingle
         txtEditPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        txtEditPlaceStdID.Location = New Point(29, 278)
+        txtEditPlaceStdID.Location = New Point(300, 184)
         txtEditPlaceStdID.Name = "txtEditPlaceStdID"
-        txtEditPlaceStdID.Size = New Size(713, 44)
+        txtEditPlaceStdID.Size = New Size(734, 44)
         txtEditPlaceStdID.TabIndex = 72
         ' 
         ' Panel2
@@ -249,9 +272,9 @@ Partial Class frmEditPlacement
         cbEditPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cbEditPlaceStatus.FormattingEnabled = True
         cbEditPlaceStatus.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
-        cbEditPlaceStatus.Location = New Point(746, 278)
+        cbEditPlaceStatus.Location = New Point(29, 270)
         cbEditPlaceStatus.Name = "cbEditPlaceStatus"
-        cbEditPlaceStatus.Size = New Size(315, 45)
+        cbEditPlaceStatus.Size = New Size(237, 45)
         cbEditPlaceStatus.TabIndex = 76
         ' 
         ' frmEditPlacement
@@ -290,4 +313,6 @@ Partial Class frmEditPlacement
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbEditPlaceStatus As ComboBox
     Friend WithEvents txtEditPlaceStdID As MaskedTextBox
+    Friend WithEvents cbEditPlaceComCon As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

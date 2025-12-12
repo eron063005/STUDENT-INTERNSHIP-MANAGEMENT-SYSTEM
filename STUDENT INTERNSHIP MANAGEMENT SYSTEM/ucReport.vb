@@ -72,7 +72,7 @@ Public Class ucReport
 
         Try
             Dim preview As New frmPreviewPythonvb(dt, filePath)
-            Dim parentForm As Dashboard = FindForm()
+            Dim parentForm As Dashboard = FindForm
             parentForm.ShowFormWithPadding(preview, leftPadding:=470, topPadding:=150, rightPadding:=416, bottomPadding:=150)
         Catch ex As Exception
             MessageBox.Show("Error showing preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

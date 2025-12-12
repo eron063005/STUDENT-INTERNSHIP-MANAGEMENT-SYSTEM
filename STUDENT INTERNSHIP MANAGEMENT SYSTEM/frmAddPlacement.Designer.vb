@@ -35,6 +35,8 @@ Partial Class frmAddPlacement
         dtpAddPlaceEndDate = New DateTimePicker()
         btnExitAddPlace = New Button()
         RoundedPanel1 = New RoundedPanel()
+        cbAddPlaceComCon = New ComboBox()
+        Label4 = New Label()
         cbAddPlaceStdID = New ComboBox()
         cbAddPlaceStatus = New ComboBox()
         Panel2 = New Panel()
@@ -98,7 +100,7 @@ Partial Class frmAddPlacement
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label5.Location = New Point(747, 244)
+        Label5.Location = New Point(29, 241)
         Label5.Name = "Label5"
         Label5.Size = New Size(77, 27)
         Label5.TabIndex = 37
@@ -108,7 +110,7 @@ Partial Class frmAddPlacement
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
-        Label3.Location = New Point(29, 244)
+        Label3.Location = New Point(300, 150)
         Label3.Name = "Label3"
         Label3.Size = New Size(124, 27)
         Label3.TabIndex = 35
@@ -188,6 +190,8 @@ Partial Class frmAddPlacement
         RoundedPanel1.BackColor = Color.Transparent
         RoundedPanel1.BorderColor = Color.Black
         RoundedPanel1.BorderSize = 5
+        RoundedPanel1.Controls.Add(cbAddPlaceComCon)
+        RoundedPanel1.Controls.Add(Label4)
         RoundedPanel1.Controls.Add(cbAddPlaceStdID)
         RoundedPanel1.Controls.Add(cbAddPlaceStatus)
         RoundedPanel1.Controls.Add(Panel2)
@@ -212,14 +216,33 @@ Partial Class frmAddPlacement
         RoundedPanel1.Size = New Size(1086, 601)
         RoundedPanel1.TabIndex = 75
         ' 
+        ' cbAddPlaceComCon
+        ' 
+        cbAddPlaceComCon.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        cbAddPlaceComCon.FormattingEnabled = True
+        cbAddPlaceComCon.Location = New Point(300, 270)
+        cbAddPlaceComCon.Name = "cbAddPlaceComCon"
+        cbAddPlaceComCon.Size = New Size(734, 45)
+        cbAddPlaceComCon.TabIndex = 76
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Century Gothic", 13.8F, FontStyle.Bold)
+        Label4.Location = New Point(300, 241)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(221, 27)
+        Label4.TabIndex = 75
+        Label4.Text = "Company Contact"
+        ' 
         ' cbAddPlaceStdID
         ' 
         cbAddPlaceStdID.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cbAddPlaceStdID.FormattingEnabled = True
         cbAddPlaceStdID.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
-        cbAddPlaceStdID.Location = New Point(27, 273)
+        cbAddPlaceStdID.Location = New Point(300, 184)
         cbAddPlaceStdID.Name = "cbAddPlaceStdID"
-        cbAddPlaceStdID.Size = New Size(712, 45)
+        cbAddPlaceStdID.Size = New Size(734, 45)
         cbAddPlaceStdID.TabIndex = 74
         ' 
         ' cbAddPlaceStatus
@@ -227,9 +250,9 @@ Partial Class frmAddPlacement
         cbAddPlaceStatus.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         cbAddPlaceStatus.FormattingEnabled = True
         cbAddPlaceStatus.Items.AddRange(New Object() {"Pending", "Ongoing", "Completed"})
-        cbAddPlaceStatus.Location = New Point(747, 273)
+        cbAddPlaceStatus.Location = New Point(29, 270)
         cbAddPlaceStatus.Name = "cbAddPlaceStatus"
-        cbAddPlaceStatus.Size = New Size(315, 45)
+        cbAddPlaceStatus.Size = New Size(237, 45)
         cbAddPlaceStatus.TabIndex = 73
         ' 
         ' Panel2
@@ -292,4 +315,6 @@ Partial Class frmAddPlacement
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbAddPlaceStatus As ComboBox
     Friend WithEvents cbAddPlaceStdID As ComboBox
+    Friend WithEvents cbAddPlaceComCon As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

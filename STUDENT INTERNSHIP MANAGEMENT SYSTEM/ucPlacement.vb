@@ -89,4 +89,46 @@ Public Class ucPlacement
         Dim parentForm As Dashboard = Me.FindForm()
         parentForm.ShowFormWithPadding(addForm, leftPadding:=470, topPadding:=300, rightPadding:=416, bottomPadding:=269)
     End Sub
+
+    Private Sub dgvPlacement_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPlacement.CellContentClick
+
+    End Sub
+
+    Sub LoadDataInternship(targetGrid As DataGridView)
+        Using con As New MySqlConnection(connString)
+            Dim query As String =
+                "SELECT
+                i.InternshipID,
+                i.StudentID,
+                CONCAT_WS(' ', s.FirstName, s.MiddleName, s.LastName) AS StudentName,
+                s.Section,
+                cc.CompanyContactId,
+                CONCAT(cc.CFirstName, ' ', cc.CLastName) AS Supervisor,
+                i.Status,
+                i.StartDate,
+                i.EndDate,
+                i.FGrade
+            FROM internship i
+            INNER JOIN student s ON i.StudentID = s.StudentID
+            LEFT JOIN company_contact cc ON i.CompanyContactID = cc.CompanyContactID
+            WHERE s.FacultyID = @facultyID
+            ORDER BY i.StudentID, i.InternshipID;"
+
+            Using cmd As New MySqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@facultyID", LoggedFacultyID)
+
+                Dim adapter As New MySqlDataAdapter(cmd)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+
+                targetGrid.DataSource = table
+            End Using
+        End Using
+
+        ' Optional DataGridView settings
+        targetGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        targetGrid.ReadOnly = True
+        targetGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    End Sub
+
 End Class
